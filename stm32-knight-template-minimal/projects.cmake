@@ -13,5 +13,5 @@ if((${BUILD_CONTEXT} MATCHES .*CM7.*) OR (NOT DEFINED BUILD_CONTEXT))
         INSTALL_COMMAND             ""
         CMAKE_ARGS                  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
     )
-	set(ST_DUAL_CORE_CM7_PROJECT_BUILD_TARGET ${CMAKE_SOURCE_DIR}/build/cm7/build/cmake-test2-cm7${CMAKE_EXECUTABLE_SUFFIX_CXX} CACHE FILEPATH "Path to cm7 project target")
+	set(ST_DUAL_CORE_CM7_PROJECT_BUILD_TARGET ${CMAKE_SOURCE_DIR}/build/cm7/build/stm32-knight-template-minimal-cm7${CMAKE_EXECUTABLE_SUFFIX_CXX} CACHE FILEPATH "Path to cm7 project target")
 endif()

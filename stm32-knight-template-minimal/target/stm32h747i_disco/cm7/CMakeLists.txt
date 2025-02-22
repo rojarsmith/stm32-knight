@@ -26,7 +26,7 @@ set(STM32_LINKER_OPTION  )
 include("../../../gcc-arm-none-eabi.cmake")
 
 # Set the project name
-set(CMAKE_PROJECT_NAME cmake-test2-cm7)
+set(CMAKE_PROJECT_NAME stm32-knight-template-minimal-cm7)
 project(${CMAKE_PROJECT_NAME})
 
 # Create an executable object type
