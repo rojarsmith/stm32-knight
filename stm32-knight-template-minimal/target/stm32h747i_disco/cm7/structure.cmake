@@ -4,6 +4,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 	USE_HAL_DRIVER 
 	STM32H747xx 
 	USE_PWR_DIRECT_SMPS_SUPPLY
+    __SOFT_FP__
     $<$<CONFIG:Debug>:DEBUG>
 )
 

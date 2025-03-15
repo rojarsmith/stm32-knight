@@ -35,11 +35,11 @@ add_executable(${CMAKE_PROJECT_NAME})
 # Include mx-generated 
 include("structure.cmake")
 
+# In order to use CMake for cross-compiling
+set(CMAKE_CXX_COMPILER_FORCED "true")
+
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
-
-# In order to use CMake for cross-compiling
-set(CMAKE_CXX_COMPILER_FORCED "true") 
 
 # Validate that STM32CubeMX code is compatible with C standard
 if(CMAKE_C_STANDARD LESS 11)
