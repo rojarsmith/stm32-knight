@@ -22,10 +22,21 @@
 #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+#ifdef STM32F746xx
+#define RCC_BASE 0x40023800 // H7
+#endif
+#ifdef STM32H747xx
 #define RCC_BASE 0x58024400 // H7
+#endif
+
 #define RCC_CFGR (volatile uint32_t *)(RCC_BASE + 0x10)
 
+#ifdef STM32F746xx
+#define HSI_FREQUENCY 16000000 // H7
+#endif
+#ifdef STM32H747xx
 #define HSI_FREQUENCY 64000000 // H7
+#endif
 
 #define SYSTICK_BASE 0xE000E010
 #define SYSTICK_CTRL_PTR (volatile uint32_t *)(SYSTICK_BASE + 0x00)
