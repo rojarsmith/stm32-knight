@@ -83,3 +83,6 @@ Q: Debug STM32F746G-DISCO meet with `"executable": "${command:STM32VSCodeExtensi
 
 A: Use new path `"executable": "${workspaceFolder}/build/stm32-knight-template-minimal-target.elf"` then ignore all wrong.
 
+Q: Not find `Debug CM7 - ST-Link` ?
+
+A: Import CMake project again.
