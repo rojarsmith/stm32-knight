@@ -46,3 +46,6 @@ enable_language(C ASM)
 if(CMAKE_C_STANDARD LESS 11)
     message(ERROR "Generated code requires C11 or higher")
 endif()
+
+# Fixed undefined reference to `_sbrk'
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --specs=nosys.specs")
