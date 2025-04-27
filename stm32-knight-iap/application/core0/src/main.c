@@ -63,7 +63,7 @@ int main(void)
 	}
 
 	uint32_t address = *(__IO uint32_t *)FLASH_ADDR_APP_0; // 0x24080000
-	printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ADDR_APP_0,
+	printf("Value at address 0x%08X: 0x%08X\r\n", (unsigned int)FLASH_ADDR_APP_0,
 		   (unsigned int)address);
 
 	for (;;)

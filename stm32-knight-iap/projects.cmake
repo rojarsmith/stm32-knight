@@ -16,7 +16,9 @@ if(${BUILD_TARGET} MATCHES STM32H747I_DISCO)
             PREFIX                      cm7
             CONFIGURE_HANDLED_BY_BUILD  true
             INSTALL_COMMAND             ""
-            CMAKE_ARGS                  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+            CMAKE_ARGS                  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON 
+                                        -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+                                        -DBUILD_CONTEXT=${BUILD_CONTEXT}
             BUILD_ALWAYS                true
         )
         set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${CMAKE_SOURCE_DIR}/build")

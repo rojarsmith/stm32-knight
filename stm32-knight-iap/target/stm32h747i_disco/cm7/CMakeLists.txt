@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 message("[target/stm32h747i_disco/core0/CMakeLists.txt]")
+message("   BUILD_CONTEXT: " ${BUILD_CONTEXT})
 
 # Setup compiler settings
 set(CMAKE_C_STANDARD 11)
