@@ -27,7 +27,7 @@ set(STM32_LINKER_OPTION  )
 include("../../../gcc-arm-none-eabi.cmake")
 
 # Set the project name
-set(CMAKE_PROJECT_NAME stm32-knight-ltdc-core0)
+set(CMAKE_PROJECT_NAME stm32-knight-ltdc-cm7)
 project(${CMAKE_PROJECT_NAME})
 
 # Create an executable object type
