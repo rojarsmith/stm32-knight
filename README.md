@@ -1,5 +1,9 @@
 # STM32 Knight
 
+## stm32-knight-ltdc
+
+LTDC
+
 ## stm32-knight-template-minimal
 
 Purpose:
@@ -86,3 +90,14 @@ A: Use new path `"executable": "${workspaceFolder}/build/stm32-knight-template-m
 Q: Not find `Debug CM7 - ST-Link` ?
 
 A: Import CMake project again.
+
+Q: Not found binary ?
+
+A: `.vscode/launch.json` modify:
+
+```json
+"configurations": [{
+    "executable": "${workspaceFolder}/build/core0/build/stm32-knight-xxx-core0.elf",
+}]
+```
+
