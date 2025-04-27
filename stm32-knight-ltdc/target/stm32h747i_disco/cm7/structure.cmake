@@ -11,6 +11,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/inc
+    ../../../target/stm32h747i_disco/cm7/inc
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/Common
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/is42s32800j
@@ -26,10 +27,10 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/src/main.c
-    ../../../application/core0/src/stm32h7xx_hal_msp.c
-    ../../../application/core0/src/stm32h7xx_it.c
     ../../../application/core0/src/syscalls.c
     ../../../target/common/system_stm32h7xx.c
+    ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_msp.c
+    ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_it.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533_reg.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/is42s32800j/is42s32800j.c

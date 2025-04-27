@@ -14,7 +14,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    ../../../application/src/cm7/main.c
+    ../../../application/src/core0/main.c
     ./startup_stm32h747xx_CM7.s
 )
 
