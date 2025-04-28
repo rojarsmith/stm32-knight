@@ -49,8 +49,10 @@ MEMORY
   /* FLASH   (rx)        : ORIGIN = 0x08000000, LENGTH = 128K */
   FLASH (rx)          : ORIGIN = 0x08000000, LENGTH = 128K
   STORAGE_FLASH (rx)  : ORIGIN = 0x08020000, LENGTH = 128K
-  /* APP0_FLASH (rx)     : ORIGIN = 0x08020800, LENGTH = 447K */
-  /* APP1_FLASH (rx)     : ORIGIN = 0x08090400, LENGTH = 447K */
+  /* FLASH_APP0 (rx)     : ORIGIN = 0x08040000, LENGTH = 384K */
+  /* FLASH_APP1 (rx)     : ORIGIN = 0x080A0000, LENGTH = 384K */
+  /* FLASH_APP0 (rx)     : ORIGIN = 0x08020800, LENGTH = 447K */
+  /* FLASH_APP1 (rx)     : ORIGIN = 0x08090400, LENGTH = 447K */
   DTCMRAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 128K
   RAM_D2 (xrw)        : ORIGIN = 0x30000000, LENGTH = 288K
   RAM_D3 (xrw)        : ORIGIN = 0x38000000, LENGTH = 64K
@@ -157,8 +159,8 @@ SECTIONS
   
   .share_storage_block_flash 0x08020000:
   {
-    KEEP(*(.fw_info_section_flash)) /* keep my variable even if not referenced */
-    KEEP(*(.fw_info2_section_flash))
+    KEEP(*(.fw_info0_section_flash)) /* keep my variable even if not referenced */
+    KEEP(*(.fw_info1_section_flash))
   } >STORAGE_FLASH
 
   /* Uninitialized data section into "RAM" Ram type memory */

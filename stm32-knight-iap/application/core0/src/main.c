@@ -15,6 +15,7 @@
 #include "main.h"
 
 /* Private define ------------------------------------------------------------*/
+#define FLASH_ADDR_FW_INFO_0 0x08020000
 #define FLASH_ADDR_APP_0 0x08040000
 #define FLASH_ADDR_APP_1 0x080A0000
 
@@ -24,10 +25,10 @@ typedef void (*pFunction)(void);
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
 
-unsigned char __attribute__((section(".fw_info_section_flash"))) fw_info_flash[10] =
-	{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-unsigned char __attribute__((section(".fw_info2_section_flash"))) fw_info2_flash[10] =
-	{'a', 'b', 'c', 'd'};
+unsigned char __attribute__((section(".fw_info0_section_flash")))
+fw_info0_flash[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+unsigned char __attribute__((section(".fw_info1_section_flash")))
+fw_info1_flash[10] = {'a', 'b', 'c', 'd'};
 
 /* Private function prototypes -----------------------------------------------*/
 static void MPU_Config(void);
@@ -49,20 +50,27 @@ int main(void)
 
 	BSP_PB_Init(BUTTON_WAKEUP, BUTTON_MODE_GPIO);
 
-	const unsigned char *fidx = (const unsigned char *)(0x08020000);
+	const unsigned char *fidx0 =
+		(const unsigned char *)(FLASH_ADDR_FW_INFO_0);
 	for (int i = 0; i < 10; i++)
 	{
-		printf("buf_flash[%d] = %d\r\n", i, fidx[i]);
+		printf("buf_flash[%d] = %d\r\n", i, fidx0[i]);
 	}
 
 	// align 4
-	const unsigned char *fidx2 = (const unsigned char *)(0x08020000 + 10 + 2);
+	printf("[align 4]\r\n");
+	const unsigned char *fidx1 =
+		(const unsigned char *)(FLASH_ADDR_FW_INFO_0 + 10 + 2);
 	for (int i = 0; i <= 3; i++)
 	{
-		printf("buf_flash[%d] = %c\r\n", i, fidx2[i]);
+		printf("buf_flash[%d] = %c\r\n", i, fidx1[i]);
 	}
 
-	uint32_t address = *(__IO uint32_t *)FLASH_ADDR_APP_0; // 0x24080000
+	uint32_t address = *(__IO uint32_t *)FLASH_ADDR_FW_INFO_0;
+	printf("Value at address 0x%08X: 0x%08X\r\n", (unsigned int)FLASH_ADDR_FW_INFO_0,
+		   (unsigned int)address);
+
+	address = *(__IO uint32_t *)FLASH_ADDR_APP_0; // 0x24080000 at AXI-SRAM
 	printf("Value at address 0x%08X: 0x%08X\r\n", (unsigned int)FLASH_ADDR_APP_0,
 		   (unsigned int)address);
 
@@ -73,7 +81,7 @@ int main(void)
 		if ((BSP_PB_GetState(BUTTON_WAKEUP) == GPIO_PIN_SET))
 		{
 			printf("Button `Wakeup`\r\n");
-			if (fw_info_flash[0] == 0)
+			if (fw_info0_flash[0] == 0)
 			{
 				Write_To_Internal_Ver(1);
 				Delay_MS(500);
