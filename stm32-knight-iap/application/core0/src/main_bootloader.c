@@ -78,9 +78,14 @@ int main(void)
 
 	for (;;)
 	{
-#if (FLASH_ORIGIN == 0x08000000)
+#if (FLASH_ORIGIN == ADDRESS_BOOTLOADER)
 		printf("IAP Demo - Bootloader\r\n");
 #endif
+        // For test
+		// Write_To_Internal_Ver(1);
+		// Delay_MS(500);
+		// Jump_To_App(address, 0);
+		
 		Delay_MS(3000);
 		if ((BSP_PB_GetState(BUTTON_WAKEUP) == GPIO_PIN_SET))
 		{
