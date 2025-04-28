@@ -74,9 +74,13 @@ int main(void)
 	printf("Value at address 0x%08X: 0x%08X\r\n", (unsigned int)FLASH_ADDR_APP_0,
 		   (unsigned int)address);
 
+	printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
+
 	for (;;)
 	{
+#if (FLASH_ORIGIN == 0x08000000)
 		printf("IAP Demo - Bootloader\r\n");
+#endif
 		Delay_MS(3000);
 		if ((BSP_PB_GetState(BUTTON_WAKEUP) == GPIO_PIN_SET))
 		{

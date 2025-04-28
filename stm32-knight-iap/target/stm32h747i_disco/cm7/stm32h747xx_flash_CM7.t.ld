@@ -46,8 +46,8 @@ MEMORY
 {
   RAM_D1 (xrw)        : ORIGIN = 0x24000000, LENGTH = 512K
   /* Memory is divided. Actual start is 0x08000000 and actual length is 2048K */
-  /* FLASH   (rx)        : ORIGIN = 0x08000000, LENGTH = 128K */
-  FLASH (rx)          : ORIGIN = 0x08000000, LENGTH = 128K
+  FLASH (rx)          : ORIGIN = @FLASH_ORIGIN@, LENGTH = @FLASH_LENGTH@
+  /* FLASH (rx)          : ORIGIN = 0x08000000, LENGTH = 128K */
   STORAGE_FLASH (rx)  : ORIGIN = 0x08020000, LENGTH = 128K
   /* FLASH_APP0 (rx)     : ORIGIN = 0x08040000, LENGTH = 384K */
   /* FLASH_APP1 (rx)     : ORIGIN = 0x080A0000, LENGTH = 384K */

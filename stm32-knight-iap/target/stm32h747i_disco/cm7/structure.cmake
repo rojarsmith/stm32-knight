@@ -26,7 +26,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    ../../../application/core0/src/main.c
+    # ../../../application/core0/src/main.c
     ../../../application/core0/src/syscalls.c
     ../../../target/common/system_stm32h7xx.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_msp.c
@@ -65,6 +65,26 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_fmc.c
     ./startup_stm32h747xx_CM7.s
 )
+
+if((${BUILD_CONTEXT} MATCHES .*BOOTLOADER.*))
+    message("   Target Source: BOOTLOADER")
+
+    set(FLASH_ORIGIN "0x08000000" CACHE STRING "Start address of the Flash memory")
+    set(FLASH_LENGTH "128K" CACHE STRING "Length of the Flash memory")
+
+    target_compile_definitions(${PROJECT_NAME} PRIVATE 
+        FLASH_ORIGIN=${FLASH_ORIGIN}
+    )
+    target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+        ../../../application/core0/src/main_bootloader.c
+    )
+endif()
+
+message(STATUS "FLASH_ORIGIN: " ${FLASH_ORIGIN})
+message(STATUS "FLASH_LENGTH: " ${FLASH_LENGTH})
+
+configure_file(stm32h747xx_flash_CM7.t.ld ${CMAKE_BINARY_DIR}/stm32h747xx_flash_CM7.ld @ONLY)
+configure_file(stm32h747xx_flash_CM7.t.ld ${CMAKE_CURRENT_SOURCE_DIR}/stm32h747xx_flash_CM7.ld @ONLY)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
