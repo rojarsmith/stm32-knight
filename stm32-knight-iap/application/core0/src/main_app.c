@@ -47,8 +47,8 @@ int main(void)
     BSP_PB_Init(BUTTON_WAKEUP, BUTTON_MODE_GPIO);
 
     uint32_t
-        address = *(__IO uint32_t *)FLASH_ADDR_APP; // 0x24080000
-    printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ADDR_APP,
+        address = *(__IO uint32_t *)FLASH_ORIGIN; // 0x24080000
+    printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ORIGIN,
            (unsigned int)address);
 
     printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
@@ -56,9 +56,9 @@ int main(void)
     for (;;)
     {
         printf("IAP Demo - App\r\n");
-#if (FLASH_ORIGIN == 0x08040000)
+#if (FLASH_ORIGIN == ADDRESS_APP_0)
         printf("Ver A\r\n");
-#elif (FLASH_ORIGIN == 0x080A0000)
+#elif (FLASH_ORIGIN == ADDRESS_APP_1)
         printf("Ver B\r\n");
 #endif
         Delay_MS(3000);
