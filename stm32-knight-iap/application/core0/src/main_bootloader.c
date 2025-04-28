@@ -75,6 +75,9 @@ int main(void)
 		   (unsigned int)address);
 
 	printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
+	printf("ADDRESS_BOOTLOADER = 0x%08X\r\n", ADDRESS_BOOTLOADER);
+	printf("ADDRESS_APP_0 = 0x%08X\r\n", ADDRESS_APP_0);
+	printf("ADDRESS_APP_1 = 0x%08X\r\n", ADDRESS_APP_1);
 
 	for (;;)
 	{
@@ -82,9 +85,9 @@ int main(void)
 		printf("IAP Demo - Bootloader\r\n");
 #endif
         // For test
-		// Write_To_Internal_Ver(1);
-		// Delay_MS(500);
-		// Jump_To_App(address, 0);
+		Write_To_Internal_Ver(1);
+		Delay_MS(500);
+		Jump_To_App(address, 0);
 		
 		Delay_MS(3000);
 		if ((BSP_PB_GetState(BUTTON_WAKEUP) == GPIO_PIN_SET))
@@ -124,11 +127,11 @@ static void Jump_To_App(uint32_t address, uint32_t ver)
 
 	if (ver == 0)
 	{
-		baseAddress = FLASH_ADDR_APP_0;
+		baseAddress = ADDRESS_APP_0;
 	}
 	else
 	{
-		baseAddress = FLASH_ADDR_APP_1;
+		baseAddress = ADDRESS_APP_1;
 	}
 
 	// This is testing what is AT the address,

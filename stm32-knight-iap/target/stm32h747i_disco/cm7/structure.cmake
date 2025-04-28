@@ -83,8 +83,8 @@ if(${BUILD_CONTEXT} MATCHES .*BOOTLOADER.*)
 elseif(${BUILD_CONTEXT} MATCHES .*APP_0.*)
     message("   Target Source: APP_0")
     
-    set(FLASH_ORIGIN 0x08040000 CACHE STRING "Start address of the Flash memory" FORCE)
-    set(FLASH_LENGTH "384K" CACHE STRING "Length of the Flash memory" FORCE)
+    set(FLASH_ORIGIN ${ADDRESS_APP_0} CACHE STRING "Start address of the Flash memory" FORCE)
+    set(FLASH_LENGTH 384K CACHE STRING "Length of the Flash memory" FORCE)
     
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         ../../../application/core0/src/main_app.c
