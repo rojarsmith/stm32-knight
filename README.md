@@ -1,5 +1,48 @@
 # STM32 Knight
 
+## stm32-knight-iap
+
+Modify `.vscode/launch.json`
+
+```json
+"executable": "${workspaceFolder}/build/cm7/build/stm32-knight-iap-cm7.elf",
+// "executable": "${command:cmake.launchTargetPath}",
+```
+
+Rebuild:
+
+Delete folder `build`→Modify `CMakeUserPresets.json`
+
+```json
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "local-debug",
+            "inherits": "debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_TARGET": "STM32H747I_DISCO",
+                // Type 1:
+                "BUILD_CONTEXT": "CM7,BOOTLOADER",
+                "BUILD_CONTEXT_S0": "CM7,APP_0"
+            }
+        }
+    ]
+}
+
+// Type 2:
+"BUILD_CONTEXT_S0": "CM7,BOOTLOADER",
+"BUILD_CONTEXT": "CM7,APP_0"
+// Type 3:
+"BUILD_CONTEXT_S0": "CM7,BOOTLOADER",
+"BUILD_CONTEXT": "CM7,APP_1"
+```
+
+→CMake→PROJECT OUTLINE Config All Projects
+
+→stm32-knight-iap-cm7 Build→CMakeLists.txt Configure with CMake Debugger
+
 ## stm32-knight-ltdc
 
 LTDC
