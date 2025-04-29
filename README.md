@@ -148,6 +148,23 @@ A: `.vscode/launch.json` modify:
 
 ### freertos-win-example
 
+`CMakeUserPresets.json`
+
+```json
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "local-debug",
+            "inherits": "debug",
+            "cacheVariables": {
+                "FREERTOS_KERNEL_PATH": "../../../operatingsystem/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel"
+            }
+        }
+    ]
+}
+```
+
 `.vscode/launch.json`
 
 ```json
@@ -178,3 +195,5 @@ In debug mode and freezon at:
 xWinApiResult = WaitForMultipleObjects( sizeof( pvObjectList ) / sizeof( void * ), pvObjectList, TRUE, xTimeoutMilliseconds );
 
 Need correct `setupCommands` for `cppdbg`.
+
+Run debug: Select and Strat Debug Configuration
