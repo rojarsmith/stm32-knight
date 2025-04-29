@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "Debug FreeRTOS Windows Simulation",
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program":"C:/my/Build/GitPublic/stm32-knight/stm32-knight-sdk/utility/freertos-win-example/out/build/local-debug/src/Debug/freertos-win-example.exe",
+        // "program": "${workspaceFolder}/out/build/local-debug/src/Debug/freertos-win-example.exe",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "console": "externalTerminal",
+        // for "type": "cppdbg",
+        // "setupCommands": [
+        //     { "description": "Enable non-stop mode", "text": "set non-stop on", "ignoreFailures": true },
+        //     { "description": "Enable scheduler locking", "text": "set scheduler-locking on", "ignoreFailures": true }
+        // ]
+    }],
+
+}

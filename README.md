@@ -144,3 +144,37 @@ A: `.vscode/launch.json` modify:
 }]
 ```
 
+## utility
+
+### freertos-win-example
+
+`.vscode/launch.json`
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "Debug FreeRTOS Windows Simulation",
+        "type": "cppvsdbg",
+        "request": "launch",
+        "program":"C:/my/Build/GitPublic/stm32-knight/stm32-knight-sdk/utility/freertos-win-example/out/build/local-debug/src/Debug/freertos-win-example.exe",
+        // "program": "${workspaceFolder}/out/build/local-debug/src/Debug/freertos-win-example.exe",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "console": "externalTerminal",
+        // for "type": "cppdbg",
+        // "setupCommands": [
+        //     { "description": "Enable non-stop mode", "text": "set non-stop on", "ignoreFailures": true },
+        //     { "description": "Enable scheduler locking", "text": "set scheduler-locking on", "ignoreFailures": true }
+        // ]
+    }],
+
+}
+```
+
+In debug mode and freezon at:
+
+xWinApiResult = WaitForMultipleObjects( sizeof( pvObjectList ) / sizeof( void * ), pvObjectList, TRUE, xTimeoutMilliseconds );
+
+Need correct `setupCommands` for `cppdbg`.
