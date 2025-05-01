@@ -1,5 +1,36 @@
 # STM32 Knight
 
+## stm32-knight-freertos
+
+FreeRTOS example.
+
+```json
+// .vscode/launch.json
+"configurations": [{
+        "executable": "${workspaceFolder}/build/cm7/build/stm32-knight-freertos-cm7.elf",
+}]
+```
+
+```json
+// CMakeUserPresets.json
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "local-debug",
+            "inherits": "debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_TARGET": "STM32H747I_DISCO",
+                "BUILD_CONTEXT": "CM7",
+                "FREERTOS_KERNEL_PATH": "../../../../stm32-knight-sdk/operatingsystem/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel"
+            }
+        }
+    ]
+}
+
+```
+
 ## stm32-knight-iap
 
 Modify `.vscode/launch.json`
