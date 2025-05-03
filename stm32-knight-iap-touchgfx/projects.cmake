@@ -19,6 +19,7 @@ if(${BUILD_TARGET} MATCHES STM32H747I_DISCO)
             CMAKE_ARGS                  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON 
                                         -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
                                         -DBUILD_CONTEXT=${BUILD_CONTEXT}
+                                        -DFREERTOS_KERNEL_PATH=${FREERTOS_KERNEL_PATH}
             BUILD_ALWAYS                true
         )
         set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_CLEAN_FILES "${CMAKE_SOURCE_DIR}/build")

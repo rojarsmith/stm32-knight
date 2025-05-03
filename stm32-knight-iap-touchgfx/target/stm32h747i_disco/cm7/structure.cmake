@@ -77,6 +77,10 @@ if(${BUILD_CONTEXT} MATCHES .*BOOTLOADER.*)
     # set(FLASH_ORIGIN "0x08000000" CACHE STRING "Start address of the Flash memory" FORCE)
     # set(FLASH_LENGTH "128K" CACHE STRING "Length of the Flash memory" FORCE)
 
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
+        BUILD_BOOTLOADER
+    )
+
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         ../../../application/core0/src/main_bootloader.c
     )
@@ -86,8 +90,26 @@ elseif(${BUILD_CONTEXT} MATCHES .*APP_0.*)
     set(FLASH_ORIGIN ${ADDRESS_APP_0} CACHE STRING "Start address of the Flash memory" FORCE)
     set(FLASH_LENGTH 384K CACHE STRING "Length of the Flash memory" FORCE)
     
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
+        BUILD_APP
+    )
+
+    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+        ${CMSIS_RTOS_V2}
+        ${FREERTOS_KERNEL_PATH}/include
+        ${FREERTOS_KERNEL_PATH}/portable/GCC/ARM_CM7/r0p1
+    )
+
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         ../../../application/core0/src/main_app.c
+        ${CMSIS_RTOS_V2}/cmsis_os2.c
+        ${FREERTOS_KERNEL_PATH}/portable/GCC/ARM_CM7/r0p1/port.c
+        ${FREERTOS_KERNEL_PATH}/portable/MemMang/heap_4.c
+        ${FREERTOS_KERNEL_PATH}/event_groups.c
+        ${FREERTOS_KERNEL_PATH}/list.c
+        ${FREERTOS_KERNEL_PATH}/queue.c
+        ${FREERTOS_KERNEL_PATH}/tasks.c
+        ${FREERTOS_KERNEL_PATH}/timers.c
     )
 elseif(${BUILD_CONTEXT} MATCHES .*APP_1.*)
     message("   Target Source: APP_1")

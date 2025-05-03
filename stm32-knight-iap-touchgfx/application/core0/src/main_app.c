@@ -17,6 +17,7 @@
  */
 
 #include "main.h"
+#include "cmsis_os.h"
 
 /* Private define ------------------------------------------------------------*/
 #define FLASH_ADDR_APP ADDRESS_BOOTLOADER
@@ -27,6 +28,14 @@ typedef void (*pFunction)(void);
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
 
+/* Definitions for TouchGFXTask */
+osThreadId_t guiTaskHandle;
+const osThreadAttr_t guiTask_attributes = {
+    .name = "GUITask",
+    .stack_size = 3048 * 4,
+    .priority = (osPriority_t)osPriorityNormal,
+};
+
 /* Private function prototypes -----------------------------------------------*/
 static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
@@ -34,9 +43,17 @@ static void SystemClock_Config(void);
 static void MX_USART1_UART_Init(void);
 static void Delay_MS(uint32_t ms);
 static void Jump_To_Boot(uint32_t address);
+static void GUITask(void *params);
 
 int main(void)
 {
+// shift for HAL, FMC, FreeRTOS
+#if (FLASH_ORIGIN == 0x08040000)
+    SCB->VTOR = (unsigned long)ADDRESS_APP_0;
+#else
+    SCB->VTOR = (unsigned long)ADDRESS_APP_1;
+#endif
+
     MPU_Config();
     CPU_CACHE_Enable();
     HAL_Init();
@@ -52,6 +69,13 @@ int main(void)
            (unsigned int)address);
 
     printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
+
+    osKernelInitialize();
+    /* creation of TouchGFXTask */
+    // guiTaskHandle = osThreadNew(TouchGFX_Task, NULL, &guiTask_attributes);
+    guiTaskHandle = osThreadNew(GUITask, NULL, &guiTask_attributes);
+
+    osKernelStart();
 
     for (;;)
     {
@@ -117,6 +141,20 @@ static void Jump_To_Boot(uint32_t address)
         jumpToApplication = (pFunction)jumpAddress;
         __set_MSP(*(__IO uint32_t *)FLASH_ADDR_APP);
         jumpToApplication();
+    }
+}
+
+__attribute__((unused)) static void GUITask(void *params)
+{
+    const TickType_t xDelay2300ms = pdMS_TO_TICKS(2300UL);
+    TickType_t xLastWakeTime;
+
+    xLastWakeTime = xTaskGetTickCount();
+
+    for (;;)
+    {
+        printf("GUITask running...\r\n");
+        vTaskDelayUntil(&xLastWakeTime, xDelay2300ms);
     }
 }
 
@@ -337,7 +375,9 @@ int _write(int file, char *ptr, int len)
 
     for (idx = 0; idx < len; idx++)
     {
+        osKernelLock();
         HAL_UART_Transmit(&huart1, (uint8_t *)ptr++, 1, 100);
+        osKernelUnlock();
     }
 
     return idx;

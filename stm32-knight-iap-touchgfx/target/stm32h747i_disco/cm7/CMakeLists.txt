@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.28)
 message("[target/stm32h747i_disco/core0/CMakeLists.txt]")
 message("   BUILD_CONTEXT: " ${BUILD_CONTEXT})
 
+if(${BUILD_CONTEXT} MATCHES .*APP_*)
+    message("   FREERTOS_KERNEL_PATH=" ${FREERTOS_KERNEL_PATH})
+    set(CMSIS_RTOS_V2 ../../../../stm32-knight-sdk/operatingsystem/CMSIS_RTOS_V2)
+endif()
+
 # Setup compiler settings
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)

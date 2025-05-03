@@ -93,8 +93,10 @@ void UsageFault_Handler(void) {
  * @param  None
  * @retval None
  */
+#ifdef BUILD_BOOTLOADER
 void SVC_Handler(void) {
 }
+#endif
 
 /**
  * @brief  This function handles Debug Monitor exception.
@@ -109,17 +111,21 @@ void DebugMon_Handler(void) {
  * @param  None
  * @retval None
  */
+#ifdef BUILD_BOOTLOADER
 void PendSV_Handler(void) {
 }
+#endif
 
 /**
  * @brief  This function handles SysTick Handler.
  * @param  None
  * @retval None
  */
+#ifdef BUILD_BOOTLOADER
 void SysTick_Handler(void) {
 	HAL_IncTick();
 }
+#endif
 
 /******************************************************************************/
 /*                 STM32H7xx Peripherals Interrupt Handlers                   */

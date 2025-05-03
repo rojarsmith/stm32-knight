@@ -85,9 +85,9 @@ int main(void)
 		printf("IAP Demo - Bootloader\r\n");
 #endif
         // For dev
-		Write_To_Internal_Ver(1);
-		Delay_MS(500);
-		Jump_To_App(address, 0);
+		// Write_To_Internal_Ver(1);
+		// Delay_MS(500);
+		// Jump_To_App(address, 0);
 
 		// Write_To_Internal_Ver(0);
 		// Delay_MS(500);
