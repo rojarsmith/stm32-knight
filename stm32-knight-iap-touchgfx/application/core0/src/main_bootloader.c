@@ -16,8 +16,8 @@
 
 /* Private define ------------------------------------------------------------*/
 #define FLASH_ADDR_FW_INFO_0 0x08020000
-#define FLASH_ADDR_APP_0 0x08040000
-#define FLASH_ADDR_APP_1 0x080A0000
+#define FLASH_ADDR_APP_0 ADDRESS_APP_0
+#define FLASH_ADDR_APP_1 ADDRESS_APP_1
 
 /* Private typedef -----------------------------------------------------------*/
 typedef void (*pFunction)(void);
@@ -85,13 +85,16 @@ int main(void)
 		printf("IAP Demo - Bootloader\r\n");
 #endif
         // For dev
-		// Write_To_Internal_Ver(1);
-		// Delay_MS(500);
-		// Jump_To_App(address, 0);
-
-		// Write_To_Internal_Ver(0);
-		// Delay_MS(500);
-		// Jump_To_App(address, 1);
+#ifdef AUTO_JUMP_0
+		Write_To_Internal_Ver(1);
+		Delay_MS(500);
+		Jump_To_App(address, 0);
+#endif
+#ifdef AUTO_JUMP_1
+		Write_To_Internal_Ver(0);
+		Delay_MS(500);
+		Jump_To_App(address, 1);
+#endif
 
 		Delay_MS(3000);
 		if ((BSP_PB_GetState(BUTTON_WAKEUP) == GPIO_PIN_SET))

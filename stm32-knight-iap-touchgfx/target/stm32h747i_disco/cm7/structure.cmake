@@ -81,6 +81,16 @@ if(${BUILD_CONTEXT} MATCHES .*BOOTLOADER.*)
         BUILD_BOOTLOADER
     )
 
+    if(${BUILD_CONTEXT} MATCHES .*AUTO_JUMP_0.*)
+        target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
+            AUTO_JUMP_0
+        )
+    elseif(${BUILD_CONTEXT} MATCHES .*AUTO_JUMP_1.*)
+        target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
+            AUTO_JUMP_1
+        )
+    endif()
+
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         ../../../application/core0/src/main_bootloader.c
     )
@@ -114,7 +124,7 @@ elseif(${BUILD_CONTEXT} MATCHES .*APP_0.*)
 elseif(${BUILD_CONTEXT} MATCHES .*APP_1.*)
     message("   Target Source: APP_1")
     
-    set(FLASH_ORIGIN 0x080A0000 CACHE STRING "Start address of the Flash memory" FORCE)
+    set(FLASH_ORIGIN ${ADDRESS_APP_1} CACHE STRING "Start address of the Flash memory" FORCE)
     set(FLASH_LENGTH "384K" CACHE STRING "Length of the Flash memory" FORCE)
     
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE
