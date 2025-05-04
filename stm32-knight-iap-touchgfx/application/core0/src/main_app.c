@@ -27,11 +27,15 @@ typedef void (*pFunction)(void);
 
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
+MDMA_HandleTypeDef hmdma_jpeg_infifo_th;
+MDMA_HandleTypeDef hmdma_jpeg_outfifo_th;
 SDRAM_HandleTypeDef hsdram1;
 extern QSPI_HandleTypeDef hqspi;
 DMA2D_HandleTypeDef hdma2d;
 DSI_HandleTypeDef hdsi;
 LTDC_HandleTypeDef hltdc;
+CRC_HandleTypeDef hcrc;
+JPEG_HandleTypeDef hjpeg;
 
 OTM8009A_Object_t OTM8009AObj;
 OTM8009A_IO_t IOCtx;
@@ -56,6 +60,8 @@ static void MX_QUADSPI_Init(void);
 static void MX_DMA2D_Init(void);
 static void MX_DSIHOST_DSI_Init(void);
 static void MX_LTDC_Init(void);
+static void MX_CRC_Init(void);
+static void MX_JPEG_Init(void);
 static void Delay_MS(uint32_t ms);
 static void Jump_To_Boot(uint32_t address);
 static void GUITask(void *params);
@@ -87,6 +93,8 @@ int main(void)
     MX_DMA2D_Init();
     MX_DSIHOST_DSI_Init();
     MX_LTDC_Init();
+    MX_CRC_Init();
+    MX_JPEG_Init();
 
     uint32_t address = *(__IO uint32_t *)FLASH_ORIGIN; // 0x24080000
     printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ORIGIN, (unsigned int)address);
@@ -578,6 +586,50 @@ static void MX_LTDC_Init(void)
     HAL_LTDC_SetPitch(&hltdc, 800, 0);
     __HAL_LTDC_ENABLE(&hltdc);
     /* USER CODE END LTDC_Init 2 */
+}
+
+/**
+ * @brief CRC Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_CRC_Init(void)
+{
+    hcrc.Instance = CRC;
+    hcrc.Init.DefaultPolynomialUse = DEFAULT_POLYNOMIAL_ENABLE;
+    hcrc.Init.DefaultInitValueUse = DEFAULT_INIT_VALUE_ENABLE;
+    hcrc.Init.InputDataInversionMode = CRC_INPUTDATA_INVERSION_NONE;
+    hcrc.Init.OutputDataInversionMode = CRC_OUTPUTDATA_INVERSION_DISABLE;
+    hcrc.InputDataFormat = CRC_INPUTDATA_FORMAT_BYTES;
+    if (HAL_CRC_Init(&hcrc) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+/**
+ * @brief JPEG Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_JPEG_Init(void)
+{
+
+    /* USER CODE BEGIN JPEG_Init 0 */
+
+    /* USER CODE END JPEG_Init 0 */
+
+    /* USER CODE BEGIN JPEG_Init 1 */
+
+    /* USER CODE END JPEG_Init 1 */
+    hjpeg.Instance = JPEG;
+    if (HAL_JPEG_Init(&hjpeg) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN JPEG_Init 2 */
+
+    /* USER CODE END JPEG_Init 2 */
 }
 
 /**

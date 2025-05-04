@@ -36,6 +36,7 @@
 extern TIM_HandleTypeDef htim6;
 extern DSI_HandleTypeDef hdsi;
 extern LTDC_HandleTypeDef hltdc;
+extern JPEG_HandleTypeDef hjpeg;
 
 /******************************************************************************/
 /*            Cortex-M7 Processor Exceptions Handlers                         */
@@ -192,6 +193,20 @@ void LTDC_IRQHandler(void)
 	/* USER CODE BEGIN LTDC_IRQn 1 */
 
 	/* USER CODE END LTDC_IRQn 1 */
+}
+
+/**
+ * @brief This function handles JPEG global interrupt.
+ */
+void JPEG_IRQHandler(void)
+{
+	/* USER CODE BEGIN JPEG_IRQn 0 */
+
+	/* USER CODE END JPEG_IRQn 0 */
+	HAL_JPEG_IRQHandler(&hjpeg);
+	/* USER CODE BEGIN JPEG_IRQn 1 */
+
+	/* USER CODE END JPEG_IRQn 1 */
 }
 
 /**

@@ -48,6 +48,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_sdram.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c
 	../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc_ex.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma2d.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dsi.c
@@ -57,6 +59,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 	../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_jpeg.c
 	../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c

@@ -1,5 +1,7 @@
 # stm32-knight-iap-touchgfx
 
+VSCode debug breakpoint failed when code runtime error.
+
 ## SysTick
 
 ```c

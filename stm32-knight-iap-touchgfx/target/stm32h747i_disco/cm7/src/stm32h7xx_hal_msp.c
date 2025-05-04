@@ -15,6 +15,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
+extern MDMA_HandleTypeDef hmdma_jpeg_infifo_th;
+extern MDMA_HandleTypeDef hmdma_jpeg_outfifo_th;
+
 /**
  * Initializes the Global MSP.
  */
@@ -531,5 +534,129 @@ void HAL_LTDC_MspDeInit(LTDC_HandleTypeDef *hltdc)
 		/* USER CODE BEGIN LTDC_MspDeInit 1 */
 
 		/* USER CODE END LTDC_MspDeInit 1 */
+	}
+}
+
+/**
+ * @brief CRC MSP Initialization
+ * This function configures the hardware resources used in this example
+ * @param hcrc: CRC handle pointer
+ * @retval None
+ */
+void HAL_CRC_MspInit(CRC_HandleTypeDef *hcrc)
+{
+	if (hcrc->Instance == CRC)
+	{
+		/* USER CODE BEGIN CRC_MspInit 0 */
+
+		/* USER CODE END CRC_MspInit 0 */
+		/* Peripheral clock enable */
+		__HAL_RCC_CRC_CLK_ENABLE();
+		/* USER CODE BEGIN CRC_MspInit 1 */
+
+		/* USER CODE END CRC_MspInit 1 */
+	}
+}
+
+/**
+ * @brief CRC MSP De-Initialization
+ * This function freeze the hardware resources used in this example
+ * @param hcrc: CRC handle pointer
+ * @retval None
+ */
+void HAL_CRC_MspDeInit(CRC_HandleTypeDef *hcrc)
+{
+	if (hcrc->Instance == CRC)
+	{
+		/* USER CODE BEGIN CRC_MspDeInit 0 */
+
+		/* USER CODE END CRC_MspDeInit 0 */
+		/* Peripheral clock disable */
+		__HAL_RCC_CRC_CLK_DISABLE();
+		/* USER CODE BEGIN CRC_MspDeInit 1 */
+
+		/* USER CODE END CRC_MspDeInit 1 */
+	}
+}
+
+/**
+ * @brief JPEG MSP Initialization
+ * This function configures the hardware resources used in this example
+ * @param hjpeg: JPEG handle pointer
+ * @retval None
+ */
+void HAL_JPEG_MspInit(JPEG_HandleTypeDef *hjpeg)
+{
+	if (hjpeg->Instance == JPEG)
+	{
+		/* USER CODE BEGIN JPEG_MspInit 0 */
+
+		/* USER CODE END JPEG_MspInit 0 */
+		/* Peripheral clock enable */
+		__HAL_RCC_JPEG_CLK_ENABLE();
+
+		/* JPEG MDMA Init */
+		/* JPEG_INFIFO_TH Init */
+		hmdma_jpeg_infifo_th.Instance = MDMA_Channel7;
+		hmdma_jpeg_infifo_th.Init.Request = MDMA_REQUEST_JPEG_INFIFO_TH;
+		hmdma_jpeg_infifo_th.Init.TransferTriggerMode = MDMA_BUFFER_TRANSFER;
+		hmdma_jpeg_infifo_th.Init.Priority = MDMA_PRIORITY_HIGH;
+		hmdma_jpeg_infifo_th.Init.Endianness = MDMA_LITTLE_ENDIANNESS_PRESERVE;
+		hmdma_jpeg_infifo_th.Init.SourceInc = MDMA_SRC_INC_BYTE;
+		hmdma_jpeg_infifo_th.Init.DestinationInc = MDMA_DEST_INC_DISABLE;
+		hmdma_jpeg_infifo_th.Init.SourceDataSize = MDMA_SRC_DATASIZE_BYTE;
+		hmdma_jpeg_infifo_th.Init.DestDataSize = MDMA_DEST_DATASIZE_WORD;
+		hmdma_jpeg_infifo_th.Init.DataAlignment = MDMA_DATAALIGN_PACKENABLE;
+		hmdma_jpeg_infifo_th.Init.BufferTransferLength = 32;
+		hmdma_jpeg_infifo_th.Init.SourceBurst = MDMA_SOURCE_BURST_32BEATS;
+		hmdma_jpeg_infifo_th.Init.DestBurst = MDMA_DEST_BURST_16BEATS;
+		hmdma_jpeg_infifo_th.Init.SourceBlockAddressOffset = 0;
+		hmdma_jpeg_infifo_th.Init.DestBlockAddressOffset = 0;
+		if (HAL_MDMA_Init(&hmdma_jpeg_infifo_th) != HAL_OK)
+		{
+			Error_Handler();
+		}
+
+		if (HAL_MDMA_ConfigPostRequestMask(&hmdma_jpeg_infifo_th, 0, 0) != HAL_OK)
+		{
+			Error_Handler();
+		}
+
+		__HAL_LINKDMA(hjpeg, hdmain, hmdma_jpeg_infifo_th);
+
+		/* JPEG_OUTFIFO_TH Init */
+		hmdma_jpeg_outfifo_th.Instance = MDMA_Channel6;
+		hmdma_jpeg_outfifo_th.Init.Request = MDMA_REQUEST_JPEG_OUTFIFO_TH;
+		hmdma_jpeg_outfifo_th.Init.TransferTriggerMode = MDMA_BUFFER_TRANSFER;
+		hmdma_jpeg_outfifo_th.Init.Priority = MDMA_PRIORITY_VERY_HIGH;
+		hmdma_jpeg_outfifo_th.Init.Endianness = MDMA_LITTLE_ENDIANNESS_PRESERVE;
+		hmdma_jpeg_outfifo_th.Init.SourceInc = MDMA_SRC_INC_DISABLE;
+		hmdma_jpeg_outfifo_th.Init.DestinationInc = MDMA_DEST_INC_BYTE;
+		hmdma_jpeg_outfifo_th.Init.SourceDataSize = MDMA_SRC_DATASIZE_WORD;
+		hmdma_jpeg_outfifo_th.Init.DestDataSize = MDMA_DEST_DATASIZE_BYTE;
+		hmdma_jpeg_outfifo_th.Init.DataAlignment = MDMA_DATAALIGN_PACKENABLE;
+		hmdma_jpeg_outfifo_th.Init.BufferTransferLength = 32;
+		hmdma_jpeg_outfifo_th.Init.SourceBurst = MDMA_SOURCE_BURST_32BEATS;
+		hmdma_jpeg_outfifo_th.Init.DestBurst = MDMA_DEST_BURST_32BEATS;
+		hmdma_jpeg_outfifo_th.Init.SourceBlockAddressOffset = 0;
+		hmdma_jpeg_outfifo_th.Init.DestBlockAddressOffset = 0;
+		if (HAL_MDMA_Init(&hmdma_jpeg_outfifo_th) != HAL_OK)
+		{
+			Error_Handler();
+		}
+
+		if (HAL_MDMA_ConfigPostRequestMask(&hmdma_jpeg_outfifo_th, 0, 0) != HAL_OK)
+		{
+			Error_Handler();
+		}
+
+		__HAL_LINKDMA(hjpeg, hdmaout, hmdma_jpeg_outfifo_th);
+
+		/* JPEG interrupt Init */
+		HAL_NVIC_SetPriority(JPEG_IRQn, 5, 0);
+		HAL_NVIC_EnableIRQ(JPEG_IRQn);
+		/* USER CODE BEGIN JPEG_MspInit 1 */
+
+		/* USER CODE END JPEG_MspInit 1 */
 	}
 }
