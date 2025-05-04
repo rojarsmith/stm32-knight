@@ -93,7 +93,7 @@ void UsageFault_Handler(void) {
  * @param  None
  * @retval None
  */
-#ifdef BUILD_BOOTLOADER
+#ifdef GOAL_BOOTLOADER
 void SVC_Handler(void) {
 }
 #endif
@@ -111,7 +111,7 @@ void DebugMon_Handler(void) {
  * @param  None
  * @retval None
  */
-#ifdef BUILD_BOOTLOADER
+#ifdef GOAL_BOOTLOADER
 void PendSV_Handler(void) {
 }
 #endif
@@ -121,7 +121,7 @@ void PendSV_Handler(void) {
  * @param  None
  * @retval None
  */
-#ifdef BUILD_BOOTLOADER
+#ifdef GOAL_BOOTLOADER
 void SysTick_Handler(void) {
 	HAL_IncTick();
 }

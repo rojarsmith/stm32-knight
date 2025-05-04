@@ -1,10 +1,13 @@
 include(ExternalProject)
 message("[projects.cmake]")
 set(ST_MULTICONTEXT DUAL_CORE CACHE STRING "Type of multi-context")
+set(FREERTOS_KERNEL_PATH "../../../../stm32-knight-sdk/operatingsystem/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel" CACHE STRING "FreeRTOS kernal")
 message("   BUILD_TARGET: " ${BUILD_TARGET})
 message("   BUILD_CONTEXT: " ${BUILD_CONTEXT})
 message("   CMAKE_SOURCE_DIR: " ${CMAKE_SOURCE_DIR})
 message("   PROJECT_SOURCE_DIR: " ${PROJECT_SOURCE_DIR})
+message("   FREERTOS_KERNEL_PATH: " ${FREERTOS_KERNEL_PATH})
+
 string(TOLOWER "${BUILD_TARGET}" BUILD_TARGET_LOWER)
 if(${BUILD_TARGET} MATCHES STM32H747I_DISCO)
     message("   Build target: STM32H747I Discovery")
