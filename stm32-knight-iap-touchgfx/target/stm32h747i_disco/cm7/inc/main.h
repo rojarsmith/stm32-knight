@@ -28,6 +28,7 @@ extern "C" {
 #include <stddef.h>
 #include "stm32h7xx_hal.h"
 #include "stm32h747i_discovery.h"
+#include "stm32h747i_discovery_qspi.h"
 #include "stm32h747i_discovery_sdram.h"
 #ifdef GOAL_APP
 #include "FreeRTOS.h"

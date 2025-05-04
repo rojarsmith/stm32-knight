@@ -32,7 +32,7 @@
 /**
  * @brief This is the list of modules to be used in the HAL driver
  */
-//#define HAL_MODULE_ENABLED
+#define HAL_MODULE_ENABLED
 /* #define HAL_ADC_MODULE_ENABLED   */
 /* #define HAL_FDCAN_MODULE_ENABLED   */
 /* #define HAL_FMAC_MODULE_ENABLED   */
@@ -95,6 +95,7 @@
 #define HAL_FLASH_MODULE_ENABLED
 #define HAL_EXTI_MODULE_ENABLED
 #define HAL_PWR_MODULE_ENABLED
+#define HAL_QSPI_MODULE_ENABLED
 #define HAL_I2C_MODULE_ENABLED
 #define HAL_CORTEX_MODULE_ENABLED
 //#define HAL_HSEM_MODULE_ENABLED

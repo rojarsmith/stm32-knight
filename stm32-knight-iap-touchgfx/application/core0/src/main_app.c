@@ -28,6 +28,8 @@ typedef void (*pFunction)(void);
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
 SDRAM_HandleTypeDef hsdram1;
+extern QSPI_HandleTypeDef hqspi;
+DMA2D_HandleTypeDef hdma2d;
 
 /* Definitions for TouchGFXTask */
 osThreadId_t guiTaskHandle;
@@ -45,6 +47,8 @@ static void MX_USART1_UART_Init(void);
 static void MX_GPIO_Init(void);
 static void MX_MDMA_Init(void);
 static void MX_FMC_Init(void);
+static void MX_QUADSPI_Init(void);
+static void MX_DMA2D_Init(void);
 static void Delay_MS(uint32_t ms);
 static void Jump_To_Boot(uint32_t address);
 static void GUITask(void *params);
@@ -72,6 +76,8 @@ int main(void)
     MX_GPIO_Init();
     MX_MDMA_Init();
     MX_FMC_Init();
+    MX_QUADSPI_Init();
+    MX_DMA2D_Init();
 
     uint32_t address = *(__IO uint32_t *)FLASH_ORIGIN; // 0x24080000
     printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ORIGIN, (unsigned int)address);
@@ -299,6 +305,66 @@ void MX_FMC_Init(void)
         Error_Handler();
     }
     /* USER CODE END FMC_Init 2 */
+}
+
+/**
+ * @brief QUADSPI Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_QUADSPI_Init(void)
+{
+    /* USER CODE BEGIN QUADSPI_Init 0 */
+
+    /* USER CODE END QUADSPI_Init 0 */
+
+    /* USER CODE BEGIN QUADSPI_Init 1 */
+
+    /* USER CODE END QUADSPI_Init 1 */
+    /* QUADSPI parameter configuration*/
+    hqspi.Instance = QUADSPI;
+    hqspi.Init.ClockPrescaler = 3;
+    hqspi.Init.FifoThreshold = 1;
+    hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_NONE;
+    hqspi.Init.FlashSize = 1;
+    hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_1_CYCLE;
+    hqspi.Init.ClockMode = QSPI_CLOCK_MODE_0;
+    hqspi.Init.DualFlash = QSPI_DUALFLASH_ENABLE;
+    if (HAL_QSPI_Init(&hqspi) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    /* USER CODE BEGIN QUADSPI_Init 2 */
+    BSP_QSPI_Init_t init;
+    init.InterfaceMode = MT25TL01G_QPI_MODE;
+    init.TransferRate = MT25TL01G_DTR_TRANSFER;
+    init.DualFlashMode = MT25TL01G_DUALFLASH_ENABLE;
+    if (BSP_QSPI_Init(0, &init) != BSP_ERROR_NONE)
+    {
+        Error_Handler();
+    }
+    if (BSP_QSPI_EnableMemoryMappedMode(0) != BSP_ERROR_NONE)
+    {
+        Error_Handler();
+    }
+    /* USER CODE END QUADSPI_Init 2 */
+}
+
+/**
+ * @brief DMA2D Initialization Function
+ * @param None
+ * @retval None
+ */
+void MX_DMA2D_Init(void)
+{
+    hdma2d.Instance = DMA2D;
+    hdma2d.Init.Mode = DMA2D_R2M;
+    hdma2d.Init.ColorMode = DMA2D_OUTPUT_RGB888;
+    hdma2d.Init.OutputOffset = 0;
+    if (HAL_DMA2D_Init(&hdma2d) != HAL_OK)
+    {
+        Error_Handler();
+    }
 }
 
 /**

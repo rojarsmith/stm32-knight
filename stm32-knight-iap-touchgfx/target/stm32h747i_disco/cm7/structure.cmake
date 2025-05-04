@@ -15,6 +15,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/Common
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/is42s32800j
+    ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/mt25tl01g
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/nt35510
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/otm8009a
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO
@@ -34,6 +35,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533_reg.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/is42s32800j/is42s32800j.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/mt25tl01g/mt25tl01g.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/nt35510/nt35510.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/nt35510/nt35510_reg.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/otm8009a/otm8009a.c
@@ -41,6 +43,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_bus.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_lcd.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_qspi.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_sdram.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c
 	../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c
@@ -57,6 +60,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c	
+    ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_qspi.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sdram.c

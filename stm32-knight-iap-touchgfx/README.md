@@ -1,5 +1,17 @@
 # stm32-knight-iap-touchgfx
 
+## SysTick
+
+```c
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM6)
+    {
+        HAL_IncTick();
+    }
+}
+```
+
 `.vscode/launch.json`
 
 ```json
