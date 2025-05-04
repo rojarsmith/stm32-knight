@@ -42,6 +42,7 @@ static void CPU_CACHE_Enable(void);
 static void SystemClock_Config(void);
 static void MX_USART1_UART_Init(void);
 static void MX_GPIO_Init(void);
+static void MX_MDMA_Init(void);
 static void Delay_MS(uint32_t ms);
 static void Jump_To_Boot(uint32_t address);
 static void GUITask(void *params);
@@ -74,6 +75,7 @@ int main(void)
     printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
 
     MX_GPIO_Init();
+    MX_MDMA_Init();
 
     osKernelInitialize();
     /* creation of TouchGFXTask */
@@ -230,6 +232,22 @@ static void MX_GPIO_Init(void)
 
     /* USER CODE BEGIN MX_GPIO_Init_2 */
     /* USER CODE END MX_GPIO_Init_2 */
+}
+
+/**
+ * Enable MDMA controller clock
+ */
+static void MX_MDMA_Init(void) {
+
+	/* MDMA controller clock enable */
+	__HAL_RCC_MDMA_CLK_ENABLE();
+	/* Local variables */
+
+	/* MDMA interrupt initialization */
+	/* MDMA_IRQn interrupt configuration */
+	HAL_NVIC_SetPriority(MDMA_IRQn, 5, 0);
+	HAL_NVIC_EnableIRQ(MDMA_IRQn);
+
 }
 
 /**
