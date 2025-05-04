@@ -34,6 +34,8 @@
 
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim6;
+extern DSI_HandleTypeDef hdsi;
+extern LTDC_HandleTypeDef hltdc;
 
 /******************************************************************************/
 /*            Cortex-M7 Processor Exceptions Handlers                         */
@@ -44,7 +46,8 @@ extern TIM_HandleTypeDef htim6;
  * @param  None
  * @retval None
  */
-void NMI_Handler(void) {
+void NMI_Handler(void)
+{
 }
 
 /**
@@ -52,9 +55,11 @@ void NMI_Handler(void) {
  * @param  None
  * @retval None
  */
-void HardFault_Handler(void) {
+void HardFault_Handler(void)
+{
 	/* Go to infinite loop when Hard Fault exception occurs */
-	while (1) {
+	while (1)
+	{
 	}
 }
 
@@ -63,9 +68,11 @@ void HardFault_Handler(void) {
  * @param  None
  * @retval None
  */
-void MemManage_Handler(void) {
+void MemManage_Handler(void)
+{
 	/* Go to infinite loop when Memory Manage exception occurs */
-	while (1) {
+	while (1)
+	{
 	}
 }
 
@@ -74,9 +81,11 @@ void MemManage_Handler(void) {
  * @param  None
  * @retval None
  */
-void BusFault_Handler(void) {
+void BusFault_Handler(void)
+{
 	/* Go to infinite loop when Bus Fault exception occurs */
-	while (1) {
+	while (1)
+	{
 	}
 }
 
@@ -85,9 +94,11 @@ void BusFault_Handler(void) {
  * @param  None
  * @retval None
  */
-void UsageFault_Handler(void) {
+void UsageFault_Handler(void)
+{
 	/* Go to infinite loop when Usage Fault exception occurs */
-	while (1) {
+	while (1)
+	{
 	}
 }
 
@@ -97,7 +108,8 @@ void UsageFault_Handler(void) {
  * @retval None
  */
 #ifdef GOAL_BOOTLOADER
-void SVC_Handler(void) {
+void SVC_Handler(void)
+{
 }
 #endif
 
@@ -106,7 +118,8 @@ void SVC_Handler(void) {
  * @param  None
  * @retval None
  */
-void DebugMon_Handler(void) {
+void DebugMon_Handler(void)
+{
 }
 
 /**
@@ -115,7 +128,8 @@ void DebugMon_Handler(void) {
  * @retval None
  */
 #ifdef GOAL_BOOTLOADER
-void PendSV_Handler(void) {
+void PendSV_Handler(void)
+{
 }
 #endif
 
@@ -125,7 +139,8 @@ void PendSV_Handler(void) {
  * @retval None
  */
 #ifdef GOAL_BOOTLOADER
-void SysTick_Handler(void) {
+void SysTick_Handler(void)
+{
 	HAL_IncTick();
 }
 #endif
@@ -138,25 +153,54 @@ void SysTick_Handler(void) {
 /******************************************************************************/
 
 /**
-  * @brief This function handles TIM6 global interrupt, DAC1_CH1 and DAC1_CH2 underrun error interrupts.
-  */
- void TIM6_DAC_IRQHandler(void)
- {
-   /* USER CODE BEGIN TIM6_DAC_IRQn 0 */
- 
-   /* USER CODE END TIM6_DAC_IRQn 0 */
-   HAL_TIM_IRQHandler(&htim6);
-   /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
- 
-   /* USER CODE END TIM6_DAC_IRQn 1 */
- }
+ * @brief This function handles TIM6 global interrupt, DAC1_CH1 and DAC1_CH2 underrun error interrupts.
+ */
+void TIM6_DAC_IRQHandler(void)
+{
+	/* USER CODE BEGIN TIM6_DAC_IRQn 0 */
+
+	/* USER CODE END TIM6_DAC_IRQn 0 */
+	HAL_TIM_IRQHandler(&htim6);
+	/* USER CODE BEGIN TIM6_DAC_IRQn 1 */
+
+	/* USER CODE END TIM6_DAC_IRQn 1 */
+}
+
+/**
+ * @brief This function handles DSI global Interrupt.
+ */
+void DSI_IRQHandler(void)
+{
+	/* USER CODE BEGIN DSI_IRQn 0 */
+
+	/* USER CODE END DSI_IRQn 0 */
+	HAL_DSI_IRQHandler(&hdsi);
+	/* USER CODE BEGIN DSI_IRQn 1 */
+
+	/* USER CODE END DSI_IRQn 1 */
+}
+
+/**
+ * @brief This function handles LTDC global interrupt.
+ */
+void LTDC_IRQHandler(void)
+{
+	/* USER CODE BEGIN LTDC_IRQn 0 */
+
+	/* USER CODE END LTDC_IRQn 0 */
+	HAL_LTDC_IRQHandler(&hltdc);
+	/* USER CODE BEGIN LTDC_IRQn 1 */
+
+	/* USER CODE END LTDC_IRQn 1 */
+}
 
 /**
  * @brief  This function handles External line 2 interrupt request.
  * @param  None
  * @retval None
  */
-void EXTI2_IRQHandler(void) {
+void EXTI2_IRQHandler(void)
+{
 }
 
 /**
@@ -164,7 +208,8 @@ void EXTI2_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void EXTI3_IRQHandler(void) {
+void EXTI3_IRQHandler(void)
+{
 }
 
 /**
@@ -172,7 +217,8 @@ void EXTI3_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void EXTI4_IRQHandler(void) {
+void EXTI4_IRQHandler(void)
+{
 }
 
 /**
@@ -180,7 +226,8 @@ void EXTI4_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void EXTI9_5_IRQHandler(void) {
+void EXTI9_5_IRQHandler(void)
+{
 }
 
 /**
@@ -188,7 +235,8 @@ void EXTI9_5_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void EXTI15_10_IRQHandler(void) {
+void EXTI15_10_IRQHandler(void)
+{
 }
 
 /**
@@ -196,14 +244,16 @@ void EXTI15_10_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void AUDIO_IN_SAIx_DMAx_IRQHandler() {
+void AUDIO_IN_SAIx_DMAx_IRQHandler()
+{
 }
 /**
  * @brief  This function handles DMA2 Stream 1 interrupt request.
  * @param  None
  * @retval None
  */
-void AUDIO_OUT_SAIx_DMAx_IRQHandler(void) {
+void AUDIO_OUT_SAIx_DMAx_IRQHandler(void)
+{
 }
 
 /**
@@ -211,14 +261,16 @@ void AUDIO_OUT_SAIx_DMAx_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void AUDIO_IN_SAI_PDMx_DMAx_IRQHandler(void) {
+void AUDIO_IN_SAI_PDMx_DMAx_IRQHandler(void)
+{
 }
 
 /**
  * @brief  Handles MDMA transfer interrupt request.
  * @retval None
  */
-void MDMA_IRQHandler(void) {
+void MDMA_IRQHandler(void)
+{
 }
 
 /**
@@ -226,7 +278,8 @@ void MDMA_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void SDMMC1_IRQHandler(void) {
+void SDMMC1_IRQHandler(void)
+{
 }
 
 /**
@@ -234,7 +287,8 @@ void SDMMC1_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void DCMI_IRQHandler(void) {
+void DCMI_IRQHandler(void)
+{
 }
 
 /**
@@ -242,7 +296,8 @@ void DCMI_IRQHandler(void) {
  * @param  None
  * @retval None
  */
-void DMA2_Stream3_IRQHandler(void) {
+void DMA2_Stream3_IRQHandler(void)
+{
 }
 
 /**
@@ -252,4 +307,3 @@ void DMA2_Stream3_IRQHandler(void) {
 /**
  * @}
  */
-

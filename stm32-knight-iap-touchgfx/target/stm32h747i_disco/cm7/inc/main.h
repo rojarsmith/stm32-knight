@@ -20,7 +20,8 @@
 #include <stdio.h>
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -28,8 +29,12 @@ extern "C" {
 #include <stddef.h>
 #include "stm32h7xx_hal.h"
 #include "stm32h747i_discovery.h"
+#include "stm32h747i_discovery_bus.h"
 #include "stm32h747i_discovery_qspi.h"
 #include "stm32h747i_discovery_sdram.h"
+#ifdef GOAL_APP
+#include "otm8009a.h"
+#endif
 #ifdef GOAL_APP
 #include "FreeRTOS.h"
 #include "task.h"
@@ -38,10 +43,13 @@ extern "C" {
 /* Exported functions ------------------------------------------------------- */
 void Error_Handler(void);
 
+extern int32_t DSI_IO_Write(uint16_t ChannelNbr, uint16_t Reg, uint8_t *pData, uint16_t Size);
+extern int32_t DSI_IO_Read(uint16_t ChannelNbr, uint16_t Reg, uint8_t *pData, uint16_t Size);
+
 /* Private defines -----------------------------------------------------------*/
-#define VCP_TX_Pin       GPIO_PIN_9
+#define VCP_TX_Pin GPIO_PIN_9
 #define VCP_TX_GPIO_Port GPIOA
-#define VCP_RX_Pin       GPIO_PIN_7
+#define VCP_RX_Pin GPIO_PIN_7
 #define VCP_RX_GPIO_Port GPIOB
 
 #define LCD_BL_Pin GPIO_PIN_12

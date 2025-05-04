@@ -28,6 +28,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/src/syscalls.c
+    ../../../gui/TouchGFX/target/TouchGFXHAL.cpp
     ../../../target/common/system_stm32h7xx.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_msp.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_timebase_tim.c
