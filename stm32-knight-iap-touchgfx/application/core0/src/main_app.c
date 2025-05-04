@@ -27,6 +27,7 @@ typedef void (*pFunction)(void);
 
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
+SDRAM_HandleTypeDef hsdram1;
 
 /* Definitions for TouchGFXTask */
 osThreadId_t guiTaskHandle;
@@ -43,6 +44,7 @@ static void SystemClock_Config(void);
 static void MX_USART1_UART_Init(void);
 static void MX_GPIO_Init(void);
 static void MX_MDMA_Init(void);
+static void MX_FMC_Init(void);
 static void Delay_MS(uint32_t ms);
 static void Jump_To_Boot(uint32_t address);
 static void GUITask(void *params);
@@ -67,15 +69,13 @@ int main(void)
 
     BSP_PB_Init(BUTTON_WAKEUP, BUTTON_MODE_GPIO);
 
-    uint32_t
-        address = *(__IO uint32_t *)FLASH_ORIGIN; // 0x24080000
-    printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ORIGIN,
-           (unsigned int)address);
-
-    printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
-
     MX_GPIO_Init();
     MX_MDMA_Init();
+    MX_FMC_Init();
+
+    uint32_t address = *(__IO uint32_t *)FLASH_ORIGIN; // 0x24080000
+    printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ORIGIN, (unsigned int)address);
+    printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
 
     osKernelInitialize();
     /* creation of TouchGFXTask */
@@ -237,17 +237,68 @@ static void MX_GPIO_Init(void)
 /**
  * Enable MDMA controller clock
  */
-static void MX_MDMA_Init(void) {
+static void MX_MDMA_Init(void)
+{
 
-	/* MDMA controller clock enable */
-	__HAL_RCC_MDMA_CLK_ENABLE();
-	/* Local variables */
+    /* MDMA controller clock enable */
+    __HAL_RCC_MDMA_CLK_ENABLE();
+    /* Local variables */
 
-	/* MDMA interrupt initialization */
-	/* MDMA_IRQn interrupt configuration */
-	HAL_NVIC_SetPriority(MDMA_IRQn, 5, 0);
-	HAL_NVIC_EnableIRQ(MDMA_IRQn);
+    /* MDMA interrupt initialization */
+    /* MDMA_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(MDMA_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(MDMA_IRQn);
+}
 
+/* FMC initialization function */
+void MX_FMC_Init(void)
+{
+
+    /* USER CODE BEGIN FMC_Init 0 */
+
+    /* USER CODE END FMC_Init 0 */
+
+    FMC_SDRAM_TimingTypeDef SdramTiming = {0};
+
+    /* USER CODE BEGIN FMC_Init 1 */
+    FMC_Bank1_R->BTCR[0] &= ~FMC_BCRx_MBKEN;
+    /* USER CODE END FMC_Init 1 */
+
+    /** Perform the SDRAM1 memory initialization sequence
+     */
+    hsdram1.Instance = FMC_SDRAM_DEVICE;
+    /* hsdram1.Init */
+    hsdram1.Init.SDBank = FMC_SDRAM_BANK2;
+    hsdram1.Init.ColumnBitsNumber = FMC_SDRAM_COLUMN_BITS_NUM_9;
+    hsdram1.Init.RowBitsNumber = FMC_SDRAM_ROW_BITS_NUM_12;
+    hsdram1.Init.MemoryDataWidth = FMC_SDRAM_MEM_BUS_WIDTH_32;
+    hsdram1.Init.InternalBankNumber = FMC_SDRAM_INTERN_BANKS_NUM_4;
+    hsdram1.Init.CASLatency = FMC_SDRAM_CAS_LATENCY_3;
+    hsdram1.Init.WriteProtection = FMC_SDRAM_WRITE_PROTECTION_DISABLE;
+    hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_PERIOD_2;
+    hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_ENABLE;
+    hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_0;
+    /* SdramTiming */
+    SdramTiming.LoadToActiveDelay = 2;
+    SdramTiming.ExitSelfRefreshDelay = 7;
+    SdramTiming.SelfRefreshTime = 4;
+    SdramTiming.RowCycleDelay = 7;
+    SdramTiming.WriteRecoveryTime = 3;
+    SdramTiming.RPDelay = 2;
+    SdramTiming.RCDDelay = 2;
+
+    if (HAL_SDRAM_Init(&hsdram1, &SdramTiming) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    /* USER CODE BEGIN FMC_Init 2 */
+    BSP_SDRAM_DeInit(0);
+    if (BSP_SDRAM_Init(0) != BSP_ERROR_NONE)
+    {
+        Error_Handler();
+    }
+    /* USER CODE END FMC_Init 2 */
 }
 
 /**
@@ -281,7 +332,7 @@ static void MPU_Config(void)
 
     /* Configure the MPU attributes as WT for SDRAM */
     MPU_InitStruct.Enable = MPU_REGION_ENABLE;
-    MPU_InitStruct.BaseAddress = SDRAM_DEVICE_ADDR;
+    MPU_InitStruct.BaseAddress = SDRAM_DEVICE_ADDR; // 0xD0000000
     MPU_InitStruct.Size = MPU_REGION_SIZE_32MB;
     MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
     MPU_InitStruct.IsBufferable = MPU_ACCESS_NOT_BUFFERABLE;
@@ -311,6 +362,28 @@ static void MPU_Config(void)
 
     /* Enable the MPU */
     HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+}
+
+/**
+ * @brief  Period elapsed callback in non blocking mode
+ * @note   This function is called  when TIM6 interrupt took place, inside
+ * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+ * a global variable "uwTick" used as application time base.
+ * @param  htim : TIM handle
+ * @retval None
+ */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    /* USER CODE BEGIN Callback 0 */
+
+    /* USER CODE END Callback 0 */
+    if (htim->Instance == TIM6)
+    {
+        HAL_IncTick();
+    }
+    /* USER CODE BEGIN Callback 1 */
+
+    /* USER CODE END Callback 1 */
 }
 
 /**
@@ -351,8 +424,8 @@ static void CPU_CACHE_Enable(void)
  */
 static void SystemClock_Config(void)
 {
-    RCC_ClkInitTypeDef RCC_ClkInitStruct;
-    RCC_OscInitTypeDef RCC_OscInitStruct;
+    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     HAL_StatusTypeDef ret = HAL_OK;
 
     /*!< Supply configuration update enable */
@@ -405,6 +478,8 @@ static void SystemClock_Config(void)
     {
         Error_Handler();
     }
+
+    HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSI, RCC_MCODIV_1);
 
     /*
      Note : The activation of the I/O Compensation Cell is recommended with communication  interfaces

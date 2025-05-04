@@ -29,6 +29,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/src/syscalls.c
     ../../../target/common/system_stm32h7xx.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_msp.c
+    ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_timebase_tim.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_it.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533_reg.c
@@ -59,6 +60,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sdram.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_fmc.c

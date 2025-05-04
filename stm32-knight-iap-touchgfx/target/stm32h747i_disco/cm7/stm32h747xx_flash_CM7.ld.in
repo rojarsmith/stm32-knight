@@ -57,6 +57,7 @@ MEMORY
   RAM_D2 (xrw)        : ORIGIN = 0x30000000, LENGTH = 288K
   RAM_D3 (xrw)        : ORIGIN = 0x38000000, LENGTH = 64K
   ITCMRAM (xrw)       : ORIGIN = 0x00000000, LENGTH = 64K
+  SDRAM   (xrw)       : ORIGIN = 0xD0000000, LENGTH = 32M
 }
 
 /* Sections */
@@ -199,4 +200,15 @@ SECTIONS
   }
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
+
+  BufferSection (NOLOAD) :
+  {
+    *(Video_RGB_Buffer Video_RGB_Buffer.*)
+    *(.gnu.linkonce.r.*)
+    . = ALIGN(0x4);
+
+    *(TouchGFX_Framebuffer TouchGFX_Framebuffer.*)
+    *(.gnu.linkonce.r.*)
+    . = ALIGN(0x4);
+   } >SDRAM
 }
