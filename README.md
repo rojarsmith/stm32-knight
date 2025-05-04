@@ -74,6 +74,10 @@ Delete folder `build`→Modify `CMakeUserPresets.json`
 
 →stm32-knight-iap-cm7 Build→CMakeLists.txt Configure with CMake Debugger
 
+## stm32-knight-iap-touchgfx
+
+IAP + FreeRTOS + TouchGFX
+
 ## stm32-knight-ltdc
 
 LTDC
