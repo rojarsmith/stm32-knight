@@ -47,8 +47,10 @@ static void GUITask(void *params);
 
 int main(void)
 {
+    // volatile int dbgbp_0 = 0;
+    // dbgbp_0++;
 // shift for HAL, FMC, FreeRTOS
-#if (FLASH_ORIGIN == 0x08040000)
+#if FLASH_ORIGIN == ADDRESS_APP_0
     SCB->VTOR = (unsigned long)ADDRESS_APP_0;
 #else
     SCB->VTOR = (unsigned long)ADDRESS_APP_1;
@@ -77,6 +79,7 @@ int main(void)
 
     osKernelStart();
 
+    // Will not arrive
     for (;;)
     {
         printf("IAP Demo - App\r\n");
@@ -153,7 +156,8 @@ __attribute__((unused)) static void GUITask(void *params)
 
     for (;;)
     {
-        printf("GUITask running...\r\n");
+        // printf("GUITask running...\r\n");
+        printf("[Tick %lu] GUITask running...\r\n", xLastWakeTime);
         vTaskDelayUntil(&xLastWakeTime, xDelay2300ms);
     }
 }
