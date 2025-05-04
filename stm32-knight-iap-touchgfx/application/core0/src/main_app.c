@@ -41,6 +41,7 @@ static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
 static void SystemClock_Config(void);
 static void MX_USART1_UART_Init(void);
+static void MX_GPIO_Init(void);
 static void Delay_MS(uint32_t ms);
 static void Jump_To_Boot(uint32_t address);
 static void GUITask(void *params);
@@ -71,6 +72,8 @@ int main(void)
            (unsigned int)address);
 
     printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
+
+    MX_GPIO_Init();
 
     osKernelInitialize();
     /* creation of TouchGFXTask */
@@ -160,6 +163,73 @@ __attribute__((unused)) static void GUITask(void *params)
         printf("[Tick %lu] GUITask running...\r\n", xLastWakeTime);
         vTaskDelayUntil(&xLastWakeTime, xDelay2300ms);
     }
+}
+
+/**
+ * @brief GPIO Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    /* USER CODE BEGIN MX_GPIO_Init_1 */
+    /* USER CODE END MX_GPIO_Init_1 */
+
+    /* GPIO Ports Clock Enable */
+    __HAL_RCC_GPIOI_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    __HAL_RCC_GPIOG_CLK_ENABLE();
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    __HAL_RCC_GPIOH_CLK_ENABLE();
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOJ_CLK_ENABLE();
+    __HAL_RCC_GPIOD_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOF_CLK_ENABLE();
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(GPIOJ,
+                      LCD_BL_Pin | FRAME_RATE_Pin | RENDER_TIME_Pin | VSYNC_FREQ_Pin,
+                      GPIO_PIN_RESET);
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(LCD_RESET_GPIO_Port, LCD_RESET_Pin, GPIO_PIN_RESET);
+
+    /*Configure GPIO pin Output Level */
+    HAL_GPIO_WritePin(MCU_ACTIVE_GPIO_Port, MCU_ACTIVE_Pin, GPIO_PIN_RESET);
+
+    /*Configure GPIO pins : LCD_BL_Pin FRAME_RATE_Pin RENDER_TIME_Pin VSYNC_FREQ_Pin */
+    GPIO_InitStruct.Pin = LCD_BL_Pin | FRAME_RATE_Pin | RENDER_TIME_Pin | VSYNC_FREQ_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
+
+    /*Configure GPIO pin : PA8 */
+    GPIO_InitStruct.Pin = GPIO_PIN_8;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF0_MCO;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    /*Configure GPIO pin : LCD_RESET_Pin */
+    GPIO_InitStruct.Pin = LCD_RESET_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(LCD_RESET_GPIO_Port, &GPIO_InitStruct);
+
+    /*Configure GPIO pin : MCU_ACTIVE_Pin */
+    GPIO_InitStruct.Pin = MCU_ACTIVE_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    HAL_GPIO_Init(MCU_ACTIVE_GPIO_Port, &GPIO_InitStruct);
+
+    /* USER CODE BEGIN MX_GPIO_Init_2 */
+    /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /**
