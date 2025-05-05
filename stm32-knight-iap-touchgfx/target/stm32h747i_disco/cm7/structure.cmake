@@ -120,6 +120,7 @@ elseif(${BUILD_CONTEXT} MATCHES .*APP_0.*)
         ../../../gui/TouchGFX/generated/fonts/include
         ../../../gui/TouchGFX/generated/gui_generated/include
         ../../../gui/TouchGFX/generated/images/include
+        ../../../gui/TouchGFX/generated/images/include/images/include
         ../../../gui/TouchGFX/generated/texts/include
         ../../../gui/TouchGFX/generated/videos/include
         ../../../gui/TouchGFX/gui/include
@@ -128,18 +129,21 @@ elseif(${BUILD_CONTEXT} MATCHES .*APP_0.*)
         ${CMSIS_RTOS_V2}
         ${FREERTOS_KERNEL_PATH}/include
         ${FREERTOS_KERNEL_PATH}/portable/GCC/ARM_CM7/r0p1
+        ${TOUCHGFX_PATH}/touchgfx/3rdparty/libjpeg/include
         ${TOUCHGFX_PATH}/touchgfx/framework/include
     )
 
     file(GLOB_RECURSE CPP_SRC_TGFX_GEN 
         ../../../gui/TouchGFX/generated/**/*.cpp
         ../../../gui/TouchGFX/gui/**/*.cpp
+        ../../../gui/TouchGFX/gui/**/**/*.cpp
     )
     list(FILTER CPP_SRC_TGFX_GEN EXCLUDE REGEX ".*\/simulator\/.*")
     file(GLOB_RECURSE CPP_SRC_TGFX_TAR
         ../../../gui/TouchGFX/target/*.cpp
         ../../../gui/TouchGFX/target/**/*.cpp
     )
+    list(FILTER CPP_SRC_TGFX_TAR EXCLUDE REGEX ".*\/simulator\/.*")
     message(STATUS "CPP_SRC_TGFX_TAR: ${CPP_SRC_TGFX_TAR}")
 
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE
