@@ -14,6 +14,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 ```
 
+## Debug
+
 `.vscode/launch.json`
 
 ```json
@@ -140,3 +142,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 ]
 ```
 
+## TouchGFX
+
+Non TouchGFX Designer generated:
+
+App/
+
+target/
+
+GUI.touchgfx

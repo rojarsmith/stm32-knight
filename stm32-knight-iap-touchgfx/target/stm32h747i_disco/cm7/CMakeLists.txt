@@ -5,6 +5,7 @@ message("   BUILD_CONTEXT: " ${BUILD_CONTEXT})
 if(${BUILD_CONTEXT} MATCHES .*APP_*)
     message("   FREERTOS_KERNEL_PATH=" ${FREERTOS_KERNEL_PATH})
     set(CMSIS_RTOS_V2 ../../../../stm32-knight-sdk/operatingsystem/CMSIS_RTOS_V2)
+    set(TOUCHGFX_PATH ../../../../stm32-knight-sdk/firmware/Middlewares/ST/TouchGFX)
 endif()
 
 # Setup compiler settings

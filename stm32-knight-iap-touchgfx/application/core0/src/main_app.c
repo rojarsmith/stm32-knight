@@ -18,6 +18,7 @@
 
 #include "main.h"
 #include "cmsis_os.h"
+#include "app_touchgfx.h"
 
 /* Private define ------------------------------------------------------------*/
 #define FLASH_ADDR_APP ADDRESS_BOOTLOADER
@@ -95,6 +96,7 @@ int main(void)
     MX_LTDC_Init();
     MX_CRC_Init();
     MX_JPEG_Init();
+    MX_TouchGFX_Init();
 
     uint32_t address = *(__IO uint32_t *)FLASH_ORIGIN; // 0x24080000
     printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ORIGIN, (unsigned int)address);

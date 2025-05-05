@@ -28,13 +28,14 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/src/syscalls.c
-    ../../../gui/TouchGFX/target/TouchGFXHAL.cpp
     ../../../target/common/system_stm32h7xx.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_msp.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_timebase_tim.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_it.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533/adv7533_reg.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/ft6x06/ft6x06.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/ft6x06/ft6x06_reg.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/is42s32800j/is42s32800j.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/mt25tl01g/mt25tl01g.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/nt35510/nt35510.c
@@ -46,6 +47,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_lcd.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_qspi.c
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_sdram.c
+    ../../../../stm32-knight-sdk/firmware/Drivers/BSP/STM32H747I-DISCO/stm32h747i_discovery_ts.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c
 	../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c
     ../../../../stm32-knight-sdk/firmware/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_crc.c
@@ -114,13 +116,37 @@ elseif(${BUILD_CONTEXT} MATCHES .*APP_0.*)
     )
 
     target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+        ../../../gui/TouchGFX/App
+        ../../../gui/TouchGFX/generated/fonts/include
+        ../../../gui/TouchGFX/generated/gui_generated/include
+        ../../../gui/TouchGFX/generated/images/include
+        ../../../gui/TouchGFX/generated/texts/include
+        ../../../gui/TouchGFX/generated/videos/include
+        ../../../gui/TouchGFX/gui/include
+        ../../../gui/TouchGFX/target
+        ../../../gui/TouchGFX/target/generated
         ${CMSIS_RTOS_V2}
         ${FREERTOS_KERNEL_PATH}/include
         ${FREERTOS_KERNEL_PATH}/portable/GCC/ARM_CM7/r0p1
+        ${TOUCHGFX_PATH}/touchgfx/framework/include
     )
+
+    file(GLOB_RECURSE CPP_SRC_TGFX_GEN 
+        ../../../gui/TouchGFX/generated/**/*.cpp
+        ../../../gui/TouchGFX/gui/**/*.cpp
+    )
+    list(FILTER CPP_SRC_TGFX_GEN EXCLUDE REGEX ".*\/simulator\/.*")
+    file(GLOB_RECURSE CPP_SRC_TGFX_TAR
+        ../../../gui/TouchGFX/target/*.cpp
+        ../../../gui/TouchGFX/target/**/*.cpp
+    )
+    message(STATUS "CPP_SRC_TGFX_TAR: ${CPP_SRC_TGFX_TAR}")
 
     target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         ../../../application/core0/src/main_app.c
+        ../../../gui/TouchGFX/App/app_touchgfx.c
+        ${CPP_SRC_TGFX_GEN}
+        ${CPP_SRC_TGFX_TAR}
         ${CMSIS_RTOS_V2}/cmsis_os2.c
         ${FREERTOS_KERNEL_PATH}/portable/GCC/ARM_CM7/r0p1/port.c
         ${FREERTOS_KERNEL_PATH}/portable/MemMang/heap_4.c
@@ -130,6 +156,12 @@ elseif(${BUILD_CONTEXT} MATCHES .*APP_0.*)
         ${FREERTOS_KERNEL_PATH}/tasks.c
         ${FREERTOS_KERNEL_PATH}/timers.c
     )
+
+    set(LIB_TGFX 
+        ${TOUCHGFX_PATH}/touchgfx/lib/core/cortex_m7/gcc
+    )
+
+    message(STATUS "LIB_TGFX: ${LIB_TGFX}")
 elseif(${BUILD_CONTEXT} MATCHES .*APP_1.*)
     message("   Goal: APP_1")
     
@@ -164,6 +196,12 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME} 
 )
+
+if(${BUILD_CONTEXT} MATCHES .*APP_0.*)
+    add_library(touchgfx STATIC IMPORTED)
+    set_target_properties(touchgfx PROPERTIES IMPORTED_LOCATION ${LIB_TGFX}/libtouchgfx-float-abi-hard.a)
+    target_link_libraries(${PROJECT_NAME} touchgfx)
+endif()
 
 # Validate that STM32CubeMX code is compatible with C standard
 if(CMAKE_C_STANDARD LESS 11)
