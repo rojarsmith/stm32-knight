@@ -6,12 +6,8 @@
  ******************************************************************************
  * @attention
  *
- * Copyright (c) 2024 .
+ * Copyright (c) 2024 Rojar Smith.
  * All rights reserved.
- *
- * This software is licensed under terms that can be found in the LICENSE file
- * in the root directory of this software component.
- * If no LICENSE file comes with this software, it is provided AS-IS.
  *
  ******************************************************************************
  */
@@ -21,8 +17,6 @@
 #include "app_touchgfx.h"
 
 /* Private define ------------------------------------------------------------*/
-#define FLASH_ADDR_APP ADDRESS_BOOTLOADER
-
 /* Private typedef -----------------------------------------------------------*/
 typedef void (*pFunction)(void);
 
@@ -48,6 +42,13 @@ const osThreadAttr_t guiTask_attributes = {
     .stack_size = 3048 * 4,
     .priority = (osPriority_t)osPriorityNormal,
 };
+/* Definitions for videoTask */
+osThreadId_t rtcTaskHandle;
+const osThreadAttr_t rtcTask_attributes = {
+    .name = "RTCTask",
+    .stack_size = 1000 * 4,
+    .priority = (osPriority_t)osPriorityLow,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 static void MPU_Config(void);
@@ -66,6 +67,8 @@ static void MX_JPEG_Init(void);
 static void Delay_MS(uint32_t ms);
 static void Jump_To_Boot(uint32_t address);
 static void GUITask(void *params);
+static void RTCTask(void *params);
+void TouchGFX_Task(void *argument);
 
 int main(void)
 {
@@ -83,6 +86,15 @@ int main(void)
     HAL_Init();
     SystemClock_Config();
 
+    /* When system initialization is finished, Cortex-M7 will release Cortex-M4 by means of
+	 HSEM notification */
+	/*HW semaphore Clock enable*/
+	// __HAL_RCC_HSEM_CLK_ENABLE();
+	/*Take HSEM */
+	// HAL_HSEM_FastTake(HSEM_ID_0);
+	/*Release HSEM in order to notify the CPU2(CM4)*/
+	// HAL_HSEM_Release(HSEM_ID_0, 0);
+
     MX_USART1_UART_Init();
 
     BSP_PB_Init(BUTTON_WAKEUP, BUTTON_MODE_GPIO);
@@ -98,14 +110,29 @@ int main(void)
     MX_JPEG_Init();
     MX_TouchGFX_Init();
 
+//	xTaskCreate(GUITask, "GUITask",
+//	configGUI_TASK_STK_SIZE,
+//	NULL,
+//	configGUI_TASK_PRIORITY,
+//	NULL);
+//
+//	xTaskCreate(RTCTask, "RTCTask", 512,
+//	NULL, configGUI_TASK_PRIORITY - 1,
+//	NULL);
+//
+//	vTaskStartScheduler();
+
     uint32_t address = *(__IO uint32_t *)FLASH_ORIGIN; // 0x24080000
     printf("Value at address 0x%08X: 0x%08X\n", (unsigned int)FLASH_ORIGIN, (unsigned int)address);
     printf("FLASH_ORIGIN = 0x%08X\r\n", FLASH_ORIGIN);
 
     osKernelInitialize();
     /* creation of TouchGFXTask */
-    // guiTaskHandle = osThreadNew(TouchGFX_Task, NULL, &guiTask_attributes);
-    guiTaskHandle = osThreadNew(GUITask, NULL, &guiTask_attributes);
+    guiTaskHandle = osThreadNew(TouchGFX_Task, NULL, &guiTask_attributes);
+    // guiTaskHandle = osThreadNew(GUITask, NULL, &guiTask_attributes);
+
+    /* creation of videoTask */
+    rtcTaskHandle = osThreadNew(RTCTask, NULL, &rtcTask_attributes);
 
     osKernelStart();
 
@@ -168,11 +195,11 @@ static void Jump_To_Boot(uint32_t address)
         SysTick->CTRL = 0; // Disable SysTick
 
         // Set vector table
-        SCB->VTOR = (unsigned long)FLASH_ADDR_APP;
+        SCB->VTOR = (unsigned long)ADDRESS_BOOTLOADER;
 
-        jumpAddress = *(__IO uint32_t *)(FLASH_ADDR_APP + 4);
+        jumpAddress = *(__IO uint32_t *)(ADDRESS_BOOTLOADER + 4);
         jumpToApplication = (pFunction)jumpAddress;
-        __set_MSP(*(__IO uint32_t *)FLASH_ADDR_APP);
+        __set_MSP(*(__IO uint32_t *)ADDRESS_BOOTLOADER);
         jumpToApplication();
     }
 }
@@ -190,6 +217,47 @@ __attribute__((unused)) static void GUITask(void *params)
         printf("[Tick %lu] GUITask running...\r\n", xLastWakeTime);
         vTaskDelayUntil(&xLastWakeTime, xDelay2300ms);
     }
+}
+
+__attribute__((unused)) static void RTCTask(void *params)
+{
+    uint32_t
+        address = *(__IO uint32_t *)ADDRESS_BOOTLOADER; // 0x24080000
+    printf("Value at address 0x%08X: 0x%08X\n",
+           (unsigned int)ADDRESS_BOOTLOADER, (unsigned int)address);
+
+    const TickType_t xDelay1000ms = pdMS_TO_TICKS(1000UL);
+
+    for (;;)
+    {
+        printf("RTCTask running...\r\n");
+        vTaskDelay(xDelay1000ms);
+#if (FLASH_ORIGIN == 0x080A0000)
+        printf("Ver B\r\n");
+#endif
+        if ((BSP_PB_GetState(BUTTON_WAKEUP) == GPIO_PIN_SET))
+        {
+            printf("Button `Wakeup`\r\n");
+            Jump_To_Boot(address);
+        }
+    }
+}
+
+/**
+ * @brief  Function implementing the TouchGFXTask thread.
+ * @param  argument: Not used
+ * @retval None
+ */
+/* USER CODE END Header_TouchGFX_Task */
+__weak void TouchGFX_Task(void *argument)
+{
+    /* USER CODE BEGIN 5 */
+    /* Infinite loop */
+    for (;;)
+    {
+        osDelay(1);
+    }
+    /* USER CODE END 5 */
 }
 
 /**

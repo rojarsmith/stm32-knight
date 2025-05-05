@@ -37,6 +37,9 @@ extern TIM_HandleTypeDef htim6;
 extern DSI_HandleTypeDef hdsi;
 extern LTDC_HandleTypeDef hltdc;
 extern JPEG_HandleTypeDef hjpeg;
+extern MDMA_HandleTypeDef hmdma_jpeg_infifo_th;
+extern MDMA_HandleTypeDef hmdma_jpeg_outfifo_th;
+extern DMA2D_HandleTypeDef hdma2d;
 
 /******************************************************************************/
 /*            Cortex-M7 Processor Exceptions Handlers                         */
@@ -210,6 +213,36 @@ void JPEG_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles DMA2D global interrupt.
+  */
+ void DMA2D_IRQHandler(void)
+ {
+   /* USER CODE BEGIN DMA2D_IRQn 0 */
+ 
+   /* USER CODE END DMA2D_IRQn 0 */
+   HAL_DMA2D_IRQHandler(&hdma2d);
+   /* USER CODE BEGIN DMA2D_IRQn 1 */
+ 
+   /* USER CODE END DMA2D_IRQn 1 */
+ }
+ 
+/**
+ * @brief  Handles MDMA transfer interrupt request.
+ * @retval None
+ */
+void MDMA_IRQHandler(void)
+{
+	/* USER CODE BEGIN MDMA_IRQn 0 */
+
+	/* USER CODE END MDMA_IRQn 0 */
+	HAL_MDMA_IRQHandler(&hmdma_jpeg_outfifo_th);
+	HAL_MDMA_IRQHandler(&hmdma_jpeg_infifo_th);
+	/* USER CODE BEGIN MDMA_IRQn 1 */
+
+	/* USER CODE END MDMA_IRQn 1 */
+}
+
+/**
  * @brief  This function handles External line 2 interrupt request.
  * @param  None
  * @retval None
@@ -277,14 +310,6 @@ void AUDIO_OUT_SAIx_DMAx_IRQHandler(void)
  * @retval None
  */
 void AUDIO_IN_SAI_PDMx_DMAx_IRQHandler(void)
-{
-}
-
-/**
- * @brief  Handles MDMA transfer interrupt request.
- * @retval None
- */
-void MDMA_IRQHandler(void)
 {
 }
 

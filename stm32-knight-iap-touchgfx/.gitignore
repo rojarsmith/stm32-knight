@@ -6,6 +6,20 @@
 /CMakeCache.txt
 /CMakeUserPresets.json
 
+# Object files
+*.o
+*.obj
+
+# Dependency files
+*.d
+
+# Executables / Binaries
+*.elf
+*.hex
+*.bin
+*.map
+*.axf
+
 # Visual Studio
 *.sln
 *.vcxproj
