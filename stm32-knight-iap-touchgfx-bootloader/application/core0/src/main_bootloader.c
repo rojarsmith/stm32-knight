@@ -244,7 +244,7 @@ static void Jump_To_App(uint32_t base_address)
 	// 2408 0000 = 00100100000010000000000000000000
 	// 2BF7 FFFF = 00101011111101111111111111111111
 	// 2000 0000 = 00100000000000000000000000000000
-	if ((base_address & 0x2BF7FFFF) == 0x20000000)
+	if ((*(__IO uint32_t *)base_address & 0x2BF7FFFF) == 0x20000000)
 	{
 		__disable_irq();
 		SysTick->CTRL = 0; // Disable SysTick
@@ -263,10 +263,10 @@ static void Jump_To_App(uint32_t base_address)
 		NVIC->ICPR[2] = 0xFFFFFFFF;
 
 		// Disable peripherals, Cache, MPU
-		HAL_DeInit();
-		SCB_DisableICache();
-		SCB_DisableDCache();
-		HAL_MPU_Disable();
+		// HAL_DeInit();
+		// SCB_DisableICache();
+		// SCB_DisableDCache();
+		// HAL_MPU_Disable();
 
 		// Set vector table
 		SCB->VTOR = (unsigned long)base_address;
