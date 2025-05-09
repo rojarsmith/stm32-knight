@@ -90,6 +90,10 @@ int main(void)
 	printf("Value at address 0x%08X: 0x%08X\r\n", (unsigned int)ADDRESS_APP_1,
 		   (unsigned int)value);
 
+	printf("SCB->VTOR = 0x%08lX\n", SCB->VTOR);
+	printf("SysTick->CTRL = 0x%08lX\n", SysTick->CTRL);
+	printf("uwTick = %lu\n", uwTick);
+
 	uint32_t print_count = 0;
 	uint32_t last_print_tick = 0;
 	for (;;)
