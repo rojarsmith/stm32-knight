@@ -1,5 +1,7 @@
 # stm32-knight-iap-touchgfx-app
 
+Paired with `stm32-knight-iap-touchgfx-bootloader`.
+
 VSCode debug breakpoint failed when code runtime error.
 
 ## SysTick
@@ -91,14 +93,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 ```json
 "configurePresets":[
-    {
-        "name":"local-debug-bootloader",
-        "inherits":"debug",
-        "cacheVariables":{
-            "BUILD_TARGET":"STM32H747I_DISCO",
-            "BUILD_CONTEXT":"CM7,BOOTLOADER,AUTO_JUMP_0"
-        }
-    },
     {
         "name":"local-debug-app-0",
         "inherits":"debug",
