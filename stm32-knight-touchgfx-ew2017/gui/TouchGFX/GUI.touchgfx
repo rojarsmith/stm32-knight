@@ -2,6 +2,11 @@
   "Application": {
     "Screens": [
       {
+        "Name": "Main",
+        "Components": [],
+        "Interactions": []
+      },
+      {
         "Name": "Screen1",
         "Components": [
           {
@@ -21,7 +26,7 @@
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_ARPR",
+            "TextId": "__SingleUse_MH4I",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -72,7 +77,7 @@
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_N7WC",
+            "TextId": "__SingleUse_W3VR",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -111,7 +116,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 24,
-    "StartupScreenName": "Screen1",
+    "StartupScreenName": "Main",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../../../stm32-knight-sdk/firmware/Middlewares/ST/TouchGFX/touchgfx",
     "UIPath": ".",
