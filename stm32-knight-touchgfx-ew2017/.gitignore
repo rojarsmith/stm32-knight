@@ -1,0 +1,31 @@
+/.vscode/
+/build/
+/CmakeFiles/
+/gui/TouchGFX/assets/images/__generated
+/gui/TouchGFX/build
+/gui/TouchGFX/generated
+/target/stm32h747i_disco/cm7/stm32h747xx_flash_CM7.ld
+/build.ninja
+/cmake_install.cmake
+/CMakeCache.txt
+/CMakeUserPresets.json
+
+# Object files
+*.o
+*.obj
+
+# Dependency files
+*.d
+
+# Executables / Binaries
+*.elf
+*.hex
+*.bin
+*.map
+*.axf
+
+# Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
