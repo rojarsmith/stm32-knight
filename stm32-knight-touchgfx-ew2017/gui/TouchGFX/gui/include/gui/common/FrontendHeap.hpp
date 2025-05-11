@@ -2,6 +2,7 @@
 #define FRONTENDHEAP_HPP
 
 #include <gui_generated/common/FrontendHeapBase.hpp>
+#include <touchgfx/transitions/SlideTransition.hpp>
 
 class FrontendHeap : public FrontendHeapBase
 {
@@ -45,10 +46,11 @@ public:
     /* Calculate largest transition, both from generated and user-defined typelists */
     typedef touchgfx::meta::select_type_maxsize< UserDefinedTransitionTypes >::type MaxUserTransitionType;
 
-    typedef touchgfx::meta::TypeList< MaxGeneratedTransitionType,
+    typedef touchgfx::meta::TypeList< SlideTransition<EAST>,
+            touchgfx::meta::TypeList< MaxGeneratedTransitionType,
             touchgfx::meta::TypeList< MaxUserTransitionType,
                             touchgfx::meta::Nil
-                            > > CombinedTransitionTypes;
+                            > > > CombinedTransitionTypes;
     typedef touchgfx::meta::select_type_maxsize< CombinedTransitionTypes >::type MaxTransitionType;
 
     static FrontendHeap& getInstance()

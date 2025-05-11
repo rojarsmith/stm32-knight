@@ -2,6 +2,11 @@
   "Application": {
     "Screens": [
       {
+        "Name": "Intro",
+        "Components": [],
+        "Interactions": []
+      },
+      {
         "Name": "Main",
         "Components": [],
         "Interactions": []
@@ -116,7 +121,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 24,
-    "StartupScreenName": "Main",
+    "StartupScreenName": "Intro",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../../../stm32-knight-sdk/firmware/Middlewares/ST/TouchGFX/touchgfx",
     "UIPath": ".",

@@ -1,4 +1,4 @@
-#include <gui/main_screen/mainView.hpp>
+#include <gui/main_screen/MainView.hpp>
 
 MainView::MainView() :
 	xAngle3D(0.0f),

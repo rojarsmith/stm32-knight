@@ -113,6 +113,7 @@ if(${BUILD_CONTEXT} MATCHES .*APP_0.*)
     file(GLOB_RECURSE CPP_SRC_TGFX_GEN 
         ../../../gui/TouchGFX/generated/**/*.cpp
         ../../../gui/TouchGFX/generated/**/**/*.cpp
+        ../../../gui/TouchGFX/generated/images/src/*.cpp
         ../../../gui/TouchGFX/gui/**/*.cpp
         ../../../gui/TouchGFX/gui/**/**/*.cpp
     )
