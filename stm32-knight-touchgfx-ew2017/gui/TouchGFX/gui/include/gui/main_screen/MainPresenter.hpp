@@ -27,6 +27,10 @@ public:
 
     virtual ~MainPresenter() {}
 
+    /**
+     * Slide Transition : Go to XX screen.
+     */
+    void gotoMusicScreenFromMainScreen();
 private:
     MainPresenter();
 

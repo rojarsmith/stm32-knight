@@ -12,6 +12,11 @@
         "Interactions": []
       },
       {
+        "Name": "Music",
+        "Components": [],
+        "Interactions": []
+      },
+      {
         "Name": "Screen1",
         "Components": [
           {

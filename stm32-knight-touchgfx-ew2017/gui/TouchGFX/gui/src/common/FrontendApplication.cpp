@@ -29,3 +29,18 @@ void FrontendApplication::gotoMainScreenFromCurrentScreenImpl()
 {
 	makeTransition< MainView, MainPresenter, SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
+
+/**
+ * SlideTransition<WEST>
+ * @note : xx screen to main screen.
+ */
+void FrontendApplication::gotoMusicScreenFromMainScreen()
+{
+	transitionCallback = touchgfx::Callback< FrontendApplication >(this, &FrontendApplication::gotoMusicScreenFromMainScreenImpl);
+	pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::gotoMusicScreenFromMainScreenImpl()
+{
+	makeTransition< MusicView, MusicPresenter, SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}

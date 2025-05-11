@@ -114,6 +114,7 @@ if(${BUILD_CONTEXT} MATCHES .*APP_0.*)
         ../../../gui/TouchGFX/generated/**/*.cpp
         ../../../gui/TouchGFX/generated/**/**/*.cpp
         ../../../gui/TouchGFX/generated/images/src/*.cpp
+        ../../../gui/TouchGFX/generated/images/src/**/*.cpp
         ../../../gui/TouchGFX/gui/**/*.cpp
         ../../../gui/TouchGFX/gui/**/**/*.cpp
     )

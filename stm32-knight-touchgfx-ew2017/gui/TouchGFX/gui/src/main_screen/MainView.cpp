@@ -115,10 +115,10 @@ void MainView::tearDownScreen()
 
 void MainView::buttonClicked(const AbstractButton& source)
 {
-	//if (&source == &btnMusic)
-	//{
-	//	presenter->GoToMusicScreenFromMainScreen();
-	//}
+	if (&source == &btnMusic)
+	{
+		presenter->gotoMusicScreenFromMainScreen();
+	}
 	//else if (&source == &btnLighting)
 	//{
 	//	presenter->GoToLightingScreenFromMainScreen();

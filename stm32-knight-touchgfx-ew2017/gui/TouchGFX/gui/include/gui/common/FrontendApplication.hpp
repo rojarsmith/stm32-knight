@@ -24,6 +24,12 @@ public:
 	 * @note : main screen to XX screen.
 	 */
 	void gotoMainScreenFromCurrentScreen();
+
+	/**
+     * SlideTransition<WEST>
+     * @note : xx screen to main screen.
+     */
+    void gotoMusicScreenFromMainScreen();
 private:
 	Callback<FrontendApplication> transitionCallback;
 
@@ -32,6 +38,12 @@ private:
 	 * @note : main screen to XX screen.
 	 */
 	void gotoMainScreenFromCurrentScreenImpl();
+
+	/**
+	 * SlideTransition<WEST>
+	 * @note : xx screen to main screen.
+	 */
+	void gotoMusicScreenFromMainScreenImpl();
 };
 
 #endif // FRONTENDAPPLICATION_HPP

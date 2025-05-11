@@ -5,6 +5,21 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="song_5" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">05. Wildheuer polka Volksmusik&#10;  - Swiss folklore matterhorn</Translation>
+      </Text>
+      <Text Id="song_4" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">04. Minuet in G major&#10;  - Johann Sebastian Bach</Translation>
+      </Text>
+      <Text Id="song_3" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">03. Oh, my darling, Clementine&#10;  - American folk song</Translation>
+      </Text>
+      <Text Id="song_2" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">02. Dronningens contillion&#10;  - Beautiful Denmark 's folk music</Translation>
+      </Text>
+      <Text Id="song_1" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">01. Craving for the spring wind&#10;  - Evergreen Symphony Orchestra</Translation>
+      </Text>
       <Text Id="__SingleUse_MH4I" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">New Text</Translation>
       </Text>
@@ -20,5 +35,6 @@
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Song" Font="verdana.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

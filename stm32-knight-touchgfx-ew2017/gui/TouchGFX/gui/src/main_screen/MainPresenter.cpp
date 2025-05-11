@@ -16,3 +16,11 @@ void MainPresenter::deactivate()
 {
 
 }
+
+/**
+ * Slide Transition : Go to XX screen.
+ */
+void MainPresenter::gotoMusicScreenFromMainScreen()
+{
+    static_cast<FrontendApplication*>(Application::getInstance())->gotoMusicScreenFromMainScreen();
+}
