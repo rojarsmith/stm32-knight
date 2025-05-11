@@ -35,7 +35,7 @@ void MainView::setupScreen()
 	uint16_t icon_width = btnBacklight.getWidth();
 	uint16_t icon_height = btnBacklight.getHeight();
 
-	uint16_t icon_pitch_width_3 = (imgDemotitle.getWidth() - (icon_width * 3)) / 2;
+	uint16_t icon_pitch_width_3 = (imgDemotitle.getWidth() - (icon_width * 2)) / 2;
 	uint16_t icon_pitch1_height = btnBacklight.getHeight() / 4;
 
 	btnWatch.setXY(imgDemotitle.getX() - icon_width - icon_pitch_width_3, (HAL::DISPLAY_HEIGHT - icon_height) / 2);
@@ -44,10 +44,10 @@ void MainView::setupScreen()
 
 	uint16_t icon_pitch_width_2 = (btnLighting.getX() - btnWatch.getX() - (icon_width * 3)) / 3;
 
-	btnFood.setXY(btnLighting.getX() - icon_width - icon_pitch_width_2, btnWatch.getY() + icon_height * 2 + icon_pitch1_height);
-	btnMusic.setXY(btnLighting.getX() - icon_width - icon_pitch_width_2, btnWatch.getY() - icon_height * 2);
-	btnBacklight.setXY(btnWatch.getX() + icon_width + icon_pitch_width_2, btnWatch.getY() - icon_height * 2);
-	btnFan.setXY(btnWatch.getX() + icon_width + icon_pitch_width_2, btnWatch.getY() + icon_height * 2 + icon_pitch1_height);
+	btnFood.setXY(btnLighting.getX() - icon_width - icon_pitch_width_2 * 6, btnWatch.getY() + icon_height + icon_pitch1_height);
+	btnMusic.setXY(btnLighting.getX() - icon_width - icon_pitch_width_2 * 6, btnWatch.getY() - icon_height);
+	btnBacklight.setXY(btnWatch.getX() + icon_width + icon_pitch_width_2 * 4, btnWatch.getY() - icon_height);
+	btnFan.setXY(btnWatch.getX() + icon_width + icon_pitch_width_2 * 4, btnWatch.getY() + icon_height + icon_pitch1_height);
 
 	btnBacklight.setAction(buttonClickedCallback);
 	btnMusic.setAction(buttonClickedCallback);

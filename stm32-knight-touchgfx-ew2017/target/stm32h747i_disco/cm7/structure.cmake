@@ -1,5 +1,5 @@
 set(ADDRESS_BOOTLOADER 0x08000000)
-set(ADDRESS_APP_0 0x08040000)
+set(ADDRESS_APP_0 0x08000000)
 set(ADDRESS_APP_1 0x080A0000)
 
 # Add project symbols (macros)
@@ -86,7 +86,7 @@ if(${BUILD_CONTEXT} MATCHES .*APP_0.*)
     message("   Goal: APP_0")
     
     set(FLASH_ORIGIN ${ADDRESS_APP_0} CACHE STRING "Start address of the Flash memory" FORCE)
-    set(FLASH_LENGTH 384K CACHE STRING "Length of the Flash memory" FORCE)
+    set(FLASH_LENGTH 1024K CACHE STRING "Length of the Flash memory" FORCE)
     
     target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
         GOAL_APP
