@@ -46,6 +46,8 @@ void Error_Handler(void);
 extern int32_t DSI_IO_Write(uint16_t ChannelNbr, uint16_t Reg, uint8_t *pData, uint16_t Size);
 extern int32_t DSI_IO_Read(uint16_t ChannelNbr, uint16_t Reg, uint8_t *pData, uint16_t Size);
 
+uint32_t getScreenWidthReal(); // Fix HAL::DISPLAY_WIDTH=832 not 800
+
 /* Private defines -----------------------------------------------------------*/
 #define VCP_TX_Pin GPIO_PIN_9
 #define VCP_TX_GPIO_Port GPIOA

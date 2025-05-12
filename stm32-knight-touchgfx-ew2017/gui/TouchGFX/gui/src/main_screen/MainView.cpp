@@ -1,4 +1,5 @@
 #include <gui/main_screen/MainView.hpp>
+#include "main.h"
 
 MainView::MainView() :
 	xAngle3D(0.0f),
@@ -21,7 +22,7 @@ void MainView::setupScreen()
 	add(imgBackground);
 
 	imgDemotitle.setBitmap(Bitmap(BITMAP_DEMOTITLE_ID));
-	imgDemotitle.setXY((HAL::DISPLAY_WIDTH - imgDemotitle.getWidth()) / 2, ((HAL::DISPLAY_HEIGHT - imgDemotitle.getHeight()) / 2));
+	imgDemotitle.setXY((getScreenWidthReal() - imgDemotitle.getWidth()) / 2, ((HAL::DISPLAY_HEIGHT - imgDemotitle.getHeight()) / 2));
 	add(imgDemotitle);
 
 	btnWatch.setBitmap(Bitmap(BITMAP_BTN_WATCH_DISABLE_ID));

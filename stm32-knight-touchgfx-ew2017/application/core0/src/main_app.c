@@ -15,6 +15,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "app_touchgfx.h"
+#include "otm8009a.h"
 
 /* Private define ------------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
@@ -288,6 +289,11 @@ __weak void TouchGFX_Task(void *argument)
         osDelay(1);
     }
     /* USER CODE END 5 */
+}
+
+uint32_t getScreenWidthReal()
+{
+    return OTM8009A_800X480_WIDTH;
 }
 
 /**
