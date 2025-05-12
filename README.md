@@ -179,6 +179,20 @@ A: `.vscode/launch.json` modify:
 }]
 ```
 
+## stm32-knight-touchgfx-ew2017
+
+```json
+            "serverArgs": [
+                "-m",
+                "0",
+                "-t",
+                "-s",
+                "-k",
+                "--extload",
+                "c:\\ST\\STM32CubeCLT_1.18.0\\STM32CubeProgrammer\\bin\\ExternalLoader\\MT25TL01G_STM32H747I-DISCO.stldr",
+            ],
+```
+
 ## utility
 
 ### freertos-win-example

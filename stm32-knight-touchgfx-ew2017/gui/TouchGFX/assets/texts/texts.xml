@@ -5,6 +5,42 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="food_3_num" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="food_2_num" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="food_1_num" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_9" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Orange juice                      &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_8" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Coffee                                 &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_7" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Cola                                     &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_6" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Apple pie                            &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_5" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Ice cream                           &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_4" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Chocolate cake                 &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_3" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Hamburger combo           &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_2" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Pizza combo                       &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="list_food_1" Alignment="Left" TypographyId="Song">
+        <Translation Language="GB">Spaghetti combo               &lt;value&gt;</Translation>
+      </Text>
       <Text Id="song_5" Alignment="Left" TypographyId="Song">
         <Translation Language="GB">05. Wildheuer polka Volksmusik&#10;  - Swiss folklore matterhorn</Translation>
       </Text>

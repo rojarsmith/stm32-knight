@@ -1,17 +1,17 @@
-#ifndef MAINPRESENTER_HPP
-#define MAINPRESENTER_HPP
+#ifndef FOODPRESENTER_HPP
+#define FOODPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class MainView;
+class FoodView;
 
-class MainPresenter : public touchgfx::Presenter, public ModelListener
+class FoodPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    MainPresenter(MainView& v);
+    FoodPresenter(FoodView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,17 +25,19 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~MainPresenter() {}
+    virtual ~FoodPresenter() {}
 
     /**
-     * Slide Transition : Go to XX screen.
+     * Slide Transition : Go to main screen.
      */
-    void gotoMusicScreenFromMainScreen();
-    void gotoFoodScreenFromMainScreen();
-private:
-    MainPresenter();
+    void gotoMainScreenFromFoodScreen();
 
-    MainView& view;
+    void printList(uint8_t* ptr);
+    void printer_status(uint8_t printer_status);
+private:
+    FoodPresenter();
+
+    FoodView& view;
 };
 
-#endif // MAINPRESENTER_HPP
+#endif // FOODPRESENTER_HPP

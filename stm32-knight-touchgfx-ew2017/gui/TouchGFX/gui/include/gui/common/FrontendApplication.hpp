@@ -30,6 +30,7 @@ public:
      * @note : xx screen to main screen.
      */
     void gotoMusicScreenFromMainScreen();
+	void gotoFoodScreenFromMainScreen();
 private:
 	Callback<FrontendApplication> transitionCallback;
 
@@ -44,6 +45,7 @@ private:
 	 * @note : xx screen to main screen.
 	 */
 	void gotoMusicScreenFromMainScreenImpl();
+	void gotoFoodScreenFromMainScreenImpl();
 };
 
 #endif // FRONTENDAPPLICATION_HPP

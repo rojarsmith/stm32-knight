@@ -169,6 +169,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     ADDRESS_BOOTLOADER=${ADDRESS_BOOTLOADER}
     ADDRESS_APP_0=${ADDRESS_APP_0}
     ADDRESS_APP_1=${ADDRESS_APP_1}
+    USE_BPP=24
 )
 configure_file(stm32h747xx_flash_CM7.ld.in ${CMAKE_BINARY_DIR}/stm32h747xx_flash_CM7.ld @ONLY)
 configure_file(stm32h747xx_flash_CM7.ld.in ${CMAKE_CURRENT_SOURCE_DIR}/stm32h747xx_flash_CM7.ld @ONLY)

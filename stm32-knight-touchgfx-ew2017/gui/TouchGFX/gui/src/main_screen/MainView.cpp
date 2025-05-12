@@ -1,5 +1,7 @@
 #include <gui/main_screen/MainView.hpp>
+#ifndef SIMULATOR
 #include "main.h"
+#endif
 
 MainView::MainView() :
 	xAngle3D(0.0f),
@@ -124,10 +126,10 @@ void MainView::buttonClicked(const AbstractButton& source)
 	//{
 	//	presenter->GoToLightingScreenFromMainScreen();
 	//}
-	//else if (&source == &btnFood)
-	//{
-	//	presenter->GoToFoodScreenFromMainScreen();
-	//}
+	else if (&source == &btnFood)
+	{
+		presenter->gotoFoodScreenFromMainScreen();
+	}
 	//else if (&source == &btnFan)
 	//{
 	//	presenter->GoToFanScreenFromMainScreen();

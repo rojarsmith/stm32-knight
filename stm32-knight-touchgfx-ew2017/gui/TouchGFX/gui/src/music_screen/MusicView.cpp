@@ -2,6 +2,9 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
+#ifndef SIMULATOR
+#include "main.h"
+#endif
 
 MusicView::MusicView() :
     volumeValueCatch(0),
@@ -20,6 +23,7 @@ MusicView::MusicView() :
 
 void MusicView::setupScreen()
 {
+    uint32_t widthReal = getScreenWidthReal();
     imgBackground.setBitmap(Bitmap(BITMAP_MAINBG_ID));
     imgBackground.setXY(0, 0);
     add(imgBackground);
@@ -33,7 +37,7 @@ void MusicView::setupScreen()
     uint16_t func_btn_width = btnHome.getWidth();
     uint16_t func_btn_height = btnHome.getHeight();
 
-    btnHome.setXY(HAL::DISPLAY_WIDTH - 26 - func_btn_width, HAL::DISPLAY_HEIGHT - func_btn_height);
+    btnHome.setXY(widthReal - 26 - func_btn_width, HAL::DISPLAY_HEIGHT - func_btn_height);
     btnHome.setAction(buttonClickedCallback);
     add(btnHome);
 
