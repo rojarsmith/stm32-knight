@@ -21,6 +21,23 @@ void Model::tick()
 
 }
 
+uint8_t Model::getdata(mode_ID id, uint8_t index)
+{
+    if ((id > 0) && (id <= 6) && (index < 10))
+    {
+        switch (id)
+        {
+        case MODE_FAN:
+            return fan[index];
+            break;
+        default:
+            break;
+        }
+    }
+
+    return 0;
+}
+
 void Model::setdata(mode_ID id, uint8_t index, uint8_t value)
 {
     if (id == MODE_LED) {
@@ -34,9 +51,9 @@ void Model::setdata(mode_ID id, uint8_t index, uint8_t value)
         //    led[index] = value;
         //    break;
 
-        //case MODE_FAN:
-        //    fan[index] = value;
-        //    break;
+        case MODE_FAN:
+            fan[index] = value;
+            break;
 
         case MODE_MP3:
             mp3[index] = value;

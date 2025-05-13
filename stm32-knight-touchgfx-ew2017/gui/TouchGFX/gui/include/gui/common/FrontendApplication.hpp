@@ -32,6 +32,7 @@ public:
     void gotoMusicScreenFromMainScreen();
 	void gotoLightingScreenFromMainScreen();
 	void gotoFoodScreenFromMainScreen();
+	void gotoFanScreenFromMainScreen();
 private:
 	Callback<FrontendApplication> transitionCallback;
 
@@ -48,6 +49,7 @@ private:
 	void gotoMusicScreenFromMainScreenImpl();
 	void gotoLightingScreenFromMainScreenImpl();
 	void gotoFoodScreenFromMainScreenImpl();
+	void gotoFanScreenFromMainScreenImpl();
 };
 
 #endif // FRONTENDAPPLICATION_HPP

@@ -1,17 +1,17 @@
-#ifndef MAINPRESENTER_HPP
-#define MAINPRESENTER_HPP
+#ifndef FANPRESENTER_HPP
+#define FANPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class MainView;
+class FanView;
 
-class MainPresenter : public touchgfx::Presenter, public ModelListener
+class FanPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    MainPresenter(MainView& v);
+    FanPresenter(FanView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,19 +25,16 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~MainPresenter() {}
+    virtual ~FanPresenter() {}
 
-    /**
-     * Slide Transition : Go to XX screen.
-     */
-    void gotoMusicScreenFromMainScreen();
-    void gotoLightingScreenFromMainScreen();
-    void gotoFoodScreenFromMainScreen();
-    void gotoFanScreenFromMainScreen();
+    void gotoMainScreenFromFanScreen();
+
+    void setFan(uint8_t fan);
+
 private:
-    MainPresenter();
+    FanPresenter();
 
-    MainView& view;
+    FanView& view;
 };
 
-#endif // MAINPRESENTER_HPP
+#endif // FANPRESENTER_HPP

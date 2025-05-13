@@ -34,3 +34,8 @@ void MainPresenter::gotoFoodScreenFromMainScreen()
 {
     static_cast<FrontendApplication*>(Application::getInstance())->gotoFoodScreenFromMainScreen();
 }
+
+void MainPresenter::gotoFanScreenFromMainScreen()
+{
+    static_cast<FrontendApplication*>(Application::getInstance())->gotoFanScreenFromMainScreen();
+}

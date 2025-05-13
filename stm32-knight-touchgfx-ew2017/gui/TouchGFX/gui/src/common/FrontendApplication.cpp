@@ -9,6 +9,8 @@
 #include <gui/food_screen/FoodPresenter.hpp>
 #include <gui/lighting_screen/LightingView.hpp>
 #include <gui/lighting_screen/LightingPresenter.hpp>
+#include <gui/fan_screen/FanView.hpp>
+#include <gui/fan_screen/FanPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -68,5 +70,16 @@ void FrontendApplication::gotoFoodScreenFromMainScreen()
 
 void FrontendApplication::gotoFoodScreenFromMainScreenImpl()
 {
-	makeTransition< FoodView, FoodPresenter, SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+	makeTransition< FoodView, FoodPresenter, BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplication::gotoFanScreenFromMainScreen()
+{
+	transitionCallback = touchgfx::Callback< FrontendApplication >(this, &FrontendApplication::gotoFanScreenFromMainScreenImpl);
+	pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::gotoFanScreenFromMainScreenImpl()
+{
+	makeTransition< FanView, FanPresenter, CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

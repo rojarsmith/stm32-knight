@@ -27,6 +27,11 @@
         "Interactions": []
       },
       {
+        "Name": "Fan",
+        "Components": [],
+        "Interactions": []
+      },
+      {
         "Name": "Screen1",
         "Components": [
           {
