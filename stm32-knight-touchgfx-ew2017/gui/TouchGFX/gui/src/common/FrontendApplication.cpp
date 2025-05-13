@@ -7,6 +7,8 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/food_screen/FoodView.hpp>
 #include <gui/food_screen/FoodPresenter.hpp>
+#include <gui/lighting_screen/LightingView.hpp>
+#include <gui/lighting_screen/LightingPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -45,6 +47,17 @@ void FrontendApplication::gotoMusicScreenFromMainScreen()
 void FrontendApplication::gotoMusicScreenFromMainScreenImpl()
 {
 	makeTransition< MusicView, MusicPresenter, SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplication::gotoLightingScreenFromMainScreen()
+{
+	transitionCallback = touchgfx::Callback< FrontendApplication >(this, &FrontendApplication::gotoLightingScreenFromMainScreenImpl);
+	pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::gotoLightingScreenFromMainScreenImpl()
+{
+	makeTransition< LightingView, LightingPresenter, SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 void FrontendApplication::gotoFoodScreenFromMainScreen()

@@ -1,17 +1,17 @@
-#ifndef MAINPRESENTER_HPP
-#define MAINPRESENTER_HPP
+#ifndef LIGHTINGPRESENTER_HPP
+#define LIGHTINGPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class MainView;
+class LightingView;
 
-class MainPresenter : public touchgfx::Presenter, public ModelListener
+class LightingPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    MainPresenter(MainView& v);
+    LightingPresenter(LightingView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,18 +25,14 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~MainPresenter() {}
+    virtual ~LightingPresenter() {}
 
-    /**
-     * Slide Transition : Go to XX screen.
-     */
-    void gotoMusicScreenFromMainScreen();
-    void gotoLightingScreenFromMainScreen();
-    void gotoFoodScreenFromMainScreen();
+    void gotoMainScreenFromLightingScreen();
+    void setLED(uint8_t LED_R, uint8_t LED_G, uint8_t LED_B);
 private:
-    MainPresenter();
+    LightingPresenter();
 
-    MainView& view;
+    LightingView& view;
 };
 
-#endif // MAINPRESENTER_HPP
+#endif // LIGHTINGPRESENTER_HPP

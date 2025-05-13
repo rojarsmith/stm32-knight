@@ -22,6 +22,11 @@
         "Interactions": []
       },
       {
+        "Name": "Lighting",
+        "Components": [],
+        "Interactions": []
+      },
+      {
         "Name": "Screen1",
         "Components": [
           {

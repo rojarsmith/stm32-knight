@@ -25,6 +25,11 @@ void MainPresenter::gotoMusicScreenFromMainScreen()
     static_cast<FrontendApplication*>(Application::getInstance())->gotoMusicScreenFromMainScreen();
 }
 
+void MainPresenter::gotoLightingScreenFromMainScreen()
+{
+    static_cast<FrontendApplication*>(Application::getInstance())->gotoLightingScreenFromMainScreen();
+}
+
 void MainPresenter::gotoFoodScreenFromMainScreen()
 {
     static_cast<FrontendApplication*>(Application::getInstance())->gotoFoodScreenFromMainScreen();

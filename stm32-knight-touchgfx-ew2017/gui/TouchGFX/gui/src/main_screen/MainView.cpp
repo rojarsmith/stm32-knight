@@ -127,10 +127,10 @@ void MainView::buttonClicked(const AbstractButton& source)
 	{
 		presenter->gotoMusicScreenFromMainScreen();
 	}
-	//else if (&source == &btnLighting)
-	//{
-	//	presenter->GoToLightingScreenFromMainScreen();
-	//}
+	else if (&source == &btnLighting)
+	{
+		presenter->gotoLightingScreenFromMainScreen();
+	}
 	else if (&source == &btnFood)
 	{
 		presenter->gotoFoodScreenFromMainScreen();

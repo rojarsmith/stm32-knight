@@ -30,6 +30,7 @@ public:
      * @note : xx screen to main screen.
      */
     void gotoMusicScreenFromMainScreen();
+	void gotoLightingScreenFromMainScreen();
 	void gotoFoodScreenFromMainScreen();
 private:
 	Callback<FrontendApplication> transitionCallback;
@@ -45,6 +46,7 @@ private:
 	 * @note : xx screen to main screen.
 	 */
 	void gotoMusicScreenFromMainScreenImpl();
+	void gotoLightingScreenFromMainScreenImpl();
 	void gotoFoodScreenFromMainScreenImpl();
 };
 
