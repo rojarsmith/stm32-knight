@@ -11,7 +11,7 @@
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/Slider.hpp>
-//#include <gui/common/BaseViewInterface.hpp>
+// #include <gui/common/BaseViewInterface.hpp>
 #include <touchgfx/widgets/TouchArea.hpp>
 
 class MusicView : public MusicViewBase
@@ -24,23 +24,23 @@ public:
 
     virtual void handleTickEvent();
 
-    void animationEnded(const AnimatedImage& source);
+    void animationEnded(const AnimatedImage &source);
     void startAnimation();
     void stopAnimation();
 
-    void setPlayMode(uint8_t value);    
-    void setPlayStatus(uint8_t value);  
-    void setSongValue(uint8_t value);   
-    void setVolumeValue(uint8_t value); 
-    void setBtnPlayIcon();              
+    void setPlayMode(uint8_t value);
+    void setPlayStatus(uint8_t value);
+    void setSongValue(uint8_t value);
+    void setVolumeValue(uint8_t value);
+    void setBtnPlayIcon();
 
-    void buttonClicked(const AbstractButton& source);
+    void buttonClicked(const AbstractButton &source);
 
     uint8_t songValue, volumeValue;
 
-    //Rojar
-    uint8_t volumeValueCatch;
+    uint32_t screenwidthreal = 0;
 
+    uint8_t volumeValueCatch;
 
     bool checkSetupScreen; // Checked the SetupScreen completed?
     bool receivedata;
@@ -57,19 +57,18 @@ protected:
     PlayMode playmode;
     PlayMode playmode_temp;
 
-    enum PlayStatus 
+    enum PlayStatus
     {
         PAUSE,
         PLAY,
-        STOP 
+        STOP
     };
 
-    PlayStatus playstatus; 
-    PlayStatus playstatus_temp; 
+    PlayStatus playstatus;
+    PlayStatus playstatus_temp;
 
 private:
     uint8_t musicTickCounter;
-
 
     Image imgBackground, imgLogo;
     Button btnHome;
@@ -87,19 +86,19 @@ private:
     RadioButtonGroup<5> radioButtonGroup;
     RadioButton btnSong1, btnSong2, btnSong3, btnSong4, btnSong5;
 
-    //Rojar====================================================================
-    //TouchArea mcuLoadArea;
-    //McuLoadSlider mcuLoadSlider;
-    //Callback<MusicView, const AbstractButton&> onMcuLoadClicked;
-    //TextArea mcuLoadTxt;
-    //TextAreaWithOneWildcard mcuLoadValueTxt;
-    //Unicode::UnicodeChar mcuLoadTxtValueBuffer[5];
+    // Rojar====================================================================
+    // TouchArea mcuLoadArea;
+    // McuLoadSlider mcuLoadSlider;
+    // Callback<MusicView, const AbstractButton&> onMcuLoadClicked;
+    // TextArea mcuLoadTxt;
+    // TextAreaWithOneWildcard mcuLoadValueTxt;
+    // Unicode::UnicodeChar mcuLoadTxtValueBuffer[5];
 
- /*   virtual void updateProcessorLoad(uint8_t mcuLoadInProcent)
-    {
-        Unicode::snprintf(mcuLoadTxtValueBuffer, 5, "%d", mcuLoadInProcent);
-        mcuLoadValueTxt.invalidate();
-    }*/
+    /*   virtual void updateProcessorLoad(uint8_t mcuLoadInProcent)
+       {
+           Unicode::snprintf(mcuLoadTxtValueBuffer, 5, "%d", mcuLoadInProcent);
+           mcuLoadValueTxt.invalidate();
+       }*/
     //=========================================================================
 
     static const uint16_t txtWidth = 300;
@@ -108,23 +107,23 @@ private:
     TextAreaWithOneWildcard song1Txt, song2Txt, song3Txt, song4Txt, song5Txt;
     Unicode::UnicodeChar song1Txtbuf[30], song2Txtbuf[30], song3Txtbuf[30], song4Txtbuf[30], song5Txtbuf[30];
 
-    Callback<MusicView, const Slider&, int> newValueCallback;
-    void newValueHandler(const Slider& slider, int value);
+    Callback<MusicView, const Slider &, int> newValueCallback;
+    void newValueHandler(const Slider &slider, int value);
 
     bool tooFast;
 
-    Callback<MusicView, const AbstractButton&> buttonClickedCallback;
+    Callback<MusicView, const AbstractButton &> buttonClickedCallback;
 
-    Callback<MusicView, const AbstractButton&> radioButtonSelectedCallback;
-    void radioButtonSelectedHandler(const AbstractButton& radioButton);
+    Callback<MusicView, const AbstractButton &> radioButtonSelectedCallback;
+    void radioButtonSelectedHandler(const AbstractButton &radioButton);
 
-    Callback<MusicView, const AnimatedImage&> animationEndedCallback;
+    Callback<MusicView, const AnimatedImage &> animationEndedCallback;
 
-    Callback<MusicView, const Slider&> sliderClickedCallback;
-    void sliderClickedHandler(const Slider& slider);
+    Callback<MusicView, const Slider &> sliderClickedCallback;
+    void sliderClickedHandler(const Slider &slider);
 
-    Callback<MusicView, const Slider&, int> stopClickedCallback;
-    void stopValueHandler(const Slider& slider, int value);
+    Callback<MusicView, const Slider &, int> stopClickedCallback;
+    void stopValueHandler(const Slider &slider, int value);
 };
 
 #endif // MUSICVIEW_HPP

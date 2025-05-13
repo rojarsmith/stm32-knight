@@ -4,6 +4,11 @@
 #endif
 
 MainView::MainView() :
+#ifndef SIMULATOR
+    screenwidthreal(getScreenWidthReal()),
+#else
+    screenwidthreal(HAL::DISPLAY_WIDTH),	
+#endif
 	xAngle3D(0.0f),
 	yAngle3D(0.0f),
 	zAngle3D(0.0f),
@@ -24,7 +29,7 @@ void MainView::setupScreen()
 	add(imgBackground);
 
 	imgDemotitle.setBitmap(Bitmap(BITMAP_DEMOTITLE_ID));
-	imgDemotitle.setXY((getScreenWidthReal() - imgDemotitle.getWidth()) / 2, ((HAL::DISPLAY_HEIGHT - imgDemotitle.getHeight()) / 2));
+	imgDemotitle.setXY((screenwidthreal - imgDemotitle.getWidth()) / 2, ((HAL::DISPLAY_HEIGHT - imgDemotitle.getHeight()) / 2));
 	add(imgDemotitle);
 
 	btnWatch.setBitmap(Bitmap(BITMAP_BTN_WATCH_DISABLE_ID));

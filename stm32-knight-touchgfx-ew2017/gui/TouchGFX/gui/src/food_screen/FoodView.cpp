@@ -494,7 +494,7 @@ void FoodView::handleTickEvent()
             btnBackToCategory.invalidate();
             btnShoppingCar.setVisible(false);
             btnShoppingCar.invalidate();
-            btnPrint.setVisible(true);
+            btnPrint.setVisible(false);
             btnPrint.invalidate();
             menuaction = NO_ANIMATION;
         }
@@ -503,7 +503,7 @@ void FoodView::handleTickEvent()
     case ANIMATE_LEFT:
         if (category_num == CATEGORY1)
         {
-            if (ItemsViewport1.getX() != (0 - screenwidthreal))
+            if (ItemsViewport1.getX() != -static_cast<int>(screenwidthreal))
             {
                 ItemsViewport1.moveRelative(-DELTA_X, 0);
                 ItemsViewport1.invalidate();
@@ -543,7 +543,7 @@ void FoodView::handleTickEvent()
         }
         if (category_num == CATEGORY2)
         {
-            if (ItemsViewport2.getX() != (0 - screenwidthreal))
+            if (ItemsViewport2.getX() != -static_cast<int>(screenwidthreal))
             {
                 ItemsViewport2.moveRelative(-DELTA_X, 0);
                 ItemsViewport2.invalidate();
@@ -583,7 +583,7 @@ void FoodView::handleTickEvent()
         }
         if (category_num == CATEGORY3)
         {
-            if (ItemsViewport3.getX() != (0 - screenwidthreal))
+            if (ItemsViewport3.getX() -static_cast<int>(screenwidthreal))
             {
                 ItemsViewport3.moveRelative(-DELTA_X, 0);
                 ItemsViewport3.invalidate();
@@ -732,12 +732,10 @@ void FoodView::handleTickEvent()
         // Back to category
         menuaction = ANIMATE_UP;
 
-
-        //Rojar
         btnHome.setTouchable(true);
         btnShoppingCar.setTouchable(true);
         btnBackToCategory.setTouchable(true);
-        btnPrint.setTouchable(true);
+        btnPrint.setTouchable(false);
         //=====================================================================
     }
     else {

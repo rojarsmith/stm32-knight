@@ -7,6 +7,11 @@
 #endif
 
 MusicView::MusicView() :
+#ifndef SIMULATOR
+    screenwidthreal(getScreenWidthReal()),
+ #else
+    screenwidthreal(HAL::DISPLAY_WIDTH),
+#endif   
     volumeValueCatch(0),
     checkSetupScreen(false),
     receivedata(false), // If receive data from arduino, set the parameter true.
@@ -23,7 +28,7 @@ MusicView::MusicView() :
 
 void MusicView::setupScreen()
 {
-    uint32_t widthReal = getScreenWidthReal();
+    uint32_t widthReal = screenwidthreal;
     imgBackground.setBitmap(Bitmap(BITMAP_MAINBG_ID));
     imgBackground.setXY(0, 0);
     add(imgBackground);

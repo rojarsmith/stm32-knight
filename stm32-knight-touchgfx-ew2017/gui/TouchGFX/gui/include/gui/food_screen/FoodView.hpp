@@ -58,7 +58,7 @@ private:
     Container ListViewport;
     static const uint8_t DELTA_X = 40; //480*272:24, 800*480:40
     static const uint8_t DELTA_Y = 30; //480*272:17, 800*480:30
-    static const uint16_t FoodTxtWidth = 300;
+    static const uint16_t FoodTxtWidth = 498; //480*272:300, 800*480:498
     static const uint8_t FoodTxtHeight = 20;
     static const uint8_t FoodTxtPitch = 14;
     static const uint8_t FoodTxtStartX = 192; // 116

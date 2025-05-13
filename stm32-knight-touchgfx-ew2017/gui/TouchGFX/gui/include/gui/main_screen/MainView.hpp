@@ -19,12 +19,15 @@ public:
 	virtual void setupScreen();
 	virtual void tearDownScreen();
 
-	void buttonClicked(const AbstractButton& source);
+	void buttonClicked(const AbstractButton &source);
 	virtual void handleTickEvent();
+
 protected:
 	Image imgBackground, imgDemotitle, imglogo;
 	Image btnWatch, btnWeather;
 	Button btnFan, btnLighting, btnMusic, btnFood, btnBacklight;
+
+	uint32_t screenwidthreal = 0;
 
 	TextureMapper textureMapperImage3D;
 	float xAngle3D;
@@ -37,7 +40,7 @@ protected:
 
 	TextArea txtCopyRight;
 
-	Callback<MainView, const AbstractButton&> buttonClickedCallback;
+	Callback<MainView, const AbstractButton &> buttonClickedCallback;
 };
 
 #endif // MAINVIEW_HPP
