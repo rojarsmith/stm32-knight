@@ -83,3 +83,14 @@ void FrontendApplication::gotoFanScreenFromMainScreenImpl()
 {
 	makeTransition< FanView, FanPresenter, CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
+
+void FrontendApplication::gotoBacklightScreenFromMainScreen()
+{
+	transitionCallback = touchgfx::Callback< FrontendApplication >(this, &FrontendApplication::gotoBacklightScreenFromMainScreenImpl);
+	pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::gotoBacklightScreenFromMainScreenImpl()
+{
+	makeTransition< BacklightView, BacklightPresenter, CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}

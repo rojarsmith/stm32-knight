@@ -139,10 +139,10 @@ void MainView::buttonClicked(const AbstractButton& source)
 	{
 		presenter->gotoFanScreenFromMainScreen();
 	}
-	//else if (&source == &btnBacklight)
-	//{
-	//	presenter->gotoBacklightScreenFromMainScreen();
-	//}
+	else if (&source == &btnBacklight)
+	{
+		presenter->gotoBacklightScreenFromMainScreen();
+	}
 }
 
 void MainView::handleTickEvent()

@@ -23,6 +23,12 @@
       <Text Id="list_food_7" Alignment="Left" TypographyId="ShoppingCar">
         <Translation Language="GB">Cola                                 &lt;value&gt;</Translation>
       </Text>
+      <Text Id="backlight_value" Alignment="Left" TypographyId="LargeValue">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="backlight_title" Alignment="Left" TypographyId="ScreenTitle">
+        <Translation Language="GB">BACKLIGHT</Translation>
+      </Text>
       <Text Id="fan_off" Alignment="Center" TypographyId="Temperature">
         <Translation Language="GB">OFF</Translation>
       </Text>
@@ -81,5 +87,7 @@
     <Typography Id="ShoppingCar" Font="consola.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" WildcardCharacterRanges="0-9" />
     <Typography Id="OrderingNumber" Font="consola.ttf" Size="20" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="skip" />
     <Typography Id="Temperature" Font="consola.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" WildcardCharacterRanges="0-9" />
+    <Typography Id="ScreenTitle" Font="consola.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="LargeValue" Font="consola.ttf" Size="68" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" WildcardCharacterRanges="0-9" />
   </Typographies>
 </TextDatabase>

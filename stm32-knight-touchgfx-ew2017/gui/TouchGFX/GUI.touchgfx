@@ -32,6 +32,11 @@
         "Interactions": []
       },
       {
+        "Name": "Backlight",
+        "Components": [],
+        "Interactions": []
+      },
+      {
         "Name": "Screen1",
         "Components": [
           {

@@ -39,3 +39,8 @@ void MainPresenter::gotoFanScreenFromMainScreen()
 {
     static_cast<FrontendApplication*>(Application::getInstance())->gotoFanScreenFromMainScreen();
 }
+
+void MainPresenter::gotoBacklightScreenFromMainScreen()
+{
+    static_cast<FrontendApplication*>(Application::getInstance())->gotoBacklightScreenFromMainScreen();
+}

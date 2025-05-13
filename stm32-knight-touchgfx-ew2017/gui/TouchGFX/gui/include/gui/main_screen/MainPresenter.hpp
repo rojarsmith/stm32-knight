@@ -34,6 +34,7 @@ public:
     void gotoLightingScreenFromMainScreen();
     void gotoFoodScreenFromMainScreen();
     void gotoFanScreenFromMainScreen();
+    void gotoBacklightScreenFromMainScreen();
 private:
     MainPresenter();
 

@@ -33,6 +33,7 @@ public:
 	void gotoLightingScreenFromMainScreen();
 	void gotoFoodScreenFromMainScreen();
 	void gotoFanScreenFromMainScreen();
+	void gotoBacklightScreenFromMainScreen();
 private:
 	Callback<FrontendApplication> transitionCallback;
 
@@ -50,6 +51,7 @@ private:
 	void gotoLightingScreenFromMainScreenImpl();
 	void gotoFoodScreenFromMainScreenImpl();
 	void gotoFanScreenFromMainScreenImpl();
+	void gotoBacklightScreenFromMainScreenImpl();
 };
 
 #endif // FRONTENDAPPLICATION_HPP
