@@ -16,6 +16,9 @@
 #include "cmsis_os.h"
 #include "app_touchgfx.h"
 #include "otm8009a.h"
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
+#include "queue.h"
+#endif
 
 /* Private define ------------------------------------------------------------*/
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +53,22 @@ const osThreadAttr_t rtcTask_attributes = {
     .stack_size = 1000 * 4,
     .priority = (osPriority_t)osPriorityLow,
 };
+
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
+// extern TIM_HandleTypeDef htim12;
+
+xQueueHandle xQueueRX;
+extern xQueueHandle xQueueTX;
+
+void setPWM(TIM_HandleTypeDef timer, uint32_t channel, uint16_t period, uint16_t pulse);
+
+typedef struct
+{
+    uint8_t mode_id;
+    uint8_t data[9];
+} xdata;
+xdata trx,ttx;
+#endif
 
 /* Private function prototypes -----------------------------------------------*/
 static void MPU_Config(void);
@@ -134,6 +153,8 @@ int main(void)
 
     /* creation of videoTask */
     rtcTaskHandle = osThreadNew(RTCTask, NULL, &rtcTask_attributes);
+
+    xQueueRX = xQueueCreate(5, sizeof(xdata));
 
     osKernelStart();
     printf("Post osKernelStart()\r\n");
@@ -259,6 +280,11 @@ __attribute__((unused)) static void RTCTask(void *params)
 
     const TickType_t xDelay1000ms = pdMS_TO_TICKS(1000UL);
 
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
+    // setPWM(htim12, TIM_CHANNEL_2, 200-1, 20);
+    LCD_SetBrightness(100); // CABC, 0~100
+#endif
+
     for (;;)
     {
         printf("RTCTask running...\r\n");
@@ -271,6 +297,32 @@ __attribute__((unused)) static void RTCTask(void *params)
             printf("Button `Wakeup`\r\n");
             Jump_To_Boot(ADDRESS_BOOTLOADER);
         }
+
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
+        taskENTER_CRITICAL();
+
+        if (xQueueRX != 0) 
+        {
+            if (xQueueReceive(xQueueRX, &trx, 0) == pdPASS)
+            {
+                if(trx.mode_id == 6)
+                {
+                    // int blv = trx.data[0] * 10;
+                    int blv = trx.data[0];
+                    LCD_SetBrightness(blv);
+                }
+                else if(trx.mode_id == 7)
+                {
+                    ttx.mode_id = 7;
+                    // ttx.data[1] = LCD_GetBrightness(); // OTM8009A not support
+                    xQueueSend(xQueueTX, &ttx, 500);
+                }
+            }
+        }
+
+        taskEXIT_CRITICAL();
+#endif
+
     }
 }
 
@@ -295,6 +347,22 @@ uint32_t getScreenWidthReal()
 {
     return OTM8009A_800X480_WIDTH;
 }
+
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
+void setPWM(TIM_HandleTypeDef timer, uint32_t channel, uint16_t period, uint16_t pulse)
+{
+	HAL_TIM_PWM_Stop(&timer, channel); // stop generation of pwm
+	TIM_OC_InitTypeDef sConfigOC;
+	timer.Init.Period = period; // set the period duration
+	HAL_TIM_PWM_Init(&timer); // reinititialise with new period value
+	sConfigOC.OCMode = TIM_OCMODE_PWM1;
+	sConfigOC.Pulse = pulse; // set the pulse duration
+	sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+	sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+	HAL_TIM_PWM_ConfigChannel(&timer, &sConfigOC, channel);
+	HAL_TIM_PWM_Start(&timer, channel); // start pwm generation
+}
+#endif
 
 /**
  * @brief GPIO Initialization Function

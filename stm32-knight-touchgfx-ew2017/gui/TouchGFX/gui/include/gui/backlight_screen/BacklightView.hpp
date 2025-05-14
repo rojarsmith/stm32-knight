@@ -62,11 +62,12 @@ private:
 	MoveAnimator<Slider> slider;
 	int16_t sliderX;
 	int16_t sliderY;
-	int sliderValue, sliderValueCatch;
+	int sliderValue, sliderValueCatch, sliderValueCatchL2;
 
 	int16_t brightnessValueTextX;
 	TextAreaWithOneWildcard brightnessValueText;
 	Unicode::UnicodeChar brightnessValueBuffer[5];
+	uint16_t brightnessValueFilterCounter;
 	uint16_t brightnessValueTextAnimationCounter;
 	enum BrightnessValueTextAnimationState
 	{

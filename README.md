@@ -181,6 +181,14 @@ A: `.vscode/launch.json` modify:
 
 ## stm32-knight-touchgfx-ew2017
 
+Backlight not support PWM, only CABC 0~100, change brightness slowly.
+
+Don't commit to git each time:
+
+gui/TouchGFX/config/gcc/app.mk
+
+gui/TouchGFX/config/msvs/Application.props
+
 ```json
             "serverArgs": [
                 "-m",

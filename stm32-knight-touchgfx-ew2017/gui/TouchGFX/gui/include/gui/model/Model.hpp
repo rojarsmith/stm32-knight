@@ -24,7 +24,8 @@ public:
         MODE_MP3,
         MODE_PNT,
         MODE_RECV,
-        MODE_PWM
+        MODE_PWM,
+        MODE_PWMG
     } mode_ID;
 
     void setdata(mode_ID id, uint8_t index, uint8_t value);
@@ -34,6 +35,8 @@ public:
 protected:
     ModelListener* modelListener;
 private:
+    uint8_t pwm[10];
+    uint8_t pwmg[10];
     uint8_t mp3[10];
     uint8_t fan[10];
 };

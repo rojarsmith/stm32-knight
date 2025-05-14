@@ -28,6 +28,7 @@ void BacklightPresenter::setBL(uint8_t pwm)
 uint8_t BacklightPresenter::getpwm()
 {
     return model->getdata(Model::MODE_PWM, 1);
+    // model->senddata(Model::MODE_PWM);
 }
 /**
  * Slide Transition : Go to XX screen.
