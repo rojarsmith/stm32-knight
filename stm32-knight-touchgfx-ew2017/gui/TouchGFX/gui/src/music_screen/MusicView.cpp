@@ -247,26 +247,23 @@ void MusicView::setupScreen()
     add(btnRandom);
     add(btnCycle);
 
-
-
-    //Rojar====================================================================
+    //=========================================================================
     // MCULoad must be added by the specialized menu view (to get correct z-order)
-    //mcuLoadTxt.setTypedText(TypedText(T_DEMO_VIEW_MCU_LOAD_TEXT));
-    //mcuLoadTxt.setColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
-    //mcuLoadTxt.setHeight(100);
-    //mcuLoadTxt.setWidth(100);
+    mcuLoadTxt.setTypedText(TypedText(T_MCU_LOAD_TEXT));
+    mcuLoadTxt.setColor(Color::getColorFromRGB(0xFF, 0xFF, 0xFF));
+    mcuLoadTxt.setHeight(100);
+    mcuLoadTxt.setWidth(100);
 
-    //Unicode::snprintf(mcuLoadTxtValueBuffer, 5, "%d", 0);
-    //mcuLoadValueTxt.setWildcard(mcuLoadTxtValueBuffer);
-    //mcuLoadValueTxt.setTypedText(TypedText(T_DEMO_VIEW_MCU_LOAD_VALUE));
-    //mcuLoadValueTxt.setColor(Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xFF));
-
+    Unicode::snprintf(mcuLoadTxtValueBuffer, 5, "%d", 0);
+    mcuLoadValueTxt.setWildcard(mcuLoadTxtValueBuffer);
+    mcuLoadValueTxt.setTypedText(TypedText(T_MCU_LOAD_VALUE));
+    mcuLoadValueTxt.setColor(Color::getColorFromRGB(0xFF, 0xFF, 0xFF));
 
     //MCU Usage.
-    //mcuLoadTxt.setXY(10, 10 - mcuLoadTxt.getTypedText().getFont()->getFontHeight());
-    //mcuLoadValueTxt.setPosition(mcuLoadTxt.getRect().right(), mcuLoadTxt.getY(), 34, 14);
-    //add(mcuLoadTxt);
-    //add(mcuLoadValueTxt);
+    mcuLoadTxt.setXY(80, 25 - mcuLoadTxt.getTypedText().getFont()->getBaseline());
+    mcuLoadValueTxt.setPosition(mcuLoadTxt.getRect().right(), mcuLoadTxt.getY(), 34, 18);
+    add(mcuLoadTxt);
+    add(mcuLoadValueTxt);
     //=========================================================================
 
     //notFirstTimeShowView = true;
@@ -277,9 +274,6 @@ void MusicView::tearDownScreen()
 {
 
 }
-
-
-
 
 void MusicView::handleTickEvent()
 {

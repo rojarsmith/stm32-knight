@@ -1,10 +1,13 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
+#include <touchgfx/hal/HAL.hpp>
 #if !defined(_MSC_VER) && !defined(SIMULATOR)
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "task.h"
 #endif
+
+static uint8_t mcuLoadLast = 0;
 
 extern "C"
 {
@@ -27,6 +30,13 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
+    uint8_t mcuLoadPct = touchgfx::HAL::getInstance()->getMCULoadPct();
+    if (mcuLoadLast != /*mcu_load_pct*/ mcuLoadPct)
+    {
+        mcuLoadLast = mcuLoadPct;
+        modelListener->mcuLoadUpdated(mcuLoadLast);
+    }
+
 #if !defined(_MSC_VER) && !defined(SIMULATOR)
     if (xQueueTX != 0)
     {

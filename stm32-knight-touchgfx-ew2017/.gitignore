@@ -31,3 +31,9 @@
 *.vcxproj
 *.vcxproj.filters
 *.user
+
+# Avoid each time
+# But it must include in project
+gui/TouchGFX/config/gcc/app.mk
+gui/TouchGFX/config/msvc/Application.props
+

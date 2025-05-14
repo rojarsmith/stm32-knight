@@ -14,6 +14,9 @@ public:
     {
         model = m;
     }
+
+    // MCU Usage.
+    virtual void mcuLoadUpdated(uint8_t mcuLoad) {}
 protected:
     Model* model;
 };

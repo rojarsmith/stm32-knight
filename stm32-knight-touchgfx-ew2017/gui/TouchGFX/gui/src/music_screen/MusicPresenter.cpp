@@ -1,4 +1,5 @@
 #include <gui/music_screen/MusicView.hpp>
+#include <gui/model/ModelListener.hpp>
 #include <gui/music_screen/MusicPresenter.hpp>
 
 MusicPresenter::MusicPresenter(MusicView& v)
@@ -73,3 +74,10 @@ void MusicPresenter::mp3_status(uint8_t play_mode, uint8_t song_num, uint8_t sta
     view.setVolumeValue(volume);
     view.receivedata = true;
 }
+
+void MusicPresenter::mcuLoadUpdated(uint8_t mcuLoad)
+{
+    view.updateProcessorLoad(mcuLoad);
+    //viewInterface.updateProcessorLoad(mcuLoad);
+}
+

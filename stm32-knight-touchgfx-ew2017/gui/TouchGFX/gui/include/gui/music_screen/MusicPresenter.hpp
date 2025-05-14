@@ -1,8 +1,8 @@
 #ifndef MUSICPRESENTER_HPP
 #define MUSICPRESENTER_HPP
 
-#include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <gui/model/ModelListener.hpp>
 
 using namespace touchgfx;
 
@@ -41,7 +41,7 @@ public:
     void mp3_status(uint8_t play_mode, uint8_t song_num, uint8_t status, uint8_t volume);
     void qstatus();
 
-    //virtual void mcuLoadUpdated(uint8_t mcuLoad);
+    virtual void mcuLoadUpdated(uint8_t mcuLoad);
 private:
     MusicPresenter();
 

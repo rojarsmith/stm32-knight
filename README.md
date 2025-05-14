@@ -78,6 +78,78 @@ Delete folder `build`→Modify `CMakeUserPresets.json`
 
 IAP + FreeRTOS + TouchGFX
 
+`.vscode/launch.json`
+
+```bash
+"configurations":[
+    {
+        "name":"APP_0 Build & Debug Microcontroller - ST-Link",
+        "cwd":"${workspaceFolder}",
+        "type":"cortex-debug",
+        "executable":"${workspaceFolder}/build/cm7/build/stm32-knight-touchgfx-ew2017-cm7.elf",
+        "executable":"${command:cmake.launchTargetPath}",
+        :"${command:cmake.launchTargetPath}":"${workspaceFolder}/path/to/filename.elf"
+        "postLaunchCommands":[
+            "monitor halt",
+            "set $sp = *(uint32_t*)0x08040000",
+            "set $pc = *(uint32_t*)0x08040004",
+            "set *(uint32_t*)0xE000ED08 = 0x08040000",
+            "break main",
+            "continue"
+        ],
+        "request":"launch",
+        "servertype":"stlink",
+        "device":"STM32H747XIHx",
+        "interface":"swd",
+        "serialNumber":"",
+        "runToEntryPoint":"main",
+        "svdFile":"${config:STM32VSCodeExtension.cubeCLT.path}/STMicroelectronics_CMSIS_SVD/STM32H747_CM7.svd",
+        "v1":false,
+        "serverpath":"${config:STM32VSCodeExtension.cubeCLT.path}/STLink-gdb-server/bin/ST-LINK_gdbserver",
+        "stm32cubeprogrammer":"${config:STM32VSCodeExtension.cubeCLT.path}/STM32CubeProgrammer/bin",
+        "stlinkPath":"${config:STM32VSCodeExtension.cubeCLT.path}/STLink-gdb-server/bin/ST-LINK_gdbserver",
+        "armToolchainPath":"${config:STM32VSCodeExtension.cubeCLT.path}/GNU-tools-for-STM32/bin",
+        "gdbPath":"${config:STM32VSCodeExtension.cubeCLT.path}/GNU-tools-for-STM32/bin/arm-none-eabi-gdb",
+        "serverArgs":[
+            "-m",
+            "0"
+        ]
+    },
+    {
+        "name":"APP_1 Build & Debug Microcontroller - ST-Link",
+        "cwd":"${workspaceFolder}",
+        "type":"cortex-debug",
+        "executable":"${workspaceFolder}/build/cm7/build/stm32-knight-touchgfx-ew2017-cm7.elf",
+        "executable":"${command:cmake.launchTargetPath}",
+        :"${command:cmake.launchTargetPath}":"${workspaceFolder}/path/to/filename.elf""postLaunchCommands":[
+            "monitor halt",
+            "set $sp = *(uint32_t*)0x080A0000",
+            "set $pc = *(uint32_t*)0x080A0004",
+            "set *(uint32_t*)0xE000ED08 = 0x080A0000",
+            "break main",
+            "continue"
+        ],
+        "request":"launch",
+        "servertype":"stlink",
+        "device":"STM32H747XIHx",
+        "interface":"swd",
+        "serialNumber":"",
+        "runToEntryPoint":"main",
+        "svdFile":"${config:STM32VSCodeExtension.cubeCLT.path}/STMicroelectronics_CMSIS_SVD/STM32H747_CM7.svd",
+        "v1":false,
+        "serverpath":"${config:STM32VSCodeExtension.cubeCLT.path}/STLink-gdb-server/bin/ST-LINK_gdbserver",
+        "stm32cubeprogrammer":"${config:STM32VSCodeExtension.cubeCLT.path}/STM32CubeProgrammer/bin",
+        "stlinkPath":"${config:STM32VSCodeExtension.cubeCLT.path}/STLink-gdb-server/bin/ST-LINK_gdbserver",
+        "armToolchainPath":"${config:STM32VSCodeExtension.cubeCLT.path}/GNU-tools-for-STM32/bin",
+        "gdbPath":"${config:STM32VSCodeExtension.cubeCLT.path}/GNU-tools-for-STM32/bin/arm-none-eabi-gdb",
+        "serverArgs":[
+            "-m",
+            "0"
+        ]
+    },
+]
+```
+
 ## stm32-knight-ltdc
 
 LTDC
@@ -181,6 +253,26 @@ A: `.vscode/launch.json` modify:
 
 ## stm32-knight-touchgfx-ew2017
 
+Video STM32 Demo : VSCode + STM32CubeCLT + IAP + FreeRTOS + TouchGFX
+
+[![STM32 Demo : VSCode + STM32CubeCLT + IAP + FreeRTOS + TouchGFX](img/stm32-knight-touchgfx-ew2017-1.png)](https://youtu.be/PzOW6UNdrQA)
+
+<video width="640" height="360" controls>
+ <source src="https://youtu.be/PzOW6UNdrQA" type="video" alt="STM32 Demo : VSCode + STM32CubeCLT + IAP + FreeRTOS + TouchGFX">
+</video>
+
+Using the latest STM32CubeCLT tool chain, the code is porting from the demo exhibited at Embedded World in 2017, and the copyright-restricted parts have been removed.
+
+Features : VSCode + STM32CubeCLT + IAP + FreeRTOS + TouchGFX
+
+![cover1](img/stm32-knight-touchgfx-ew2017-1.png)
+
+![cover1](img/stm32-knight-touchgfx-ew2017-2.png)
+
+![cover1](img/stm32-knight-touchgfx-ew2017-3.png)
+
+![cover1](img/stm32-knight-touchgfx-ew2017-4.png)
+
 Backlight not support PWM, only CABC 0~100, change brightness slowly.
 
 Don't commit to git each time:
@@ -189,16 +281,31 @@ gui/TouchGFX/config/gcc/app.mk
 
 gui/TouchGFX/config/msvs/Application.props
 
+`.vscode/launch.json`
+
 ```json
-            "serverArgs": [
-                "-m",
-                "0",
-                "-t",
-                "-s",
-                "-k",
-                "--extload",
-                "c:\\ST\\STM32CubeCLT_1.18.0\\STM32CubeProgrammer\\bin\\ExternalLoader\\MT25TL01G_STM32H747I-DISCO.stldr",
-            ],
+"executable": "${command:STM32VSCodeExtension.dualCoreCM7Target}",
+"serverArgs": [
+    "-m", "0",
+    "-t", "-s",
+    "-k",
+    "--extload", "c:\\ST\\STM32CubeCLT_1.18.0\\STM32CubeProgrammer\\bin\\ExternalLoader\\MT25TL01G_STM32H747I-DISCO.stldr",
+],
+```
+
+`CMakeUserPresets.json`
+
+```json
+"configurePresets":[
+    {
+        "name":"local-debug-app-0",
+        "inherits":"debug",
+        "cacheVariables":{
+            "BUILD_TARGET":"STM32H747I_DISCO",
+            "BUILD_CONTEXT":"CM7,APP_0"
+        }
+    }
+]
 ```
 
 ## utility
@@ -254,3 +361,14 @@ xWinApiResult = WaitForMultipleObjects( sizeof( pvObjectList ) / sizeof( void * 
 Need correct `setupCommands` for `cppdbg`.
 
 Run debug: Select and Strat Debug Configuration
+
+## TouchGFX
+
+Non TouchGFX Designer generated:
+
+App/
+
+target/
+
+GUI.touchgfx
+

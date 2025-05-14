@@ -13,6 +13,8 @@
 #include <touchgfx/containers/Slider.hpp>
 // #include <gui/common/BaseViewInterface.hpp>
 #include <touchgfx/widgets/TouchArea.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class MusicView : public MusicViewBase
 {
@@ -44,6 +46,21 @@ public:
 
     bool checkSetupScreen; // Checked the SetupScreen completed?
     bool receivedata;
+
+    // ====================================================================
+    // TouchArea mcuLoadArea;
+    // McuLoadSlider mcuLoadSlider;
+    // Callback<MusicView, const AbstractButton&> onMcuLoadClicked;
+    TextArea mcuLoadTxt;
+    TextAreaWithOneWildcard mcuLoadValueTxt;
+    Unicode::UnicodeChar mcuLoadTxtValueBuffer[5];
+
+    virtual void updateProcessorLoad(uint8_t mcuLoadInProcent)
+    {
+        Unicode::snprintf(mcuLoadTxtValueBuffer, 5, "%d", mcuLoadInProcent);
+        mcuLoadValueTxt.invalidate();
+    }
+    //=========================================================================
 
 protected:
     enum PlayMode
@@ -85,21 +102,6 @@ private:
     Image imgFlag1, imgFlag2, imgFlag3, imgFlag4, imgFlag5;
     RadioButtonGroup<5> radioButtonGroup;
     RadioButton btnSong1, btnSong2, btnSong3, btnSong4, btnSong5;
-
-    // Rojar====================================================================
-    // TouchArea mcuLoadArea;
-    // McuLoadSlider mcuLoadSlider;
-    // Callback<MusicView, const AbstractButton&> onMcuLoadClicked;
-    // TextArea mcuLoadTxt;
-    // TextAreaWithOneWildcard mcuLoadValueTxt;
-    // Unicode::UnicodeChar mcuLoadTxtValueBuffer[5];
-
-    /*   virtual void updateProcessorLoad(uint8_t mcuLoadInProcent)
-       {
-           Unicode::snprintf(mcuLoadTxtValueBuffer, 5, "%d", mcuLoadInProcent);
-           mcuLoadValueTxt.invalidate();
-       }*/
-    //=========================================================================
 
     static const uint16_t txtWidth = 300;
     static const uint8_t txtHeight = 48;
