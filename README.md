@@ -281,6 +281,50 @@ gui/TouchGFX/config/gcc/app.mk
 
 gui/TouchGFX/config/msvs/Application.props
 
+`gui/TouchGFX/config/gcc/app.mk`
+
+```ini
+# Relative location of the TouchGFX framework from root of application
+touchgfx_path := ../../../stm32-knight-sdk/firmware/Middlewares/ST/TouchGFX/touchgfx
+
+# Location of the TouchGFX Environment
+touchgfx_env := ../../../../../../../TouchGFX/4.25.0/env
+# Optional additional compiler flags
+user_cflags := -DUSE_BPP=24
+```
+
+`gui/TouchGFX/config/msvs/Application.props`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ImportGroup Label="PropertySheets"/>
+  <PropertyGroup Label="UserMacros">
+    <UseBPP>24</UseBPP>
+    <TouchGFXReleasePath>..\..\..\..\..\stm32-knight-sdk\firmware\Middlewares\ST\TouchGFX\touchgfx</TouchGFXReleasePath>
+    <TouchGFXEnvPath>..\..\..\..\..\..\..\..\..\TouchGFX\4.25.0\env</TouchGFXEnvPath>
+    <ApplicationRoot>..\..</ApplicationRoot>
+  </PropertyGroup>
+  <PropertyGroup/>
+  <ItemDefinitionGroup/>
+  <ItemGroup>
+    <BuildMacro Include="UseBPP">
+      <Value>$(UseBPP)</Value>
+    </BuildMacro>
+    <BuildMacro Include="TouchGFXReleasePath">
+      <Value>$(TouchGFXReleasePath)</Value>
+    </BuildMacro>
+    <BuildMacro Include="TouchGFXEnvPath">
+      <Value>$(TouchGFXEnvPath)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ApplicationRoot">
+      <Value>$(ApplicationRoot)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
+
+```
+
 `.vscode/launch.json`
 
 ```json
