@@ -1,5 +1,9 @@
 # STM32 Knight
 
+Compile after change assets:
+
+Delete build
+
 ## stm32-knight-freertos
 
 FreeRTOS example.
@@ -250,6 +254,14 @@ A: `.vscode/launch.json` modify:
     "executable": "${workspaceFolder}/build/core0/build/stm32-knight-xxx-core0.elf",
 }]
 ```
+
+## stm32-knight-touchgfx-coffee-machine
+
+Coffee machine GUI for 2017 Munich electronics show. Porting to STM32H747I Discovery at 2025.
+
+![stm32-knight-touchgfx-coffee-machine-1](img/stm32-knight-touchgfx-coffee-machine-1.jpg)
+
+![stm32-knight-touchgfx-coffee-machine-2](img/stm32-knight-touchgfx-coffee-machine-2.png)
 
 ## stm32-knight-touchgfx-ew2017
 
