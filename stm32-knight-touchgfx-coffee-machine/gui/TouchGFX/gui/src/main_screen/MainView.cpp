@@ -177,7 +177,7 @@ void MainView::setupScreen()
 	txtCopyRight.setColor(Color::getColorFromRGB(0xFF, 0xFF, 0xFF));
 	/*txtCopyRight.setHeight(100);
 	txtCopyRight.setWidth(255);*/
-	txtCopyRight.setXY(20, 400 + txtCopyRight.getTypedText().getFont()->getBaseline());
+	txtCopyRight.setXY(20, 380 + txtCopyRight.getTypedText().getFont()->getBaseline());
 	add(txtCopyRight);
 }
 

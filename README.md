@@ -364,6 +364,14 @@ user_cflags := -DUSE_BPP=24
 ]
 ```
 
+## stm32-knight-touchgfx-massage-chair
+
+Real Japanese Massage Chair GUI Case Performance Evaluation. Porting to STM32H747I Discovery at 2025.
+
+![stm32-knight-touchgfx-massage-chair-01](img/stm32-knight-touchgfx-massage-chair-01.jpg)
+
+![stm32-knight-touchgfx-massage-chair-02](img/stm32-knight-touchgfx-massage-chair-02.png)
+
 ## utility
 
 ### freertos-win-example

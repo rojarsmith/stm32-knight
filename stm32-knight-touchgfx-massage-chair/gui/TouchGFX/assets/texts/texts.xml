@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+    <Language Id="JPN" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Unsorted">
+      <Text Id="icon_auto" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">AUTO</Translation>
+        <Translation Language="JPN">オートマチック</Translation>
+      </Text>
+      <Text Id="icon_config" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">CONFIG</Translation>
+        <Translation Language="JPN">セット</Translation>
+      </Text>
+      <Text Id="icon_home" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">HOME</Translation>
+        <Translation Language="JPN">家</Translation>
+      </Text>
+      <Text Id="icon_none" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">NONE</Translation>
+        <Translation Language="JPN">ノー</Translation>
+      </Text>
+      <Text Id="icon_relex" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">RELAX</Translation>
+        <Translation Language="JPN">リラックス</Translation>
+      </Text>
+      <Text Id="icon_whole_body" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">WHOLE</Translation>
+        <Translation Language="JPN">全身</Translation>
+      </Text>
+      <Text Id="icon_waist" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">WAIST</Translation>
+        <Translation Language="JPN">ウェスト</Translation>
+      </Text>
+      <Text Id="icon_stretch" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">STRETCH</Translation>
+        <Translation Language="JPN">拡張</Translation>
+      </Text>
+      <Text Id="icon_exmode" Alignment="Center" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">EX-MODE</Translation>
+        <Translation Language="JPN">延ばします</Translation>
+      </Text>
+      <Text Id="title_motor_1" Alignment="Center" TypographyId="ConfigTitleJapanese">
+        <Translation Language="GB">Motor 1</Translation>
+        <Translation Language="JPN">モーター 1</Translation>
+      </Text>
+      <Text Id="title_motor_2" Alignment="Center" TypographyId="ConfigTitleJapanese">
+        <Translation Language="GB">Motor 2</Translation>
+        <Translation Language="JPN">モーター 2</Translation>
+      </Text>
+      <Text Id="title_motor_3" Alignment="Center" TypographyId="ConfigTitleJapanese">
+        <Translation Language="GB">Motor 3</Translation>
+        <Translation Language="JPN">モーター 3</Translation>
+      </Text>
+      <Text Id="demo_value" Alignment="Center" TypographyId="DemoValue">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="JPN">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="config_japan" Alignment="Center" TypographyId="ConfigButtonJapanese">
+        <Translation Language="GB">日本語</Translation>
+        <Translation Language="JPN">日本語</Translation>
+      </Text>
+      <Text Id="config_english" Alignment="Center" TypographyId="ConfigButton">
+        <Translation Language="GB">ENGLISH</Translation>
+        <Translation Language="JPN">ENGLISH</Translation>
+      </Text>
+      <Text Id="info_version" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">Version : 1.5.20250517</Translation>
+        <Translation Language="JPN">Version : 1.5.20250517</Translation>
+      </Text>
+      <Text Id="scan_dot" Alignment="Left" TypographyId="ScanTitle">
+        <Translation Language="GB">.</Translation>
+        <Translation Language="JPN">.</Translation>
+      </Text>
+      <Text Id="scan_title" Alignment="Left" TypographyId="ScanTitle">
+        <Translation Language="GB">SCANNING</Translation>
+        <Translation Language="JPN">SCANNING</Translation>
+      </Text>
+      <Text Id="config_brightness_value" Alignment="Right" TypographyId="ConfigValue">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+        <Translation Language="JPN" Alignment="Right">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="motor_value" Alignment="Left" TypographyId="ConfigValueJapanese">
+        <Translation Language="GB" Alignment="Left">&lt;value&gt; rpm</Translation>
+        <Translation Language="JPN" Alignment="Left">&lt;value&gt; rpm</Translation>
+      </Text>
+      <Text Id="config_reset_to_factory" Alignment="Center" TypographyId="ConfigButtonJapanese">
+        <Translation Language="GB">Reset to Factory</Translation>
+        <Translation Language="JPN" Alignment="Center">デフォルトをリセット</Translation>
+      </Text>
+      <Text Id="config_brightness" Alignment="Left" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">Brightness</Translation>
+        <Translation Language="JPN" Alignment="Left">明る</Translation>
+      </Text>
+      <Text Id="config_volume" Alignment="Left" TypographyId="IconLabel">
+        <Translation Language="GB">Volume</Translation>
+        <Translation Language="JPN"></Translation>
+      </Text>
+      <Text Id="config_offset" Alignment="Left" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">Offset</Translation>
+        <Translation Language="JPN">補い</Translation>
+      </Text>
+      <Text Id="config_speed" Alignment="Left" TypographyId="IconLabelJapanese">
+        <Translation Language="GB">Speed</Translation>
+        <Translation Language="JPN">スピード</Translation>
+      </Text>
+      <Text Id="dialog_msg" Alignment="Center" TypographyId="ConfigButtonJapanese">
+        <Translation Language="GB">Clear all data.&#10;&#10;Are you sure ?</Translation>
+        <Translation Language="JPN">これはすべてのデータが消去されます。&#10;&#10;本当に？</Translation>
+      </Text>
+      <Text Id="CopyRight" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">By. Rojar Smith @ 2025</Translation>
+        <Translation Language="JPN"></Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="NotoSansMono-Light.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="IconLabel" Font="NotoSansMono-Light.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" />
+    <Typography Id="ConfigTitle" Font="NotoSansMono-Light.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" />
+    <Typography Id="ConfigButton" Font="NotoSansMono-Light.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="ConfigValue" Font="NotoSansMono-Light.ttf" Size="34" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
+    <Typography Id="ScanTitle" Font="NotoSansMono-Light.ttf" Size="58" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="Info" Font="NotoSansMono-Light.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="IconLabelJapanese" Font="ipaexg.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="ConfigTitleJapanese" Font="NotoSerifJP-VF.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="ConfigButtonJapanese" Font="NotoSerifJP-VF.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="ConfigValueJapanese" Font="NotoSerifJP-VF.ttf" Size="34" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
+    <Typography Id="ScanTitleJapanese" Font="ipaexg.ttf" Size="58" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="InfoJapanese" Font="NotoSerifJP-VF.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="DemoValue" Font="NotoSansMono-Light.ttf" Size="28" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" WildcardCharacterRanges="0-9" />
+  </Typographies>
+</TextDatabase>
