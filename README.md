@@ -255,6 +255,14 @@ A: `.vscode/launch.json` modify:
 }]
 ```
 
+## stm32-knight-touchgfx-burn-test
+
+TouchGFX stress test performance evaluation Demo uses 2~3 tasks and supports dynamic increase and decrease of tasks in the FreeRTOS background. Porting to STM32H747I Discovery at 2025.
+
+![stm32-knight-touchgfx-burn-test-01](img/stm32-knight-touchgfx-burn-test-01.jpg)
+
+![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-burn-test-02.jpg)
+
 ## stm32-knight-touchgfx-coffee-machine
 
 Coffee machine GUI for 2017 Munich electronics show. Porting to STM32H747I Discovery at 2025.

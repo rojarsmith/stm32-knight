@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Unsorted">
+      <Text Id="Base_View_Mcu_Load_Value" Alignment="Center" TypographyId="BaseView_McuLoad_Text">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="Base_View_Mcu_Load_text" Alignment="Center" TypographyId="BaseView_McuLoad_Text">
+        <Translation Language="GB">MCU load</Translation>
+      </Text>
+      <Text Id="config_high" Alignment="Left" TypographyId="ConfigButton">
+        <Translation Language="GB">HIGH</Translation>
+      </Text>
+      <Text Id="config_low" Alignment="Left" TypographyId="ConfigButton">
+        <Translation Language="GB">LOW</Translation>
+      </Text>
+      <Text Id="CopyRight" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">By. Rojar Smith @ 2025</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="NotoSansMono-Light.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="BaseView_McuLoad_Text" Font="NotoSansMono-Light.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" WildcardCharacterRanges="0-9" />
+    <Typography Id="ConfigButton" Font="NotoSansMono-Light.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="skip" />
+  </Typographies>
+</TextDatabase>

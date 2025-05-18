@@ -1,0 +1,39 @@
+/.vscode/
+/build/
+/CmakeFiles/
+/gui/TouchGFX/assets/images/__generated
+/gui/TouchGFX/build
+/gui/TouchGFX/generated
+/gui/TouchGFX/simulator/msvs/.vs
+/gui/TouchGFX/simulator/msvs/screenshots
+/target/stm32h747i_disco/cm7/stm32h747xx_flash_CM7.ld
+/build.ninja
+/cmake_install.cmake
+/CMakeCache.txt
+/CMakeUserPresets.json
+
+# Object files
+*.o
+*.obj
+
+# Dependency files
+*.d
+
+# Executables / Binaries
+*.elf
+*.hex
+*.bin
+*.map
+*.axf
+
+# Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+
+# Avoid each time
+# But it must include in project
+gui/TouchGFX/config/gcc/app.mk
+gui/TouchGFX/config/msvc/Application.props
+
