@@ -31,7 +31,9 @@ private:
 	LineFluxion lineFluxion1;
 	LineFluxion lineFluxion2;
 
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
     static uint8_t canvasBuffer[CANVAS_BUFFER_SIZE_DESK];
+#endif
 
     TextArea txtCopyRight;
 };

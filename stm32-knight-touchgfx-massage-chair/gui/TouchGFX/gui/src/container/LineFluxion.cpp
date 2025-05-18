@@ -2,6 +2,7 @@
 #include <gui/container/LineFluxion.hpp>
 #include <touchgfx/Color.hpp>
 #include <touchgfx/EasingEquations.hpp>
+#include <touchgfx/hal/HAL.hpp>
 
 LineFluxion::LineFluxion()
 	:
@@ -40,6 +41,8 @@ void LineFluxion::textMoveAnimationEndedHandler(const MoveAnimator<TextAreaWithO
 	}
 	else if (constatus == ANIMAN_RUNNING_VALUE_IN)
 	{
+		HAL::getInstance()->disableInterrupts();
+
 		for (int y = 0; y < sizeH; y++)
 		{
 			for (int x = 0; x < 200; x++)
@@ -47,6 +50,9 @@ void LineFluxion::textMoveAnimationEndedHandler(const MoveAnimator<TextAreaWithO
 				drawPixel(x, y, 255, 255, 255, 0);
 			}
 		}
+
+        HAL::getInstance()->enableInterrupts();
+
 		pixelDataWidget.invalidate();
 
 		drwagain = 1;
@@ -72,6 +78,8 @@ void LineFluxion::setDirection(Direction d) {
 
 		updateValue(0);
 
+		HAL::getInstance()->disableInterrupts();
+
 		pixelDataWidget.setPosition(0, 100 - sizeH, sizeW, sizeH);
 		pixelDataWidget.setPixelData((uint8_t*)HAL::getInstance()->getAnimationStorage());
 		pixelDataWidget.setBitmapFormat(Bitmap::ARGB8888);
@@ -88,6 +96,10 @@ void LineFluxion::setDirection(Direction d) {
 				drawPixel(x, y, 255, 255, 255, 0);
 			}
 		}
+
+		pixelDataWidget.invalidate();
+
+		HAL::getInstance()->enableInterrupts();
 
 		break;
 	case TOP_RIGHT:
@@ -110,6 +122,7 @@ void LineFluxion::updateValue(int value)
 
 void LineFluxion::drawLineIn()
 {
+	HAL::getInstance()->disableInterrupts();
 	for (int x = 0; x < inventoryIn1Each; x++)
 	{
 		if (nX >= 150) {
@@ -148,18 +161,28 @@ void LineFluxion::drawLineIn()
 	if (nX >= inventoryIn1Each) {
 		nX -= inventoryIn1Each;
 	}
+	HAL::getInstance()->enableInterrupts();
 
+	//SCB_CleanDCache_by_Addr((uint32_t*)pixelBuffer, sizeW * sizeH * 4);
 	pixelDataWidget.invalidate();
 }
 
 void LineFluxion::drawPixel(int x, int y, uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 {
+	// if (x < 0 || x >= sizeW || y < 0 || y >= sizeH) { return; }
+
+	// pixelBuffer[x * 4 + y * 800 + 0] = b;
+	// pixelBuffer[x * 4 + y * 800 + 1] = g;
+	// pixelBuffer[x * 4 + y * 800 + 2] = r;
+	// pixelBuffer[x * 4 + y * 800 + 3] = a;
+
 	if (x < 0 || x >= sizeW || y < 0 || y >= sizeH) { return; }
 
-	pixelBuffer[x * 4 + y * 800 + 0] = b;
-	pixelBuffer[x * 4 + y * 800 + 1] = g;
-	pixelBuffer[x * 4 + y * 800 + 2] = r;
-	pixelBuffer[x * 4 + y * 800 + 3] = a;
+	int offset = x * 4 + y * sizeW * 4;
+	pixelBuffer[offset + 0] = b;
+	pixelBuffer[offset + 1] = g;
+	pixelBuffer[offset + 2] = r;
+	pixelBuffer[offset + 3] = a;
 }
 
 void LineFluxion::setValueSample(int value)

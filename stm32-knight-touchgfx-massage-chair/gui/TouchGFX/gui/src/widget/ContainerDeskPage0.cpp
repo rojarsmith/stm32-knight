@@ -2,17 +2,21 @@
 #include <gui/widget/ContainerDeskPage0.hpp>
 #include <touchgfx/Color.hpp>
 
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
 // uint8_t ContainerDeskPage0::canvasBuffer[CANVAS_BUFFER_SIZE_DESK];
 __attribute__((section(".RAM_D1"))) __attribute__((aligned(4)))
 uint8_t ContainerDeskPage0::canvasBuffer[CANVAS_BUFFER_SIZE_DESK];
+#endif
 
 ContainerDeskPage0::ContainerDeskPage0()
 {
+#if !defined(_MSC_VER) && !defined(SIMULATOR)
 	// Not work
 	// CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE_DESK);
 	// SCB_CleanDCache_by_Addr((uint32_t*)pixelBuffer, 200 * 50 * 4);
 	// Manual set buffer for LineFluxion. MUST!!!!
     HAL::getInstance()->setAnimationStorage((void*)canvasBuffer); 
+#endif
 
 	backgroundColor.setPosition(0, 0, 700, 480);
 	backgroundColor.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
