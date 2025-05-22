@@ -27,9 +27,9 @@
 *.axf
 
 # Visual Studio
-*.sln
-*.vcxproj
-*.vcxproj.filters
+# *.sln
+# *.vcxproj
+# *.vcxproj.filters
 *.user
 
 # Avoid each time
