@@ -1,4 +1,5 @@
 #include <gui/common/EventManager.hpp>
+#include <touchgfx/Application.hpp>
 
 EventManager::EventManager()
 	:
