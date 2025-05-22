@@ -2,13 +2,740 @@
 <TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
   <Languages>
     <Language Id="GB" />
+    <Language Id="SPA" />
+    <Language Id="FRE" />
+    <Language Id="GER" />
   </Languages>
   <Texts>
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Group1">
+      <Text Id="S20_HEADER" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Drag</Translation>
+        <Translation Language="SPA">Arrastre</Translation>
+        <Translation Language="FRE">Glissez</Translation>
+        <Translation Language="GER">Ziehen Sie</Translation>
+      </Text>
+      <Text Id="S20_TITLE" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">to select side</Translation>
+        <Translation Language="SPA">y seleccione lado</Translation>
+        <Translation Language="FRE">vers le connecteur choisi</Translation>
+        <Translation Language="GER">zur Auswahl einer Seite</Translation>
+      </Text>
+      <Text Id="S21_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Drag to select a plug side</Translation>
+        <Translation Language="SPA">Arrastre y seleccione lado del enchufe</Translation>
+        <Translation Language="FRE">Faites glisser du côté de votre choix</Translation>
+        <Translation Language="GER">Ziehen Sie zur Auswahl einer Steckerseite</Translation>
+      </Text>
+      <Text Id="S40_HEADER" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Verifying card ID</Translation>
+        <Translation Language="SPA">Verificando tarjeta</Translation>
+        <Translation Language="FRE">Vérification</Translation>
+        <Translation Language="GER">Überprüfung der</Translation>
+      </Text>
+      <Text Id="S40_TITLE" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">Please wait</Translation>
+        <Translation Language="SPA">Por favor, espere</Translation>
+        <Translation Language="FRE">Veuillez patienter</Translation>
+        <Translation Language="GER">Karten-ID</Translation>
+      </Text>
+      <Text Id="S50_HEADER" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Connect selected</Translation>
+        <Translation Language="SPA">Conecte el</Translation>
+        <Translation Language="FRE">Branchez la prise</Translation>
+        <Translation Language="GER">Ausgewählt</Translation>
+      </Text>
+      <Text Id="S50_TITLE" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">plug to car</Translation>
+        <Translation Language="SPA">enchufe al coche</Translation>
+        <Translation Language="FRE">à la voiture</Translation>
+        <Translation Language="GER">Stecker mit Auto verbinden</Translation>
+      </Text>
+      <Text Id="HOME_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">&lt;text&gt;</Translation>
+        <Translation Language="SPA">&lt;text&gt;</Translation>
+        <Translation Language="FRE">&lt;text&gt;</Translation>
+        <Translation Language="GER">&lt;text&gt;</Translation>
+      </Text>
+      <Text Id="HOME_SUBTITLE_1" Alignment="Center" TypographyId="SubTitle1">
+        <Translation Language="GB">to Select Side</Translation>
+        <Translation Language="SPA">to Select Side</Translation>
+        <Translation Language="FRE">zum Auswählen einer Seite</Translation>
+        <Translation Language="GER">afin de sélectionner un côté</Translation>
+      </Text>
+      <Text Id="FOOTER_PHONE" Alignment="Left" TypographyId="Footer2">
+        <Translation Language="GB">&lt;text&gt;</Translation>
+        <Translation Language="SPA">&lt;text&gt;</Translation>
+        <Translation Language="FRE">&lt;text&gt;</Translation>
+        <Translation Language="GER">&lt;text&gt;</Translation>
+      </Text>
+      <Text Id="FOOTER_CLOCK" Alignment="Left" TypographyId="Footer2">
+        <Translation Language="GB">&lt;text&gt;</Translation>
+        <Translation Language="SPA">&lt;text&gt;</Translation>
+        <Translation Language="FRE">&lt;text&gt;</Translation>
+        <Translation Language="GER">&lt;text&gt;</Translation>
+      </Text>
+      <Text Id="FOOTER_CURRENCY" Alignment="Left" TypographyId="Footer1">
+        <Translation Language="GB">€</Translation>
+        <Translation Language="SPA">€</Translation>
+        <Translation Language="FRE">€</Translation>
+        <Translation Language="GER">€</Translation>
+      </Text>
+      <Text Id="FOOTER_MONEY" Alignment="Left" TypographyId="Footer1">
+        <Translation Language="GB">&lt;text&gt;</Translation>
+        <Translation Language="SPA">&lt;text&gt;</Translation>
+        <Translation Language="FRE">&lt;text&gt;</Translation>
+        <Translation Language="GER">&lt;text&gt;</Translation>
+      </Text>
+      <Text Id="FOOTER_PER_KWH" Alignment="Left" TypographyId="Footer1">
+        <Translation Language="GB">Per kWh</Translation>
+        <Translation Language="SPA">Por kWh</Translation>
+        <Translation Language="FRE">Par kWh</Translation>
+        <Translation Language="GER">pro kWh</Translation>
+      </Text>
+      <Text Id="FOOTER_MAX_DOT" Alignment="Left" TypographyId="Footer1">
+        <Translation Language="GB">MAX.</Translation>
+        <Translation Language="SPA">Máx.</Translation>
+        <Translation Language="FRE">Máx.</Translation>
+        <Translation Language="GER">Máx.</Translation>
+      </Text>
+      <Text Id="FOOTER_MAX_VALUE" Alignment="Left" TypographyId="Footer1">
+        <Translation Language="GB">&lt;text&gt;</Translation>
+        <Translation Language="SPA">&lt;text&gt;</Translation>
+        <Translation Language="FRE">&lt;text&gt;</Translation>
+        <Translation Language="GER">&lt;text&gt;</Translation>
+      </Text>
+      <Text Id="FOOTER_KW" Alignment="Left" TypographyId="Footer1">
+        <Translation Language="GB">kW</Translation>
+        <Translation Language="SPA">kW</Translation>
+        <Translation Language="FRE">kW</Translation>
+        <Translation Language="GER">kW</Translation>
+      </Text>
+      <Text Id="LANGUAGE_SELECT" Alignment="Center" TypographyId="Menu1_LTR">
+        <Translation Language="GB">English</Translation>
+        <Translation Language="SPA">Inglés</Translation>
+        <Translation Language="FRE">Anglais</Translation>
+        <Translation Language="GER">Englisch</Translation>
+      </Text>
+      <Text Id="GOT_IT" Alignment="Center" TypographyId="Button">
+        <Translation Language="GB">GOT IT</Translation>
+        <Translation Language="SPA">Entendido</Translation>
+        <Translation Language="FRE">D'accord</Translation>
+        <Translation Language="GER">Verstanden</Translation>
+      </Text>
+      <Text Id="G1" Alignment="Center" TypographyId="Menu1">
+        <Translation Language="GB">Charging</Translation>
+        <Translation Language="SPA">Cargando</Translation>
+        <Translation Language="FRE">En charge</Translation>
+        <Translation Language="GER">Lädt auf</Translation>
+      </Text>
+      <Text Id="G2" Alignment="Center" TypographyId="Menu1">
+        <Translation Language="GB">Finished</Translation>
+        <Translation Language="SPA">Finished</Translation>
+        <Translation Language="FRE">Terminée</Translation>
+        <Translation Language="GER">Fertig</Translation>
+      </Text>
+      <Text Id="G21_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Drag to select a plug side</Translation>
+        <Translation Language="SPA">Arrastre para seleccionar un lado del enchufe</Translation>
+        <Translation Language="FRE">Faites glisser afin de sélectionner un côté de la fiche</Translation>
+        <Translation Language="GER">Ziehen Sie zum Auswählen einer Steckerseite</Translation>
+      </Text>
+      <Text Id="G10" Alignment="Center" TypographyId="Rome48_RTL">
+        <Translation Language="GB">!</Translation>
+        <Translation Language="SPA">!</Translation>
+        <Translation Language="FRE">!</Translation>
+        <Translation Language="GER">!</Translation>
+      </Text>
+      <Text Id="E1_TITLE" Alignment="Center" TypographyId="Rome48_RTL">
+        <Translation Language="GB">Your card is not recognized</Translation>
+        <Translation Language="SPA">No se puede reconocer su tarjeta</Translation>
+        <Translation Language="FRE">Votre carte n’est pas reconnue</Translation>
+        <Translation Language="GER">Ihre Karte wird nicht erkannt</Translation>
+      </Text>
+      <Text Id="E1_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">Please try again, or try with a different payment method. In case of recurring issues, please contact your service provider through &lt;variable7&gt; and refer to charger ID &lt;variable8&gt;.</Translation>
+        <Translation Language="SPA">Por favor, inténtelo de nuevo o utilice un método de pago diferente.&#10;Si experimenta problemas con frecuencia, póngase en contacto con su proveedor de servicios a través de &lt;variable7&gt; y consulte la identidad del cargador &lt;variable8&gt;.</Translation>
+        <Translation Language="FRE">Veuillez tenter de nouveau ou essayez un autre moyen de paiement.&#10;En cas de problème récurrent, veuillez contacter votre prestataire de service au &lt;variable7&gt; en indiquant le numéro du chargeur : &lt;variable8&gt;.</Translation>
+        <Translation Language="GER">Bitte versuchen Sie es erneut oder versuchen Sie es mit einer anderen Zahlungsmethode. Bei wiederkehrenden Problemen kontaktieren Sie bitte Ihren Dienstleistungsanbieter durch &lt;Variable7&gt; und beziehen Sie sich auf die Ladegerät-ID &lt;Variable8&gt;.</Translation>
+      </Text>
+      <Text Id="E2_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Charger is already being used</Translation>
+        <Translation Language="SPA">El enchufe está en uso</Translation>
+        <Translation Language="FRE">Le chargeur est en cours d’utilisation</Translation>
+        <Translation Language="GER">Ladegerät wird bereits verwendet</Translation>
+      </Text>
+      <Text Id="E2_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">Please wait for the charger to become available, or try a different charger.</Translation>
+        <Translation Language="SPA">Espere a que el cargador esté disponible o utilice con un cargador diferente.</Translation>
+        <Translation Language="FRE">Patientez jusqu'à ce que le chargeur soit disponible ou tournez-vous vers un autre chargeur.</Translation>
+        <Translation Language="GER">Bitte warten Sie, bis das Ladegerät zur Verfügung steht oder versuchen Sie ein anderes Ladegerät.</Translation>
+      </Text>
+      <Text Id="E3_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Plug is not placed correctly</Translation>
+        <Translation Language="SPA">Enchufe no colocado correctamente</Translation>
+        <Translation Language="FRE">La prise n’est pas mise correctement</Translation>
+        <Translation Language="GER">Stecker ist nicht richtig platziert.</Translation>
+      </Text>
+      <Text Id="E3_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">The plug does not seem to be placed correctly. Please place it correctly into its holder to continue.</Translation>
+        <Translation Language="SPA">Parece que el enchufe no se ha colocado correctamente.&#10;Por favor, colóquelo correctamente en su soporte para continuar.</Translation>
+        <Translation Language="FRE">La fiche ne semble pas être correctement placée.&#10;Veuillez la placer correctement dans son support pour continuer.</Translation>
+        <Translation Language="GER">Der Stecker ist nicht korrekt platziert worden. Bitte warten Sie, bis das Ladegerät zur Verfügung steht oder versuchen Sie ein anderes Ladegerät.</Translation>
+      </Text>
+      <Text Id="E4_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Connection failed</Translation>
+        <Translation Language="SPA">Error de conexión</Translation>
+        <Translation Language="FRE">Échec de la connexion</Translation>
+        <Translation Language="GER">Verbindung fehlgeschlagen</Translation>
+      </Text>
+      <Text Id="E4_BODY" Alignment="Center" TypographyId="Robo36w1">
+        <Translation Language="GB">Unfortunately, the charger has problems connecting to your car. Please try again.&#10;&#10;In case of recurring issues, please contact your service provider through &lt;text&gt; and refer to charger ID &lt;text&gt;.</Translation>
+        <Translation Language="SPA">Lamentablemente, el cargador no se puede conectar a su coche correctamente.&#10;Inténtelo de nuevo.&#10;&#10;Si experimenta problemas con frecuencia, póngase en contacto con su proveedor de servicios a través de &lt;text&gt; y consulte la identidad del cargador &lt;text&gt;.</Translation>
+        <Translation Language="FRE">Malheureusement, le chargeur est défectueux et ne permet pas la connexion à votre carte.&#10;Veuillez essayer de nouveau.&#10;&#10;En cas de problèmes récurrents, veuillez contacter votre fournisseur de service à travers la &lt;text&gt; en indiquant le numéro du chargeur : &lt;text&gt;.</Translation>
+        <Translation Language="GER">Das Ladegerät hat leider Probleme mit der Verbindung zu Ihrem Auto. Bitte versuchen Sie es erneut. &#10;&#10;Bei wiederkehrenden Problemen kontaktieren Sie bitte Ihren Dienstleistungsanbieter durch &lt;text&gt; und beziehen sich auf die Ladegerät-ID &lt;text&gt;.</Translation>
+      </Text>
+      <Text Id="E5_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">System is currently offline</Translation>
+        <Translation Language="SPA">Fallo de conexción del sistema</Translation>
+        <Translation Language="FRE">Le système est actuellement hors ligne</Translation>
+        <Translation Language="GER">System ist derzeit offline</Translation>
+      </Text>
+      <Text Id="E5_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">A problem has been detected involving the connection of this system. Please try a different charger nearby. Need help finding the charger nearest by? Check your charge app.</Translation>
+        <Translation Language="SPA">Se ha detectado un problema relacionado con la conexión de este sistema.&#10;Por favor, utilice un cargador diferente cercano.&#10;¿Necesita ayuda para encontrar el cargador más cercano?&#10;Consulte su aplicación de carga.</Translation>
+        <Translation Language="FRE">Un problème concernant la connexion de ce système a été détecté.&#10;Veuillez utiliser un autre chargeur à proximité.&#10;Avez-vous besoin d’aide pour trouver le chargeur le plus proche ?&#10;Consultez votre application pour la recharge.</Translation>
+        <Translation Language="GER">Mit der Verbindung dieses Systems wurde ein Problem festgestellt. Bitte versuchen Sie ein anderes Ladegerät in der Nähe. Brauchen Sie Hilfe bei der Suche des nächstgelegenen Ladegeräts? Überprüfen Sie Ihre Auflade-App.</Translation>
+      </Text>
+      <Text Id="E6_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">System currently not available</Translation>
+        <Translation Language="SPA">Sistema no disponible en este momento</Translation>
+        <Translation Language="FRE">Système actuellement indisponible</Translation>
+        <Translation Language="GER">System derzeit nicht verfügbar</Translation>
+      </Text>
+      <Text Id="E6_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">This charging station is currently out of order. Please try a different charger nearby. Need help finding the charger nearest by? Check your charge app. &#10;&#10;Please contact your service provider through &lt;text&gt; and refer to charger ID &lt;text&gt;.</Translation>
+        <Translation Language="SPA">Este punto de carga se encuentra fuera de servicio en estos momentos.&#10;Por favor, utilice un cargador diferente cercano.&#10;¿Necesita ayuda para encontrar el cargador más cercano? Consulte su aplicación de carga.&#10;&#10;Por favor, póngase en contacto con su proveedor de servicios a través de &lt;text&gt; y consulte la identidad del cargador &lt;text&gt;.&#10;</Translation>
+        <Translation Language="FRE">Cette station de charge est actuellement hors service. Veuillez essayer un autre chargeur à côté.&#10;&#10;Avez-vous besoin d’aide pour trouver le chargeur le plus proche ? Consultez votre application de charge. &#10;Veuillez contacter votre fournisseur de service à travers la &lt;text&gt; en indiquant le numéro du chargeur :  &lt;text&gt;.</Translation>
+        <Translation Language="GER">Diese Ladestation ist derzeit außer Betrieb. Bitte versuchen Sie ein anderes Ladegerät in der Nähe. Brauchen Sie Hilfe bei der Suche des nächstgelegenen Ladegeräts? Überprüfen Sie Ihre Auflade-App. &#10;&#10;Kontaktieren Sie bitte Ihren Dienstleistungsanbieter durch &lt;text&gt; und beziehen sich auf die Ladegerät-ID &lt;text&gt;.</Translation>
+      </Text>
+      <Text Id="S30_HEADER" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Choose your</Translation>
+        <Translation Language="SPA">Seleccione su</Translation>
+        <Translation Language="FRE">Choisissez un</Translation>
+        <Translation Language="GER">Wählen Sie Ihre</Translation>
+      </Text>
+      <Text Id="S30_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Payment method</Translation>
+        <Translation Language="SPA">método de pago</Translation>
+        <Translation Language="FRE">moyen de paiement</Translation>
+        <Translation Language="GER">Zahlungsmethode</Translation>
+      </Text>
+      <Text Id="S30_PAYMENT_OPTION1" Alignment="Left" TypographyId="SubTitle1">
+        <Translation Language="GB">QR code</Translation>
+        <Translation Language="SPA">Código QR</Translation>
+        <Translation Language="FRE">Code QR</Translation>
+        <Translation Language="GER">QR-Code</Translation>
+      </Text>
+      <Text Id="S30_PAYMENT_OPTION11" Alignment="Left" TypographyId="Content1">
+        <Translation Language="GB">Scan here</Translation>
+        <Translation Language="SPA">Escanear aquí</Translation>
+        <Translation Language="FRE">Scannez-le ici</Translation>
+        <Translation Language="GER">Scannen Sie hier</Translation>
+      </Text>
+      <Text Id="S30_PAYMENT_OPTION2" Alignment="Left" TypographyId="SubTitle1">
+        <Translation Language="GB">Charge card</Translation>
+        <Translation Language="SPA">Tarjeta de carga</Translation>
+        <Translation Language="FRE">Badge d'accès</Translation>
+        <Translation Language="GER">Ladekarte</Translation>
+      </Text>
+      <Text Id="S30_PAYMENT_OPTION21" Alignment="Left" TypographyId="Content1">
+        <Translation Language="GB">Present below</Translation>
+        <Translation Language="SPA">Presente debajo</Translation>
+        <Translation Language="FRE">Passez ici</Translation>
+        <Translation Language="GER">Unten vorhalten</Translation>
+      </Text>
+      <Text Id="S30_PAYMENT_OPTION3" Alignment="Left" TypographyId="SubTitle1">
+        <Translation Language="GB">Credit card</Translation>
+        <Translation Language="SPA">Tarjeta de crédito</Translation>
+        <Translation Language="FRE">Carte bancaire</Translation>
+        <Translation Language="GER">Kreditkarte</Translation>
+      </Text>
+      <Text Id="S30_PAYMENT_OPTION31" Alignment="Left" TypographyId="Content1">
+        <Translation Language="GB">Present below</Translation>
+        <Translation Language="SPA">Presentar a continuación</Translation>
+        <Translation Language="FRE">Présentez ci-dessous</Translation>
+        <Translation Language="GER">Unten vorhanden</Translation>
+      </Text>
+      <Text Id="S31_TITLE_PAGE1" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Payment can be done using QR code</Translation>
+        <Translation Language="SPA">Puede pagar con Cód QR</Translation>
+        <Translation Language="FRE">Vous pouvez payer via le code QR</Translation>
+        <Translation Language="GER">Zahlung möglich per QR-Code</Translation>
+      </Text>
+      <Text Id="S31_TITLE_PAGE2" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Payment can be done using Charge card</Translation>
+        <Translation Language="SPA">Puede pagar con Tarjeta de recarga&#10;</Translation>
+        <Translation Language="FRE">Vous pouvez payer via le Badge d'accès</Translation>
+        <Translation Language="GER">Bezahlung kann erfolgen über Gebührenkarte</Translation>
+      </Text>
+      <Text Id="S31_TITLE_PAGE3" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Payment can be done using Credit card</Translation>
+        <Translation Language="SPA">El pago se puede realizar utilizando Tarjeta de crédito</Translation>
+        <Translation Language="FRE">Carte de crédit Présentez ci-dessous</Translation>
+        <Translation Language="GER">Zahlungmöglich per Ladekarte</Translation>
+      </Text>
+      <Text Id="DBG_NVS_ROLI18LL" Alignment="Left" TypographyId="Roli18">
+        <Translation Language="GB">&lt;text&gt;</Translation>
+        <Translation Language="SPA">&lt;text&gt;</Translation>
+        <Translation Language="FRE">&lt;text&gt;</Translation>
+        <Translation Language="GER">&lt;text&gt;</Translation>
+      </Text>
+      <Text Id="DBG_NVS_ROLI18RL" Alignment="Right" TypographyId="Roli18">
+        <Translation Language="GB">&lt;text&gt;</Translation>
+        <Translation Language="SPA">&lt;text&gt;</Translation>
+        <Translation Language="FRE">&lt;text&gt;</Translation>
+        <Translation Language="GER">&lt;text&gt;</Translation>
+      </Text>
+      <Text Id="P0202_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Session stopped Payment cancelled</Translation>
+        <Translation Language="SPA">Sesión suspendida Pago cancelado</Translation>
+        <Translation Language="FRE">Session suspendue Paiement annulé</Translation>
+        <Translation Language="GER">Sitzung beendet Zahlung abgebrochen</Translation>
+      </Text>
+      <Text Id="P0202_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">If you want to start charging, please start over.</Translation>
+        <Translation Language="SPA">Si desea empezar a cargar, comience de nuevo.</Translation>
+        <Translation Language="FRE">Pour démarrer la recharge, veuillez recommencer.</Translation>
+        <Translation Language="GER">Wenn Sie den Ladevorgang starten möchten, beginnen Sie bitte von vorne.</Translation>
+      </Text>
+      <Text Id="P0202_BUTTON" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">GOT IT</Translation>
+        <Translation Language="SPA">Entendido</Translation>
+        <Translation Language="FRE">D'accord</Translation>
+        <Translation Language="GER">Verstanden</Translation>
+      </Text>
+      <Text Id="P0203_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Do you want to stop charging?</Translation>
+        <Translation Language="SPA">¿Desea detener la carga?</Translation>
+        <Translation Language="FRE">Souhaitez-vous arrêter la recharge ?</Translation>
+        <Translation Language="GER">Möchten Sie den Ladevorgang abbrechen?</Translation>
+      </Text>
+      <Text Id="P0203_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">This plug is currently in use. If you are using it and want to stop charging, present your card or stop the session in your app.</Translation>
+        <Translation Language="SPA">Este enchufe está actualmente en uso. Si lo está usando y desea detener la carga, presente su tarjeta o suspenda la sesión desde su aplicación.</Translation>
+        <Translation Language="FRE">*Glissez* &#10;+</Translation>
+        <Translation Language="GER">Dieser Stecker wird zurzeit verwendet. Wenn Sie es verwenden und den Ladevorgang abbrechen möchten, zeigen Sie die Karte oder beenden Sie die Sitzung in Ihrer App.</Translation>
+      </Text>
+      <Text Id="P0203_BUTTON" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">GOT IT</Translation>
+        <Translation Language="SPA">Entendido</Translation>
+        <Translation Language="FRE">D'accord</Translation>
+        <Translation Language="GER">Verstanden</Translation>
+      </Text>
+      <Text Id="P0204_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">To stop session present credit card</Translation>
+        <Translation Language="SPA">Para finalizar Tarjeta de crédito</Translation>
+        <Translation Language="FRE">Pour terminer passez votre carte bancaire</Translation>
+        <Translation Language="GER">Fürs Sitzungsende, Kreditkarte vorhalten</Translation>
+      </Text>
+      <Text Id="P0204_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">In case you are done with your charging session,  present your credit card once more to stop the session.</Translation>
+        <Translation Language="SPA">Si ha finalizado la sesión de carga, vuelva a presentar su tarjeta de crédito para suspender la sesión.</Translation>
+        <Translation Language="FRE">Si vous avez terminé votre session de recharge, passez votre carte bancaire pour mettre fin à la session.</Translation>
+        <Translation Language="GER">Für den Fall, dass Sie mit Ihrem Ladevorgang fertig sind, zeigen Sie Ihre Kreditkarte noch einmal, um die Sitzung zu beenden.</Translation>
+      </Text>
+      <Text Id="P0204_BUTTON" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">GOT IT</Translation>
+        <Translation Language="SPA">Entendido</Translation>
+        <Translation Language="FRE">D'accord</Translation>
+        <Translation Language="GER">Verstanden</Translation>
+      </Text>
+      <Text Id="P0205_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Charging session stopped Payment approved</Translation>
+        <Translation Language="SPA">Recarga finalizada Pago aprobado</Translation>
+        <Translation Language="FRE">Session terminée Paiement autorisé</Translation>
+        <Translation Language="GER">Ladevorgang beendet Zahlung bestätigt</Translation>
+      </Text>
+      <Text Id="P0205_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">Place the plug back into it's original holder to stop your charging session. An overview of your charging session will follow.</Translation>
+        <Translation Language="SPA">Vuelva a colocar el enchufe en su soporte original para finalizar correctamente su sesión de carga.&#10;A continuación, obtendrá un resumen de su sesión de carga.</Translation>
+        <Translation Language="FRE">Remettez la prise dans son support afin de marquer la fin de la session.&#10;Un récapitulatif de votre session de recharge s’affichera ensuite.</Translation>
+        <Translation Language="GER">Stecken Sie den Stecker wieder in seine ursprüngliche Halterung, um Ihren Ladevorgang richtig zu beenden. Eine Übersicht über Ihren Ladevorgang wird folgen.</Translation>
+      </Text>
+      <Text Id="P0206_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Put the plug back into its holder</Translation>
+        <Translation Language="SPA">Vuelva a colocar el enchufe en su soporte</Translation>
+        <Translation Language="FRE">Remettez le connecteur dans son support</Translation>
+        <Translation Language="GER">Bitte stecken Sie den Stecker zurück </Translation>
+      </Text>
+      <Text Id="P0207_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Thank you for charging with us!</Translation>
+        <Translation Language="SPA">¡Gracias por cargar con nosotros!</Translation>
+        <Translation Language="FRE">Merci d'avoir choisi notre service !</Translation>
+        <Translation Language="GER">Vielen Dank für die Aufladung mit uns!</Translation>
+      </Text>
+      <Text Id="P0207_TFA1" Alignment="Left" TypographyId="Content1">
+        <Translation Language="GB">Duration</Translation>
+        <Translation Language="SPA">Duración</Translation>
+        <Translation Language="FRE">Durée</Translation>
+        <Translation Language="GER">Dauer</Translation>
+      </Text>
+      <Text Id="P0207_TFA2" Alignment="Left" TypographyId="Content1">
+        <Translation Language="GB">Energy</Translation>
+        <Translation Language="SPA">Energía</Translation>
+        <Translation Language="FRE">Consommation</Translation>
+        <Translation Language="GER">Energie</Translation>
+      </Text>
+      <Text Id="P0207_TFA3" Alignment="Left" TypographyId="Content1">
+        <Translation Language="GB">Paid</Translation>
+        <Translation Language="SPA">Pagado</Translation>
+        <Translation Language="FRE">Payé</Translation>
+        <Translation Language="GER">Bezahlt</Translation>
+      </Text>
+      <Text Id="P0207_TFB11" Alignment="Right" TypographyId="Robo36w1">
+        <Translation Language="GB">&lt;text&gt; hr</Translation>
+        <Translation Language="SPA">&lt;text&gt; hr</Translation>
+        <Translation Language="FRE">&lt;text&gt; h</Translation>
+        <Translation Language="GER">&lt;text&gt; h</Translation>
+      </Text>
+      <Text Id="P0207_TFB12" Alignment="Right" TypographyId="Robo36w1">
+        <Translation Language="GB">&lt;text&gt; min</Translation>
+        <Translation Language="SPA">&lt;text&gt; min</Translation>
+        <Translation Language="FRE">&lt;text&gt; min</Translation>
+        <Translation Language="GER">&lt;text&gt; min</Translation>
+      </Text>
+      <Text Id="P0207_TFB2" Alignment="Right" TypographyId="Robo36w1">
+        <Translation Language="GB">&lt;text&gt; kWh</Translation>
+        <Translation Language="SPA">&lt;text&gt; kWh</Translation>
+        <Translation Language="FRE">&lt;text&gt; kWh</Translation>
+        <Translation Language="GER">&lt;text&gt; kWh</Translation>
+      </Text>
+      <Text Id="P0207_TFB3" Alignment="Right" TypographyId="Robo36w1">
+        <Translation Language="GB">€ &lt;text&gt;</Translation>
+        <Translation Language="SPA">€ &lt;text&gt;</Translation>
+        <Translation Language="FRE">€ &lt;text&gt;</Translation>
+        <Translation Language="GER">€ &lt;text&gt;</Translation>
+      </Text>
+      <Text Id="P0207_BUTTON" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">Close(       )</Translation>
+        <Translation Language="SPA">Fin(       )</Translation>
+        <Translation Language="FRE">Fermer(       )</Translation>
+        <Translation Language="GER">Schließen(       )</Translation>
+      </Text>
+      <Text Id="P0207_BUTTON2" Alignment="Right" TypographyId="Robo24w1">
+        <Translation Language="GB">&lt;text&gt;s</Translation>
+        <Translation Language="SPA">&lt;text&gt;s</Translation>
+        <Translation Language="FRE">&lt;text&gt;s</Translation>
+        <Translation Language="GER">&lt;text&gt;s</Translation>
+      </Text>
+      <Text Id="P0208_TFIT1" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">Remember to stop charging through your payment app</Translation>
+        <Translation Language="SPA">Recuerde detener la cargar a través de su aplicación de pago</Translation>
+        <Translation Language="FRE">N’oubliez pas de terminer la recharge sur votre application</Translation>
+        <Translation Language="GER">Ladevorgang bitte über die Bezahl-App stoppen</Translation>
+      </Text>
+      <Text Id="S0210_A_CHARGE_CARD" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Pay with</Translation>
+        <Translation Language="SPA">Pague con</Translation>
+        <Translation Language="FRE">Payez avec</Translation>
+        <Translation Language="GER">Mit Ladekarte</Translation>
+      </Text>
+      <Text Id="S0210_A_CHARGE_CARD2" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">charge card</Translation>
+        <Translation Language="SPA">tarjeta de recarga</Translation>
+        <Translation Language="FRE">votre carte de recharge</Translation>
+        <Translation Language="GER">bezahlen</Translation>
+      </Text>
+      <Text Id="S0210_A_BODY" Alignment="Center" TypographyId="RoLi30">
+        <Translation Language="GB">Present your charge card below</Translation>
+        <Translation Language="SPA">Presente su tarjeta debajo</Translation>
+        <Translation Language="FRE">Présentez votre carte de recharge ci-dessous</Translation>
+        <Translation Language="GER">Bitte Ihre Ladekarte unten vorhalten</Translation>
+      </Text>
+      <Text Id="S0210_A_BUTTON_1" Alignment="Left" TypographyId="RoBo18">
+        <Translation Language="GB">Use QR code</Translation>
+        <Translation Language="SPA">Utilice un código QR</Translation>
+        <Translation Language="FRE">Utilisez le QR code</Translation>
+        <Translation Language="GER">QR Code benutzen</Translation>
+      </Text>
+      <Text Id="S0210_A_BUTTON_2" Alignment="Left" TypographyId="RoBo18">
+        <Translation Language="GB">Use credit card</Translation>
+        <Translation Language="SPA">Utilice tarjeta de crédito</Translation>
+        <Translation Language="FRE">Utilisez votre carte bancaire</Translation>
+        <Translation Language="GER">Kreditkarte benutzen</Translation>
+      </Text>
+      <Text Id="S0210_B_CREDIT_CARD" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Pay with</Translation>
+        <Translation Language="SPA">Pague con</Translation>
+        <Translation Language="FRE">Payez avec</Translation>
+        <Translation Language="GER">Mit Kreditkarte</Translation>
+      </Text>
+      <Text Id="S0210_B_CREDIT_CARD2" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">credit card</Translation>
+        <Translation Language="SPA">tarjeta de crédito</Translation>
+        <Translation Language="FRE">votre carte bancaire</Translation>
+        <Translation Language="GER">bezahlen</Translation>
+      </Text>
+      <Text Id="S0210_B_BODY" Alignment="Center" TypographyId="RoLi30">
+        <Translation Language="GB">Present your credit card below</Translation>
+        <Translation Language="SPA">Presente su tarjeta debajo</Translation>
+        <Translation Language="FRE">Présentez votre carte bancaire ci-dessous</Translation>
+        <Translation Language="GER">Bitte Ihre Kreditkarte unten vorhalten </Translation>
+      </Text>
+      <Text Id="S0210_B_BUTTON_1" Alignment="Left" TypographyId="RoBo18">
+        <Translation Language="GB">Use QR code</Translation>
+        <Translation Language="SPA">Utilice un código QR</Translation>
+        <Translation Language="FRE">Utilisez le QR code</Translation>
+        <Translation Language="GER">QR Code benutzen</Translation>
+      </Text>
+      <Text Id="S0210_B_BUTTON_2" Alignment="Left" TypographyId="RoBo18">
+        <Translation Language="GB">Use charge card</Translation>
+        <Translation Language="SPA">Utilice tarjeta de recarga</Translation>
+        <Translation Language="FRE">Utilisez votre carte de recharge</Translation>
+        <Translation Language="GER">Ladekarte benutzen</Translation>
+      </Text>
+      <Text Id="S0210_C_QR_CODE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Pay with</Translation>
+        <Translation Language="SPA">Pague con</Translation>
+        <Translation Language="FRE">Payez via</Translation>
+        <Translation Language="GER">Mit QR Code</Translation>
+      </Text>
+      <Text Id="S0210_C_QR_CODE2" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">QR code</Translation>
+        <Translation Language="SPA">código QR</Translation>
+        <Translation Language="FRE"> QR code</Translation>
+        <Translation Language="GER">bezahlen</Translation>
+      </Text>
+      <Text Id="S0210_C_BODY" Alignment="Center" TypographyId="RoLi30">
+        <Translation Language="GB">Use your mobile to scan the code above</Translation>
+        <Translation Language="SPA">Utilice su móvil para escanear el código de la pantalla</Translation>
+        <Translation Language="FRE">Utilisez votre téléphone pour scanner le code ci-dessus</Translation>
+        <Translation Language="GER">Scannen Sie den oberen Code mit Ihrem Handy</Translation>
+      </Text>
+      <Text Id="S0210_C_BUTTON_1" Alignment="Left" TypographyId="RoBo18">
+        <Translation Language="GB">Use charge card</Translation>
+        <Translation Language="SPA">Utilice tarjeta de recarga</Translation>
+        <Translation Language="FRE">Utilisez votre carte de recharge</Translation>
+        <Translation Language="GER">Ladekarte benutzen</Translation>
+      </Text>
+      <Text Id="S0210_C_BUTTON_2" Alignment="Left" TypographyId="RoBo18">
+        <Translation Language="GB">Use credit card</Translation>
+        <Translation Language="SPA">Utilice tarjeta de crédito</Translation>
+        <Translation Language="FRE">Utilisez votre carte bancaire</Translation>
+        <Translation Language="GER">Kreditkarte benutzen</Translation>
+      </Text>
+      <Text Id="S0211_ABC_TITLE_A" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Complete payment using charge card</Translation>
+        <Translation Language="SPA">Puede pagar con Tarjeta de recarga</Translation>
+        <Translation Language="FRE">Vous pouvez payer via le Badge d'accès</Translation>
+        <Translation Language="GER">Zahlungmöglich per Ladekarte</Translation>
+      </Text>
+      <Text Id="S0211_ABC_TITLE_B" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Complete payment usingcredit card</Translation>
+        <Translation Language="SPA">Puede pagar con Tarjeta de crédito</Translation>
+        <Translation Language="FRE">Vous pouvez payer en carte bancaire</Translation>
+        <Translation Language="GER">Zahlung möglich per Kreditkarte</Translation>
+      </Text>
+      <Text Id="S0211_ABC_TITLE_C" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Payment can be done using QR code</Translation>
+        <Translation Language="SPA">Puede pagar con Cód QR</Translation>
+        <Translation Language="FRE">Vous pouvez payer via le code QR</Translation>
+        <Translation Language="GER">Zahlung möglich per QR-Code</Translation>
+      </Text>
+      <Text Id="S0211_ABC_BUTTON" Alignment="Center" TypographyId="RoLi36">
+        <Translation Language="GB">GOT IT</Translation>
+        <Translation Language="SPA">GOT IT</Translation>
+        <Translation Language="FRE">GOT IT</Translation>
+        <Translation Language="GER">GOT IT</Translation>
+      </Text>
+      <Text Id="S0212_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Verifiying card</Translation>
+        <Translation Language="SPA">Verifiying card</Translation>
+        <Translation Language="FRE">Verifiying card</Translation>
+        <Translation Language="GER">Verifiying card</Translation>
+      </Text>
+      <Text Id="S0212_SUB_TITLE" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">Verifiying</Translation>
+        <Translation Language="SPA">Verifiying</Translation>
+        <Translation Language="FRE">Verifiying</Translation>
+        <Translation Language="GER">Verifiying</Translation>
+      </Text>
+      <Text Id="S0212_BODY" Alignment="Center" TypographyId="RoLi30">
+        <Translation Language="GB">Card</Translation>
+        <Translation Language="SPA">Card</Translation>
+        <Translation Language="FRE">Card</Translation>
+        <Translation Language="GER">Card</Translation>
+      </Text>
+      <Text Id="S0213_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Accepted</Translation>
+        <Translation Language="SPA">Accepted</Translation>
+        <Translation Language="FRE">Accepted</Translation>
+        <Translation Language="GER">Accepted</Translation>
+      </Text>
+      <Text Id="S0213_SUB_TITLE" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">Card</Translation>
+        <Translation Language="SPA">Card</Translation>
+        <Translation Language="FRE">Card</Translation>
+        <Translation Language="GER">Card</Translation>
+      </Text>
+      <Text Id="P0404_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Do you want to cancel your session?</Translation>
+        <Translation Language="SPA">¿Desea cancelar su sesión?</Translation>
+        <Translation Language="FRE">Souhaitez-vous annuler votre session ?</Translation>
+        <Translation Language="GER">Möchten Sie Ihre Sitzung abbrechen?</Translation>
+      </Text>
+      <Text Id="P0404_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">In case you changed your mind or want to select a different plug, put your plug back into its holder, stop session and start over.</Translation>
+        <Translation Language="SPA">En caso de que haya cambiado de idea o desee seleccionar un enchufe diferente, vuelva a colocar el enchufe en su soporte, detenga la sesión y vuelva a comenzar.</Translation>
+        <Translation Language="FRE">Au cas où vous avez changé d’avis ou souhaitez sélectionner une autre fiche, remettez tout simplement votre fiche dans son support, arrêtez la session et recommencez.</Translation>
+        <Translation Language="GER">Für den Fall, dass Sie Ihre Meinung ändern oder einen anderen Stecker auswählen möchten, setzen Sie Ihren Stecker wieder in seine Halterung, beenden Sie die Sitzung und starten Sie erneut.</Translation>
+      </Text>
+      <Text Id="P0404_BUTTON1" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="SPA">Sí</Translation>
+        <Translation Language="FRE">Oui</Translation>
+        <Translation Language="GER">Ja</Translation>
+      </Text>
+      <Text Id="P0404_BUTTON2" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">No</Translation>
+        <Translation Language="SPA">No</Translation>
+        <Translation Language="FRE">Non</Translation>
+        <Translation Language="GER">Nein</Translation>
+      </Text>
+      <Text Id="S0401_IDENTIFYING_CARD" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Verifying card ID</Translation>
+        <Translation Language="SPA">Verificando tarjeta Por favor</Translation>
+        <Translation Language="FRE">Vérification Veuillez</Translation>
+        <Translation Language="GER">Überprüfung der</Translation>
+      </Text>
+      <Text Id="S0401_IDENTIFYING_CARD2" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">Please wait</Translation>
+        <Translation Language="SPA">espere</Translation>
+        <Translation Language="FRE">patienter</Translation>
+        <Translation Language="GER">Karten-ID</Translation>
+      </Text>
+      <Text Id="S0402_CARD_APPROVED" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Card accepted</Translation>
+        <Translation Language="SPA">Tarjeta aceptada</Translation>
+        <Translation Language="FRE">Carte acceptée</Translation>
+        <Translation Language="GER">Karte akzeptiert</Translation>
+      </Text>
+      <Text Id="S0403_SELECT_PLUG" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Please take</Translation>
+        <Translation Language="SPA">Utilice un</Translation>
+        <Translation Language="FRE">Sélectionnez une</Translation>
+        <Translation Language="GER">Bitte nutzen Sie</Translation>
+      </Text>
+      <Text Id="S0403_SELECT_PLUG2" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">available plug</Translation>
+        <Translation Language="SPA">enchufe disponible</Translation>
+        <Translation Language="FRE">prise disponible</Translation>
+        <Translation Language="GER">den freien Stecker</Translation>
+      </Text>
+      <Text Id="S0404_STOP_SESSION" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Do you want to cancel your session?</Translation>
+        <Translation Language="SPA">¿Desea cancelar su sesión?</Translation>
+        <Translation Language="FRE">Souhaitez-vous annuler votre session ?</Translation>
+        <Translation Language="GER">Möchten Sie Ihre Sitzung abbrechen?</Translation>
+      </Text>
+      <Text Id="S0404_BODY" Alignment="Center" TypographyId="RoLi36">
+        <Translation Language="GB">In case you changed your mind or want to select a different plug, put your plug back into its holder, stop session and start over.</Translation>
+        <Translation Language="SPA">En caso de que haya cambiado de idea o desee seleccionar un enchufe diferente, vuelva a colocar el enchufe en su soporte, detenga la sesión y vuelva a comenzar.</Translation>
+        <Translation Language="FRE">Si vous avez changé d’avis ou souhaitez sélectionner une autre prise, remettez la prise dans son support, mettez fin à la session en cours et recommencez.</Translation>
+        <Translation Language="GER">Für den Fall, dass Sie Ihre Meinung ändern oder einen anderen Stecker auswählen möchten, setzen Sie Ihren Stecker wieder in seine Halterung, beenden Sie die Sitzung und starten Sie erneut.</Translation>
+      </Text>
+      <Text Id="S0404_BUTTON_1" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="SPA">Sí</Translation>
+        <Translation Language="FRE">Oui</Translation>
+        <Translation Language="GER">Ja</Translation>
+      </Text>
+      <Text Id="S0404_BUTTON_2" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">No</Translation>
+        <Translation Language="SPA">No</Translation>
+        <Translation Language="FRE">Non</Translation>
+        <Translation Language="GER">Nein</Translation>
+      </Text>
+      <Text Id="P0501_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Do you want to cancel your session?</Translation>
+        <Translation Language="SPA">¿Desea cancelar la sesión?</Translation>
+        <Translation Language="FRE">Souhaitez-vous annuler votre session ?</Translation>
+        <Translation Language="GER">Möchten Sie Ihre Sitzung abbrechen?</Translation>
+      </Text>
+      <Text Id="P0501_BODY" Alignment="Left" TypographyId="Content1">
+        <Translation Language="GB">If you selected the wrong plug, put the plug back into its holder, stop session and start over. Click yes to stop session, click no to continue with the selected plug.</Translation>
+        <Translation Language="SPA">Si ha seleccionado el enchufe incorrecto, vuelva a enchufarlo, detenga la sesión y a continuación, vuelva a comenzar.&#10;Haga clic en «Sí» para detener la sesión, haga clic en «No» para continuar con el enchufe seleccionado.&#10;</Translation>
+        <Translation Language="FRE">Au cas où vous avez sélectionné la mauvaise fiche, remettez-la dans son support, arrêtez la session et redémarrez-la.&#10;Cliquez sur oui pour arrêter la session, cliquez sur non pour continuer avec la fiche sélectionnée.</Translation>
+        <Translation Language="GER">Wenn Sie den falschen Stecker ausgewählt haben, stecken Sie den Stecker wieder in seine Halterung, beenden Sie die Sitzung und starten Sie erneut. Klicken Sie auf Ja, um die Sitzung zu beenden, klicken Sie auf Nein, um mit dem ausgewählten Stecker fortzufahren.</Translation>
+      </Text>
+      <Text Id="P0501_BUTTON1" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="SPA">Si</Translation>
+        <Translation Language="FRE">Oui</Translation>
+        <Translation Language="GER">Ja</Translation>
+      </Text>
+      <Text Id="P0501_BUTTON2" Alignment="Center" TypographyId="Robo24">
+        <Translation Language="GB">No</Translation>
+        <Translation Language="SPA">No</Translation>
+        <Translation Language="FRE">Non</Translation>
+        <Translation Language="GER">Nein</Translation>
+      </Text>
+      <Text Id="S0502_ESTABLISHING_CONNECTION" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Connecting to car</Translation>
+        <Translation Language="SPA">Conectando Por favor</Translation>
+        <Translation Language="FRE">Connexion à la voiture</Translation>
+        <Translation Language="GER">Verbindet mit</Translation>
+      </Text>
+      <Text Id="S0502_ESTABLISHING_CONNECTION2" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">Please wait</Translation>
+        <Translation Language="SPA">espere</Translation>
+        <Translation Language="FRE">Patientez</Translation>
+        <Translation Language="GER">Auto Bitte warten</Translation>
+      </Text>
+      <Text Id="S0503_CONNECTION_ESTABLISHED" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Connection</Translation>
+        <Translation Language="SPA">Conexión realizada</Translation>
+        <Translation Language="FRE">Connexion</Translation>
+        <Translation Language="GER">Verbindung</Translation>
+      </Text>
+      <Text Id="S0503_CONNECTION_ESTABLISHED2" Alignment="Center" TypographyId="Rome36">
+        <Translation Language="GB">successful </Translation>
+        <Translation Language="SPA">correctamente</Translation>
+        <Translation Language="FRE">réussie</Translation>
+        <Translation Language="GER">erfolgreich</Translation>
+      </Text>
+      <Text Id="P0504_TITLE" Alignment="Center" TypographyId="Rome48">
+        <Translation Language="GB">Your car is now charging</Translation>
+        <Translation Language="SPA">Su coche se está cargando</Translation>
+        <Translation Language="FRE">Votre voiture est maintenant en cours de charge</Translation>
+        <Translation Language="GER">Ihr Auto wird jetzt aufgeladen.</Translation>
+      </Text>
+      <Text Id="P0504_BODY" Alignment="Center" TypographyId="Content1">
+        <Translation Language="GB">Congratulations, your car will now be charged! </Translation>
+        <Translation Language="SPA">¡Felicidades, su coche se ha cargado!</Translation>
+        <Translation Language="FRE">Félicitations ! Désormais, votre voiture sera facturée !</Translation>
+        <Translation Language="GER">Herzlichen Glückwunsch, Ihr Auto wird nun aufgeladen!</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Rome48" Font="Roboto-Medium.ttf" Size="48" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Rome36" Font="Roboto-Medium.ttf" Size="36" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="SubTitle1" Font="Roboto-Medium.ttf" Size="36" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Footer2" Font="Roboto-Light.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,A-z,0x20,0x2F,0x3A,0x28,0x29,0x2E,0x23,0x2D" />
+    <Typography Id="Footer1" Font="Roboto-Light.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,A-z,0x20,0x2F,0x3A,0x28,0x29,0x2E,0x8364" />
+    <Typography Id="Menu1_LTR" Font="Roboto-Medium.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Button" Font="Roboto-Bold.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,A-z,0x20,0x2F,0x3A,0x28,0x29,0x2E,0x8364" />
+    <Typography Id="Menu1" Font="Roboto-Medium.ttf" Size="24" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
+    <Typography Id="Rome48_RTL" Font="Roboto-Medium.ttf" Size="48" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
+    <Typography Id="Content1" Font="Roboto-Light.ttf" Size="36" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Robo36w1" Font="Roboto-Light.ttf" Size="36" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,A-z,0x20,0x2F,0x3A,0x28,0x29,0x2E,0x8364" />
+    <Typography Id="Roli18" Font="Roboto-Light.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,A-z,0x20,0x2F,0x3A,0x28,0x29,0x2E,0x23,0x2D" />
+    <Typography Id="Robo24" Font="Roboto-Bold.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Robo24w1" Font="Roboto-Bold.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,A-z,0x20,0x2F,0x3A,0x28,0x29,0x2E,0x8364" />
+    <Typography Id="RoLi30" Font="Roboto-Light.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="RoBo18" Font="Roboto-Bold.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="RoLi36" Font="Roboto-Light.ttf" Size="36" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="RoLi15" Font="Roboto-Light.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

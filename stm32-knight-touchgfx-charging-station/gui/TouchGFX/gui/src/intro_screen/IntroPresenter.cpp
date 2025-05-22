@@ -2,7 +2,9 @@
 #include <gui/intro_screen/IntroPresenter.hpp>
 
 IntroPresenter::IntroPresenter(IntroView& v)
-    : view(v)
+    : 
+    BasePresenter(v),
+    view(v)
 {
 
 }

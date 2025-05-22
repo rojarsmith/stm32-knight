@@ -10,3 +10,8 @@ void Model::tick()
 {
 
 }
+
+MachineStatus* Model::getMachineStatus()
+{
+	return &mstatus_;
+}

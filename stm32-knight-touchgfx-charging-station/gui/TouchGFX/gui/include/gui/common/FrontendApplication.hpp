@@ -13,12 +13,24 @@ public:
     FrontendApplication(Model& m, FrontendHeap& heap);
     virtual ~FrontendApplication() { }
 
+	void gotoScreen(int id);
+
+	typedef void(FrontendApplication::*GotoScreen)();
+	GotoScreen gotoScreens_[9];
+
+    void gotoIntro();
+	void gotoHome();
+
     virtual void handleTickEvent()
     {
         model.tick();
         FrontendApplicationBase::handleTickEvent();
     }
+
+	void gotoIntroImpl();
+	void gotoHomeImpl();
 private:
+    Callback<FrontendApplication> transitionCallback;
 };
 
 #endif // FRONTENDAPPLICATION_HPP

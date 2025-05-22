@@ -3,12 +3,15 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <gui/common/BasePresenter.hpp>
+#include <gui/common/BaseViewInterface.hpp>
 
 using namespace touchgfx;
 
 class IntroView;
 
-class IntroPresenter : public touchgfx::Presenter, public ModelListener
+// class IntroPresenter : public touchgfx::Presenter, public ModelListener
+class IntroPresenter : public BasePresenter
 {
 public:
     IntroPresenter(IntroView& v);

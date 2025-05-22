@@ -2,11 +2,14 @@
 #define INTROVIEW_HPP
 
 #include <gui_generated/intro_screen/IntroViewBase.hpp>
+#include <gui/common/BaseView.hpp>
 #include <gui/common/TargetFix.hpp>
 #include <gui/intro_screen/IntroPresenter.hpp>
 #include <touchgfx/widgets/Image.hpp>
 
-class IntroView : public IntroViewBase, TargetFix
+//using touchgfx::View<IntroPresenter>::presenter;
+
+class IntroView : public BaseView<IntroPresenter, IntroViewBase>, TargetFix
 {
 public:
     IntroView();

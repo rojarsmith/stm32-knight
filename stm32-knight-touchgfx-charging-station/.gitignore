@@ -37,3 +37,4 @@
 gui/TouchGFX/config/gcc/app.mk
 gui/TouchGFX/config/msvc/Application.props
 
+auto/extvar/include/external.h
