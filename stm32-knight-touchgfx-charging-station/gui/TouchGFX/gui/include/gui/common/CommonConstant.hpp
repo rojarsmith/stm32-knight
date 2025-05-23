@@ -55,6 +55,7 @@ public:
 	int After2Tick = 2;
 	uint8_t After30Tick = 30;
 	uint8_t After60Tick = 60;
+	uint8_t After120Tick = 120;
 	int AfterXSec = (int)(3 * 60);
 	
 	uint16_t DisplayWidthHalf; //384

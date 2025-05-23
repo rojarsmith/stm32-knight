@@ -17,7 +17,7 @@ IntroView::IntroView()
 
 void IntroView::setupScreen()
 {
-    IntroViewBase::setupScreen();
+	BaseView::setupScreen();
 
 	//background_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
 	background_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
@@ -77,6 +77,16 @@ printf("in\r\n");
 
 	image_.setXY(0, (getFixedDisplayHeight() - image_.getHeight()) / 2);
 	add(image_);
+
+	BaseView::afterSetupScreen();
+
+	completedCommand();
+	setMask(MaskList::FULL_MASK, true);
+
+	em_.setEventTriggerCallback(event_trigger_callback_);
+	em_.addCountDownEvent(
+		EventList::EVENT_SEND_COMMAND,
+		ms_->ux_delay_0100_to_0200 + 1);
 }
 
 void IntroView::tearDownScreen()
@@ -113,4 +123,44 @@ void IntroView::showBitmap(BitmapId id)
 
 void IntroView::eventTriggerHandler(const int source)
 {
+	switch (source)
+	{
+	case EventList::EVENT_1TICK_LOOP:
+		event1TickLoop();
+		break;
+	case EventList::EVENT_SEND_COMMAND:
+		eventSendCommand();
+		break;
+	case EventList::EVENT_CHANGE_SCREEN:
+		eventChangeScreen();
+		break;
+	case 43:
+		event43();
+		break;
+	case 49:
+		event49();
+		break;
+	}
+}
+
+void IntroView::event1TickLoop()
+{
+}
+
+void IntroView::eventSendCommand()
+{
+	em_.removeAll();
+
+	sendCommand(ScreenNumber::SCREEN_HOME);
+
+	//em_.addCountDownEvent(EventList::EVENT_CHANGE_SCREEN, cc_.After1Tick);
+	//em_.addCountDownEvent(EventList::EVENT_CHANGE_SCREEN, cc_.After60Tick);
+	em_.addCountDownEvent(EventList::EVENT_CHANGE_SCREEN, cc_.After120Tick);
+}
+
+void IntroView::eventChangeScreen()
+{
+	em_.removeAll();
+
+	changeScreen(ScreenNumber::SCREEN_HOME);
 }
