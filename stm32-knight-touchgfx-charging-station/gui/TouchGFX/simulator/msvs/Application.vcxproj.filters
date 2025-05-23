@@ -220,6 +220,12 @@
     <Filter Include="Header Files\gui\widgets\info">
       <UniqueIdentifier>37910025-285E-0EB8-110C-35782A855F68</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\widgets\footer">
+      <UniqueIdentifier>{2ac2b6f2-7ad9-4708-98a7-0d1fd636064e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\footer">
+      <UniqueIdentifier>{0869e2be-82fc-49b2-bde5-fb3f1bd6a028}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -365,6 +371,15 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\widgets\info\MessageYellow.cpp">
       <Filter>Source Files\gui\widgets\info</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\wallpaper\Wallpaper.cpp">
+      <Filter>Source Files\gui\widgets\wallpaper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\footer\Footer.cpp">
+      <Filter>Source Files\gui\widgets\footer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\footer\FooterItemGroup.cpp">
+      <Filter>Source Files\gui\widgets\footer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -933,6 +948,18 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\widgets\info\MessageYellow.hpp">
       <Filter>Header Files\gui\widgets\info</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\auto\extvar\include\external.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\wallpaper\Wallpaper.hpp">
+      <Filter>Header Files\gui\widgets\wallpaper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\footer\Footer.hpp">
+      <Filter>Header Files\gui\widgets\footer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\footer\FooterItemGroup.hpp">
+      <Filter>Header Files\gui\widgets\footer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

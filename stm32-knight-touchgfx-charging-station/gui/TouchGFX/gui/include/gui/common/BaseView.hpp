@@ -25,6 +25,7 @@ extern "C"
 #include <gui/common/CommonConstant.hpp>
 #include <gui/common/CommonFunction.h>
 #include <gui/common/EventManager.hpp>
+#include <gui/common/TargetFix.hpp>
 #include <gui/model/Model.hpp>
 #include <gui/widgets/information/Information.hpp>
 #include <gui/widgets/info/AbstractMessage.hpp>
@@ -35,7 +36,7 @@ extern "C"
 using namespace touchgfx;
 
 template <class T, class U>
-class BaseView : public U, public BaseViewInterface
+class BaseView : public U, public BaseViewInterface, public TargetFix
 {
 public:	
 	BaseView()
@@ -50,7 +51,7 @@ public:
 
 	virtual ~BaseView()
 	{
-		U::View<T>::~View();
+		U::template View<T>::~View();
 	}
 
 	void setMessageAction(void *open, void *close)
@@ -69,6 +70,8 @@ public:
 	}
 	virtual void setupScreen()
 	{
+		ratio_height_ = (getFixedDisplayHeight() - 640) / 2; // 800x480
+
 		ms_ = View<T>::presenter->getMachineStatus();
 		//ms_ = static_cast<View<T>*>(this)->presenter->getMachineStatus();
 		//ms_ = static_cast<View<T>>(U)::View<T>::presenter->getMachineStatus();
@@ -137,6 +140,18 @@ public:
 		mask_full_view_.setTouchable(true);
 		BaseView<T, U>::add(mask_full_view_);
 
+		//Element // Only for 800x480
+		screen_ratio_mask_top_.setPosition(0, 0, HAL::DISPLAY_WIDTH, ratio_height_);
+		screen_ratio_mask_top_.setAlpha(255);
+		screen_ratio_mask_top_.setColor(Color::getColorFromRGB(0, 0, 0));
+		BaseView<T, U>::add(screen_ratio_mask_top_);
+
+		//Element // Only for 800x480
+		screen_ratio_mask_bottom_.setPosition(0, 720, HAL::DISPLAY_WIDTH, ratio_height_);
+		screen_ratio_mask_bottom_.setAlpha(255);
+		screen_ratio_mask_bottom_.setColor(Color::getColorFromRGB(0, 0, 0));
+		BaseView<T, U>::add(screen_ratio_mask_bottom_);
+
 		//Element
 		BaseView<T, U>::add(em_);
 
@@ -161,6 +176,7 @@ public:
 	}
 
 protected:
+	int16_t ratio_height_;
 	int16_t count_filter_;
 	int16_t count_filter_pop_;
 	int16_t pole_day_width_;
@@ -178,6 +194,8 @@ protected:
 	Box right_top_mask_;
 	Box mask_back_bottom_;
 	Box mask_full_view_;
+	Box screen_ratio_mask_top_;
+	Box screen_ratio_mask_bottom_;
 	static const uint16_t TEXT_SIZE_14 = 14;
 	TextAreaWithOneWildcard version_;
 	Unicode::UnicodeChar version_buffer_[TEXT_SIZE_14];	

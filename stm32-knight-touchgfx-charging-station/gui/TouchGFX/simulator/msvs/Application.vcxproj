@@ -32,6 +32,8 @@
     <ClCompile Include="..\..\gui\src\home_screen\HomePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\home_screen\HomeView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\home_screen\HomeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\widgets\footer\Footer.cpp"/>
+    <ClCompile Include="..\..\gui\src\widgets\footer\FooterItemGroup.cpp"/>
     <ClCompile Include="..\..\gui\src\widgets\info\AbstractContent.cpp"/>
     <ClCompile Include="..\..\gui\src\widgets\info\AbstractMessage.cpp"/>
     <ClCompile Include="..\..\gui\src\widgets\info\Content0201.cpp"/>
@@ -59,6 +61,7 @@
     <ClCompile Include="..\..\gui\src\widgets\info\MessageE5.cpp"/>
     <ClCompile Include="..\..\gui\src\widgets\info\MessageRed.cpp"/>
     <ClCompile Include="..\..\gui\src\widgets\info\MessageYellow.cpp"/>
+    <ClCompile Include="..\..\gui\src\widgets\wallpaper\Wallpaper.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -225,6 +228,8 @@
     <ClInclude Include="..\..\gui\include\gui\home_screen\HomeView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\home_screen\HomeViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelSchema.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\widgets\footer\Footer.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\widgets\footer\FooterItemGroup.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\widgets\info\AbstractContent.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\widgets\info\AbstractMessage.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\widgets\info\Content0201.hpp"/>
@@ -252,6 +257,7 @@
     <ClInclude Include="..\..\gui\include\gui\widgets\info\MessageE5.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\widgets\info\MessageRed.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\widgets\info\MessageYellow.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\widgets\wallpaper\Wallpaper.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

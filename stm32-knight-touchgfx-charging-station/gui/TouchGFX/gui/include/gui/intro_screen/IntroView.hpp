@@ -9,7 +9,7 @@
 
 //using touchgfx::View<IntroPresenter>::presenter;
 
-class IntroView : public BaseView<IntroPresenter, IntroViewBase>, TargetFix
+class IntroView : public BaseView<IntroPresenter, IntroViewBase>
 {
 public:
     IntroView();

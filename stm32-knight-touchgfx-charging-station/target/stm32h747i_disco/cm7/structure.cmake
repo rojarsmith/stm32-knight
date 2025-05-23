@@ -15,6 +15,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/inc
+    ../../../auto/extvar/include
     ../../../target/stm32h747i_disco/cm7/inc
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/Common

@@ -2,7 +2,9 @@
 #include <gui/home_screen/HomePresenter.hpp>
 
 HomePresenter::HomePresenter(HomeView& v)
-    : view(v)
+    : 
+    BasePresenter(v),
+    view(v)
 {
 
 }

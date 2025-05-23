@@ -3,12 +3,14 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <gui/common/BasePresenter.hpp>
 
 using namespace touchgfx;
 
 class HomeView;
 
-class HomePresenter : public touchgfx::Presenter, public ModelListener
+//class HomePresenter : public touchgfx::Presenter, public ModelListener
+class HomePresenter : public BasePresenter
 {
 public:
     HomePresenter(HomeView& v);
