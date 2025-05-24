@@ -22,7 +22,7 @@ void SocketSelector::initialize(MachineStatus* status)
 	ms_ = status;
 
 	item_.initialize(ms_);
-	item_.setPosition(65, 62, 350, 62);
+	item_.setPosition(65, 62, 350, 62); // 800x480
 	//item_.setPosition(104, 100, 560, 100);
 	item_.setVisible(false);
 	item_.setSocketSelectedCallback(selector_move_out_callback_);
@@ -69,17 +69,20 @@ void SocketSelector::beginSlideAnimation(AnimationStyle animation, bool is_right
 			item_.setXY(-350, 0);
 			//item_.setXY(-560, 0);
 		}
-		item_.startMoveAnimation(104, 0, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
+		//item_.startMoveAnimation(104, 0, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
+		item_.startMoveAnimation(65, 0, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
 		break;	
 	case SLIDE_IN_FROM_BOTTON:
 		item_.setXY(65, 187);
 		//item_.setXY(104, 300);
-		item_.startMoveAnimation(104, 0, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
+		//item_.startMoveAnimation(104, 0, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
+		item_.startMoveAnimation(65, 0, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
 		break;
 	case SLIDE_OUT_TO_BOTTON:
 		item_.setXY(65, 0);
 		//item_.setXY(104, 0);
-		item_.startMoveAnimation(104, 300, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
+		//item_.startMoveAnimation(104, 300, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
+		item_.startMoveAnimation(65, 187, ANIMATION_TRANSITION_IN_DURATION, EasingEquations::linearEaseIn);
 		break;
 	}
 }

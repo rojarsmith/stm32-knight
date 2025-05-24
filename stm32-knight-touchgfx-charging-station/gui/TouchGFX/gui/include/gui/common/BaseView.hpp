@@ -26,6 +26,7 @@ extern "C"
 #include <gui/common/CommonFunction.h>
 #include <gui/common/EventManager.hpp>
 #include <gui/common/TargetFix.hpp>
+#include <gui/common/Resolution.hpp>
 #include <gui/model/Model.hpp>
 #include <gui/widgets/information/Information.hpp>
 #include <gui/widgets/info/AbstractMessage.hpp>
@@ -36,7 +37,7 @@ extern "C"
 using namespace touchgfx;
 
 template <class T, class U>
-class BaseView : public U, public BaseViewInterface, public TargetFix
+class BaseView : public U, public BaseViewInterface, public TargetFix, public Resolution
 {
 public:	
 	BaseView()

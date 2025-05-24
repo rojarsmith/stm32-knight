@@ -244,6 +244,54 @@
     <Filter Include="Header Files\gui\widgets\title">
       <UniqueIdentifier>CF0DE364-418C-9BB7-1907-3A06BFB39800</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\widgets\plugin">
+      <UniqueIdentifier>F0A54027-52A1-1D27-EFD8-5AB9087ABE35</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\plugin">
+      <UniqueIdentifier>4A2FE1B7-326C-AF90-AD38-D4D506ECD64F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\loading">
+      <UniqueIdentifier>2085AEA9-FE1F-9CF9-DC4B-DBAEE740D077</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\loading">
+      <UniqueIdentifier>45466526-B7F2-1948-1CCC-FBA48A7D3FE4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\socket">
+      <UniqueIdentifier>2CB36569-321F-CBBF-B9CF-44FAFFB630D8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\language">
+      <UniqueIdentifier>24D47546-AF58-25FF-CC98-47CD9B4323D2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\socket">
+      <UniqueIdentifier>9305948D-A9E9-F946-F078-2D95CBCEB6C0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\language">
+      <UniqueIdentifier>F60D1EFC-75E7-CF5B-7D12-ACB23F752B91</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\socket_selector">
+      <UniqueIdentifier>79FF9045-CA30-1DE7-88FB-517F687F6EC6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\socket_selector">
+      <UniqueIdentifier>CFCABFCF-7BA9-CDC7-FA42-DA06A1FECB09</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\context">
+      <UniqueIdentifier>C1D1BBEE-6C90-1FA2-62FC-A6A5D4DB69B8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\context">
+      <UniqueIdentifier>EBDD6FF2-70BB-5040-F1B0-6142409C5D7B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\payment_screen">
+      <UniqueIdentifier>5C9A9F4A-AEAC-FDEA-4163-AE9E8F5A2CDC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\payment_screen">
+      <UniqueIdentifier>F03006D5-0136-8C7A-350C-BCDF1F593A63</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\payment_screen">
+      <UniqueIdentifier>4D44401A-8B1A-BFF8-10B3-0271645DB7F8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\payment_screen">
+      <UniqueIdentifier>59E7D06F-1EEF-19FE-42E5-8F461ADADF55</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -410,6 +458,54 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\widgets\title\Title.cpp">
       <Filter>Source Files\gui\widgets\title</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\ContainerEx.cpp">
+      <Filter>Source Files\gui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\context\Context.cpp">
+      <Filter>Source Files\gui\widgets\context</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\context\ContextNameValue.cpp">
+      <Filter>Source Files\gui\widgets\context</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\Integration.cpp">
+      <Filter>Source Files\gui\widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\language\Language.cpp">
+      <Filter>Source Files\gui\widgets\language</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\loading\Loading.cpp">
+      <Filter>Source Files\gui\widgets\loading</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\plugin\Plugin.cpp">
+      <Filter>Source Files\gui\widgets\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\socket\Socket.cpp">
+      <Filter>Source Files\gui\widgets\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\socket_selector\SocketSelector.cpp">
+      <Filter>Source Files\gui\widgets\socket_selector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\socket_selector\SocketSelectorBackground.cpp">
+      <Filter>Source Files\gui\widgets\socket_selector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\socket_selector\SocketSelectorBackgroundCharging.cpp">
+      <Filter>Source Files\gui\widgets\socket_selector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\socket_selector\SocketSelectorBar.cpp">
+      <Filter>Source Files\gui\widgets\socket_selector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\Resolution.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\payment_screen\PaymentPresenter.cpp">
+      <Filter>Source Files\gui\payment_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\payment_screen\PaymentView.cpp">
+      <Filter>Source Files\gui\payment_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\payment_screen\PaymentViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\payment_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1002,6 +1098,54 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\widgets\title\Title.hpp">
       <Filter>Header Files\gui\widgets\title</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\ContainerEx.hpp">
+      <Filter>Header Files\gui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\context\Context.hpp">
+      <Filter>Header Files\gui\widgets\context</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\context\ContextNameValue.hpp">
+      <Filter>Header Files\gui\widgets\context</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\Integration.hpp">
+      <Filter>Header Files\gui\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\language\Language.hpp">
+      <Filter>Header Files\gui\widgets\language</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\loading\Loading.hpp">
+      <Filter>Header Files\gui\widgets\loading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\plugin\Plugin.hpp">
+      <Filter>Header Files\gui\widgets\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\socket\Socket.hpp">
+      <Filter>Header Files\gui\widgets\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\socket_selector\SocketSelector.hpp">
+      <Filter>Header Files\gui\widgets\socket_selector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\socket_selector\SocketSelectorBackground.hpp">
+      <Filter>Header Files\gui\widgets\socket_selector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\socket_selector\SocketSelectorBackgroundCharging.hpp">
+      <Filter>Header Files\gui\widgets\socket_selector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\socket_selector\SocketSelectorBar.hpp">
+      <Filter>Header Files\gui\widgets\socket_selector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\Resolution.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\payment_screen\PaymentPresenter.hpp">
+      <Filter>Header Files\gui\payment_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\payment_screen\PaymentView.hpp">
+      <Filter>Header Files\gui\payment_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\payment_screen\PaymentViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\payment_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

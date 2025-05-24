@@ -17,12 +17,16 @@
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp" />
     <ClCompile Include="$(ApplicationRoot)\simulator\main.cpp" />
     <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp" />
+    <ClCompile Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\BitBuffer.cpp" />
+    <ClCompile Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\QrCodeGenerator.cpp" />
+    <ClCompile Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\QrSegment.cpp" />
     <ClCompile Include="..\..\gui\src\common\BasePresenter.cpp" />
     <ClCompile Include="..\..\gui\src\common\BMPFileLoader.cpp" />
     <ClCompile Include="..\..\gui\src\common\CommonFunction.cpp" />
     <ClCompile Include="..\..\gui\src\common\EventManager.cpp" />
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp" />
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp" />
+    <ClCompile Include="..\..\gui\src\common\Resolution.cpp" />
     <ClCompile Include="..\..\gui\src\common\TargetFix.cpp" />
     <ClCompile Include="..\..\gui\src\model\Model.cpp" />
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp" />
@@ -32,6 +36,8 @@
     <ClCompile Include="..\..\gui\src\home_screen\HomePresenter.cpp" />
     <ClCompile Include="..\..\gui\src\home_screen\HomeView.cpp" />
     <ClCompile Include="..\..\generated\gui_generated\src\home_screen\HomeViewBase.cpp" />
+    <ClCompile Include="..\..\gui\src\widgets\backto\Backto.cpp" />
+    <ClCompile Include="..\..\gui\src\widgets\button_with_label_ex\ButtonWithLabelEx.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\ContainerEx.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\context\Context.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\context\ContextNameValue.cpp" />
@@ -68,6 +74,8 @@
     <ClCompile Include="..\..\gui\src\widgets\language\Language.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\loading\Loading.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\plugin\Plugin.cpp" />
+    <ClCompile Include="..\..\gui\src\widgets\qrcode\QRCode.cpp" />
+    <ClCompile Include="..\..\gui\src\widgets\qrcode\QRCodeWidget.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\socket\Socket.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\socket_selector\SocketSelector.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\socket_selector\SocketSelectorBackground.cpp" />
@@ -78,6 +86,9 @@
     <ClCompile Include="..\..\gui\src\boot_screen\BootPresenter.cpp" />
     <ClCompile Include="..\..\gui\src\boot_screen\BootView.cpp" />
     <ClCompile Include="..\..\generated\gui_generated\src\boot_screen\BootViewBase.cpp" />
+    <ClCompile Include="..\..\gui\src\payment_screen\PaymentPresenter.cpp" />
+    <ClCompile Include="..\..\gui\src\payment_screen\PaymentView.cpp" />
+    <ClCompile Include="..\..\generated\gui_generated\src\payment_screen\PaymentViewBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml" />
@@ -219,6 +230,9 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp" />
     <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp" />
     <ClInclude Include="..\..\..\..\auto\extvar\include\external.h" />
+    <ClInclude Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\BitBuffer.hpp" />
+    <ClInclude Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\QrCodeGenerator.hpp" />
+    <ClInclude Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\QrSegment.hpp" />
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp" />
     <ClInclude Include="..\..\gui\include\gui\common\BasePresenter.hpp" />
     <ClInclude Include="..\..\gui\include\gui\common\BaseView.hpp" />
@@ -231,6 +245,7 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp" />
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp" />
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\Resolution.hpp" />
     <ClInclude Include="..\..\gui\include\gui\common\TargetFix.hpp" />
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp" />
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp" />
@@ -244,6 +259,8 @@
     <ClInclude Include="..\..\gui\include\gui\home_screen\HomeView.hpp" />
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\home_screen\HomeViewBase.hpp" />
     <ClInclude Include="..\..\gui\include\gui\model\ModelSchema.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\widgets\backto\Backto.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\widgets\button_with_label_ex\ButtonWithLabelEx.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\ContainerEx.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\context\Context.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\context\ContextNameValue.hpp" />
@@ -280,6 +297,8 @@
     <ClInclude Include="..\..\gui\include\gui\widgets\language\Language.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\loading\Loading.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\plugin\Plugin.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\widgets\qrcode\QRCode.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\widgets\qrcode\QRCodeWidget.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\socket\Socket.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\socket_selector\SocketSelector.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\socket_selector\SocketSelectorBackground.hpp" />
@@ -290,6 +309,9 @@
     <ClInclude Include="..\..\gui\include\gui\boot_screen\BootPresenter.hpp" />
     <ClInclude Include="..\..\gui\include\gui\boot_screen\BootView.hpp" />
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\boot_screen\BootViewBase.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\payment_screen\PaymentPresenter.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\payment_screen\PaymentView.hpp" />
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\payment_screen\PaymentViewBase.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc" />
@@ -349,7 +371,7 @@
       <DisableSpecificWarnings>4355</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ApplicationRoot)\..\..\auto\extvar\include;$(ApplicationRoot);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ApplicationRoot)\..\..\auto\extvar\include;$(ApplicationRoot)\..\..\lib;$(ApplicationRoot);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -42,7 +42,7 @@ class CommonConstant
 private:	
 	CommonConstant() {}	
 	~CommonConstant(void) {}
-	CommonConstant(const CommonConstant&) {};
+	CommonConstant(const CommonConstant&) { return; };
 	CommonConstant& operator=(CommonConstant const&) {};
 public:	
 	static CommonConstant& getInstance() 

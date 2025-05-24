@@ -84,12 +84,12 @@ void HomeView::setupScreen()
 	add(title_);
 
 	//Element
-	int16_t socket_slider_y = 468 - ratio_height_;
+	int16_t socket_slider_y = 468;
 	//int16_t socket_slider_y = 750;
 	int16_t socket_slider_h = 171;
 	//int16_t socket_slider_y = 100 + 174;
 	socket_slider_.initialize(ms_);
-	socket_slider_.setPosition(0, socket_slider_y, HAL::DISPLAY_WIDTH, socket_slider_h);
+	socket_slider_.setPosition(0, getScaledHeight(socket_slider_y), HAL::DISPLAY_WIDTH, socket_slider_h);
 	socket_slider_.setPlugNotInSocketCallback(plug_not_in_socket_callback_);
 	socket_slider_.setBarMoveOutAnimationEndCallback(bar_move_out_animation_end_callback_);
 	socket_slider_.setTouchable(true);
