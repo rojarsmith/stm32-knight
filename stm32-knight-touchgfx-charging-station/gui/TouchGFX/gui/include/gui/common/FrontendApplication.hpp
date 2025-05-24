@@ -20,6 +20,8 @@ public:
 
     void gotoIntro();
 	void gotoHome();
+    void gotoPayment();
+    void gotoConnect();
 
     virtual void handleTickEvent()
     {
@@ -29,6 +31,8 @@ public:
 
 	void gotoIntroImpl();
 	void gotoHomeImpl();
+    void gotoPaymentImpl();
+    void gotoConnectImpl();
 private:
     Callback<FrontendApplication> transitionCallback;
 };

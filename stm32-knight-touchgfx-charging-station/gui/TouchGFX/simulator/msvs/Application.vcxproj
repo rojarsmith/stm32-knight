@@ -236,6 +236,7 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp" />
     <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp" />
     <ClInclude Include="..\..\..\..\auto\extvar\include\external.h" />
+    <ClInclude Include="$(ApplicationRoot)\..\..\lib\qrcode-json\json.hpp" />
     <ClInclude Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\BitBuffer.hpp" />
     <ClInclude Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\QrCodeGenerator.hpp" />
     <ClInclude Include="$(ApplicationRoot)\..\..\lib\qrcode-generator\QrSegment.hpp" />

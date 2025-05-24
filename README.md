@@ -263,6 +263,10 @@ TouchGFX stress test performance evaluation Demo uses 2~3 tasks and supports dyn
 
 ![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-burn-test-02.jpg)
 
+## stm32-knight-touchgfx-charging-station
+
+Not support compile with TouchGFX Designer
+
 ## stm32-knight-touchgfx-coffee-machine
 
 Coffee machine GUI for 2017 Munich electronics show. Porting to STM32H747I Discovery at 2025.

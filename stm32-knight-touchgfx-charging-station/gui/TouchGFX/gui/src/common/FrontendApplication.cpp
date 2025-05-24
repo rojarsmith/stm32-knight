@@ -5,6 +5,10 @@
 #include <gui/intro_screen/IntroPresenter.hpp>
 #include <gui/home_screen/HomeView.hpp>
 #include <gui/home_screen/HomePresenter.hpp>
+#include <gui/payment_screen/PaymentView.hpp>
+#include <gui/payment_screen/PaymentPresenter.hpp>
+#include <gui/connect_screen/ConnectView.hpp>
+#include <gui/connect_screen/ConnectPresenter.hpp>
 //#include <platform/driver/lcd/LCD16bpp.hpp>
 #include <platform/driver/lcd/LCD24bpp.hpp>
 
@@ -19,10 +23,10 @@ FrontendApplication::FrontendApplication(Model& m, FrontendHeap& heap)
 	gotoScreens_[ScreenNumber::SCREEN_STANDBY] = &FrontendApplication::gotoStandby;*/
 	gotoScreens_[ScreenNumber::SCREEN_INTRO] = &FrontendApplication::gotoIntro;
 	gotoScreens_[ScreenNumber::SCREEN_HOME] = &FrontendApplication::gotoHome;
-	/*gotoScreens_[ScreenNumber::SCREEN_PAYMENT] = &FrontendApplication::gotoPayment;
-	gotoScreens_[ScreenNumber::SCREEN_PAY_RFID] = &FrontendApplication::gotoVista;
+	gotoScreens_[ScreenNumber::SCREEN_PAYMENT] = &FrontendApplication::gotoPayment;
+	/*gotoScreens_[ScreenNumber::SCREEN_PAY_RFID] = &FrontendApplication::gotoVista;*/
 	gotoScreens_[ScreenNumber::SCREEN_CONNECT] = &FrontendApplication::gotoConnect;
-	gotoScreens_[ScreenNumber::SCREEN_SCREEN1] = &FrontendApplication::gotoScreen1;*/
+	/*gotoScreens_[ScreenNumber::SCREEN_SCREEN1] = &FrontendApplication::gotoScreen1;*/
 }
 
 void FrontendApplication::gotoScreen(int id)
@@ -50,4 +54,26 @@ void FrontendApplication::gotoHome()
 void FrontendApplication::gotoHomeImpl()
 {
 	makeTransition<HomeView, HomePresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplication::gotoPayment()
+{
+	transitionCallback = Callback<FrontendApplication>(this, &FrontendApplication::gotoPaymentImpl);
+	pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::gotoPaymentImpl()
+{
+	makeTransition<PaymentView, PaymentPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplication::gotoConnect()
+{
+	transitionCallback = Callback<FrontendApplication>(this, &FrontendApplication::gotoConnectImpl);
+	pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::gotoConnectImpl()
+{
+	makeTransition<ConnectView, ConnectPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

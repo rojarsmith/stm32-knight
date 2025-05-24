@@ -38,3 +38,7 @@ gui/TouchGFX/config/gcc/app.mk
 gui/TouchGFX/config/msvc/Application.props
 
 auto/extvar/include/external.h
+
+gui/TouchGFX/simulator/msvs/debug_input_data.json
+gui/TouchGFX/simulator/msvs/debug_output_data.json
+

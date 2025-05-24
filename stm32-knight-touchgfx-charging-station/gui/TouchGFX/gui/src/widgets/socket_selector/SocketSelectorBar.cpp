@@ -257,7 +257,8 @@ void SocketSelectorBar::snap(int x)
 	else if (vvalid_selected_threshold_right_ < x)
 	{
 		charge_socket_selected_ = ChargeSocketSelected::CHARGE_SOCKET_RIGHT;
-		animateIndicator(doriginal_point_ + SELECTOR_SIZE_, 30, EasingEquations::quadEaseOut);
+		animateIndicator(doriginal_point_ + SELECTOR_SIZE_ + 1, 30, EasingEquations::quadEaseOut); // 800x480
+		//animateIndicator(doriginal_point_ + SELECTOR_SIZE_, 30, EasingEquations::quadEaseOut);
 	}
 	else if (vvalid_selected_threshold_left_ > x)
 	{

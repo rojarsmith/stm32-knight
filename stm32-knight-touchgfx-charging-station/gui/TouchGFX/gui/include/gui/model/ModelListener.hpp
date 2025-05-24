@@ -14,6 +14,9 @@ public:
     {
         model = m;
     }
+
+    virtual void machineStatusUpdated(MachineStatus* status) {}
+    virtual void screenChanged(int id) {}
 protected:
     Model* model;
 };
