@@ -22,7 +22,7 @@
 //#include <gui/widgets/language/Language.hpp>
 //#include <gui/widgets/loading/Loading.hpp>
 #include <gui/widgets/information/Information.hpp>
-//#include <gui/widgets/title/Title.hpp>
+#include <gui/widgets/title/Title.hpp>
 //#include <gui/widgets/plugin/Plugin.hpp>
 //#include <gui/widgets/socket/Socket.hpp>
 //#include <gui/widgets/socket_selector/SocketSelector.hpp>
@@ -46,8 +46,16 @@ private:
 	//::[UX Item]::
 	Wallpaper wallpaper_;
 	ZoomAnimationImage pole_;
-
+	//Socket socket_right_;
+	//Socket socket_left_;
+	//Plugin plugin_right_;
+	//Plugin plugin_left_;
+	Title title_;
+	Information information_;
+	//Language language_;
+	//SocketSelector socket_slider_;
 	Footer footer_;
+	Box lang_mask_;
 
 	Callback<HomeView, const ZoomAnimationImage&> poleAnimationEndedCallback;
 	void poleAnimationEndedHandler(const ZoomAnimationImage& image);

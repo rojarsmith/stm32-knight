@@ -56,11 +56,18 @@ void HomeView::setupScreen()
 	pole_.setAnimationEndedCallback(poleAnimationEndedCallback);
 	add(pole_);
 
+	//Item
+	title_.setPosition(cc_.TitleX, cc_.TitleY, cc_.TitleWidth, cc_.TitleHeight);
+	title_.initialize(ms_);
+	title_.setInAnimationDuration(ANIMATION_TRANSITION_IN_DURATION);
+	title_.setOutAnimationDuration(ANIMATION_TRANSITION_OUT_DURATION);
+	add(title_);
+
 	//Element
 	uint16_t foot_reduce_y = (uint16_t)(116 / 1.6); // 800x480
 	footer_.initialize(ms_);
 	//footer_.setPosition(0, HAL::DISPLAY_HEIGHT - foot_reduce_y, HAL::DISPLAY_WIDTH, foot_reduce_y);
-	footer_.setPosition(0, HAL::DISPLAY_HEIGHT - foot_reduce_y - ratio_height_, HAL::DISPLAY_WIDTH, foot_reduce_y); // 
+	footer_.setPosition(0, getFixedDisplayHeight() - foot_reduce_y - ratio_height_, HAL::DISPLAY_WIDTH, foot_reduce_y); // 
 	footer_.setAnimationDuration(ANIMATION_TRANSITION_IN_DURATION);
 	//footer_.set
 	add(footer_);
@@ -93,6 +100,17 @@ void HomeView::buttonClickedHandler(const int source)
 	else
 	{
 		return;
+	}
+
+	ms_->ux_popup_trigger_ = true;
+
+	if (!ms_->popup_opened && nullptr == message_)
+	{
+		ms_->ux_popup_number = MessageNumber::MESSAGE_21;
+	}
+	else
+	{
+		ms_->ux_popup_number = MessageNumber::MESSAGE_0;
 	}
 }
 
@@ -130,7 +148,7 @@ void HomeView::event2()
 void HomeView::eventRenderGraphic()
 {
 	//information_.renderGraphic();
-	//title_.renderGraphic();
+	title_.renderGraphic();
 }
 
 void HomeView::event6()
@@ -161,10 +179,10 @@ void HomeView::eventTranIn()
 	bool is_out_r = ms_->ux_plugin_in_out_status_right;
 	bool is_out_l = ms_->ux_plugin_in_out_status_left;
 
-	//int pole_width = Bitmap(BITMAP_POLE_DAY_ID).getWidth();
-	//int pole_height = Bitmap(BITMAP_POLE_DAY_ID).getHeight();
-	int pole_width = (int)(Bitmap(BITMAP_POLE_DAY_ID).getWidth() / 1.6);
-	int pole_height = (int)(Bitmap(BITMAP_POLE_DAY_ID).getHeight() / 1.6);
+	int pole_width = Bitmap(BITMAP_POLE_DAY_ID).getWidth();
+	int pole_height = Bitmap(BITMAP_POLE_DAY_ID).getHeight();
+	//int pole_width = (int)(Bitmap(BITMAP_POLE_DAY_ID).getWidth() / 1.6);
+	//int pole_height = (int)(Bitmap(BITMAP_POLE_DAY_ID).getHeight() / 1.6);
 	pole_.setPosition(
 		ms_->pole_previous_x,
 		ms_->pole_previous_y,
@@ -209,8 +227,8 @@ void HomeView::eventTranIn()
 	//	plugin_left_.beginAnimation(-129 - (981 - 387) - 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
 	//}
 
-	//title_.setInAnimationDuration(cc_.ScreenTranInDuration);
-	//title_.beginTransitionNextInAnimation(ms_->ux_screen_id_next);
+	title_.setInAnimationDuration(cc_.ScreenTranInDuration);
+	title_.beginTransitionNextInAnimation(ms_->ux_screen_id_next);
 
 	footer_.beginSlideAnimation(AnimationStyle::SLIDE_IN);
 
@@ -250,8 +268,8 @@ void HomeView::eventTranOut()
 		EasingEquations::linearEaseNone, EasingEquations::linearEaseNone,
 		EasingEquations::linearEaseNone, EasingEquations::linearEaseNone);
 
-	//title_.setOutAnimationDuration(cc_.ScreenTranOutDuration);
-	//title_.beginTransitionOutAnimation();
+	title_.setOutAnimationDuration(cc_.ScreenTranOutDuration);
+	title_.beginTransitionOutAnimation();
 
 	footer_.setAnimationDuration(cc_.ScreenTranOutDuration);
 	footer_.beginSlideAnimation(AnimationStyle::STATIC_IN);

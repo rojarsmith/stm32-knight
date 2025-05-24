@@ -10,6 +10,11 @@
         "Name": "Intro",
         "Components": [],
         "Interactions": []
+      },
+      {
+        "Name": "Boot",
+        "Components": [],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],
@@ -19,7 +24,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 24,
-    "StartupScreenName": "Intro",
+    "StartupScreenName": "Boot",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../../../stm32-knight-sdk/firmware/Middlewares/ST/TouchGFX/touchgfx",
     "UIPath": ".",

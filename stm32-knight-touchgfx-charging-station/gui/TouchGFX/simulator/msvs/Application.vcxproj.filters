@@ -226,6 +226,24 @@
     <Filter Include="Header Files\gui\widgets\footer">
       <UniqueIdentifier>{0869e2be-82fc-49b2-bde5-fb3f1bd6a028}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\boot_screen">
+      <UniqueIdentifier>CB6FD324-BDFA-5DE3-04BA-56C17C717E4E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\boot_screen">
+      <UniqueIdentifier>1F5EDB43-1D0B-DA29-BE32-605D68127207</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\boot_screen">
+      <UniqueIdentifier>4A97BB16-A367-E58F-14E3-E38FF11E2C65</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\boot_screen">
+      <UniqueIdentifier>5F82DF98-109F-9AED-3C27-90962AF9BBDD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\title">
+      <UniqueIdentifier>7585F7CA-F56A-1A3B-9570-4184FD53CED9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\title">
+      <UniqueIdentifier>CF0DE364-418C-9BB7-1907-3A06BFB39800</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -380,6 +398,18 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\widgets\footer\FooterItemGroup.cpp">
       <Filter>Source Files\gui\widgets\footer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\boot_screen\BootPresenter.cpp">
+      <Filter>Source Files\gui\boot_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\boot_screen\BootView.cpp">
+      <Filter>Source Files\gui\boot_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\boot_screen\BootViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\boot_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\title\Title.cpp">
+      <Filter>Source Files\gui\widgets\title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -960,6 +990,18 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\widgets\footer\FooterItemGroup.hpp">
       <Filter>Header Files\gui\widgets\footer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\boot_screen\BootPresenter.hpp">
+      <Filter>Header Files\gui\boot_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\boot_screen\BootView.hpp">
+      <Filter>Header Files\gui\boot_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\boot_screen\BootViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\boot_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\title\Title.hpp">
+      <Filter>Header Files\gui\widgets\title</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
