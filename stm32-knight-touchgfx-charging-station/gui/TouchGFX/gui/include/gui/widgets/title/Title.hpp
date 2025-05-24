@@ -12,7 +12,7 @@
 
 using namespace touchgfx;
 
-class Title : public Container, public Resolution
+class Title : public Container
 {
 public:
 	Title();

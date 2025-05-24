@@ -20,6 +20,11 @@
         "Name": "Payment",
         "Components": [],
         "Interactions": []
+      },
+      {
+        "Name": "Connect",
+        "Components": [],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],

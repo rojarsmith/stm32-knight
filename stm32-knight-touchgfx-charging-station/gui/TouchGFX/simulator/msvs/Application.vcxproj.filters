@@ -292,6 +292,36 @@
     <Filter Include="Header Files\generated\gui_generated\payment_screen">
       <UniqueIdentifier>59E7D06F-1EEF-19FE-42E5-8F461ADADF55</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\connect_screen">
+      <UniqueIdentifier>A9F4AB9C-3557-4D56-0458-9DD402C7BFF0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\connect_screen">
+      <UniqueIdentifier>1C2AD63A-041F-2975-112E-75AEB9234A96</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\qrcode">
+      <UniqueIdentifier>C6419C94-5742-16B6-F2D7-218CBB23B5D2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\qrcode">
+      <UniqueIdentifier>8FE951ED-96F7-19FA-39C9-CC8DC519F6DF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\connect_screen">
+      <UniqueIdentifier>7B16F050-56A4-209C-26E3-79AAB2B491CD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\connect_screen">
+      <UniqueIdentifier>556D9A5F-5822-F3DE-1C80-8D84773C1AEA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\button_with_label_ex">
+      <UniqueIdentifier>25BC83B6-608E-8C97-1A65-9A4FAF16473E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\button_with_label_ex">
+      <UniqueIdentifier>BEF7C726-9A80-D157-1101-1FD8BD9BED16</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\backto">
+      <UniqueIdentifier>B77C8B35-A1E8-5273-50CC-942066C91D0C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\backto">
+      <UniqueIdentifier>BBE3B0C5-CA41-7B4B-C588-00B357EE7FE7</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -506,6 +536,27 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\payment_screen\PaymentViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\payment_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\backto\Backto.cpp">
+      <Filter>Source Files\gui\widgets\backto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\button_with_label_ex\ButtonWithLabelEx.cpp">
+      <Filter>Source Files\gui\widgets\button_with_label_ex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\connect_screen\ConnectPresenter.cpp">
+      <Filter>Source Files\gui\connect_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\connect_screen\ConnectView.cpp">
+      <Filter>Source Files\gui\connect_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\connect_screen\ConnectViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\connect_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\qrcode\QRCode.cpp">
+      <Filter>Source Files\gui\widgets\qrcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\qrcode\QRCodeWidget.cpp">
+      <Filter>Source Files\gui\widgets\qrcode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1146,6 +1197,27 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\payment_screen\PaymentViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\payment_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\backto\Backto.hpp">
+      <Filter>Header Files\gui\widgets\backto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\button_with_label_ex\ButtonWithLabelEx.hpp">
+      <Filter>Header Files\gui\widgets\button_with_label_ex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\connect_screen\ConnectPresenter.hpp">
+      <Filter>Header Files\gui\connect_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\connect_screen\ConnectView.hpp">
+      <Filter>Header Files\gui\connect_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\connect_screen\ConnectViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\connect_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\qrcode\QRCode.hpp">
+      <Filter>Header Files\gui\widgets\qrcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\qrcode\QRCodeWidget.hpp">
+      <Filter>Header Files\gui\widgets\qrcode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

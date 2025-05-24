@@ -38,6 +38,8 @@
     <ClCompile Include="..\..\generated\gui_generated\src\home_screen\HomeViewBase.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\backto\Backto.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\button_with_label_ex\ButtonWithLabelEx.cpp" />
+    <ClCompile Include="..\..\gui\src\widgets\car\Car.cpp" />
+    <ClCompile Include="..\..\gui\src\widgets\car\CarItemGroup.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\ContainerEx.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\context\Context.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\context\ContextNameValue.cpp" />
@@ -73,6 +75,7 @@
     <ClCompile Include="..\..\gui\src\widgets\Integration.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\language\Language.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\loading\Loading.cpp" />
+    <ClCompile Include="..\..\gui\src\widgets\pay_method\PayMethod.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\plugin\Plugin.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\qrcode\QRCode.cpp" />
     <ClCompile Include="..\..\gui\src\widgets\qrcode\QRCodeWidget.cpp" />
@@ -89,6 +92,9 @@
     <ClCompile Include="..\..\gui\src\payment_screen\PaymentPresenter.cpp" />
     <ClCompile Include="..\..\gui\src\payment_screen\PaymentView.cpp" />
     <ClCompile Include="..\..\generated\gui_generated\src\payment_screen\PaymentViewBase.cpp" />
+    <ClCompile Include="..\..\gui\src\connect_screen\ConnectPresenter.cpp" />
+    <ClCompile Include="..\..\gui\src\connect_screen\ConnectView.cpp" />
+    <ClCompile Include="..\..\generated\gui_generated\src\connect_screen\ConnectViewBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml" />
@@ -261,6 +267,8 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelSchema.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\backto\Backto.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\button_with_label_ex\ButtonWithLabelEx.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\widgets\car\Car.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\widgets\car\CarItemGroup.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\ContainerEx.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\context\Context.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\context\ContextNameValue.hpp" />
@@ -296,6 +304,7 @@
     <ClInclude Include="..\..\gui\include\gui\widgets\Integration.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\language\Language.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\loading\Loading.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\widgets\pay_method\PayMethod.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\plugin\Plugin.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\qrcode\QRCode.hpp" />
     <ClInclude Include="..\..\gui\include\gui\widgets\qrcode\QRCodeWidget.hpp" />
@@ -312,6 +321,9 @@
     <ClInclude Include="..\..\gui\include\gui\payment_screen\PaymentPresenter.hpp" />
     <ClInclude Include="..\..\gui\include\gui\payment_screen\PaymentView.hpp" />
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\payment_screen\PaymentViewBase.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\connect_screen\ConnectPresenter.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\connect_screen\ConnectView.hpp" />
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\connect_screen\ConnectViewBase.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc" />
