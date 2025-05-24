@@ -6,10 +6,10 @@
 
 HomeView::HomeView()
     :
-	//socket_right_(false, ms_),
-	//socket_left_(true, ms_),
-	//plugin_right_(false, ms_),
-	//plugin_left_(true, ms_),
+	socket_right_(false, ms_),
+	socket_left_(true, ms_),
+	plugin_right_(false, ms_),
+	plugin_left_(true, ms_),
 	button_clicked_callback_(this, &HomeView::buttonClickedHandler),
 	poleAnimationEndedCallback(this, &HomeView::poleAnimationEndedHandler),
 	//begin_animation_callback_(this, &HomeView::beginAnimationHandler),
@@ -56,6 +56,26 @@ void HomeView::setupScreen()
 	pole_.setAnimationEndedCallback(poleAnimationEndedCallback);
 	add(pole_);
 
+	//Element
+	socket_right_.initialize(ms_, false);
+	socket_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	add(socket_right_);
+
+	//Element
+	socket_left_.initialize(ms_, true);
+	socket_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	add(socket_left_);
+
+	//Element
+	plugin_right_.initialize(ms_, false);
+	plugin_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	add(plugin_right_);
+
+	//Element
+	plugin_left_.initialize(ms_, true);
+	plugin_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	add(plugin_left_);
+
 	//Item
 	title_.setPosition(cc_.TitleX, cc_.TitleY, cc_.TitleWidth, cc_.TitleHeight);
 	title_.initialize(ms_);
@@ -69,7 +89,6 @@ void HomeView::setupScreen()
 	//footer_.setPosition(0, HAL::DISPLAY_HEIGHT - foot_reduce_y, HAL::DISPLAY_WIDTH, foot_reduce_y);
 	footer_.setPosition(0, getFixedDisplayHeight() - foot_reduce_y - ratio_height_, HAL::DISPLAY_WIDTH, foot_reduce_y); // 
 	footer_.setAnimationDuration(ANIMATION_TRANSITION_IN_DURATION);
-	//footer_.set
 	add(footer_);
 
 	BaseView::afterSetupScreen();
@@ -166,12 +185,12 @@ void HomeView::event6()
 		ms_->pole_previous_height
 	);
 
-	//socket_right_.renderGraphic();
-	//socket_left_.renderGraphic();
+	socket_right_.renderGraphic();
+	socket_left_.renderGraphic();
 	//information_.renderGraphic();
-	//title_.renderGraphic();
+	title_.renderGraphic();
 	footer_.renderGraphic();
-	//wallpaper_.renderGraphic();
+	wallpaper_.renderGraphic();
 }
 
 void HomeView::eventTranIn()
@@ -206,26 +225,32 @@ void HomeView::eventTranIn()
 		EasingEquations::linearEaseNone,
 		EasingEquations::linearEaseNone);
 
+	socket_right_.beginAnimation(300, 263, 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration); // 800x480
+    socket_left_.beginAnimation(120, 263, 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration); // 800x480
 	//socket_right_.beginAnimation(480, 421, 96, 180, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 	//socket_left_.beginAnimation(192, 421, 96, 180, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 
-	//if (!is_out_r)
-	//{
-	//	plugin_right_.beginAnimation(510, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
-	//}
-	//else
-	//{
-	//	plugin_right_.beginAnimation(510 + 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
-	//}
+	if (!is_out_r)
+	{
+		plugin_right_.beginAnimation(318, -158 + POLE_DEBUG_Y_SHIFT, 241, 1111, 255, cc_.ScreenTranInDuration);
+		//plugin_right_.beginAnimation(510, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
+	}
+	else
+	{
+		plugin_right_.beginAnimation(376, -158 + POLE_DEBUG_Y_SHIFT, 613, 1096, 255, cc_.ScreenTranInDuration);
+		//plugin_right_.beginAnimation(510 + 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
+	}
 
-	//if (!is_out_l)
-	//{
-	//	plugin_left_.beginAnimation(-129, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
-	//}
-	//else
-	//{
-	//	plugin_left_.beginAnimation(-129 - (981 - 387) - 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
-	//}
+	if (!is_out_l)
+	{
+		plugin_left_.beginAnimation(-80, -158 + POLE_DEBUG_Y_SHIFT, 241, 1111, 255, cc_.ScreenTranInDuration);
+		//plugin_left_.beginAnimation(-129, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
+	}
+	else
+	{
+		plugin_left_.beginAnimation(-510, -158 + POLE_DEBUG_Y_SHIFT, 613, 1096, 255, cc_.ScreenTranInDuration);
+		//plugin_left_.beginAnimation(-129 - (981 - 387) - 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
+	}
 
 	title_.setInAnimationDuration(cc_.ScreenTranInDuration);
 	title_.beginTransitionNextInAnimation(ms_->ux_screen_id_next);
@@ -259,8 +284,10 @@ void HomeView::eventTranIn()
 void HomeView::eventTranOut()
 {
 	pole_.startZoomAndMoveAnimation(
-		144,
-		-407,
+		90,
+		-254,
+		//144,
+		//-407,
 		pole_day_width_,
 		pole_day_height_,
 		cc_.ScreenTranOutDuration,
