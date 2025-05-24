@@ -11,9 +11,12 @@ SocketSelectorBar::SocketSelectorBar()
 	is_grabbed_(false),
 	is_animate_indicator_(false),
 	is_animate_indicator_hack_(false),
-	shift_x_indicator_direction_(10),
-	right_cut_off_(SELECTOR_CORRDINATE_RIGHT_LIMIT - 9),
-    left_cut_off_(SELECTOR_CORRDINATE_LEFT_LIMIT - 9),
+	shift_x_indicator_direction_(6),
+	//shift_x_indicator_direction_(10),
+	right_cut_off_(SELECTOR_CORRDINATE_RIGHT_LIMIT - 5),
+	left_cut_off_(SELECTOR_CORRDINATE_LEFT_LIMIT - 5),
+	//right_cut_off_(SELECTOR_CORRDINATE_RIGHT_LIMIT - 9),
+ //   left_cut_off_(SELECTOR_CORRDINATE_LEFT_LIMIT - 9),
 	valid_selected_threshold_(35),
 	charge_socket_selected_(ChargeSocketSelected::CHARGE_SOCKET_NONE),
 	container_move_ended_callback_(this, &SocketSelectorBar::containerMoveEndedHandler),
@@ -78,8 +81,6 @@ void SocketSelectorBar::handleDragEvent(const DragEvent& evt)
 	}
 }
 
-
-
 void SocketSelectorBar::handleTickEvent()
 {	
 	ms_->ux_drag_selector_vx_prev = ms_->ux_drag_selector_vx;
@@ -132,7 +133,7 @@ void SocketSelectorBar::initialize(MachineStatus* status)
 	add(socket_slider_animation_left_);
 
 	//Item Group		
-	ind_.setPosition(ORIGINAL_POINT_ - indicator_width_helf_, 9, 43, 43);
+	ind_.setPosition(ORIGINAL_POINT_ - indicator_width_helf_, 9, 44, 44);
 	//ind_.setPosition(ORIGINAL_POINT_ - indicator_width_helf_, 15 ,70, 70);
 	ind_.setMoveAnimationEndedAction(container_move_ended_callback_);
 

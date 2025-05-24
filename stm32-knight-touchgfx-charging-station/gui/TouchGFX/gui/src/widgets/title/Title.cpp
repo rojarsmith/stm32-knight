@@ -213,10 +213,14 @@ void Title::beginTransitionNextOutAnimation(ScreenNumber next)
 
 void Title::beginSubScreenTransitionAnimation(ScreenNumber next)
 {
-	title_.setPosition(0, 0, 768, 60);
-	subtitle_.setPosition(0, 60, 768, 60);
-	title_prev_.setPosition(0, 0, 768, 60);
-	subtitle_prev_.setPosition(0, 60, 768, 60);
+	title_.setPosition(0, 0, 480, 37);
+	subtitle_.setPosition(0, 37, 480, 37);
+	title_prev_.setPosition(0, 0, 480, 37);
+	subtitle_prev_.setPosition(0, 37, 480, 37);
+	//title_.setPosition(0, 0, 768, 60);
+	//subtitle_.setPosition(0, 60, 768, 60);
+	//title_prev_.setPosition(0, 0, 768, 60);
+	//subtitle_prev_.setPosition(0, 60, 768, 60);
 
 	title_prev_.setTypedText(title_.getTypedText());
 	subtitle_prev_.setTypedText(subtitle_.getTypedText());
@@ -346,24 +350,28 @@ void Title::configElement(ScreenNumber id)
 
 	if (!isTwoLine_)
 	{
-		title_.setY(30);
+		title_.setY(18);
+		//title_.setY(30);
 		subtitle_.setVisible(false);
 	}
 	else
 	{
 		title_.setY(0);
-		subtitle_.setY(60);
+		subtitle_.setY(37);
+		//subtitle_.setY(60);
 		subtitle_.setVisible(true);
 	}
 	if (!isTwoLine_prev_)
 	{
-		title_prev_.setY(30);
+		title_prev_.setY(18);
+		//title_prev_.setY(30);
 		subtitle_prev_.setVisible(false);
 	}
 	else
 	{
 		title_prev_.setY(0);
-		subtitle_prev_.setY(60);
+		subtitle_prev_.setY(37);
+		//subtitle_prev_.setY(60);
 		subtitle_prev_.setVisible(true);
 	}
 }

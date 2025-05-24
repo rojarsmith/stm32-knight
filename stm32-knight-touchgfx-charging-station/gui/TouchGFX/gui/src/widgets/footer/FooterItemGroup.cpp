@@ -126,33 +126,40 @@ void FooterItemGroup::renderElementLowSpeed()
 	if (WeatherStyle::NIGHT == ms_->ux_weather)
 	{
 		split_line_.setBitmap(Bitmap(BITMAP_FOOTER_LINE_ID));
-		split_line_.setPosition(477, 36, Bitmap(BITMAP_FOOTER_LINE_ID).getWidth(), Bitmap(BITMAP_FOOTER_LINE_ID).getHeight());
+		split_line_.setPosition(298, 22, Bitmap(BITMAP_FOOTER_LINE_ID).getWidth(), Bitmap(BITMAP_FOOTER_LINE_ID).getHeight());
+		//split_line_.setPosition(477, 36, Bitmap(BITMAP_FOOTER_LINE_ID).getWidth(), Bitmap(BITMAP_FOOTER_LINE_ID).getHeight());
 
 		icon_phone_.setBitmap(Bitmap(BITMAP_FOOTER_PHONE_ID));
-		icon_phone_.setPosition(528, 29, Bitmap(BITMAP_FOOTER_PHONE_ID).getWidth(), Bitmap(BITMAP_FOOTER_PHONE_ID).getHeight());
+		icon_phone_.setPosition(330, 18, Bitmap(BITMAP_FOOTER_PHONE_ID).getWidth(), Bitmap(BITMAP_FOOTER_PHONE_ID).getHeight());
+		//icon_phone_.setPosition(528, 29, Bitmap(BITMAP_FOOTER_PHONE_ID).getWidth(), Bitmap(BITMAP_FOOTER_PHONE_ID).getHeight());
 
 		icon_clock_.setBitmap(Bitmap(BITMAP_FOOTER_CLOCK_ID));
-		icon_clock_.setPosition(528, 63, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
+		icon_clock_.setPosition(330, 39, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
+		//icon_clock_.setPosition(528, 63, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
 
-		text_head_1_.setPosition(80 - 10, 44, 62, 28);
+		text_head_1_.setPosition(43, 27, 38, 17);
+		//text_head_1_.setPosition(80 - 10, 44, 62, 28);
 		text_head_1_.setAlpha(255);
 		text_head_1_.setColor(touchgfx::Color::getColorFromRGB(76, 199, 238));
 		text_head_1_.setLinespacing(0);
 		text_head_1_.setTypedText(TypedText(T_FOOTER_CURRENCY));
 
-		text_tail_1_.setPosition(149, 44, 88, 28);
+		text_tail_1_.setPosition(93, 27, 55, 17);
+		//text_tail_1_.setPosition(149, 44, 88, 28);
 		text_tail_1_.setAlpha(255);
 		text_tail_1_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		text_tail_1_.setLinespacing(0);
 		text_tail_1_.setTypedText(TypedText(T_FOOTER_PER_KWH));
 
-		text_head_2_.setPosition(280, 44, 88, 28);
+		text_head_2_.setPosition(175, 27, 55, 17);
+		//text_head_2_.setPosition(280, 44, 88, 28);
 		text_head_2_.setAlpha(255);
 		text_head_2_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		text_head_2_.setLinespacing(0);
 		text_head_2_.setTypedText(TypedText(T_FOOTER_MAX_DOT));
 
-		text_tail_2_.setPosition(401, 44, 88, 28);
+		text_tail_2_.setPosition(250, 27, 55, 17);
+		//text_tail_2_.setPosition(401, 44, 88, 28);
 		text_tail_2_.setAlpha(255);
 		text_tail_2_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		text_tail_2_.setLinespacing(0);
@@ -161,33 +168,40 @@ void FooterItemGroup::renderElementLowSpeed()
 	else
 	{
 		split_line_.setBitmap(Bitmap(BITMAP_FOOTER_LINE_ID));
-		split_line_.setPosition(477, 36, Bitmap(BITMAP_FOOTER_LINE_ID).getWidth(), Bitmap(BITMAP_FOOTER_LINE_ID).getHeight());
+		split_line_.setPosition(298, 22, Bitmap(BITMAP_FOOTER_LINE_ID).getWidth(), Bitmap(BITMAP_FOOTER_LINE_ID).getHeight());
+		//split_line_.setPosition(477, 36, Bitmap(BITMAP_FOOTER_LINE_ID).getWidth(), Bitmap(BITMAP_FOOTER_LINE_ID).getHeight());
 
 		icon_phone_.setBitmap(Bitmap(BITMAP_FOOTER_PHONE_ID));
-		icon_phone_.setPosition(528, 29, Bitmap(BITMAP_FOOTER_PHONE_ID).getWidth(), Bitmap(BITMAP_FOOTER_PHONE_ID).getHeight());
+		icon_phone_.setPosition(330, 18, Bitmap(BITMAP_FOOTER_PHONE_ID).getWidth(), Bitmap(BITMAP_FOOTER_PHONE_ID).getHeight());
+		//icon_phone_.setPosition(528, 29, Bitmap(BITMAP_FOOTER_PHONE_ID).getWidth(), Bitmap(BITMAP_FOOTER_PHONE_ID).getHeight());
 
 		icon_clock_.setBitmap(Bitmap(BITMAP_FOOTER_CLOCK_ID));
-		icon_clock_.setPosition(528, 63, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
+		icon_clock_.setPosition(330, 39, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
+		//icon_clock_.setPosition(528, 63, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
 
-		text_head_1_.setPosition(80 - 10, 44, 62, 28);
+		text_head_1_.setPosition(43, 27, 38, 17);
+		//text_head_1_.setPosition(80 - 10, 44, 62, 28);
 		text_head_1_.setAlpha(255);
 		text_head_1_.setColor(touchgfx::Color::getColorFromRGB(76, 199, 238));
 		text_head_1_.setLinespacing(0);
 		text_head_1_.setTypedText(TypedText(T_FOOTER_CURRENCY));
 
-		text_tail_1_.setPosition(149, 44, 88, 28);
+		text_tail_1_.setPosition(93, 27, 55, 17);
+		//text_tail_1_.setPosition(149, 44, 88, 28);
 		text_tail_1_.setAlpha(255);
 		text_tail_1_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 		text_tail_1_.setLinespacing(0);
 		text_tail_1_.setTypedText(TypedText(T_FOOTER_PER_KWH));
 
-		text_head_2_.setPosition(280, 44, 88, 28);
+		text_head_2_.setPosition(175, 27, 55, 17);
+		//text_head_2_.setPosition(280, 44, 88, 28);
 		text_head_2_.setAlpha(255);
 		text_head_2_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 		text_head_2_.setLinespacing(0);
 		text_head_2_.setTypedText(TypedText(T_FOOTER_MAX_DOT));
 
-		text_tail_2_.setPosition(401, 44, 88, 28);
+		text_tail_2_.setPosition(250, 27, 55, 17);
+		//text_tail_2_.setPosition(401, 44, 88, 28);
 		text_tail_2_.setAlpha(255);
 		text_tail_2_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 		text_tail_2_.setLinespacing(0);

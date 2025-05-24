@@ -273,7 +273,8 @@ void SocketSelectorBackground::event_10()
 
 	if (side_)
 	{
-		title_.setXY(140, 38);
+		title_.setXY(87, 23);
+		//title_.setXY(140, 38);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
@@ -282,7 +283,8 @@ void SocketSelectorBackground::event_10()
 	}
 	else
 	{
-		title_.setXY(42, 38);
+		title_.setXY(26, 23);
+		//title_.setXY(42, 38);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
@@ -306,7 +308,8 @@ void SocketSelectorBackground::event_11()
 	{
 		layer_3_.setBitmap(Bitmap(BITMAP_SLIDER_NOT_CHARGING_RIGHT_ID));
 
-		title_.setXY(140, 38);
+		title_.setXY(87, 23);
+		//title_.setXY(140, 38);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
@@ -317,7 +320,8 @@ void SocketSelectorBackground::event_11()
 	{
 		layer_3_.setBitmap(Bitmap(BITMAP_SLIDER_NOT_CHARGING_LEFT_ID));
 
-		title_.setXY(42, 38);
+		title_.setXY(26, 23);
+		//title_.setXY(42, 38);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
@@ -343,7 +347,8 @@ void SocketSelectorBackground::event_12()
 	{
 		layer_3_.setBitmap(Bitmap(BITMAP_SLIDER_ERROR_RIGHT_ID));		
 
-		title_.setXY(225, 18);
+		title_.setXY(140, 11);
+		//title_.setXY(225, 18);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
@@ -354,7 +359,8 @@ void SocketSelectorBackground::event_12()
 	{
 		layer_3_.setBitmap(Bitmap(BITMAP_SLIDER_ERROR_LEFT_ID));			
 
-		title_.setXY(42, 18);
+		title_.setXY(26, 11);
+		//title_.setXY(42, 18);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
@@ -380,7 +386,8 @@ void SocketSelectorBackground::event_13()
 	{
 		layer_3_.setBitmap(Bitmap(BITMAP_SLIDER_BLACK_RIGHT_ID));		
 
-		title_.setXY(225, 18);
+		title_.setXY(140, 11);
+		//title_.setXY(225, 18);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
@@ -391,7 +398,8 @@ void SocketSelectorBackground::event_13()
 	{
 		layer_3_.setBitmap(Bitmap(BITMAP_SLIDER_BLACK_LEFT_ID));
 
-		title_.setXY(42, 18);
+		title_.setXY(26, 11);
+		//title_.setXY(42, 18);
 		title_.setAlpha(150);
 		title_.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 		title_.setLinespacing(0);
