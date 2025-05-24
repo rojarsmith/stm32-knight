@@ -43,8 +43,8 @@ void Title::renderGraphic()
 	title_.setAlpha(ms_->title_alpha);
 	subtitle_.setAlpha(ms_->subtitle_alpha);
 
-	title_.setPosition(0, 0, 480, 37); // 800x480
-	subtitle_.setPosition(0, 37, 480, 37); // 800x480
+	title_.setPosition(0, getScaledY(0), 480, 37); // 800x480
+	subtitle_.setPosition(0, getScaledY(37), 480, 37); // 800x480
 	//title_.setPosition(0, 0, 768, 60);
 	//subtitle_.setPosition(0, 60, 768, 60);
 

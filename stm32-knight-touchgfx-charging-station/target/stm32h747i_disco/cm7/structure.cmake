@@ -16,6 +16,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/inc
     ../../../auto/extvar/include
+    ../../../lib
     ../../../target/stm32h747i_disco/cm7/inc
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/adv7533
     ../../../../stm32-knight-sdk/firmware/Drivers/BSP/Components/Common
@@ -34,6 +35,9 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ../../../application/core0/src/freertos.c
     ../../../application/core0/src/syscalls.c
+    ../../../lib/qrcode-generator/BitBuffer.cpp
+    ../../../lib/qrcode-generator/QrCodeGenerator.cpp
+    ../../../lib/qrcode-generator/QrSegment.cpp
     ../../../target/common/system_stm32h7xx.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_msp.c
     ../../../target/stm32h747i_disco/cm7/src/stm32h7xx_hal_timebase_tim.c

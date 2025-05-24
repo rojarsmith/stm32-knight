@@ -81,10 +81,61 @@ public:
 	}
 
 	virtual void afterSetupScreen()
-	{
+	{	
+		//Element
+		left_top_mask_.setPosition(0, getScaledY(0), 75, 75);
+		//left_top_mask_.setPosition(0, 0, 120, 120);
+		left_top_mask_.setAlpha(0);
+		left_top_mask_.setVisible(false);
+		left_top_mask_.setTouchable(false);
+		BaseView<T, U>::add(left_top_mask_);
+
+		//Element
+		left_top_mask2_.setPosition(75, getScaledY(0), 125, 75);
+		//left_top_mask2_.setPosition(120, 0, 200, 120);
+		left_top_mask2_.setAlpha(0);
+		left_top_mask2_.setVisible(false);
+		left_top_mask2_.setTouchable(false);
+		BaseView<T, U>::add(left_top_mask2_);
+
+		//Element
+		right_top_mask_.setPosition(406, getScaledY(0), 75, 75);
+		//right_top_mask_.setPosition(650, 0, 120, 120);
+        right_top_mask_.setAlpha(0);
+        right_top_mask_.setVisible(false);
+        right_top_mask_.setTouchable(false);
+		BaseView<T, U>::add(right_top_mask_);
+
+		mask_back_bottom_.setPosition(31, getScaledY(437), HAL::DISPLAY_WIDTH, 202);
+		//mask_back_bottom_.setPosition(50, 700, HAL::DISPLAY_WIDTH, 324);
+		mask_back_bottom_.setAlpha(0);
+		mask_back_bottom_.setVisible(false);
+		mask_back_bottom_.setTouchable(false);
+		BaseView<T, U>::add(mask_back_bottom_);
+
+		//Element
+		mask_full_view_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+		mask_full_view_.setAlpha(0);
+		mask_full_view_.setVisible(true);
+		mask_full_view_.setTouchable(true);
+		BaseView<T, U>::add(mask_full_view_);
+
+		//Element // Only for 800x480
+		screen_ratio_mask_top_.setPosition(0, 0, HAL::DISPLAY_WIDTH, ratio_height_);
+		screen_ratio_mask_top_.setAlpha(255);
+		screen_ratio_mask_top_.setColor(Color::getColorFromRGB(0, 0, 0));
+		BaseView<T, U>::add(screen_ratio_mask_top_);
+
+		//Element // Only for 800x480
+		screen_ratio_mask_bottom_.setPosition(0, 720, HAL::DISPLAY_WIDTH, ratio_height_);
+		screen_ratio_mask_bottom_.setAlpha(255);
+		screen_ratio_mask_bottom_.setColor(Color::getColorFromRGB(0, 0, 0));
+		BaseView<T, U>::add(screen_ratio_mask_bottom_);
+
 #ifdef SIMULATOR          
 		//Element		
-		version_.setPosition(580, 2, 202, 28);
+		version_.setPosition(362, 1, 126, 17);
+		//version_.setPosition(580, 2, 202, 28);
 		version_.setAlpha(255);
 		version_.setColor(Color::getColorFromRGB(255, 0, 0));
 		version_.setLinespacing(0);
@@ -106,52 +157,6 @@ public:
 
 		BaseView<T, U>::add(version_);
 #endif
-		
-		//Element
-		left_top_mask_.setPosition(0, 0, 120, 120);
-		left_top_mask_.setAlpha(0);
-		left_top_mask_.setVisible(false);
-		left_top_mask_.setTouchable(false);
-		BaseView<T, U>::add(left_top_mask_);
-
-		//Element
-		left_top_mask2_.setPosition(120, 0, 200, 120);
-		left_top_mask2_.setAlpha(0);
-		left_top_mask2_.setVisible(false);
-		left_top_mask2_.setTouchable(false);
-		BaseView<T, U>::add(left_top_mask2_);
-
-		//Element
-		right_top_mask_.setPosition(650, 0, 120, 120);
-        right_top_mask_.setAlpha(0);
-        right_top_mask_.setVisible(false);
-        right_top_mask_.setTouchable(false);
-		BaseView<T, U>::add(right_top_mask_);
-
-		mask_back_bottom_.setPosition(50, 700, HAL::DISPLAY_WIDTH, 324);
-		mask_back_bottom_.setAlpha(0);
-		mask_back_bottom_.setVisible(false);
-		mask_back_bottom_.setTouchable(false);
-		BaseView<T, U>::add(mask_back_bottom_);
-
-		//Element
-		mask_full_view_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
-		mask_full_view_.setAlpha(0);
-		mask_full_view_.setVisible(true);
-		mask_full_view_.setTouchable(true);
-		BaseView<T, U>::add(mask_full_view_);
-
-		//Element // Only for 800x480
-		screen_ratio_mask_top_.setPosition(0, 0, HAL::DISPLAY_WIDTH, ratio_height_);
-		screen_ratio_mask_top_.setAlpha(255);
-		screen_ratio_mask_top_.setColor(Color::getColorFromRGB(0, 0, 0));
-		BaseView<T, U>::add(screen_ratio_mask_top_);
-
-		//Element // Only for 800x480
-		screen_ratio_mask_bottom_.setPosition(0, 720, HAL::DISPLAY_WIDTH, ratio_height_);
-		screen_ratio_mask_bottom_.setAlpha(255);
-		screen_ratio_mask_bottom_.setColor(Color::getColorFromRGB(0, 0, 0));
-		BaseView<T, U>::add(screen_ratio_mask_bottom_);
 
 		//Element
 		BaseView<T, U>::add(em_);
@@ -197,7 +202,8 @@ protected:
 	Box mask_full_view_;
 	Box screen_ratio_mask_top_;
 	Box screen_ratio_mask_bottom_;
-	static const uint16_t TEXT_SIZE_14 = 14;
+	static const uint16_t TEXT_SIZE_14 = 12; // 800x480
+	//static const uint16_t TEXT_SIZE_14 = 14;
 	TextAreaWithOneWildcard version_;
 	Unicode::UnicodeChar version_buffer_[TEXT_SIZE_14];	
 
@@ -389,7 +395,8 @@ protected:
 				break;
 			}
 
-			message_->setPosition(65, 140, 638, 838 + 20);
+			message_->setPosition(40, 87, 398, getScaledY(536));
+			//message_->setPosition(65, 140, 638, 838 + 20);
 			message_->setAnimationDuration(ms_->ux_pop_tran_in_time);
 			message_->setOpenCompletedCallback(*(GenericCallback<const int> *)pv1_);
 			message_->setCloseCompletedCallback(*(GenericCallback<const int> *)pv2_);

@@ -4,13 +4,13 @@
 #include "main.h"
 #endif
 
-int16_t Resolution::getScaledHeight(int16_t height)
+int16_t Resolution::getScaledY(int16_t height)
 {
     // 800x480
     return height + 80;
 }
 
-int16_t Resolution::getScaledHeightMax()
+int16_t Resolution::getScaledYMax()
 {
     // Portrait 4:3 480x640 @ 480x800
     return 640;

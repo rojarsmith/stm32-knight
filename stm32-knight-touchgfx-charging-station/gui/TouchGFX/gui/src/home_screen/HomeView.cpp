@@ -49,7 +49,7 @@ void HomeView::setupScreen()
 	pole_.setBitmaps(Bitmap(getPoleBitmapSmall()), Bitmap(getPoleBitmapLarge()));
 	pole_.setPosition(
 		ms_->pole_previous_x,
-		ms_->pole_previous_y,
+		getScaledY(ms_->pole_previous_y),
 		ms_->pole_previous_width,
 		ms_->pole_previous_height
 	);
@@ -58,26 +58,26 @@ void HomeView::setupScreen()
 
 	//Element
 	socket_right_.initialize(ms_, false);
-	socket_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	socket_right_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(socket_right_);
 
 	//Element
 	socket_left_.initialize(ms_, true);
-	socket_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	socket_left_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(socket_left_);
 
 	//Element
 	plugin_right_.initialize(ms_, false);
-	plugin_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	plugin_right_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(plugin_right_);
 
 	//Element
 	plugin_left_.initialize(ms_, true);
-	plugin_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	plugin_left_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(plugin_left_);
 
 	//Item
-	title_.setPosition(cc_.TitleX, cc_.TitleY, cc_.TitleWidth, cc_.TitleHeight);
+	title_.setPosition(cc_.TitleX, getScaledY(cc_.TitleY), cc_.TitleWidth, cc_.TitleHeight);
 	title_.initialize(ms_);
 	title_.setInAnimationDuration(ANIMATION_TRANSITION_IN_DURATION);
 	title_.setOutAnimationDuration(ANIMATION_TRANSITION_OUT_DURATION);
@@ -89,14 +89,14 @@ void HomeView::setupScreen()
 	int16_t socket_slider_h = 171;
 	//int16_t socket_slider_y = 100 + 174;
 	socket_slider_.initialize(ms_);
-	socket_slider_.setPosition(0, getScaledHeight(socket_slider_y), HAL::DISPLAY_WIDTH, socket_slider_h);
+	socket_slider_.setPosition(0, getScaledY(socket_slider_y), HAL::DISPLAY_WIDTH, socket_slider_h);
 	socket_slider_.setPlugNotInSocketCallback(plug_not_in_socket_callback_);
 	socket_slider_.setBarMoveOutAnimationEndCallback(bar_move_out_animation_end_callback_);
 	socket_slider_.setTouchable(true);
 	add(socket_slider_);
 
 	//Element
-	information_.setPosition(18, 18, 43, 43);
+	information_.setPosition(18, getScaledY(18), 43, 43);
 	//information_.setPosition(30, 30, 70, 70);
 	information_.initialize(ms_);
 	information_.setDeepTouchable(true);
@@ -106,7 +106,7 @@ void HomeView::setupScreen()
 	//Element
 	language_.initialize(ms_);
 	language_.setAnimationDuration(15);
-	language_.setPosition(75, 20, 241, 40);
+	language_.setPosition(75, getScaledY(20), 241, 40);
 	//language_.setPosition(120, 33, 386, 64);
 	language_.setBeginAnimationCallback(begin_animation_callback_);
 	language_.setOpenContainerCallback(open_container_callback_);
@@ -114,7 +114,7 @@ void HomeView::setupScreen()
 	add(language_);
 
 	//Element
-	lang_mask_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	lang_mask_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	lang_mask_.setAlpha(0);
 	lang_mask_.setVisible(false);
 	lang_mask_.setTouchable(false);
@@ -133,14 +133,14 @@ void HomeView::setupScreen()
 
 	char selector_x_name_[] = "selector_x_";
 	float selector_x_v_ = 00.00f;
-	selector_x_.setPosition(0, 125, 187, 12);
+	selector_x_.setPosition(0, getScaledY(125), 187, 12);
 	//selector_x_.setPosition(0, 200, 300, 20);
 	selector_x_.initialize(selector_x_name_, selector_x_v_);
 	add(selector_x_);
 
 	char selector_vx_name_[] = "selector_vx_";
 	float selector_vx_v_ = 00.00f;
-	selector_vx_.setPosition(0, 137, 187, 12);
+	selector_vx_.setPosition(0, getScaledY(137), 187, 12);
 	//selector_vx_.setPosition(0, 220, 300, 20);
 	selector_vx_.initialize(selector_vx_name_, selector_vx_v_);
 	add(selector_vx_);
@@ -474,7 +474,7 @@ void HomeView::event6()
 	pole_.setBitmaps(Bitmap(getPoleBitmapSmall()), Bitmap(getPoleBitmapLarge()));
 	pole_.setPosition(
 		ms_->pole_previous_x,
-		ms_->pole_previous_y,
+		getScaledY(ms_->pole_previous_y),
 		ms_->pole_previous_width,
 		ms_->pole_previous_height
 	);
@@ -553,8 +553,6 @@ void HomeView::eventPlugNotInSocket()
 				ms_->ux_popup_trigger_ = true;
 				ms_->ux_popup_number = MessageNumber::MESSAGE_25;
 				sendCommand(ScreenNumber::SCENARIO_2_5);
-
-
 			}
 			else
 			{
@@ -593,7 +591,7 @@ void HomeView::eventTranOutRFID()
 	int pole_height = Bitmap(BITMAP_POLE_DAY_ID).getHeight();
 	pole_.startZoomAndMoveAnimation(
 		305,
-		214,
+		getScaledY(214),
 		(int)(pole_width * 0.33),
 		(int)(pole_height * 0.33),
 		cc_.ScreenTranOutDuration,
@@ -625,20 +623,20 @@ void HomeView::eventTranOutRFID()
 
 	if (!is_out_r)
 	{
-		plugin_right_.beginAnimation(178 + 249, 257, 129, 593, 255, cc_.ScreenTranOutDuration);
+		plugin_right_.beginAnimation(178 + 249, getScaledY(257), 129, 593, 255, cc_.ScreenTranOutDuration);
 	}
 	else
 	{
-		plugin_right_.beginAnimation(178 + 249 + 31, 257, 327, 585, 255, cc_.ScreenTranOutDuration);
+		plugin_right_.beginAnimation(178 + 249 + 31, getScaledY(257), 327, 585, 255, cc_.ScreenTranOutDuration);
 	}
 
 	if (!is_out_l)
 	{
-		plugin_left_.beginAnimation(-36 + 249, 257, 129, 593, 255, cc_.ScreenTranOutDuration);
+		plugin_left_.beginAnimation(-36 + 249, getScaledY(257), 129, 593, 255, cc_.ScreenTranOutDuration);
 	}
 	else
 	{
-		plugin_left_.beginAnimation(-36 + 249 + (-327 - 31 + 129), 257, 327, 585, 255, cc_.ScreenTranOutDuration);
+		plugin_left_.beginAnimation(-36 + 249 + (-327 - 31 + 129), getScaledY(257), 327, 585, 255, cc_.ScreenTranOutDuration);
 	}
 
 	socket_slider_.setSlideDuration(cc_.ScreenTranOutDuration);
@@ -656,18 +654,18 @@ void HomeView::eventTranIn()
 	//int pole_height = (int)(Bitmap(BITMAP_POLE_DAY_ID).getHeight() / 1.6);
 	pole_.setPosition(
 		ms_->pole_previous_x,
-		ms_->pole_previous_y,
+		getScaledY(ms_->pole_previous_y),
 		ms_->pole_previous_width,
 		ms_->pole_previous_height
 	);
 	pole_.setVisible(true);
 
 	int16_t item_end_x = (int16_t)(144 / 1.6); // 800x480
-	int16_t item_end_y = (int16_t)( -407 / 1.6); // 800x480
+	int16_t item_end_y = (int16_t)(-407 / 1.6); // 800x480
 
 	pole_.startZoomAndMoveAnimation(
 		item_end_x,
-		item_end_y,
+		getScaledY(item_end_y),
 		pole_width,
 		pole_height,
 		cc_.ScreenTranInDuration,
@@ -747,7 +745,7 @@ void HomeView::eventTranOut()
 {
 	pole_.startZoomAndMoveAnimation(
 		90,
-		-254,
+		getScaledY(-254),
 		//144,
 		//-407,
 		pole_day_width_,

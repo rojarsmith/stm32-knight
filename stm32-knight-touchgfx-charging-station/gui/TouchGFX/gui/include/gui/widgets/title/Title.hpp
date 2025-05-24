@@ -8,10 +8,11 @@
 #include <gui/common/CommonConstant.hpp>
 #include <gui/common/CommonFunction.h>
 #include <gui/model/ModelSchema.hpp>
+#include <gui/common/Resolution.hpp>
 
 using namespace touchgfx;
 
-class Title : public Container
+class Title : public Container, public Resolution
 {
 public:
 	Title();
