@@ -32,11 +32,9 @@ std::string title_path = "build/bin/Title.bmp";
 std::string title_path_temp = "../../assets/intro/Title.bmp";
 std::string title_path = "../../build/Debug/bin/Title.bmp";
 #endif
-printf("in\r\n");
 	std::ifstream ifs(title_path, std::ios::binary);
 	if (!ifs.is_open())
 	{
-		printf("in\r\n");
 		std::ifstream src(title_path_temp, std::ios::in | std::ios::binary);
 
 		std::ofstream dst(title_path, std::ios::out | std::ios::binary);
