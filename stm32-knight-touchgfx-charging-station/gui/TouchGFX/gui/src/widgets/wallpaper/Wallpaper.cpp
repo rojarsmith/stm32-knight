@@ -20,7 +20,7 @@ void Wallpaper::initialize(WeatherStyle& weather, WeatherStyle& weather_prev)
 	weather_ = &weather;
 	weather_prev_ = &weather_prev;
 
-	background_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	background_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(background_);
 
 	setGraphic();

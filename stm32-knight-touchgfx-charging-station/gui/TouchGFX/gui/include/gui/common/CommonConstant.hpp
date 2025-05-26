@@ -33,8 +33,8 @@ extern "C"
 	const int ANIMATION_MESSAGE_OUT_DURATION = 30;
 	//const int ANIMATION_TRANSITION_IN_DURATION = 10; //1 = close for low hardware
 	//const int ANIMATION_TRANSITION_OUT_DURATION = 10; //1 = close for low hardware
-	const int ANIMATION_TRANSITION_IN_DURATION = 180; //1 = close for low hardware
-	const int ANIMATION_TRANSITION_OUT_DURATION = 180; //1 = close for low hardware
+	const int ANIMATION_TRANSITION_IN_DURATION = 30; //1 = close for low hardware
+	const int ANIMATION_TRANSITION_OUT_DURATION = 30; //1 = close for low hardware
 	const int ANIMATION_SHAKE_BUTTON = 15;
 	const int ANIMATION_PLUGIN_EXG_DURATION = 30;	
 

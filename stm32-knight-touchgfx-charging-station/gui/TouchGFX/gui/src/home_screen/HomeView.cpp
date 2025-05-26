@@ -273,7 +273,8 @@ void HomeView::closeContainerCallback(int callback)
 	{
 		//Texts::setLanguage(SPA);
 	}
-	application().drawCachedAreas();
+	//application().drawCachedAreas();
+	application().invalidate();
 
 	setMask(MaskList::FULL_MASK, false);
 }

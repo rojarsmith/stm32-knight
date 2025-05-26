@@ -6,11 +6,12 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <gui/common/CommonConstant.hpp>
 #include <gui/common/CommonFunction.h>
+#include <gui/common/TargetFix.hpp>
 #include <gui/model/ModelSchema.hpp>
 
 using namespace touchgfx;
 
-class Wallpaper : public Container
+class Wallpaper : public Container, public TargetFix
 {
 public:
 	Wallpaper();

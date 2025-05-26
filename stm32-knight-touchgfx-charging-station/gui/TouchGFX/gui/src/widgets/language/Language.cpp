@@ -30,32 +30,38 @@ void Language::initialize(MachineStatus* status)
 	background_left_.setVisible(false);
 	add(background_left_);
 
-	view_port_.setPosition(32, 0, 354, 64);
+	view_port_.setPosition(20, 0, 221, 40); //800x480
+	//view_port_.setPosition(32, 0, 354, 64);
 
 	background_right_.setBitmap(Bitmap(BITMAP_LANGUAGE_RIGHT_ID));
-	background_right_.setXY(0 - 322, 0);
+	background_right_.setXY(0 - 201, 0);
+	//background_right_.setXY(0 - 322, 0);
 	background_right_.setVisible(false);
 	view_port_.add(background_right_);
 
 	add(view_port_);
 
 	america_.setBitmaps(Bitmap(BITMAP_LANGUAGE_AMERICA_ID), Bitmap(BITMAP_LANGUAGE_AMERICA_ID));
-	america_.setXY(10, 10);
+	america_.setXY(6, icon_y_);
+	//america_.setXY(10, 10);
 	america_.setAction(button_clicked_);
 	america_.setVisible(false);
 
 	spain_.setBitmaps(Bitmap(BITMAP_LANGUAGE_SPAIN_ID), Bitmap(BITMAP_LANGUAGE_SPAIN_ID));
-	spain_.setXY(10, 10);
+	spain_.setXY(6, icon_y_);
+	//spain_.setXY(10, 10);
 	spain_.setAction(button_clicked_);
 	spain_.setVisible(false);
 
 	germany_.setBitmaps(Bitmap(BITMAP_LANGUAGE_GERMANY_ID), Bitmap(BITMAP_LANGUAGE_GERMANY_ID));
-	germany_.setXY(10, 10);
+	germany_.setXY(6, icon_y_);
+	//germany_.setXY(10, 10);
 	germany_.setAction(button_clicked_);
 	germany_.setVisible(false);
 
 	france_.setBitmaps(Bitmap(BITMAP_LANGUAGE_FRANCE_ID), Bitmap(BITMAP_LANGUAGE_FRANCE_ID));
-	france_.setXY(10, 10);
+	france_.setXY(6, icon_y_);
+	//france_.setXY(10, 10);
 	france_.setAction(button_clicked_);
 	france_.setVisible(false);
 	
@@ -80,7 +86,8 @@ void Language::initialize(MachineStatus* status)
 	add(germany_);
 	add(france_);
 
-	menu_.setXY(10 + (34 + gap_) * 4, 18);
+	menu_.setXY(6 + (21 + gap_) * 4, 11);
+	//menu_.setXY(10 + (34 + gap_) * 4, 18);
 	menu_.setAlpha(255);
 	menu_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 	menu_.setLinespacing(0);
@@ -88,7 +95,8 @@ void Language::initialize(MachineStatus* status)
 	menu_.setVisible(false);
 	add(menu_);
 
-	mask_.setPosition(0, 0, 386, 64);
+	mask_.setPosition(0, 0, 241, 40);
+	//mask_.setPosition(0, 0, 386, 64);
 	mask_.setAlpha(0);
 	mask_.setTouchable(false);
 	add(mask_);
@@ -109,7 +117,8 @@ void Language::openContainer()
 	background_left_.startFadeAnimation(255, animation_duration_);
 
 	background_right_.setAlpha(0);
-	background_right_.setXY(0 - 322, 0);
+	background_right_.setXY(0 - 201, 0);
+	//background_right_.setXY(0 - 322, 0);
 	background_right_.setVisible(true);
 	background_right_.setFadeAnimationEndedAction(image_fade_ended_callback_);
 	background_right_.setMoveAnimationEndedAction(image_move_ended_callback_);
@@ -124,13 +133,15 @@ void Language::openContainer()
 	{
 		america_.setAlpha(0);
 	}
-	america_.setXY(10, 10);
+	america_.setXY(6, icon_y_);
+	//america_.setXY(10, 10);
 	america_.setVisible(true);
 	america_.setTouchable(true);
 	america_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	america_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	america_.startFadeAnimation(255, animation_duration_);
-	america_.startMoveAnimation(10, 10, animation_duration_);
+	america_.startMoveAnimation(6, icon_y_, animation_duration_);
+	//america_.startMoveAnimation(10, 10, animation_duration_);
 
 	if (LanguageList::SPANISH == ms_->ui_language)
 	{
@@ -140,13 +151,15 @@ void Language::openContainer()
 	{
 		spain_.setAlpha(0);
 	}
-	spain_.setXY(10, 10);
+	spain_.setXY(6, icon_y_);
+	//spain_.setXY(10, 10);
 	spain_.setVisible(true);
 	spain_.setTouchable(true);
 	spain_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	spain_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	spain_.startFadeAnimation(255, animation_duration_);
-	spain_.startMoveAnimation(10 + (44 + gap_) * 1, 10, animation_duration_);
+	spain_.startMoveAnimation(6 + (27 + gap_) * 1, icon_y_, animation_duration_);
+	//spain_.startMoveAnimation(10 + (44 + gap_) * 1, 10, animation_duration_);
 
 	if (LanguageList::GERMAN == ms_->ui_language)
 	{
@@ -156,13 +169,15 @@ void Language::openContainer()
 	{
 		germany_.setAlpha(0);
 	}
-	germany_.setXY(10, 10);
+	germany_.setXY(6, icon_y_);
+	//germany_.setXY(10, 10);
 	germany_.setVisible(true);
 	germany_.setTouchable(true);
 	germany_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	germany_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	germany_.startFadeAnimation(255, animation_duration_);
-	germany_.startMoveAnimation(10 + (44 + gap_) * 2, 10, animation_duration_);
+	germany_.startMoveAnimation(6 + (27 + gap_) * 2, icon_y_, animation_duration_);
+	//germany_.startMoveAnimation(10 + (44 + gap_) * 2, 10, animation_duration_);
 
 	if (LanguageList::FRENCH == ms_->ui_language)
 	{
@@ -172,22 +187,26 @@ void Language::openContainer()
 	{
 		france_.setAlpha(0);
 	}
-	france_.setXY(10, 10);
+	france_.setXY(6, icon_y_);
+	//france_.setXY(10, 10);
 	france_.setVisible(true);
 	france_.setTouchable(true);
 	france_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	france_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	france_.startFadeAnimation(255, animation_duration_);
-	france_.startMoveAnimation(10 + (44 + gap_) * 3, 10, animation_duration_);
+	france_.startMoveAnimation(6 + (27 + gap_) * 3, icon_y_, animation_duration_);
+	//france_.startMoveAnimation(10 + (44 + gap_) * 3, 10, animation_duration_);
 
 	menu_.setAlpha(0);
-	menu_.setPosition(10, 18, 164, 60);
+	menu_.setPosition(6, 11, 102, 37);
+	//menu_.setPosition(10, 18, 164, 60);
 	//menu_.setXY(10, 18);
 	menu_.setVisible(true);
 	menu_.setFadeAnimationEndedAction(textareawithonewildcard_fade_ended_callback_);
 	menu_.setMoveAnimationEndedAction(textareawithonewildcard_move_ended_callback_);
 	menu_.startFadeAnimation(255, animation_duration_);
-	menu_.startMoveAnimation(10 + (34 + gap_) * 4, 18, animation_duration_);
+	menu_.startMoveAnimation(6 + (21 + gap_) * 4, 11, animation_duration_);
+	//menu_.startMoveAnimation(10 + (34 + gap_) * 4, 18, animation_duration_);
 
 	mask_.setTouchable(true);
 }
@@ -386,10 +405,11 @@ void Language::closeContainer()
 	background_right_.setFadeAnimationEndedAction(image_fade_ended_callback_);
 	background_right_.setMoveAnimationEndedAction(image_move_ended_callback_);
 	background_right_.startFadeAnimation(0, animation_duration_);
-	background_right_.startMoveAnimation(0 - 322, 0, animation_duration_);
+	background_right_.startMoveAnimation(0 - 201, 0, animation_duration_);
+	//background_right_.startMoveAnimation(0 - 322, 0, animation_duration_);
 	
 	america_.setAlpha(255);
-	america_.setXY(10, 10);	
+	america_.setXY(10, icon_y_);
 	america_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	america_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	if (LanguageList::ENGISH == ms_->ui_language)
@@ -400,10 +420,12 @@ void Language::closeContainer()
 	{				
 		america_.startFadeAnimation(0, animation_duration_);		
 	}
-	america_.startMoveAnimation(10, 10, animation_duration_);
+	america_.startMoveAnimation(6, 6, animation_duration_);
+	//america_.startMoveAnimation(10, 10, animation_duration_);
 
 	spain_.setAlpha(255);
-	spain_.setXY(10 + (44 + gap_) * 1, 10);
+	spain_.setXY(6 + (27 + gap_) * 1, icon_y_);
+	//spain_.setXY(10 + (44 + gap_) * 1, 10);
 	spain_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	spain_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	if (LanguageList::SPANISH == ms_->ui_language)
@@ -415,10 +437,11 @@ void Language::closeContainer()
 		spain_.startFadeAnimation(0, animation_duration_);
 		
 	}
-	spain_.startMoveAnimation(10, 10, animation_duration_);
+	spain_.startMoveAnimation(10, icon_y_, animation_duration_);
 
 	germany_.setAlpha(255);
-	germany_.setXY(10 + (44 + gap_) * 2, 10);
+	germany_.setXY(6 + (27 + gap_) * 2, icon_y_);
+	//germany_.setXY(10 + (44 + gap_) * 2, 10);
 	germany_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	germany_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	if (LanguageList::GERMAN == ms_->ui_language)
@@ -432,7 +455,8 @@ void Language::closeContainer()
 	germany_.startMoveAnimation(10, 10, animation_duration_);
 
 	france_.setAlpha(255);
-	france_.setXY(10 + (44 + gap_) * 3, 10);
+	france_.setXY(6 + (27 + gap_) * 3, icon_y_);
+	//france_.setXY(10 + (44 + gap_) * 3, 10);
 	france_.setFadeAnimationEndedAction(button_fade_ended_callback_);
 	france_.setMoveAnimationEndedAction(button_move_ended_callback_);
 	if (LanguageList::FRENCH == ms_->ui_language)
@@ -443,14 +467,17 @@ void Language::closeContainer()
 	{
 		france_.startFadeAnimation(0, animation_duration_);
 	}
-	france_.startMoveAnimation(10, 10, animation_duration_);
+	france_.startMoveAnimation(6, 6, animation_duration_);
+	//france_.startMoveAnimation(10, 10, animation_duration_);
 
 	menu_.setAlpha(255);
-	menu_.setXY(10 + (34 + gap_) * 4, 18);
+	menu_.setXY(6 + (21 + gap_) * 4, 11);
+	//menu_.setXY(10 + (34 + gap_) * 4, 18);
 	menu_.setFadeAnimationEndedAction(textareawithonewildcard_fade_ended_callback_);
 	menu_.setMoveAnimationEndedAction(textareawithonewildcard_move_ended_callback_);	
 	menu_.startFadeAnimation(0, animation_duration_);
-	menu_.startMoveAnimation(10, 18, animation_duration_);
+	menu_.startMoveAnimation(6, 11, animation_duration_);
+	//menu_.startMoveAnimation(10, 18, animation_duration_);
 
 	mask_.setTouchable(true);
 }

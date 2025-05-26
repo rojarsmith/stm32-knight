@@ -33,7 +33,9 @@ protected:
 private:
 	MachineStatus *ms_;
 	int tick_;
-	int gap_ = 20;
+	int gap_ = 12;
+	//int gap_ = 20;
+	int16_t icon_y_ = 6;
 	bool is_opened;
 
 	Integration integration_;
