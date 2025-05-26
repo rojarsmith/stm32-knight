@@ -31,8 +31,10 @@ extern "C"
 	//Animation duration.
 	const int ANIMATION_MESSAGE_IN_DURATION = 30; //Message+Content
 	const int ANIMATION_MESSAGE_OUT_DURATION = 30;
-	const int ANIMATION_TRANSITION_IN_DURATION = 10; //1 = close for low hardware
-	const int ANIMATION_TRANSITION_OUT_DURATION = 10; //1 = close for low hardware
+	//const int ANIMATION_TRANSITION_IN_DURATION = 10; //1 = close for low hardware
+	//const int ANIMATION_TRANSITION_OUT_DURATION = 10; //1 = close for low hardware
+	const int ANIMATION_TRANSITION_IN_DURATION = 180; //1 = close for low hardware
+	const int ANIMATION_TRANSITION_OUT_DURATION = 180; //1 = close for low hardware
 	const int ANIMATION_SHAKE_BUTTON = 15;
 	const int ANIMATION_PLUGIN_EXG_DURATION = 30;	
 
@@ -60,7 +62,8 @@ public:
 	uint8_t After30Tick = 30;
 	uint8_t After60Tick = 60;
 	uint8_t After120Tick = 120;
-	int AfterXSec = (int)(3 * 60);
+	uint8_t After240Tick = 240;
+	int AfterXSec = (int)(3* 60);
 	
 	uint16_t DisplayWidthHalf; //384
 	uint16_t DisplayHeightHalf; //512

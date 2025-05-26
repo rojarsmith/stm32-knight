@@ -121,7 +121,7 @@ void HomeView::setupScreen()
 	add(lang_mask_);
 
 	//Element
-	uint16_t foot_reduce_y = (uint16_t)(116 / 1.6); // 800x480
+	uint16_t foot_reduce_y = 72; // 800x480
 	footer_.initialize(ms_);
 	//footer_.setPosition(0, HAL::DISPLAY_HEIGHT - foot_reduce_y, HAL::DISPLAY_WIDTH, foot_reduce_y);
 	footer_.setPosition(0, getFixedDisplayHeight() - foot_reduce_y - ratio_height_, HAL::DISPLAY_WIDTH, foot_reduce_y); // 
@@ -759,7 +759,7 @@ void HomeView::eventTranOut()
 	title_.beginTransitionOutAnimation();
 
 	footer_.setAnimationDuration(cc_.ScreenTranOutDuration);
-	footer_.beginSlideAnimation(AnimationStyle::STATIC_IN);
+	footer_.beginSlideAnimation(AnimationStyle::SLIDE_OUT);
 }
 
 void HomeView::event26()
@@ -770,7 +770,7 @@ void HomeView::eventSendCommandTo0300()
 {
 	sendCommand(ScreenNumber::SCENARIO_2_30);
 
-	em_.addCountDownEvent(EventList::EVENT_CHANGE_SCREEN_TO_0300, cc_.After2Tick);
+	em_.addCountDownEvent(EventList::EVENT_CHANGE_SCREEN_TO_0300, cc_.AfterXSec);
 }
 
 void HomeView::eventChangeScreentTo0300()

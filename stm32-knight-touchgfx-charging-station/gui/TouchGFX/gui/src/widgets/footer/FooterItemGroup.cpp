@@ -183,28 +183,32 @@ void FooterItemGroup::renderElementLowSpeed()
 		icon_clock_.setPosition(330, 39, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
 		//icon_clock_.setPosition(528, 63, Bitmap(BITMAP_FOOTER_CLOCK_ID).getWidth(), Bitmap(BITMAP_FOOTER_CLOCK_ID).getHeight());
 
-		text_head_1_.setPosition(25, 27, 38, 17);
+		int16_t flowitem_x = left_items_origin_x_;
+		text_head_1_.setPosition(flowitem_x, left_item_top_margin_, 38, 17);
 		//text_head_1_.setPosition(80 - 10, 44, 62, 28);
 		text_head_1_.setAlpha(255);
 		text_head_1_.setColor(touchgfx::Color::getColorFromRGB(76, 199, 238));
 		text_head_1_.setLinespacing(0);
 		text_head_1_.setTypedText(TypedText(T_FOOTER_CURRENCY));
 
-		text_tail_1_.setPosition(93, 27, 55, 17);
+		flowitem_x += left_item_right_margin_1_;
+		text_tail_1_.setPosition(flowitem_x, left_item_top_margin_, 57, 17);
 		//text_tail_1_.setPosition(149, 44, 88, 28);
 		text_tail_1_.setAlpha(255);
 		text_tail_1_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 		text_tail_1_.setLinespacing(0);
 		text_tail_1_.setTypedText(TypedText(T_FOOTER_PER_KWH));
 
-		text_head_2_.setPosition(175, 27, 55, 17);
+		flowitem_x += left_item_right_margin_2_;
+		text_head_2_.setPosition(flowitem_x, left_item_top_margin_, 55, 17);
 		//text_head_2_.setPosition(280, 44, 88, 28);
 		text_head_2_.setAlpha(255);
 		text_head_2_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 		text_head_2_.setLinespacing(0);
 		text_head_2_.setTypedText(TypedText(T_FOOTER_MAX_DOT));
 
-		text_tail_2_.setPosition(250, 27, 55, 17);
+		flowitem_x += left_item_right_margin_3_;
+		text_tail_2_.setPosition(flowitem_x, left_item_top_margin_, 55, 17);
 		//text_tail_2_.setPosition(401, 44, 88, 28);
 		text_tail_2_.setAlpha(255);
 		text_tail_2_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
