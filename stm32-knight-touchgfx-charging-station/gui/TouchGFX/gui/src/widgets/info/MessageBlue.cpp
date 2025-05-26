@@ -29,16 +29,19 @@ void MessageBlue::initialize(MachineStatus *status, ContentType content)
 	decorate_.setAlpha(0);
 	add(decorate_);
 
-	pprt_view_.setPosition(0, 20, 638, 838);
+	pprt_view_.setPosition(0, 13, 398, 523);
+	//pprt_view_.setPosition(0, 20, 638, 838);
 
 	//background_.setColor(Color::getColorFromRGB(0xFF, 0xCD, 0x00));
 	background_.setColor(Color::getColorFromRGB(0x4C, 0xC7, 0xEE));
-	background_.setPosition(0, -838, 638, 838);
+	background_.setPosition(0, -523, 398, 523);
+	//background_.setPosition(0, -838, 638, 838);
 	background_.setAlpha(0);
 	pprt_view_.add(background_);
 
 	background_decorate_.setBitmap(Bitmap(BITMAP_INFO_TILE_MASK_ID));
-	background_decorate_.setPosition(0, -838, 638, 838);
+	background_decorate_.setPosition(0, -523, 398, 523);
+	//background_decorate_.setPosition(0, -838, 638, 838);
 	background_decorate_.setAlpha(0);
 	//pprt_view_.add(background_decorate_);
 
@@ -86,12 +89,14 @@ void MessageBlue::event4()
 	background_.setFadeAnimationEndedAction(box_fade_ended_callback_);
 	background_.setMoveAnimationEndedAction(box_move_ended_callback_);
 	background_.startFadeAnimation(0, animation_duration_);
-	background_.startMoveAnimation(0, -838, animation_duration_);
+	background_.startMoveAnimation(0, -523, animation_duration_);
+	//background_.startMoveAnimation(0, -838, animation_duration_);
 
 	background_decorate_.setFadeAnimationEndedAction(tiledimage_fade_ended_callback_);
 	background_decorate_.setMoveAnimationEndedAction(tiledimage_move_ended_callback_);
 	background_decorate_.startFadeAnimation(0, animation_duration_);
-	background_decorate_.startMoveAnimation(0, -838, animation_duration_);
+	background_decorate_.startMoveAnimation(0, -523, animation_duration_);
+	//background_decorate_.startMoveAnimation(0, -838, animation_duration_);
 }
 
 void MessageBlue::event5()

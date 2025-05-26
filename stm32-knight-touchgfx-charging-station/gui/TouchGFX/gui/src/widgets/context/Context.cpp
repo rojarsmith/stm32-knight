@@ -7,7 +7,8 @@ Context::Context()
 	:	
 	item_fade_animation_ended_callback_(this, &Context::itemFadeAnimationEndedHandler)
 {
-	line_1_1_.setPosition(0, 0, 350, 60);
+	line_1_1_.setPosition(0, 0, 218, 37);
+	//line_1_1_.setPosition(0, 0, 350, 60);
 	line_1_1_.setAlpha(0);
 	line_1_1_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 	line_1_1_.setLinespacing(0);
@@ -18,7 +19,8 @@ Context::Context()
 	line_1_1_.setFadeAnimationEndedAction(item_fade_animation_ended_callback_);
 	add(line_1_1_);
 	
-	line_2_1_.setPosition(0, 52, 350, 56);
+	line_2_1_.setPosition(0, 32, 218, 35);
+	//line_2_1_.setPosition(0, 52, 350, 56);
 	line_2_1_.setAlpha(0);
 	line_2_1_.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 	line_2_1_.setLinespacing(0);

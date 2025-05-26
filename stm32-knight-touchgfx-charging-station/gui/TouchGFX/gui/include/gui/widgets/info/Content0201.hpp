@@ -25,10 +25,14 @@ public:
 	virtual void initialize(MachineStatus *status);
 
 private:
-	const int HAND_RIGHT_BEGIN_X = 40 + 230;
-	const int HAND_RIGHT_END_R_X = 40 + 230 + 35;
-	const int HAND_RIGHT_END_L_X = 40 + 230 - 35;
-	const int HAND_Y = 220 + 294;
+	const int HAND_RIGHT_BEGIN_X = 25 + 143;
+	const int HAND_RIGHT_END_R_X = 25 + 143 + 21;
+	const int HAND_RIGHT_END_L_X = 25 + 143 - 21;
+	const int HAND_Y = 137 + 183;
+	//const int HAND_RIGHT_BEGIN_X = 40 + 230;
+	//const int HAND_RIGHT_END_R_X = 40 + 230 + 35;
+	//const int HAND_RIGHT_END_L_X = 40 + 230 - 35;
+	//const int HAND_Y = 220 + 294;
 	const int HAND_ANIMATION_DURATION = 60;
 
 	FadeAnimator<TextArea> title_;

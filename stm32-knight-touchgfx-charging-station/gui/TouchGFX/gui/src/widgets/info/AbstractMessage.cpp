@@ -111,7 +111,8 @@ void AbstractMessage::initialize(MachineStatus *status, ContentType content)
 	}
 	pcount_++;
 
-	content_->setPosition(0, 20, 638, 838);
+	content_->setPosition(0, 12, 398, 523); // 480x800
+	//content_->setPosition(0, 20, 638, 838);
 	content_->initialize(ms_);
 	content_->setOpenCompletedCallback(content_open_end_callback_);
 	content_->setCloseCompletedCallback(content_close_end_callback_);

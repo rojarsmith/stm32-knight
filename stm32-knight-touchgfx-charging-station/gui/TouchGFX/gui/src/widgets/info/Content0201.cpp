@@ -29,13 +29,15 @@ void Content0201::initialize(MachineStatus *status)
 
 	title_.setTypedText(TypedText(T_S21_TITLE));
 	title_.setColor(Color::getColorFromRGB(255, 255, 255));
-	title_.setPosition(40, 50, 558, 140);
+	title_.setPosition(25, 31, 348, 87);
+	//title_.setPosition(40, 50, 558, 140);
 	title_.setAlpha(0);
 	title_.setWideTextAction(WIDE_TEXT_WORDWRAP);
 	add(title_);
 
 	ok_.setBitmaps(Bitmap(BITMAP_BUTTON_INFO_1_ID), Bitmap(BITMAP_BUTTON_INFO_1_PRESS_ID));
-	ok_.setPosition(219, 735, 202, 72);
+	ok_.setPosition(136, 459, 126, 45);
+	//ok_.setPosition(219, 735, 202, 72);
 	ok_.setLabelText(TypedText(T_GOT_IT));
 	ok_.setLabelColor(Color::getColorFromRGB(255, 255, 255));
 	ok_.setLabelColorPressed(Color::getColorFromRGB(255, 255, 255));
@@ -45,7 +47,8 @@ void Content0201::initialize(MachineStatus *status)
 	add(ok_);
 
 	figure_.setBitmap(Bitmap(BITMAP_INFO_DRAG_1_ID));
-	figure_.setXY(40, 220);
+	figure_.setXY(25, 137);
+	//figure_.setXY(40, 220);
 	figure_.setAlpha(0);
 	add(figure_);
 	
