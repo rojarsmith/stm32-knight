@@ -25,6 +25,21 @@
         "Name": "Connect",
         "Components": [],
         "Interactions": []
+      },
+      {
+        "Name": "Screen1",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "Standby",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "Vista",
+        "Components": [],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],

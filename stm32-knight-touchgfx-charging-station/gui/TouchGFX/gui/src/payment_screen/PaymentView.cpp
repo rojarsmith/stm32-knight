@@ -633,12 +633,12 @@ void PaymentView::eventTranIn()
 
 	if (ChargeSocketSelected::CHARGE_SOCKET_LEFT == ms_->operation_charge_socket_selected)
 	{
-		socket_left_.beginAnimation(120, 263, 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
+		socket_left_.beginAnimation(120, getScaledY(263), 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 		//socket_left_.beginAnimation(192, 421, 96, 180, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		socket_left_.beginAnimation(120, 263, 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
+		socket_left_.beginAnimation(120, getScaledY(263), 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 		//socket_left_.beginAnimation(192, 421, 96, 180, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 	}
 

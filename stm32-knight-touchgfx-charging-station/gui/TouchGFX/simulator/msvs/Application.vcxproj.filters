@@ -322,6 +322,54 @@
     <Filter Include="Source Files\gui\widgets\backto">
       <UniqueIdentifier>BBE3B0C5-CA41-7B4B-C588-00B357EE7FE7</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\vista_screen">
+      <UniqueIdentifier>28D5162B-5D67-F43B-3DBE-C612F0DBB2A5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\vista_screen">
+      <UniqueIdentifier>30CBE609-8594-FB21-0A2F-805ABCFA8631</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\standby_screen">
+      <UniqueIdentifier>4B6D0827-2F1C-0F13-4139-134064084C11</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\standby_screen">
+      <UniqueIdentifier>D74ED547-D5B6-62B8-4AEE-2CB148FE5D52</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screen1_screen">
+      <UniqueIdentifier>D7A0646F-A896-4B28-6D04-105B361E68E4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screen1_screen">
+      <UniqueIdentifier>88E7E8B5-3EB8-FFD6-6A70-ECF46956B42A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screen1_screen">
+      <UniqueIdentifier>760467C1-0CA6-2A5E-94DF-712CAACA5E29</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\pay_method">
+      <UniqueIdentifier>11553A8A-B89F-0CDA-2E57-FA9B985A06CD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\pay_method">
+      <UniqueIdentifier>BC94DB8D-DABA-0750-CFAB-5430B2FD7817</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screen1_screen">
+      <UniqueIdentifier>F463A071-B2E3-6704-1627-698E98CE81E4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\standby_screen">
+      <UniqueIdentifier>69BA9E2C-12F4-7EBF-7247-81E8AA98A70B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\standby_screen">
+      <UniqueIdentifier>317546A0-436C-4487-6D35-1EB907887D4A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\widgets\car">
+      <UniqueIdentifier>26C0877D-F670-1587-7C9D-08DAE44B536B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\widgets\car">
+      <UniqueIdentifier>020497A2-571C-317A-52CD-8A759F513110</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\vista_screen">
+      <UniqueIdentifier>A4E5C5D7-402E-0FE4-655C-1A017C7CEDD3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\vista_screen">
+      <UniqueIdentifier>D6245E17-511C-B611-C84A-91567B3A2848</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -557,6 +605,42 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\widgets\qrcode\QRCodeWidget.cpp">
       <Filter>Source Files\gui\widgets\qrcode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\car\Car.cpp">
+      <Filter>Source Files\gui\widgets\car</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\car\CarItemGroup.cpp">
+      <Filter>Source Files\gui\widgets\car</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\widgets\pay_method\PayMethod.cpp">
+      <Filter>Source Files\gui\widgets\pay_method</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp">
+      <Filter>Source Files\gui\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1View.cpp">
+      <Filter>Source Files\gui\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\standby_screen\StandbyPresenter.cpp">
+      <Filter>Source Files\gui\standby_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\standby_screen\StandbyView.cpp">
+      <Filter>Source Files\gui\standby_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\standby_screen\StandbyViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\standby_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\vista_screen\VistaPresenter.cpp">
+      <Filter>Source Files\gui\vista_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\vista_screen\VistaView.cpp">
+      <Filter>Source Files\gui\vista_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\vista_screen\VistaViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\vista_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1218,6 +1302,42 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\widgets\qrcode\QRCodeWidget.hpp">
       <Filter>Header Files\gui\widgets\qrcode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\car\Car.hpp">
+      <Filter>Header Files\gui\widgets\car</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\car\CarItemGroup.hpp">
+      <Filter>Header Files\gui\widgets\car</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\widgets\pay_method\PayMethod.hpp">
+      <Filter>Header Files\gui\widgets\pay_method</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1Presenter.hpp">
+      <Filter>Header Files\gui\screen1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1View.hpp">
+      <Filter>Header Files\gui\screen1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\standby_screen\StandbyPresenter.hpp">
+      <Filter>Header Files\gui\standby_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\standby_screen\StandbyView.hpp">
+      <Filter>Header Files\gui\standby_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\standby_screen\StandbyViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\standby_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\vista_screen\VistaPresenter.hpp">
+      <Filter>Header Files\gui\vista_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\vista_screen\VistaView.hpp">
+      <Filter>Header Files\gui\vista_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\vista_screen\VistaViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\vista_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
