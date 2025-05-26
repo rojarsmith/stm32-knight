@@ -34,7 +34,7 @@ void PaymentView::setupScreen()
 	BaseView::setupScreen();
 
 	//Element
-	wallpaper_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	wallpaper_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	wallpaper_.initialize(ms_->ux_weather, ms_->ux_weather_prev);
 	add(wallpaper_);
 
@@ -51,22 +51,22 @@ void PaymentView::setupScreen()
 
 	//Element
 	socket_right_.initialize(ms_, false);
-	socket_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	socket_right_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(socket_right_);
 
 	//Element
 	socket_left_.initialize(ms_, true);
-	socket_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	socket_left_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(socket_left_);
 
 	//Element
 	plugin_right_.initialize(ms_, false);
-	plugin_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	plugin_right_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(plugin_right_);
 
 	//Element
 	plugin_left_.initialize(ms_, true);
-	plugin_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
+	plugin_left_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, getFixedDisplayHeight());
 	add(plugin_left_);
 
 	//Element
@@ -123,7 +123,7 @@ void PaymentView::setupScreen()
 
 	//Element
 	footer_.initialize(ms_);
-	footer_.setPosition(0, getFixedDisplayHeight() - 72, HAL::DISPLAY_WIDTH, 72);
+	footer_.setPosition(0, getScaledY(getFixedDisplayHeight() - 72), HAL::DISPLAY_WIDTH, 72);
 	//footer_.setPosition(0, getFixedDisplayHeight() - 116, HAL::DISPLAY_WIDTH, 116);
 	footer_.setAnimationDuration(ANIMATION_TRANSITION_OUT_DURATION);
 	footer_.setSlideAnimationEndedCallback(footerMoveAnimationEndedCallback);
@@ -131,7 +131,7 @@ void PaymentView::setupScreen()
 
 	//Element
 	checking_.initialize(ms_);
-	checking_.setPosition(-63, -63, 63, 63);
+	checking_.setPosition(-63, getScaledY(-63), 63, 63);
 	//checking_.setPosition(-102, -102, 102, 102);
 	checking_.setOpenCompletedCallback(checking_open_end_callback_);
 	checking_.setHideCompletedCallback(checking_hide_end_callback_);
@@ -140,7 +140,7 @@ void PaymentView::setupScreen()
 	add(checking_);
 
 	//Element
-	bottom_mask_.setPosition(0, 225, 480, 352);
+	bottom_mask_.setPosition(0, getScaledY(225), 480, 352);
 	//bottom_mask_.setPosition(0, 360, 768, 564);
 	bottom_mask_.setAlpha(0);
 	bottom_mask_.setVisible(false);
@@ -158,6 +158,10 @@ void PaymentView::setupScreen()
 	em_.addCountDownEvent(EventList::EVENT_TRAN_IN_END, cc_.ScreenTranInDuration + cc_.After1Tick);
 }
 
+void PaymentView::afterTransition()
+{
+}
+
 void PaymentView::tearDownScreen()
 {
 	code_.gc();
@@ -169,10 +173,6 @@ void PaymentView::tearDownScreen()
 	ms_->pole_previous_height = pole_.getHeight();
 
 	BaseView::tearDownScreen();
-}
-
-void PaymentView::afterTransition()
-{
 }
 
 //void PaymentView::updateGraphic()
@@ -436,7 +436,7 @@ void PaymentView::eventTriggerHandler(const int source)
 		//	//	eventPopOpenBtn(); //
 		//	//	break;
 	case 23:
-		event23(); //
+		event23(); //Move out to connect view.
 		break;
 	case 24:
 		event24(); //Move out to connect view.
@@ -546,7 +546,7 @@ void PaymentView::eventArrowAni()
 {
 	int idx = bottom_arrow_2_tick_ % 26;
 
-	arrow_.setXY(arrow_.getX(), bottom_arrow_2_sy_ + cam_[idx]);
+	arrow_.setXY(arrow_.getX(), getScaledY(bottom_arrow_2_sy_ + cam_[idx]));
 	arrow_.invalidate();
 	bottom_arrow_2_mask_.invalidate();
 
@@ -622,12 +622,12 @@ void PaymentView::eventTranIn()
 
 	if (ChargeSocketSelected::CHARGE_SOCKET_RIGHT == ms_->operation_charge_socket_selected)
 	{
-		socket_right_.beginAnimation(300, 263, 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
+		socket_right_.beginAnimation(300, getScaledY(263), 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 		//socket_right_.beginAnimation(480, 421, 96, 180, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		socket_right_.beginAnimation(300, 263, 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
+		socket_right_.beginAnimation(300, getScaledY(263), 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 		//socket_right_.beginAnimation(480, 421, 96, 180, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 	}
 
@@ -644,12 +644,12 @@ void PaymentView::eventTranIn()
 
 	if (!is_out_r)
 	{
-		plugin_right_.beginAnimation(318, -158 + POLE_DEBUG_Y_SHIFT, 241, 1111, 255, cc_.ScreenTranInDuration);
+		plugin_right_.beginAnimation(318, getScaledY(-158 + POLE_DEBUG_Y_SHIFT), 241, 1111, 255, cc_.ScreenTranInDuration);
 		//plugin_right_.beginAnimation(510, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		plugin_right_.beginAnimation(376, -158 + POLE_DEBUG_Y_SHIFT, 613, 1096, 255, cc_.ScreenTranInDuration);
+		plugin_right_.beginAnimation(376, getScaledY(-158 + POLE_DEBUG_Y_SHIFT), 613, 1096, 255, cc_.ScreenTranInDuration);
 		//plugin_right_.beginAnimation(510 + 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
 	}
 
@@ -695,7 +695,7 @@ void PaymentView::eventTranIn()
 	int16_t qy = 331 - (qh / 2);
 	//int16_t qx = 384 - (qw / 2);
 	//int16_t qy = 530 - (qh / 2);
-	qr_code_.setXY(qx, qy);
+	qr_code_.setXY(qx, getScaledY(qy));
 	qr_code_.setQRCode(&code_);
 	qr_code_.setScale(8);
 	qr_code_.setAlpha(0);
@@ -705,7 +705,7 @@ void PaymentView::eventTranIn()
 
 	qr_code_bg_.setPosition(
 		qr_code_.getX() - 12,
-		qr_code_.getY() - 12,
+		getScaledY(qr_code_.getY() - 12),
 		qr_code_.getWidth() + 25,
 		qr_code_.getHeight() + 25
 	);
@@ -742,12 +742,12 @@ void PaymentView::eventChangeScreenTo0200()
 
 void PaymentView::event23()
 {
-	changeScreen(ScreenNumber::SCREEN_CONNECT);
+	
 }
 
 void PaymentView::event24()
 {
-
+	changeScreen(ScreenNumber::SCREEN_CONNECT);
 }
 
 void PaymentView::eventChangePaymentMethodIn()
@@ -769,7 +769,7 @@ void PaymentView::eventChangePaymentMethodIn()
 		button_qr_.setVisible(true);
 		button_qr_.setAction(on_button_clicked_);
 		button_qr_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);
-		button_qr_.startMoveAnimation(cc_.PaymentBtnXRight, cc_.PaymentBtnQrEndY, cc_.ScreenTranInDuration / 2);
+		button_qr_.startMoveAnimation(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY), cc_.ScreenTranInDuration / 2);
 
 		button_char_.setVisible(false);
 
@@ -822,7 +822,7 @@ void PaymentView::eventChangePaymentMethodIn()
 		break;
 	case ScreenNumber::SCENARIO_2_31:
 		//ms_->ux_screen_id_current = ScreenNumber::SCENARIO_2_31;		
-		button_qr_.setXY(cc_.PaymentBtnXRight, cc_.PaymentBtnQrEndY + cc_.PaymentBtnStartShiftY);
+		button_qr_.setXY(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY + cc_.PaymentBtnStartShiftY));
 		button_qr_.setBitmaps(Bitmap(BITMAP_PAY_QRCODE_BUTTON_ID), Bitmap(BITMAP_PAY_QRCODE_BUTTON_ID));
 		button_qr_.setLabelText(TypedText(T_S0210_B_BUTTON_1));
 		button_qr_.setLabelTextXPrefixOffset(46);
@@ -835,7 +835,7 @@ void PaymentView::eventChangePaymentMethodIn()
 		button_qr_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);
 		button_qr_.startMoveAnimation(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY), cc_.ScreenTranInDuration / 2);
 
-		button_char_.setXY(cc_.PaymentBtnXRight, cc_.PaymentBtnQrEndY + cc_.PaymentBtnSplitY + cc_.PaymentBtnStartShiftY);
+		button_char_.setXY(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY + cc_.PaymentBtnSplitY + cc_.PaymentBtnStartShiftY));
 		button_char_.setBitmaps(Bitmap(BITMAP_PAY_CHARGECARD_BUTTON_ID), Bitmap(BITMAP_PAY_CHARGECARD_BUTTON_ID));
 		button_char_.setLabelText(TypedText(T_S0210_B_BUTTON_2));
 		button_char_.setLabelTextXPrefixOffset(46);
@@ -851,7 +851,7 @@ void PaymentView::eventChangePaymentMethodIn()
 		button_cred_.setVisible(false);
 
 		plo_char_icon_2_.setBitmap(Bitmap(BITMAP_PAYMENT_IDXCREDIT_CARD_BLUE_ID));
-		plo_char_icon_2_.setXY(188, 377);
+		plo_char_icon_2_.setXY(188, getScaledY(377));
 		//plo_char_icon_2_.setXY(302, 657 - 53);
 		plo_char_icon_2_.setAlpha(0);
 		plo_char_icon_2_.setVisible(true);
@@ -867,7 +867,7 @@ void PaymentView::eventChangePaymentMethodIn()
 		plo_char_title_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);
 
 		arrow_.setBitmap(Bitmap(BITMAP_PAYMENT_ARROW_ID));
-		arrow_.setXY(316, cc_.arrowBeginY);
+		arrow_.setXY(316, getScaledY(cc_.arrowBeginY));
 		arrow_.setAlpha(0);
 		arrow_.setVisible(true);
 		arrow_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);
@@ -886,7 +886,7 @@ void PaymentView::eventChangePaymentMethodIn()
 
 		button_qr_.setVisible(false);
 
-		button_char_.setXY(cc_.PaymentBtnXRight, cc_.PaymentBtnQrEndY + cc_.PaymentBtnStartShiftY);
+		button_char_.setXY(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY + cc_.PaymentBtnStartShiftY));
 		button_char_.setBitmaps(Bitmap(BITMAP_PAY_CHARGECARD_BUTTON_ID), Bitmap(BITMAP_PAY_CHARGECARD_BUTTON_ID));
 		button_char_.setLabelText(TypedText(T_S0210_B_BUTTON_2));
 		button_char_.setLabelTextXPrefixOffset(46);
@@ -897,7 +897,7 @@ void PaymentView::eventChangePaymentMethodIn()
 		button_char_.setVisible(true);
 		button_char_.setAction(on_button_clicked_);
 		button_char_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);
-		button_char_.startMoveAnimation(cc_.PaymentBtnXRight, cc_.PaymentBtnQrEndY, cc_.ScreenTranInDuration / 2);
+		button_char_.startMoveAnimation(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY), cc_.ScreenTranInDuration / 2);
 
 		button_cred_.setXY(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY + cc_.PaymentBtnStartShiftY + cc_.PaymentBtnSplitY));
 		button_cred_.setBitmaps(Bitmap(BITMAP_PAY_CREDITCARD_BUTTON_ID), Bitmap(BITMAP_PAY_CREDITCARD_BUTTON_ID));
@@ -924,11 +924,11 @@ void PaymentView::eventChangePaymentMethodIn()
 		qr_code_.setVisible(true);
 		qr_code_bg_.setVisible(true);
 
-		qr_code_.setY(getScaledY(getFixedDisplayHeight() + 20));
+		qr_code_.setY(getScaledY(getFixedDisplayHeight() + 12));
 		qr_code_bg_.setY(getScaledY(getFixedDisplayHeight()));
 		//qr_code_.setY(HAL::DISPLAY_HEIGHT + 20);
 		//qr_code_bg_.setY(HAL::DISPLAY_HEIGHT);
-		qr_code_.startMoveAnimation(qr_code_end_x_, qr_code_end_y_, cc_.ScreenTranInDuration / 2);
+		qr_code_.startMoveAnimation(qr_code_end_x_, getScaledY(qr_code_end_y_), cc_.ScreenTranInDuration / 2);
 		qr_code_bg_.startMoveAnimation(qr_code_bg_end_x_, getScaledY(qr_code_bg_end_y_), cc_.ScreenTranInDuration / 2);
 
 		em_.addAlwaysKeepEvent(EVENT_WAIT_ACTIVE_PAY, 1);
@@ -1135,7 +1135,7 @@ void PaymentView::eventAcceptedWaitPayment()
 void PaymentView::eventAcceptedPaymentQR()
 {
 	checking_.setAnimationDuration(cc_.ScreenTranInDuration / 2);
-	checking_.setXY(208, 485);
+	checking_.setXY(208, getScaledY(485));
 	//checking_.setXY(333, 776);
 	checking_.setVisible(true);
 	checking_.open();

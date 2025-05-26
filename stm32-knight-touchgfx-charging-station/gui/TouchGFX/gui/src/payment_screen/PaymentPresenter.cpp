@@ -18,3 +18,8 @@ void PaymentPresenter::deactivate()
 {
 
 }
+
+//int PaymentPresenter::getWeather()
+//{
+//	return model->getWeather();
+//}

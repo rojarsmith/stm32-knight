@@ -4,6 +4,7 @@
 #include <touchgfx/widgets/Widget.hpp>
 #include <gui/widgets/qrcode/QRCode.hpp>
 #include <touchgfx/hal/Types.hpp>
+#include <gui/common/TargetFix.hpp>
 
 /**
 * @class QRCodeWidget
@@ -16,7 +17,7 @@
 *
 *        @sa touchgfx::Widget
 */
-class QRCodeWidget : public touchgfx::Widget
+class QRCodeWidget : public touchgfx::Widget, public TargetFix
 {
 public:
     /**
@@ -79,6 +80,7 @@ private:
 	uint8_t alpha_;
 	uint16_t color_;
 	uint16_t background_color_;	
+    uint32_t w_;
 
 	uint16_t convertRGB888toRGB565(uint8_t red, uint8_t green, uint8_t blue);
 };

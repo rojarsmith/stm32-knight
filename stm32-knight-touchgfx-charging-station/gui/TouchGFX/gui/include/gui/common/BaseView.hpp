@@ -395,7 +395,7 @@ protected:
 				break;
 			}
 
-			message_->setPosition(40, 87, 398, getScaledY(536));
+			message_->setPosition(40, getScaledY(87), 398, getScaledY(536));
 			//message_->setPosition(65, 140, 638, 838 + 20);
 			message_->setAnimationDuration(ms_->ux_pop_tran_in_time);
 			message_->setOpenCompletedCallback(*(GenericCallback<const int> *)pv1_);

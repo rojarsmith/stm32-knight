@@ -26,6 +26,11 @@ private:
 	static const uint16_t TEXT_SIZE_5 = 5;
 	static const uint16_t TEXT_SIZE_6 = 6;
 	static const uint16_t TEXT_SIZE_21 = 21;
+	static const uint16_t left_items_origin_x_ = 25;
+	static const uint16_t left_item_top_margin_ = 27;
+	static const uint16_t left_item_right_margin_1_ = 64;
+	static const uint16_t left_item_right_margin_2_ = 76;
+	static const uint16_t left_item_right_margin_3_ = 88;
 
 	MachineStatus *ms_;
 	WeatherStyle* weather_;

@@ -6,7 +6,8 @@ QRCodeWidget::QRCodeWidget() :
     scale(1),
 	alpha_(255),
 	color_(0),
-	background_color_(0xFFFF)
+	background_color_(0xFFFF),
+	w_(getFixedDisplayHeight())
 {
 }
 
@@ -41,7 +42,8 @@ void QRCodeWidget::draw(const touchgfx::Rect& invalidatedArea) const
     {
 		for (int x = invalidatedArea.x; x < invalidatedArea.right(); x++)
         {
-			framebuffer[absolute.y + y + (r90x + x) * touchgfx::HAL::DISPLAY_HEIGHT] = code->at(y / scale, (invalidatedArea.right() - x) / scale) ? color_ : background_color_;
+			framebuffer[absolute.y + y + (r90x + x) * w_] = code->at(y / scale, (invalidatedArea.right() - x) / scale) ? color_ : background_color_;
+			//framebuffer[absolute.y + y + (r90x + x) * touchgfx::HAL::DISPLAY_HEIGHT] = code->at(y / scale, (invalidatedArea.right() - x) / scale) ? color_ : background_color_;
         }
     }
 
