@@ -112,10 +112,18 @@ void PaymentView::setupScreen()
 
 
 	//QR Code
+	//qrcode_.setXY(100, 100);
+	qrcode_.setBuffers(qrBuffer_qrCode_, qrScratchBuffer_qrCode_);
+	qrcode_.setQRCodeVersion(2);
+	qrcode_.setScale(2);
+	qrcode_.convertStringToQRCode("http://rojarsmith.github.io");
+	qrcode_.setVisible(false);
+
 	qr_code_bg_.setColor(Color::getColorFromRGB(255, 255, 255));
 	qr_code_bg_.setAlpha(255);
 	add(qr_code_bg_);
-	add(qr_code_);
+	add(qrcode_);
+	//add(qr_code_);
 
 	//Element Block
 	add(plo_char_title_);
@@ -164,8 +172,8 @@ void PaymentView::afterTransition()
 
 void PaymentView::tearDownScreen()
 {
-	code_.gc();
-	remove(qr_code_);
+	//code_.gc();
+	//remove(qr_code_);
 
 	ms_->pole_previous_x = pole_.getX();
 	ms_->pole_previous_y = pole_.getY();
@@ -680,47 +688,59 @@ void PaymentView::eventTranIn()
 	em_.addOneTimeEvent(EVENT_CHANGE_PAYMENT_METHOD_IN);
 
 	//Payment Logo - QR Code
-	code_.setRawData(ms_->ux_qr_data);
-	qr_code_.setQRCode(&code_);
-	qr_code_.setScale(8);
-	int16_t qcpx = 240;
-	int16_t qcpy = 340;
-	//int16_t qcpx = 384;
-	//int16_t qcpy = 545;
-	int cw = code_.getWidth();
-	int ch = code_.getHeight();
-	int qw = qr_code_.getWidth();
-	int qh = qr_code_.getHeight();
-	int16_t qx = 240 - (qw / 2);
-	int16_t qy = 331 - (qh / 2);
-	//int16_t qx = 384 - (qw / 2);
-	//int16_t qy = 530 - (qh / 2);
-	qr_code_.setXY(qx, getScaledY(qy));
-	qr_code_.setQRCode(&code_);
-	qr_code_.setScale(8);
-	qr_code_.setAlpha(0);
-	qr_code_.setColor(getPLOQrR(), getPLOQrG(), getPLOQrB());
-	qr_code_.setBackgroundColor(255, 255, 255);
-	qr_code_.setVisible(false);
+	int16_t qr_x = (HAL::DISPLAY_WIDTH / 2) - (qrcode_.getWidth() / 2);
+	int16_t qr_y = 260;
+	qrcode_.setXY(qr_x, getScaledY(qr_y));
+	//qrcode_.setVisible(true);
+	//qrcode_.invalidate();
+
+	//code_.setRawData(ms_->ux_qr_data);
+	//qr_code_.setQRCode(&code_);
+	//qr_code_.setScale(8);
+	//int16_t qcpx = 240;
+	//int16_t qcpy = 340;
+	////int16_t qcpx = 384;
+	////int16_t qcpy = 545;
+	//int cw = code_.getWidth();
+	//int ch = code_.getHeight();
+	//int qw = qr_code_.getWidth();
+	//int qh = qr_code_.getHeight();
+	//int16_t qx = 240 - (qw / 2);
+	//int16_t qy = 331 - (qh / 2);
+	////int16_t qx = 384 - (qw / 2);
+	////int16_t qy = 530 - (qh / 2);
+	//qr_code_.setXY(qx, getScaledY(qy));
+	//qr_code_.setQRCode(&code_);
+	//qr_code_.setScale(8);
+	//qr_code_.setAlpha(0);
+	//qr_code_.setColor(getPLOQrR(), getPLOQrG(), getPLOQrB());
+	//qr_code_.setBackgroundColor(255, 255, 255);
+	//qr_code_.setVisible(false);
 
 	qr_code_bg_.setPosition(
-		qr_code_.getX() - 12,
-		getScaledY(qr_code_.getY() - 12),
-		qr_code_.getWidth() + 25,
-		qr_code_.getHeight() + 25
+		qrcode_.getX() - 12,
+		qrcode_.getY() - 12,
+		qrcode_.getWidth() + 24,
+		qrcode_.getHeight() + 24
 	);
 	//qr_code_bg_.setPosition(
-	//	qr_code_.getX() - 20,
-	//	qr_code_.getY() - 20,
-	//	qr_code_.getWidth() + 40,
-	//	qr_code_.getHeight() + 40
+	//	qr_code_.getX() - 12,
+	//	getScaledY(qr_code_.getY() - 12),
+	//	qr_code_.getWidth() + 25,
+	//	qr_code_.getHeight() + 25
 	//);
+	////qr_code_bg_.setPosition(
+	////	qr_code_.getX() - 20,
+	////	qr_code_.getY() - 20,
+	////	qr_code_.getWidth() + 40,
+	////	qr_code_.getHeight() + 40
+	////);
 	qr_code_bg_.setVisible(false);
 
-	qr_code_end_x_ = qr_code_.getX();
-	qr_code_end_y_ = qr_code_.getY();
+	qr_code_end_x_ = qrcode_.getX();
+	qr_code_end_y_ = getUnscaledY(qrcode_.getY());
 	qr_code_bg_end_x_ = qr_code_bg_.getX();
-	qr_code_bg_end_y_ = qr_code_bg_.getY();
+	qr_code_bg_end_y_ = getUnscaledY(qr_code_bg_.getY());
 }
 
 void PaymentView::eventTranInEnd()
@@ -921,14 +941,17 @@ void PaymentView::eventChangePaymentMethodIn()
 		plo_char_title_.setVisible(true);
 		plo_char_title_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);
 
-		qr_code_.setVisible(true);
+		qrcode_.setVisible(true);
+		//qr_code_.setVisible(true);
 		qr_code_bg_.setVisible(true);
 
-		qr_code_.setY(getScaledY(getFixedDisplayHeight() + 12));
-		qr_code_bg_.setY(getScaledY(getFixedDisplayHeight()));
-		//qr_code_.setY(HAL::DISPLAY_HEIGHT + 20);
-		//qr_code_bg_.setY(HAL::DISPLAY_HEIGHT);
-		qr_code_.startMoveAnimation(qr_code_end_x_, getScaledY(qr_code_end_y_), cc_.ScreenTranInDuration / 2);
+		qrcode_.setY(getScaledY(getScaledYMax() + qrcode_.getHeight()));
+		//qr_code_.setY(getScaledY(getFixedDisplayHeight() + 12));
+		qr_code_bg_.setY(getScaledY(getScaledYMax() + qr_code_bg_.getHeight()));
+		////qr_code_.setY(HAL::DISPLAY_HEIGHT + 20);
+		////qr_code_bg_.setY(HAL::DISPLAY_HEIGHT);
+		qrcode_.startMoveAnimation(qr_code_end_x_, getScaledY(qr_code_end_y_), cc_.ScreenTranInDuration / 2);
+		//qr_code_.startMoveAnimation(qr_code_end_x_, getScaledY(qr_code_end_y_), cc_.ScreenTranInDuration / 2);
 		qr_code_bg_.startMoveAnimation(qr_code_bg_end_x_, getScaledY(qr_code_bg_end_y_), cc_.ScreenTranInDuration / 2);
 
 		em_.addAlwaysKeepEvent(EVENT_WAIT_ACTIVE_PAY, 1);
@@ -1021,8 +1044,9 @@ void PaymentView::eventChangePaymentMethodOut()
 		button_cred_.startFadeAnimation(cc_.PaymentAlphaBegin, cc_.ScreenTranOutDuration / 2);
 		button_cred_.startMoveAnimation(cc_.PaymentBtnXRight, getScaledY(cc_.PaymentBtnQrEndY + cc_.PaymentBtnSplitY + cc_.PaymentBtnStartShiftY), cc_.ScreenTranOutDuration / 2);
 		plo_char_title_.startFadeAnimation(cc_.PaymentAlphaBegin, cc_.ScreenTranOutDuration / 2);
-		qr_code_.startMoveAnimation(qr_code_end_x_, getScaledY(getFixedDisplayHeight() + 20), cc_.ScreenTranInDuration / 2);
-		qr_code_bg_.startMoveAnimation(qr_code_bg_end_x_, getScaledY(getFixedDisplayHeight()), cc_.ScreenTranInDuration / 2);
+		qrcode_.startMoveAnimation(qr_code_end_x_, getScaledY(getScaledYMax() + qrcode_.getHeight()), cc_.ScreenTranInDuration / 2);
+		//qr_code_.startMoveAnimation(qr_code_end_x_, getScaledY(getFixedDisplayHeight() + 20), cc_.ScreenTranInDuration / 2);
+		qr_code_bg_.startMoveAnimation(qr_code_bg_end_x_, getScaledY(getScaledYMax() + qr_code_bg_.getHeight()), cc_.ScreenTranInDuration / 2);
 		break;
 	case ScreenNumber::SCENARIO_2_33:
 		title_.beginTransitionOutAnimationFast();

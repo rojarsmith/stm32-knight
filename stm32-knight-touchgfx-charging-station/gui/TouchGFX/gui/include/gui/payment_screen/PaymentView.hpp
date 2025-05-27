@@ -20,7 +20,8 @@
 #include <gui/widgets/footer/Footer.hpp>
 #include <gui/widgets/plugin/Plugin.hpp>
 #include <gui/widgets/socket/Socket.hpp>
-#include <gui/widgets/qrcode/QRCodeWidget.hpp>
+#include <touchgfx/widgets/QRCode.hpp>
+//#include <gui/widgets/qrcode/QRCodeWidget.hpp>
 #include <gui/widgets/info/MessageYellow.hpp>
 #include <gui/widgets/loading/Loading.hpp>
 #include <gui/widgets/information/Information.hpp>
@@ -57,8 +58,12 @@ private:
 
 	//Payment Logo - QR Code
 	Box bottom_mask_;
-	QRCode code_;
-	MoveAnimator<QRCodeWidget> qr_code_;
+	uint8_t qrBuffer_qrCode_[QRCODE_BUFFER_SIZE(2)];
+	uint8_t qrScratchBuffer_qrCode_[QRCODE_BUFFER_SIZE(2)];
+	MoveAnimator<QRCode> qrcode_;
+	//QRCode qrcode_;
+	//QRCode code_;
+	//MoveAnimator<QRCodeWidget> qr_code_;
 	MoveAnimator<Box> qr_code_bg_;
 	int16_t qr_code_end_x_;
 	int16_t qr_code_end_y_;

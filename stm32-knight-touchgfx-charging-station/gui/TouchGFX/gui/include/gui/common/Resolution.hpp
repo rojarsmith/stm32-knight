@@ -11,6 +11,7 @@ class Resolution
 public:
 
     int16_t getScaledY(int16_t height);
+    int16_t getUnscaledY(int16_t height);
     int16_t getScaledYMax();
 };
 

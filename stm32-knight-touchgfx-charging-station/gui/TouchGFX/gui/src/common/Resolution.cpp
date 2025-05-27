@@ -10,6 +10,12 @@ int16_t Resolution::getScaledY(int16_t height)
     return height + 80;
 }
 
+int16_t Resolution::getUnscaledY(int16_t height)
+{
+    // 640x480
+    return height - 80;
+}
+
 int16_t Resolution::getScaledYMax()
 {
     // Portrait 4:3 480x640 @ 480x800
