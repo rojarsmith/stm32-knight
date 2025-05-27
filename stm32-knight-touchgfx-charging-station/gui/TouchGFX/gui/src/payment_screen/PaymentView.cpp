@@ -1215,7 +1215,8 @@ void PaymentView::eventTranOut()
 
 	//em_.removeAllEvent();
 	//em_.addOneTimeEvent(24);
-	em_.addCountDownEvent(23, cc_.ScreenTranOutDuration + 1);
+	//em_.addCountDownEvent(23, cc_.ScreenTranOutDuration + 1);
+	em_.addCountDownEvent(24, cc_.ScreenTranOutDuration + 1);
 }
 
 #pragma region Style Resource

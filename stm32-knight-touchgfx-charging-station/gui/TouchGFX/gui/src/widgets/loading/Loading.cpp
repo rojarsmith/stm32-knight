@@ -291,14 +291,17 @@ void Loading::event10()
 	front_image_.setVisible(false);
 
 	front_zoom_.setBitmaps(Bitmap(BITMAP_CHECKING_TICK_SMALL_ID), Bitmap(BITMAP_CHECKING_TICK_ID));
-	front_zoom_.setPosition(51, 51, 0, 0);
+	front_zoom_.setPosition(31, 31, 0, 0);
+	//front_zoom_.setPosition(51, 51, 0, 0);
 	front_zoom_.setVisible(true);
 	front_zoom_.setAnimationEndedCallback(zoomanimationimageAnimationEndedCallback1);
 	front_zoom_.startZoomAndMoveAnimation(
 		0,
 		0,
-		102,
-		102,
+		63,
+		63,
+		//102,
+		//102,
 		ANIMATION_LOADING_OPEN_DURATION,
 		ZoomAnimationImage::FIXED_LEFT_AND_TOP,
 		EasingEquations::linearEaseNone, EasingEquations::linearEaseNone,
@@ -308,12 +311,15 @@ void Loading::event10()
 void Loading::event11()
 {
 	front_zoom_.setBitmaps(Bitmap(BITMAP_CHECKING_TICK_SMALL_ID), Bitmap(BITMAP_CHECKING_TICK_ID));
-	front_zoom_.setPosition(0, 0, 102, 102);
+	front_zoom_.setPosition(0, 0, 63, 63);
+	//front_zoom_.setPosition(0, 0, 102, 102);
 	front_zoom_.setVisible(true);
 	front_zoom_.setAnimationEndedCallback(zoomanimationimageAnimationEndedCallback2);
 	front_zoom_.startZoomAndMoveAnimation(
-		51,
-		51,
+		31,
+		31,
+		//51,
+		//51,
 		0,
 		0,
 		ANIMATION_LOADING_HIDE_DURATION,
@@ -369,14 +375,17 @@ void Loading::event22()
 	front_image_.setVisible(false);
 
 	front_zoom_.setBitmaps(Bitmap(BITMAP_CHECKING_TICK_SMALL_ID), Bitmap(BITMAP_CHECKING_TICK_ID));
-	front_zoom_.setPosition(51, 51, 0, 0);
+	front_zoom_.setPosition(31, 31, 0, 0);
+	//front_zoom_.setPosition(51, 51, 0, 0);
 	front_zoom_.setVisible(true);
 	front_zoom_.setAnimationEndedCallback(zoomanimationimageAnimationEndedCallback3);
 	front_zoom_.startZoomAndMoveAnimation(
 		0,
 		0,
-		102,
-		102,
+		63,
+		63,
+		//102,
+		//102,
 		animation_duration_,
 		ZoomAnimationImage::FIXED_LEFT_AND_TOP,
 		EasingEquations::linearEaseNone,
@@ -390,12 +399,15 @@ void Loading::event23()
 	em_.removeAllEvent();
 
 	front_zoom_.setBitmaps(Bitmap(BITMAP_CHECKING_TICK_SMALL_ID), Bitmap(BITMAP_CHECKING_TICK_ID));
-	front_zoom_.setPosition(0, 0, 102, 102);
+	front_zoom_.setPosition(0, 0, 63, 63);
+	//front_zoom_.setPosition(0, 0, 102, 102);
 	front_zoom_.setVisible(true);
 	front_zoom_.setAnimationEndedCallback(zoomanimationimageAnimationEndedCallback2);
 	front_zoom_.startZoomAndMoveAnimation(
-		51,
-		51,
+		31,
+		31,
+		//51,
+		//51,
 		0,
 		0,
 		animation_duration_,

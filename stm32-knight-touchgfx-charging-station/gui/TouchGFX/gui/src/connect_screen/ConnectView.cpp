@@ -31,7 +31,7 @@ void ConnectView::setupScreen()
 	scenario_prev_ = ms_->ux_screen_id_current;
 
 	//Element
-	wallpaper_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	wallpaper_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
 	wallpaper_.initialize(ms_->ux_weather, ms_->ux_weather_prev);
 	add(wallpaper_);
 
@@ -39,7 +39,7 @@ void ConnectView::setupScreen()
 	pole_.setBitmaps(Bitmap(getPoleBitmapSmall()), Bitmap(getPoleBitmapLarge()));
 	pole_.setPosition(
 		ms_->pole_previous_x,
-		ms_->pole_previous_y,
+		getScaledY(ms_->pole_previous_y),
 		ms_->pole_previous_width,
 		ms_->pole_previous_height
 	);
@@ -47,12 +47,12 @@ void ConnectView::setupScreen()
 
 	//Element
 	socket_right_.initialize(ms_, false);
-	socket_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	socket_right_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
 	add(socket_right_);
 
 	//Element
 	socket_left_.initialize(ms_, true);
-	socket_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	socket_left_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
 	add(socket_left_);
 
 	//Element
@@ -63,12 +63,12 @@ void ConnectView::setupScreen()
 
 	//Element
 	plugin_right_.initialize(ms_, false);
-	plugin_right_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	plugin_right_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
 	add(plugin_right_);
 
 	//Element
 	plugin_left_.initialize(ms_, true);
-	plugin_left_.setPosition(0, 0, HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
+	plugin_left_.setPosition(0, getScaledY(0), HAL::DISPLAY_WIDTH, HAL::DISPLAY_HEIGHT);
 	add(plugin_left_);
 
 	//Element
@@ -77,7 +77,7 @@ void ConnectView::setupScreen()
 	add(plugin_out_);
 
 	//Element
-	title_.setPosition(cc_.TitleX, cc_.TitleY, cc_.TitleWidth, cc_.TitleHeight);
+	title_.setPosition(cc_.TitleX, getScaledY(cc_.TitleY), cc_.TitleWidth, cc_.TitleHeight);
 	title_.initialize(ms_);
 	title_.setInAnimationDuration(ANIMATION_TRANSITION_IN_DURATION);
 	title_.setOutAnimationDuration(ANIMATION_TRANSITION_OUT_DURATION);
@@ -85,8 +85,12 @@ void ConnectView::setupScreen()
 
 	//Element
 	footer_.initialize(ms_);
-	footer_.setPosition(0, HAL::DISPLAY_HEIGHT - 116, HAL::DISPLAY_WIDTH, 116);
-	footer_.setItemXY(0, 0);
+	uint16_t foot_reduce_y = 72; // 800x480
+	//footer_.setPosition(0, HAL::DISPLAY_HEIGHT - foot_reduce_y, HAL::DISPLAY_WIDTH, foot_reduce_y);
+	footer_.setPosition(0, getFixedDisplayHeight() - foot_reduce_y - ratio_height_, HAL::DISPLAY_WIDTH, foot_reduce_y); // 
+	//footer_.setPosition(0, getFixedDisplayHeight() - 72, HAL::DISPLAY_WIDTH, 72);
+	//footer_.setPosition(0, getFixedDisplayHeight() - 116, HAL::DISPLAY_WIDTH, 116);
+	//footer_.setItemXY(0, 0);
 	add(footer_);
 
 	//Element
@@ -151,21 +155,21 @@ void ConnectView::backtoButtonClickedHandler(const int source)
 
 	ms_->ux_return_button_clicked = true;
 
-	//if (ScreenNumber::SCENARIO_4_1 == scenario_prev_ ||
-	//	ScreenNumber::SCENARIO_4_2 == scenario_prev_ || 
-	//	ScreenNumber::SCENARIO_4_3 == scenario_prev_)
-	//{
-	//	em_.addOneTimeEvent(23);
-	//	em_.addCountDownEvent(24, cc_.ScreenTranOutDuration + 1);
-	//}
-	//else
-	//{
-	//	em_.addOneTimeEvent(20);
-	//	em_.addCountDownEvent(EVENT_TRAN_OUT, cc_.ScreenTranOutDuration);
-	//	em_.addCountDownEvent(22, cc_.ScreenTranOutDuration * 2 + 1);
-	//}
+	if (ScreenNumber::SCENARIO_4_1 == scenario_prev_ ||
+		ScreenNumber::SCENARIO_4_2 == scenario_prev_ || 
+		ScreenNumber::SCENARIO_4_3 == scenario_prev_)
+	{
+		em_.addOneTimeEvent(23);
+		em_.addCountDownEvent(24, cc_.ScreenTranOutDuration + 1);
+	}
+	else
+	{
+		em_.addOneTimeEvent(20);
+		em_.addCountDownEvent(EVENT_TRAN_OUT, cc_.ScreenTranOutDuration);
+		em_.addCountDownEvent(22, cc_.ScreenTranOutDuration * 2 + 1);
+	}
 
-	//sendCommand(scenario_prev_);
+	sendCommand(scenario_prev_);
 }
 
 void ConnectView::buttonClickedHandler(const int source)
@@ -396,6 +400,8 @@ void ConnectView::eventTranIn()
 	title_.beginTransitionNextInAnimation(ms_->ux_screen_id_next);
 	car_.setAnimationDuration(cc_.ScreenTranInDuration);
 	car_.beginSlideAnimation(AnimationStyle::SLIDE_IN);
+
+	footer_.beginSlideAnimation(AnimationStyle::SLIDE_IN);
 }
 
 void ConnectView::eventTranInEnd()
