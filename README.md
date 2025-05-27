@@ -267,6 +267,10 @@ TouchGFX stress test performance evaluation Demo uses 2~3 tasks and supports dyn
 
 Not support compile with TouchGFX Designer
 
+Original resolution: Portrait 1024x768 4:3
+
+STM32H747I Discovery: Portrait 640x480 4:3
+
 ## stm32-knight-touchgfx-coffee-machine
 
 Coffee machine GUI for 2017 Munich electronics show. Porting to STM32H747I Discovery at 2025.

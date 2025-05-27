@@ -28,20 +28,24 @@ void Content0202::initialize(MachineStatus *status)
 
 	title_.setTypedText(TypedText(T_P0202_TITLE));
 	title_.setColor(Color::getColorFromRGB(255, 255, 255));
-	title_.setPosition(40, 50, 558, 140);
+
+	title_.setPosition(25, 31, 348, 87);
+	//title_.setPosition(40, 50, 558, 140);
 	title_.setAlpha(0);
 	title_.setWideTextAction(WIDE_TEXT_WORDWRAP);
 	add(title_);
 
 	body_.setTypedText(TypedText(T_P0202_BODY));
 	body_.setColor(Color::getColorFromRGB(255, 255, 255));
-	body_.setPosition(40, 200, 558, 140);
+	body_.setPosition(25, 125, 348, 87);
+	//body_.setPosition(40, 200, 558, 140);
 	body_.setAlpha(0);
 	body_.setWideTextAction(WIDE_TEXT_WORDWRAP);
 	add(body_);
 
 	ok_.setBitmaps(Bitmap(BITMAP_BUTTON_INFO_1_ID), Bitmap(BITMAP_BUTTON_INFO_1_PRESS_ID));
-	ok_.setPosition(219, 735, 202, 72);
+	ok_.setPosition(136, 459, 126, 45);
+	//ok_.setPosition(219, 735, 202, 72);
 	ok_.setLabelText(TypedText(T_P0202_BUTTON));
 	ok_.setLabelColor(Color::getColorFromRGB(255, 255, 255));
 	ok_.setLabelColorPressed(Color::getColorFromRGB(255, 255, 255));
