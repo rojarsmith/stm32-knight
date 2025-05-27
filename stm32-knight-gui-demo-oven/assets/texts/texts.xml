@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1">
+      <Text Id="temperature_value" Alignment="Center" TypographyId="wheel_selectors">
+        <Translation Language="GB">&lt;temperature&gt; °C</Translation>
+      </Text>
+      <Text Id="temperature_value_center" Alignment="Center" TypographyId="wheel_selectors_center">
+        <Translation Language="GB">&lt;temperature&gt; °C</Translation>
+      </Text>
+      <Text Id="humidity_value" Alignment="Center" TypographyId="wheel_selectors">
+        <Translation Language="GB">&lt;humidity&gt; %</Translation>
+      </Text>
+      <Text Id="humidity_value_center" Alignment="Center" TypographyId="wheel_selectors_center">
+        <Translation Language="GB">&lt;humidity&gt; %</Translation>
+      </Text>
+      <Text Id="__SingleUse_7BKI" Alignment="Center" TypographyId="headline">
+        <Translation Language="GB">TEMPERATURE</Translation>
+      </Text>
+      <Text Id="__SingleUse_9I3O" Alignment="Center" TypographyId="headline">
+        <Translation Language="GB">HUMIDITY</Translation>
+      </Text>
+      <Text Id="timer_hour" Alignment="Center" TypographyId="wheel_selectors_small">
+        <Translation Language="GB">&lt;hour&gt; HOUR</Translation>
+      </Text>
+      <Text Id="timer_min" Alignment="Center" TypographyId="wheel_selectors_small">
+        <Translation Language="GB">&lt;min&gt; MIN</Translation>
+      </Text>
+      <Text Id="timer_second" Alignment="Center" TypographyId="wheel_selectors_small">
+        <Translation Language="GB">&lt;sec&gt; SEC</Translation>
+      </Text>
+      <Text Id="__SingleUse_9K60" Alignment="Center" TypographyId="headline">
+        <Translation Language="GB">TIMER</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="wheel_selectors" Font="SairaSemiCondensed-Bold.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="wheel_selectors_center" Font="SairaSemiCondensed-Bold.ttf" Size="34" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="headline" Font="SairaSemiCondensed-Bold.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="wheel_selectors_small" Font="SairaSemiCondensed-Regular.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+  </Typographies>
+</TextDatabase>

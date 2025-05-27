@@ -35,6 +35,18 @@ FreeRTOS example.
 
 ```
 
+## stm32-knight-gui-demo-oven
+
+Simple oven demo with only GUI.
+
+![stm32-knight-gui-demo-oven-01](img/stm32-knight-gui-demo-oven-01.png)
+
+## stm32-knight-gui-demo-pool-hwint
+
+Simple Pool with backend demo with only GUI.
+
+![stm32-knight-gui-demo-pool-hwint-01](img/stm32-knight-gui-demo-pool-hwint-01.png)
+
 ## stm32-knight-iap
 
 Modify `.vscode/launch.json`
@@ -157,6 +169,18 @@ IAP + FreeRTOS + TouchGFX
 ## stm32-knight-ltdc
 
 LTDC
+
+## stm32-knight-sdk
+
+No need to rely on ST official package.
+
+## stm32-knight-security-box
+
+Advance security box demo.
+
+![stm32-knight-security-box-01](img/stm32-knight-security-box-01.png)
+
+![stm32-knight-security-box-01](img/stm32-knight-security-box-02.png)
 
 ## stm32-knight-template-minimal
 
@@ -293,6 +317,12 @@ Coffee machine GUI for 2017 Munich electronics show. Porting to STM32H747I Disco
 ![stm32-knight-touchgfx-coffee-machine-1](img/stm32-knight-touchgfx-coffee-machine-1.jpg)
 
 ![stm32-knight-touchgfx-coffee-machine-2](img/stm32-knight-touchgfx-coffee-machine-2.png)
+
+## stm32-knight-touchgfx-dynamic-container
+
+TouchGFX dynamically creates and deletes containers.
+
+![stm32-knight-touchgfx-dynamic-container-1](img/stm32-knight-touchgfx-dynamic-container-01.png)![stm32-knight-touchgfx-dynamic-container-1](img/stm32-knight-touchgfx-dynamic-container-02.png)
 
 ## stm32-knight-touchgfx-ew2017
 

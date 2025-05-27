@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\bin\armstlink2.dll" 
+
+"C:\TouchGFXProjects\PoolDemoHwInt\target\ST\STM32F746G-DISCO\IAR\Debug\Exe\application.out" 
+
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.5\arm\bin\armbat.dll" 
+
+--flash_loader "C:\TouchGFXProjects\PoolDemoHwInt\target\ST\STM32F746G-DISCO\IAR\QSPI.board" 
+
+
+
+

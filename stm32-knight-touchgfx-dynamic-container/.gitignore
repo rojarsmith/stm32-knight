@@ -1,0 +1,20 @@
+# TouchGFX Template
+application.config
+target.config
+*.log
+touchgfx/**/**/touchgfx/
+touchgfx/**/**/touchgfx_backup/
+touchgfx/**/**/*_backup.touchgfx
+
+﻿# TouchGFX with Visual Studio and other
+build/
+generated/
+simulator/msvs/.vs/
+simulator/msvs/screenshots/
+
+# TouchGFX with IAR
+target/IAR8.x/Debug
+target/IAR8.x/settings
+target/IAR8.x/*.dep
+target/IAR8.x/*.ewt
+target/IAR8.x/Backup of *.ewp

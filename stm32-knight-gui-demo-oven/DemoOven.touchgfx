@@ -1,0 +1,596 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 600,
+            "Height": 1024,
+            "RelativeFilename": "background.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "topBarButtonRecipes",
+            "X": 480,
+            "Y": 19,
+            "Width": 90,
+            "Height": 110,
+            "Pressed": "top_icon_cut_big-assets\\top_icons_recipes_pressed.png",
+            "Released": "top_icon_cut_big-assets\\top_icons_recipes_normal.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "topBarButtonLower",
+            "X": 143,
+            "Y": 19,
+            "Width": 90,
+            "Height": 110,
+            "Pressed": "top_icon_cut_big-assets\\top_icons_lower_pressed.png",
+            "Released": "top_icon_cut_big-assets\\top_icons_lower_normal.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "topBarButtonHotAir",
+            "X": 255,
+            "Y": 19,
+            "Width": 90,
+            "Height": 110,
+            "Pressed": "top_icon_cut_big-assets\\top_icons_hotair_pressed.png",
+            "Released": "top_icon_cut_big-assets\\top_icons_hotair_normal.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "topBarButtonGrill",
+            "X": 367,
+            "Y": 19,
+            "Width": 90,
+            "Height": 110,
+            "Pressed": "top_icon_cut_big-assets\\top_icons_grill_pressed.png",
+            "Released": "top_icon_cut_big-assets\\top_icons_grill_normal.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "topBarButtonUpper",
+            "X": 30,
+            "Y": 19,
+            "Width": 90,
+            "Height": 110,
+            "Pressed": "top_icon_cut_big-assets\\top_icons_upper_pressed.png",
+            "Released": "top_icon_cut_big-assets\\top_icons_upper_normal.png"
+          },
+          {
+            "Type": "Container",
+            "Name": "ovenContainer",
+            "Y": 147,
+            "Width": 600,
+            "Height": 877,
+            "Moveable": true,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "ovenContainerBottom",
+                "Y": 571,
+                "Width": 600,
+                "Height": 648,
+                "Moveable": true,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "headline2",
+                    "X": 224,
+                    "Y": 12,
+                    "Width": 150,
+                    "Height": 38,
+                    "TextId": "__SingleUse_9K60",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 50,
+                      "Green": 50,
+                      "Blue": 50
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "startOvenButton",
+                    "X": 19,
+                    "Y": 202,
+                    "Width": 560,
+                    "Height": 90,
+                    "Pressed": "buttons\\button_start_pressed.png",
+                    "Released": "buttons\\button_start_normal.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "ovenContainerCenter",
+                "Y": 229,
+                "Width": 600,
+                "Height": 342,
+                "Moveable": true,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "ovenBackground",
+                    "X": 30,
+                    "Y": 14,
+                    "Width": 540,
+                    "Height": 328,
+                    "RelativeFilename": "oven_frames\\oven_frame.png",
+                    "Moveable": true
+                  },
+                  {
+                    "Type": "AnimatedImage",
+                    "Name": "hotairFan",
+                    "X": 190,
+                    "Y": 78,
+                    "Width": 220,
+                    "Height": 220,
+                    "FileNameFirst": "oven_frames\\hotair_frames\\fan_00.png",
+                    "FileNameLast": "oven_frames\\hotair_frames\\fan_09.png",
+                    "UpdateTicksInterval": 40,
+                    "LoopEnabled": true
+                  },
+                  {
+                    "Type": "AnimatedImage",
+                    "Name": "lowerHeat",
+                    "X": 48,
+                    "Y": 308,
+                    "Width": 500,
+                    "Height": 25,
+                    "FileNameFirst": "oven_frames\\lower_frames\\lower_00000.png",
+                    "FileNameLast": "oven_frames\\lower_frames\\lower_00010.png",
+                    "UpdateTicksInterval": 100,
+                    "LoopEnabled": true
+                  },
+                  {
+                    "Type": "AnimatedImage",
+                    "Name": "upperHeat",
+                    "X": 48,
+                    "Y": 28,
+                    "Width": 500,
+                    "Height": 25,
+                    "FileNameFirst": "oven_frames\\upper_frames\\upper_00000.png",
+                    "FileNameLast": "oven_frames\\upper_frames\\upper_00010.png",
+                    "UpdateTicksInterval": 100,
+                    "LoopEnabled": true
+                  },
+                  {
+                    "Type": "AnimatedImage",
+                    "Name": "grill",
+                    "X": 48,
+                    "Y": 41,
+                    "Width": 500,
+                    "Height": 35,
+                    "FileNameFirst": "oven_frames\\grill_frames\\grill_00000.png",
+                    "FileNameLast": "oven_frames\\grill_frames\\grill_00010.png",
+                    "UpdateTicksInterval": 100,
+                    "LoopEnabled": true
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "ovenContainerTop",
+                "Width": 600,
+                "Height": 229,
+                "Moveable": true,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "headline1",
+                    "X": 375,
+                    "Y": 15,
+                    "Width": 120,
+                    "Height": 38,
+                    "TextId": "__SingleUse_9I3O",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 50,
+                      "Green": 50,
+                      "Blue": 50
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "headline0",
+                    "X": 90,
+                    "Y": 16,
+                    "Width": 150,
+                    "Height": 38,
+                    "TextId": "__SingleUse_7BKI",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 50,
+                      "Green": 50,
+                      "Blue": 50
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "recipesContainer",
+            "X": 600,
+            "Y": 147,
+            "Width": 600,
+            "Height": 700,
+            "Moveable": true,
+            "Components": [
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_0",
+                "X": 30,
+                "Y": 35,
+                "Width": 124,
+                "Height": 149,
+                "Selected": true,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_roast_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_roast_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_roast_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_roast_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_1",
+                "X": 170,
+                "Y": 35,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_steak_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_steak_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_steak_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_steak_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_2",
+                "X": 306,
+                "Y": 35,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_chicken_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_chicken_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_chicken_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_chicken_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_3",
+                "X": 442,
+                "Y": 35,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_burgers_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_burgers_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_burgers_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_burgers_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_4",
+                "X": 30,
+                "Y": 205,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_seafood_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_seafood_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_seafood_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_seafood_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_5",
+                "X": 170,
+                "Y": 205,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_fish_pressedl.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_fish_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_fish_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_fish_pressedl.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_6",
+                "X": 306,
+                "Y": 205,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_prawns_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_prawns_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_prawns_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_prawns_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_7",
+                "X": 442,
+                "Y": 205,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_crab_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_crab_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_crab_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_crab_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_8",
+                "X": 30,
+                "Y": 377,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_eggs_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_eggs_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_eggs_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_eggs_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_9",
+                "X": 170,
+                "Y": 377,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_pizza_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_pizza_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_pizza_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_pizza_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_10",
+                "X": 306,
+                "Y": 377,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_sausages_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_sausages_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_sausages_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_sausages_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_11",
+                "X": 442,
+                "Y": 377,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_bacon_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_bacon_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_bacon_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_bacon_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_12",
+                "X": 30,
+                "Y": 547,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_fries_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_fries_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_fries_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_fries_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_13",
+                "X": 170,
+                "Y": 547,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_vegetables_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_vegetables_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_vegetables_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_vegetables_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "recipe_14",
+                "X": 306,
+                "Y": 547,
+                "Width": 124,
+                "Height": 149,
+                "Deselectable": true,
+                "FileNameSelected": "recipes_icons_cut_big-assets\\icon_recipes_bread_pressed.png",
+                "FileNameSelectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_bread_normal.png",
+                "FileNameUnselected": "recipes_icons_cut_big-assets\\icon_recipes_bread_normal.png",
+                "FileNameUnselectedPressed": "recipes_icons_cut_big-assets\\icon_recipes_bread_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup"
+              },
+              {
+                "Type": "Button",
+                "Name": "aboutButton",
+                "X": 442,
+                "Y": 547,
+                "Width": 124,
+                "Height": 150,
+                "Pressed": "about\\icon_recipes_about_big.png",
+                "Released": "about\\icon_recipes_about_big.png"
+              }
+            ]
+          },
+          {
+            "Type": "Button",
+            "Name": "selectRecipeButton",
+            "X": 19,
+            "Y": 1024,
+            "Width": 560,
+            "Height": 90,
+            "Pressed": "buttons\\button_select_recipe_pressed.png",
+            "Released": "buttons\\button_select_recipe_normal.png",
+            "Moveable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "aboutImage",
+            "Width": 600,
+            "Height": 1024,
+            "Visible": false,
+            "RelativeFilename": "about\\big_about_screen_rs_2025.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "closeAboutButton",
+            "X": 19,
+            "Y": 920,
+            "Width": 560,
+            "Height": 90,
+            "Visible": false,
+            "Pressed": "buttons\\button_back_pressed_big.png",
+            "Released": "buttons\\button_back_normal_big.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BottomBarButtonHandler",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startOvenButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bottomBarButtonHandler"
+            }
+          },
+          {
+            "InteractionName": "TopBarButtonRrecipesPressedHandler",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "topBarButtonRecipes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "topBarButtonRecipesPressedHandler"
+            }
+          },
+          {
+            "InteractionName": "ShowAbout",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "aboutButton"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "aboutImage.setVisible(true);\r\ncloseAboutButton.setVisible(true);\r\naboutImage.invalidate();\r\ncloseAboutButton.invalidate();"
+            }
+          },
+          {
+            "InteractionName": "HideAbout",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "closeAboutButton"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "aboutImage.setVisible(false);\r\ncloseAboutButton.setVisible(false);\r\naboutImage.invalidate();\r\ncloseAboutButton.invalidate();"
+            }
+          },
+          {
+            "InteractionName": "SelectRecipeButtonPressedHandler",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "selectRecipeButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "selectRecipeButtonPressedHandler"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "DemoOven",
+    "Resolution": {
+      "Width": 600,
+      "Height": 1024
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "0.1.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 600,
+        "Height": 1024
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommandOverride": "",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "make -f target/gcc/Makefile -j10",
+    "CompileTargetCommandOverride": "make -f target/gcc/Makefile -j10 && post_generate.bat",
+    "FlashTargetCommand": "make -f target/gcc/Makefile -j10 flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "AdditionalFeatures": [
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.9.3"
+}

@@ -1,0 +1,142 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 143,
+              "Green": 35,
+              "Blue": 35
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "X": 48,
+            "Y": 388,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\blue_buttons_round_edge_small_pressed.png",
+            "Released": "__designer\\blue_buttons_round_edge_small.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 149,
+              "Green": 227,
+              "Blue": 44
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "X": 594,
+            "Y": 405,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\blue_buttons_round_edge_small_pressed.png",
+            "Released": "__designer\\blue_buttons_round_edge_small.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApplication3",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "1.0.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      1,
+      2,
+      4,
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "1": "LCD1bpp",
+      "2": "LCD2bpp",
+      "4": "LCD4bpp",
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "FlashTargetCommand": "",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "AdditionalFeatures": [
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.9.3"
+}

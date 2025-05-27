@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1">
+      <Text Id="EnteredText" Alignment="Left" TypographyId="Display">
+        <Translation Language="GB">&lt;placeholder&gt;</Translation>
+      </Text>
+      <Text Id="NumMode" Alignment="Center" TypographyId="Mode">
+        <Translation Language="GB">ABC</Translation>
+      </Text>
+      <Text Id="AlphaMode" Alignment="Center" TypographyId="Mode">
+        <Translation Language="GB">123 </Translation>
+      </Text>
+      <Text Id="__SingleUse_RCRB" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Security Box</Translation>
+      </Text>
+      <Text Id="__SingleUse_I4CB" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_LEV2" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">TIME</Translation>
+      </Text>
+      <Text Id="__SingleUse_WSS7" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">Clear Unlock Log</Translation>
+      </Text>
+      <Text Id="__SingleUse_6983" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_W6OH" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_YGJH" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Mod by. Rojar Smith 2025</Translation>
+      </Text>
+      <Text Id="__SingleUse_DEPO" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">UNLOCK LOG</Translation>
+      </Text>
+      <Text Id="__SingleUse_LY8B" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">The Security Box Demo is for show you the concept that Smart Embedded can do.&#10;&#10;The demo will save the unlock log on the internal flash rom and restore when next time power reset.&#10;&#10;When you input correct user and password, the VCOM will send the unlock package and unlock log will add 1 record.&#10;&#10;Try username, password : "ROJAR, 1234"</Translation>
+      </Text>
+      <Text Id="__SingleUse_1DZT" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">No</Translation>
+      </Text>
+      <Text Id="__SingleUse_FJQ4" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_1HE2" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_4OWL" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_1RXF" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_VQZO" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_656Z" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_SEO7" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z2UT" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_5CQ2" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q1TK" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_527S" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_89US" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_XH1S" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_G7G5" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_BQN6" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_88VI" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZD92" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_PKQJ" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_TJFI" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">7</Translation>
+      </Text>
+      <Text Id="__SingleUse_D1EX" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">Name</Translation>
+      </Text>
+      <Text Id="__SingleUse_9620" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">9999-99-99 99:99:99</Translation>
+      </Text>
+      <Text Id="__SingleUse_9P3K" Alignment="Left" TypographyId="Mode">
+        <Translation Language="GB">8</Translation>
+      </Text>
+      <Text Id="DigitalClock" Alignment="Left" TypographyId="DigitalClock">
+        <Translation Language="GB">&lt;time&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2JMR" Alignment="Left" TypographyId="DigitalClock">
+        <Translation Language="GB">2025-01-02</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Display" Font="RobotoCondensed-Regular.ttf" Size="56" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9,0x0040-0x0060" />
+    <Typography Id="Mode" Font="RobotoCondensed-Regular.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" />
+    <Typography Id="Keyboard" Font="RobotoCondensed-Regular.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="DigitalClock" Font="VeraMono.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="APM :" WildcardCharacterRanges="0-9" />
+  </Typographies>
+</TextDatabase>
