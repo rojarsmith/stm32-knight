@@ -105,7 +105,7 @@ void PaymentView::setupScreen()
 	add(button_cred_);
 	add(arrow_);
 
-	bottom_arrow_2_mask_.setPosition(197, getScaledY(481), 85, 81);
+	bottom_arrow_2_mask_.setPosition(197, getScaledY(581), 85, 91);
 	//bottom_arrow_2_mask_.setPosition(316, 770, 136, 130);
 	bottom_arrow_2_mask_.setAlpha(0);
 	add(bottom_arrow_2_mask_);
@@ -276,22 +276,22 @@ void PaymentView::backtoButtonClickedHandler(const int source)
 
 	ms_->ux_return_button_clicked = true;
 
-	//if (ScreenNumber::SCENARIO_2_34 == ms_->ux_screen_id_current)
-	//{
-	//	ms_->ux_return_button_clicked = true;
-	//}
-	//else
-	//{
-	//	int cd = 0;
-	//	if (ms_->ux_loading_status == UXLoadingStatus::UX_LOADING_RUNNING)
-	//	{
-	//		cd = ANIMATION_LOADING_HIDE_DURATION;
-	//		checking_.hide();
-	//	}
+	if (ScreenNumber::SCENARIO_2_34 == ms_->ux_screen_id_current)
+	{
+		ms_->ux_return_button_clicked = true;
+	}
+	else
+	{
+		int cd = 0;
+		if (ms_->ux_loading_status == UXLoadingStatus::UX_LOADING_RUNNING)
+		{
+			cd = ANIMATION_LOADING_HIDE_DURATION;
+			checking_.hide();
+		}
 
-	//	em_.addOneTimeEvent(EVENT_CHANGE_PAYMENT_METHOD_OUT);
-	//	em_.addCountDownEvent(EVENT_SEND_COMMAND_TO_0200, cd + cc_.ScreenTranOutDuration + 1);
-	//}
+		em_.addOneTimeEvent(EVENT_CHANGE_PAYMENT_METHOD_OUT);
+		em_.addCountDownEvent(EVENT_SEND_COMMAND_TO_0200, cd + cc_.ScreenTranOutDuration + 1);
+	}
 }
 
 void PaymentView::buttonClickedHandler(const AbstractButton& source)
@@ -630,45 +630,45 @@ void PaymentView::eventTranIn()
 
 	if (ChargeSocketSelected::CHARGE_SOCKET_RIGHT == ms_->operation_charge_socket_selected)
 	{
-		socket_right_.beginAnimation(300, getScaledY(263), 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
+		socket_right_.beginAnimation(300, 263, 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 		//socket_right_.beginAnimation(480, 421, 96, 180, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		socket_right_.beginAnimation(300, getScaledY(263), 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
+		socket_right_.beginAnimation(300, 263, 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 		//socket_right_.beginAnimation(480, 421, 96, 180, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 	}
 
 	if (ChargeSocketSelected::CHARGE_SOCKET_LEFT == ms_->operation_charge_socket_selected)
 	{
-		socket_left_.beginAnimation(120, getScaledY(263), 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
+		socket_left_.beginAnimation(120, 263, 60, 112, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 		//socket_left_.beginAnimation(192, 421, 96, 180, cc_.SocketAlphaGeneral, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		socket_left_.beginAnimation(120, getScaledY(263), 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
+		socket_left_.beginAnimation(120, 263, 60, 112, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 		//socket_left_.beginAnimation(192, 421, 96, 180, cc_.SocketAlphaHomeBegin, cc_.ScreenTranInDuration);
 	}
 
 	if (!is_out_r)
 	{
-		plugin_right_.beginAnimation(318, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 241, 1111, 255, cc_.ScreenTranInDuration);
+		plugin_right_.beginAnimation(318, plugin_in_y_ + POLE_DEBUG_Y_SHIFT, 241, 1111, 255, cc_.ScreenTranInDuration);
 		//plugin_right_.beginAnimation(510, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		plugin_right_.beginAnimation(376, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 613, 1096, 255, cc_.ScreenTranInDuration);
+		plugin_right_.beginAnimation(376, plugin_in_y_ + POLE_DEBUG_Y_SHIFT, 613, 1096, 255, cc_.ScreenTranInDuration);
 		//plugin_right_.beginAnimation(510 + 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
 	}
 
 	if (!is_out_l)
 	{
-		plugin_left_.beginAnimation(-80, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 241, 1111, 255, cc_.ScreenTranInDuration);
+		plugin_left_.beginAnimation(-80, plugin_in_y_ + POLE_DEBUG_Y_SHIFT, 241, 1111, 255, cc_.ScreenTranInDuration);
 		//plugin_left_.beginAnimation(-129, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		plugin_left_.beginAnimation(-510, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 613, 1096, 255, cc_.ScreenTranInDuration);
+		plugin_left_.beginAnimation(-510, plugin_in_y_ + POLE_DEBUG_Y_SHIFT, 613, 1096, 255, cc_.ScreenTranInDuration);
 		//plugin_left_.beginAnimation(-129 - (981 - 387) - 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
 	}
 
@@ -887,7 +887,8 @@ void PaymentView::eventChangePaymentMethodIn()
 		plo_char_title_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);
 
 		arrow_.setBitmap(Bitmap(BITMAP_PAYMENT_ARROW_ID));
-		arrow_.setXY(316, getScaledY(cc_.arrowBeginY));
+		arrow_.setXY(197, getScaledY(cc_.arrowBeginY));
+		//arrow_.setXY(316, getScaledY(cc_.arrowBeginY));
 		arrow_.setAlpha(0);
 		arrow_.setVisible(true);
 		arrow_.startFadeAnimation(cc_.PaymentAlphaEnd, cc_.ScreenTranInDuration / 2);

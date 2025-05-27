@@ -6,10 +6,11 @@
 #include <gui/common/EventManager.hpp>
 #include <gui/common/CommonConstant.hpp>
 #include <gui/model/ModelSchema.hpp>
+#include <gui/common/Resolution.hpp>
 
 using namespace touchgfx;
 
-class Plugin : public Container
+class Plugin : public Container, Resolution
 {
 public:
 	Plugin(bool is_mirrored, MachineStatus *machine_status);
@@ -22,13 +23,20 @@ public:
 protected:
 	
 private:	
-	int16_t PLUGIN_HOME_IN_X_OG_RIGHT_ = 510;
-	int16_t PLUGIN_HOME_IN_X_OG_LEFT_ = -129;
-	int16_t PLUGIN_HOME_IN_Y_OG_ = -254;
-	int16_t PLUGIN_HOME_IN_W_OG_ = 387;
-	int16_t PLUGIN_HOME_IN_H_OG_ = 1779;
-	int16_t PLUGIN_RIGHT_LARGE_X_SHIFT_ = 93;
-	int16_t PLUGIN_LEFT_LARGE_X_SHIFT_ = 686;
+	int16_t PLUGIN_HOME_IN_X_OG_RIGHT_ = 318;
+	int16_t PLUGIN_HOME_IN_X_OG_LEFT_ = -80;
+	int16_t PLUGIN_HOME_IN_Y_OG_ = -158;
+	int16_t PLUGIN_HOME_IN_W_OG_ = 241;
+	int16_t PLUGIN_HOME_IN_H_OG_ = 1111;
+	int16_t PLUGIN_RIGHT_LARGE_X_SHIFT_ = 58;
+	int16_t PLUGIN_LEFT_LARGE_X_SHIFT_ = 428;
+	//int16_t PLUGIN_HOME_IN_X_OG_RIGHT_ = 510;
+	//int16_t PLUGIN_HOME_IN_X_OG_LEFT_ = -129;
+	//int16_t PLUGIN_HOME_IN_Y_OG_ = -254;
+	//int16_t PLUGIN_HOME_IN_W_OG_ = 387;
+	//int16_t PLUGIN_HOME_IN_H_OG_ = 1779;
+	//int16_t PLUGIN_RIGHT_LARGE_X_SHIFT_ = 93;
+	//int16_t PLUGIN_LEFT_LARGE_X_SHIFT_ = 686;
 
 	ZoomAnimationImage plugin_mask_;
 	ZoomAnimationImage plugin_;	

@@ -28,20 +28,23 @@ void Content0204::initialize(MachineStatus *status)
 
 	title_.setTypedText(TypedText(T_P0204_TITLE));
 	title_.setColor(Color::getColorFromRGB(0, 0, 0));
-	title_.setPosition(40, 40, 558, 160);
+	title_.setPosition(25, 25, 348, 100);
+	//title_.setPosition(40, 40, 558, 160);
 	title_.setAlpha(0);
 	title_.setWideTextAction(WIDE_TEXT_WORDWRAP);
 	add(title_);
 
 	body_.setTypedText(TypedText(T_P0204_BODY));
 	body_.setColor(Color::getColorFromRGB(255, 255, 255));
-	body_.setPosition(40, 200, 558, 500);
+	body_.setPosition(25, 125, 384, 312);
+	//body_.setPosition(40, 200, 558, 500);
 	body_.setAlpha(0);
 	body_.setWideTextAction(WIDE_TEXT_WORDWRAP);
 	add(body_);
 
 	ok_.setBitmaps(Bitmap(BITMAP_BUTTON_INFO_2_ID), Bitmap(BITMAP_BUTTON_INFO_2_PRESS_ID));
-	ok_.setPosition(219, 735, 202, 72);
+	ok_.setPosition(136, 459, 126, 45);
+	//ok_.setPosition(219, 735, 202, 72);
 	ok_.setLabelText(TypedText(T_P0204_BUTTON));
 	ok_.setLabelColor(Color::getColorFromRGB(0, 0, 0));
 	ok_.setLabelColorPressed(Color::getColorFromRGB(0, 0, 0));
