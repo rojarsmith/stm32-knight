@@ -29,7 +29,7 @@ HomeView::~HomeView()
 	BaseView::~BaseView();
 
 	ms_->pole_previous_x = pole_.getX();
-	ms_->pole_previous_y = pole_.getY();
+	ms_->pole_previous_y = getUnscaledY(pole_.getY());
 	ms_->pole_previous_width = pole_.getWidth();
 	ms_->pole_previous_height = pole_.getHeight();
 }
@@ -163,7 +163,7 @@ void HomeView::setupScreen()
 void HomeView::tearDownScreen()
 {
 	ms_->pole_previous_x = pole_.getX();
-	ms_->pole_previous_y = pole_.getY();
+	ms_->pole_previous_y = getUnscaledY(pole_.getY());
 	ms_->pole_previous_width = pole_.getWidth();
 	ms_->pole_previous_height = pole_.getHeight();
 
@@ -468,14 +468,14 @@ void HomeView::eventChangeToStandby()
 void HomeView::event6()
 {
 	ms_->pole_previous_x = pole_.getX();
-	ms_->pole_previous_y = pole_.getY();
+	ms_->pole_previous_y = getUnscaledY(pole_.getY());
 	ms_->pole_previous_width = pole_.getWidth();
 	ms_->pole_previous_height = pole_.getHeight();
 
 	pole_.setBitmaps(Bitmap(getPoleBitmapSmall()), Bitmap(getPoleBitmapLarge()));
 	pole_.setPosition(
 		ms_->pole_previous_x,
-		ms_->pole_previous_y,
+		getScaledY(ms_->pole_previous_y),
 		ms_->pole_previous_width,
 		ms_->pole_previous_height
 	);
@@ -771,7 +771,7 @@ void HomeView::eventSendCommandTo0300()
 {
 	sendCommand(ScreenNumber::SCENARIO_2_30);
 
-	em_.addCountDownEvent(EventList::EVENT_CHANGE_SCREEN_TO_0300, cc_.AfterXSec);
+	em_.addCountDownEvent(EventList::EVENT_CHANGE_SCREEN_TO_0300, cc_.After30Tick);
 }
 
 void HomeView::eventChangeScreentTo0300()
