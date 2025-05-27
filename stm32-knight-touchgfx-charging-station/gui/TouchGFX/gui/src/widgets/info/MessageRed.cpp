@@ -29,15 +29,18 @@ void MessageRed::initialize(MachineStatus *status, ContentType content)
 	decorate_.setAlpha(0);
 	add(decorate_);
 
-	pprt_view_.setPosition(0, 20, 638, 838);
+	pprt_view_.setPosition(0, 12, 398, 523);
+	//pprt_view_.setPosition(0, 20, 638, 838);
 
 	background_.setColor(Color::getColorFromRGB(0xFF, 0x00, 0x00));
-	background_.setPosition(0, -838, 638, 838);
+	background_.setPosition(0, -523, 398, 523);
+	//background_.setPosition(0, -838, 638, 838);
 	background_.setAlpha(0);
 	pprt_view_.add(background_);
 
 	background_decorate_.setBitmap(Bitmap(BITMAP_INFO_TILE_MASK_ID));
-	background_decorate_.setPosition(0, -838, 638, 838);
+	background_decorate_.setPosition(0, -523, 398, 523);
+	//background_decorate_.setPosition(0, -838, 638, 838);
 	background_decorate_.setAlpha(0);
 	pprt_view_.add(background_decorate_);
 

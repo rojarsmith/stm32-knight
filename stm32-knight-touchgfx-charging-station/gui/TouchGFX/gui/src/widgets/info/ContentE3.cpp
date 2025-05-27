@@ -29,20 +29,23 @@ void ContentE3::initialize(MachineStatus *status)
 
 	title_.setTypedText(TypedText(T_E3_TITLE));
 	title_.setColor(Color::getColorFromRGB(255, 255, 255));
-	title_.setPosition(40, 40, 558, 160);
+	title_.setPosition(25, 25, 348, 100);
+	//title_.setPosition(40, 40, 558, 160);
 	title_.setAlpha(0);
 	title_.setWideTextAction(WIDE_TEXT_WORDWRAP);
 	add(title_);		
 
 	body_.setTypedText(TypedText(T_E3_BODY));
 	body_.setColor(Color::getColorFromRGB(255, 255, 255));	
-	body_.setPosition(40, 180, 558, 500);
+	body_.setPosition(25, 112, 348, 312);
+	//body_.setPosition(40, 180, 558, 500);
 	body_.setAlpha(0);
 	body_.setWideTextAction(WIDE_TEXT_WORDWRAP);
 	add(body_);
 
 	ok_.setBitmaps(Bitmap(BITMAP_BUTTON_INFO_1_ID), Bitmap(BITMAP_BUTTON_INFO_1_PRESS_ID));
-	ok_.setPosition(219, 715, 200, 70);
+	ok_.setPosition(136, 446, 125, 43);
+	//ok_.setPosition(219, 715, 200, 70);
 	ok_.setLabelText(TypedText(T_GOT_IT));
 	ok_.setLabelColor(Color::getColorFromRGB(255, 255, 255));
 	ok_.setLabelColorPressed(Color::getColorFromRGB(0, 255, 0));

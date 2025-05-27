@@ -32,7 +32,7 @@ void SocketSelectorBackground::initialize(MachineStatus* status)
 	ms_ = status;
 
 	layer_charging_.initialize(ms_);
-	layer_charging_.setPosition(0, 0, 125, 62); // 800x480
+	layer_charging_.setPosition(0, 0, 175, 62); // 800x480
 	//layer_charging_.setPosition(0, 0, 280, 100);
 	layer_charging_.setVisible(false);
 	add(layer_charging_);

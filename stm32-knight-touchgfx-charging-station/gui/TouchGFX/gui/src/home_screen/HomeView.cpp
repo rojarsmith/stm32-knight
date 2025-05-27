@@ -475,7 +475,7 @@ void HomeView::event6()
 	pole_.setBitmaps(Bitmap(getPoleBitmapSmall()), Bitmap(getPoleBitmapLarge()));
 	pole_.setPosition(
 		ms_->pole_previous_x,
-		getScaledY(ms_->pole_previous_y),
+		ms_->pole_previous_y,
 		ms_->pole_previous_width,
 		ms_->pole_previous_height
 	);
