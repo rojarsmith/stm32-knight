@@ -176,7 +176,7 @@ void PaymentView::tearDownScreen()
 	//remove(qr_code_);
 
 	ms_->pole_previous_x = pole_.getX();
-	ms_->pole_previous_y = pole_.getY();
+	ms_->pole_previous_y = getUnscaledY(pole_.getY());
 	ms_->pole_previous_width = pole_.getWidth();
 	ms_->pole_previous_height = pole_.getHeight();
 
@@ -652,23 +652,23 @@ void PaymentView::eventTranIn()
 
 	if (!is_out_r)
 	{
-		plugin_right_.beginAnimation(318, getScaledY(-158 + POLE_DEBUG_Y_SHIFT), 241, 1111, 255, cc_.ScreenTranInDuration);
+		plugin_right_.beginAnimation(318, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 241, 1111, 255, cc_.ScreenTranInDuration);
 		//plugin_right_.beginAnimation(510, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		plugin_right_.beginAnimation(376, getScaledY(-158 + POLE_DEBUG_Y_SHIFT), 613, 1096, 255, cc_.ScreenTranInDuration);
+		plugin_right_.beginAnimation(376, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 613, 1096, 255, cc_.ScreenTranInDuration);
 		//plugin_right_.beginAnimation(510 + 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
 	}
 
 	if (!is_out_l)
 	{
-		plugin_left_.beginAnimation(-80, getScaledY(-209 + POLE_DEBUG_Y_SHIFT), 241, 1111, 255, cc_.ScreenTranInDuration);
+		plugin_left_.beginAnimation(-80, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 241, 1111, 255, cc_.ScreenTranInDuration);
 		//plugin_left_.beginAnimation(-129, -254 + POLE_DEBUG_Y_SHIFT, 387, 1779, 255, cc_.ScreenTranInDuration);
 	}
 	else
 	{
-		plugin_left_.beginAnimation(-510, getScaledY(-209 + POLE_DEBUG_Y_SHIFT), 613, 1096, 255, cc_.ScreenTranInDuration);
+		plugin_left_.beginAnimation(-510, getScaledY(plugin_in_y_ + POLE_DEBUG_Y_SHIFT), 613, 1096, 255, cc_.ScreenTranInDuration);
 		//plugin_left_.beginAnimation(-129 - (981 - 387) - 93, -254 + POLE_DEBUG_Y_SHIFT, 981, 1755, 255, cc_.ScreenTranInDuration);
 	}
 

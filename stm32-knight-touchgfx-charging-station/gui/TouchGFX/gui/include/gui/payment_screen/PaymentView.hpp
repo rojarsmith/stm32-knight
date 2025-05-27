@@ -56,6 +56,8 @@ private:
 	Backto backto_;
 	Title title_;
 
+	int16_t plugin_in_y_ = -158; // 480x640 @ 800x480
+
 	//Payment Logo - QR Code
 	Box bottom_mask_;
 	uint8_t qrBuffer_qrCode_[QRCODE_BUFFER_SIZE(2)];
