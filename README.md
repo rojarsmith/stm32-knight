@@ -279,6 +279,12 @@ A: `.vscode/launch.json` modify:
 }]
 ```
 
+## stm32-knight-touchgfx-3d-gesture-entry
+
+A demonstration project in cooperation with Taiwan's new 5G mmWave 3D Hand Gesture IC company for algorithm development. This project cannot be executed on STM32, but uses a Windows x64 embedded computer, and uses grpc to communicate with the IC driver software. This 2025 ported version has disabled the grpc communication function.
+
+![stm32-knight-touchgfx-3d-gesture-entry-01](img/stm32-knight-touchgfx-3d-gesture-entry-01.png)
+
 ## stm32-knight-touchgfx-3d-gesture-game
 
 A demonstration project in cooperation with Taiwan's new 5G mmWave 3D Hand Gesture IC company was presented to the guests of the US CEO 2020 in the form of a parkour-style mini-game. This project cannot be executed on STM32, but uses a Windows x64 embedded computer, and uses grpc to communicate with the IC driver software. This 2025 ported version has disabled the grpc communication function.

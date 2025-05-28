@@ -1,0 +1,9 @@
+﻿# TouchGFX
+assets/texts/~$*
+build/
+generated/
+simulator/msvs/.vs/
+simulator/msvs/packages.config
+simulator/msvs/packages/vcpkg*
+simulator/msvs/packages/*
+simulator/msvs/screenshots/

@@ -1,0 +1,512 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "ScreenMain",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "boxBackground",
+            "Width": 800,
+            "Height": 480
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonAbout",
+            "X": 113,
+            "Y": 376,
+            "Width": 150,
+            "Height": 50,
+            "Alpha": 85,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 12,
+                "TextId": "__SingleUse_FWQ3",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 150,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ],
+            "Fadeable": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonClickTest",
+            "X": 352,
+            "Y": 376,
+            "Width": 150,
+            "Height": 50,
+            "Alpha": 85,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 12,
+                "TextId": "__SingleUse_S0JN",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 150,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ],
+            "Fadeable": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "customContainerDirPad",
+            "X": 385,
+            "Y": 121,
+            "Width": 192,
+            "Height": 192,
+            "CustomContainerDefinitionName": "CustomContainerDirPad"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "customContainerKnob",
+            "X": 168,
+            "Y": 143,
+            "Width": 149,
+            "Height": 149,
+            "CustomContainerDefinitionName": "CustomContainerKnob"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTitle",
+            "X": 20,
+            "Y": 26,
+            "Width": 557,
+            "Height": 41,
+            "TextId": "__SingleUse_LKW6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 200,
+            "AutoSize": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonMouse",
+            "X": 601,
+            "Y": 376,
+            "Width": 150,
+            "Height": 50,
+            "Alpha": 85,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 12,
+                "TextId": "__SingleUse_BMZV",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 10,
+                  "Green": 10,
+                  "Blue": 10
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 150,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ],
+            "Fadeable": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "customContainerHand",
+            "Width": 220,
+            "Height": 265,
+            "Visible": false,
+            "CustomContainerDefinitionName": "CustomContainerHand"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionEnableMouseMode",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButtonMouse"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "enableMouseMode"
+            }
+          },
+          {
+            "InteractionName": "InteractionAboutIn",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call ScreenMain actionAboutIn"
+            },
+            "Action": {
+              "Type": "ActionFade",
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 1000,
+              "ActionComponent": "flexButtonAbout"
+            }
+          },
+          {
+            "InteractionName": "InteractionAboutOut",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call ScreenMain actionAboutOut"
+            },
+            "Action": {
+              "Type": "ActionFade",
+              "Alpha": 85,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 1000,
+              "ActionComponent": "flexButtonAbout"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "actionAboutIn"
+          },
+          {
+            "Name": "actionAboutOut"
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "CustomContainerDirPad",
+        "Width": 192,
+        "Height": 192,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "pad",
+            "Width": 192,
+            "Height": 192,
+            "RelativeFilename": "dir_pad.png",
+            "Alpha": 85,
+            "Fadeable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "du",
+            "X": 33,
+            "Y": 1,
+            "Width": 126,
+            "Height": 51,
+            "RelativeFilename": "dir_u.png",
+            "Alpha": 0,
+            "Fadeable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "dl",
+            "X": 1,
+            "Y": 31,
+            "Width": 51,
+            "Height": 126,
+            "RelativeFilename": "dir_l.png",
+            "Alpha": 0,
+            "Fadeable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "dr",
+            "X": 141,
+            "Y": 31,
+            "Width": 51,
+            "Height": 126,
+            "RelativeFilename": "dir_r.png",
+            "Alpha": 0,
+            "Fadeable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "dd",
+            "X": 33,
+            "Y": 137,
+            "Width": 126,
+            "Height": 51,
+            "RelativeFilename": "dir_d.png",
+            "Alpha": 0,
+            "Fadeable": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionPadIn",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call CustomContainerDirPad actionFadeIn"
+            },
+            "Action": {
+              "Type": "ActionFade",
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 1000,
+              "ActionComponent": "pad"
+            }
+          },
+          {
+            "InteractionName": "InteractionPadOut",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call CustomContainerDirPad actionFadeOut"
+            },
+            "Action": {
+              "Type": "ActionFade",
+              "Alpha": 85,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 1000,
+              "ActionComponent": "pad"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "actionFadeIn"
+          },
+          {
+            "Name": "actionFadeOut"
+          }
+        ]
+      },
+      {
+        "Name": "CustomContainerHand",
+        "Width": 220,
+        "Height": 265,
+        "Components": [
+          {
+            "Type": "TextureMapper",
+            "Name": "hand",
+            "Width": 220,
+            "Height": 265,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "hand.png",
+            "Scale": 0.49,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0,
+            "Alpha": 30
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CustomContainerKnob",
+        "Width": 149,
+        "Height": 149,
+        "Components": [
+          {
+            "Type": "TextureMapper",
+            "Name": "knob",
+            "Width": 149,
+            "Height": 149,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "Kock1.PNG",
+            "Scale": 1.0,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0,
+            "Alpha": 85,
+            "Fadeable": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionKnobIn",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call CustomContainerKnob actionFadeIn"
+            },
+            "Action": {
+              "Type": "ActionFade",
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "Duration": 1000,
+              "ActionComponent": "knob"
+            }
+          },
+          {
+            "InteractionName": "InteractionKnobOut",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call CustomContainerKnob actionFadeOut"
+            },
+            "Action": {
+              "Type": "ActionFade",
+              "Alpha": 85,
+              "Easing": "Linear",
+              "EasingOption": "Out",
+              "Duration": 998,
+              "ActionComponent": "knob"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "actionFadeIn"
+          },
+          {
+            "Name": "actionFadeOut"
+          }
+        ]
+      }
+    ],
+    "Name": "Application",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "ScreenMain",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "C:\\TouchGFX\\4.12.3\\touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "2.0.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "1": "LCD1bpp",
+      "2": "LCD2bpp",
+      "4": "LCD4bpp",
+      "8": "LCD8bpp_ARGB2222",
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "FlashTargetCommand": "",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "AdditionalFeatures": [
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.12.3"
+}
