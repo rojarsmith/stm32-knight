@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package sensor;
+
+service SensorMX {  
+  rpc SetGesture (GestureRequest) returns (google.protobuf.Empty) {}
+  rpc SetValue2Double (Value2DoubleRequest) returns (google.protobuf.Empty) {}
+  rpc SetValue2Int32 (Value2Int32Request) returns (google.protobuf.Empty) {}
+  rpc SetValue4Int32 (Value4Int32Request) returns (google.protobuf.Empty) {}
+}
+
+message GestureRequest {
+  string device_id = 1;
+  string action_id = 2;
+  int32 op_1 = 3;
+  int32 op_2 = 4;
+}
+
+message Value2DoubleRequest {
+  string device_id = 1;
+  string action_id = 2;
+  double op_1 = 3;
+  double op_2 = 4;
+}
+
+message Value2Int32Request {
+  string device_id = 1;
+  string action_id = 2;
+  int32 op_1 = 3;
+  int32 op_2 = 4;
+}
+
+message Value4Int32Request {
+  string device_id = 1;
+  string action_id = 2;
+  int32 op_1 = 3;
+  int32 op_2 = 4;
+  int32 op_3 = 5;
+  int32 op_4 = 6;
+}

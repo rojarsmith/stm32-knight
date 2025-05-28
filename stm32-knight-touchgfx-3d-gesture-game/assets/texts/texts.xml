@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1">
+      <Text Id="__SingleUse_UOOZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Horizontal Wave - Select</Translation>
+      </Text>
+      <Text Id="__SingleUse_X0P4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Hand Push - Confirm</Translation>
+      </Text>
+      <Text Id="__SingleUse_ON2A" Alignment="Left" TypographyId="Huge">
+        <Translation Language="GB">Game</Translation>
+      </Text>
+      <Text Id="__SingleUse_RBOM" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">3D Gesture - 60GHz mmWave Demo v1.0</Translation>
+      </Text>
+      <Text Id="Carousel_Game_2D_Headline" Alignment="Center" TypographyId="Huge">
+        <Translation Language="GB">Game</Translation>
+      </Text>
+      <Text Id="Carousel_Score_Headline" Alignment="Center" TypographyId="Huge">
+        <Translation Language="GB">Score</Translation>
+      </Text>
+      <Text Id="Carousel_About_Headline" Alignment="Center" TypographyId="Huge">
+        <Translation Language="GB">About</Translation>
+      </Text>
+      <Text Id="__SingleUse_FA8J" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">@ 2025</Translation>
+      </Text>
+      <Text Id="__SingleUse_OK41" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Rojar Smith</Translation>
+      </Text>
+      <Text Id="__SingleUse_38GJ" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">System Integrated Manufacturing Service</Translation>
+      </Text>
+      <Text Id="__SingleUse_YYBO" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Finger Pinch - Return</Translation>
+      </Text>
+      <Text Id="__SingleUse_XHVX" Alignment="Left" TypographyId="Huge">
+        <Translation Language="GB">Top 3</Translation>
+      </Text>
+      <Text Id="__SingleUse_6I4B" Alignment="Right" TypographyId="Large2">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y8JP" Alignment="Right" TypographyId="Large2">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8CAI" Alignment="Right" TypographyId="Large2">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="game2d_popup_won" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">YOU WON!</Translation>
+      </Text>
+      <Text Id="game2d_popup_lost" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">YOU DIED!</Translation>
+      </Text>
+      <Text Id="game2d_popup_welcome" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">JUMP SLIDE&#10;AVOID ARROWS !</Translation>
+      </Text>
+      <Text Id="game2d_popup_percentage" Alignment="Center" TypographyId="Large2">
+        <Translation Language="GB">YOU REACHED &lt;percentage&gt;%</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z52M" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Hand Push - Slide</Translation>
+      </Text>
+      <Text Id="__SingleUse_8EB2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Finger Pinch - Jump</Translation>
+      </Text>
+      <Text Id="gest_info_1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Hand Push - Play</Translation>
+      </Text>
+      <Text Id="gest_info_2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Finger Tip - Return</Translation>
+      </Text>
+      <Text Id="load_text" Alignment="Left" TypographyId="Middle">
+        <Translation Language="GB">FPS : </Translation>
+      </Text>
+      <Text Id="load_value" Alignment="Left" TypographyId="Middle">
+        <Translation Language="GB">&lt;value&gt; %</Translation>
+      </Text>
+      <Text Id="__SingleUse_FMMS" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Finger Pinch - Return</Translation>
+      </Text>
+      <Text Id="gest_info_1s" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Hand Push&#10;Play</Translation>
+      </Text>
+      <Text Id="gest_info_2s" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Finger Tip&#10;Return</Translation>
+      </Text>
+      <Text Id="__SingleUse_WNW1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">AI IC &amp; Software Mix Algorithm</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Huge" Font="Roboto-Light.ttf" Size="60" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large2" Font="Roboto-Light.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890.,-" />
+    <Typography Id="Middle" Font="Roboto-Light.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890.,-" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

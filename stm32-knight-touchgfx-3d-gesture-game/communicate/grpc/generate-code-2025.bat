@@ -1,0 +1,6 @@
+protoc.exe -I=. --proto_path=C:\my\toolchain\vcpkg-2025.04.09\installed\x64-windows\include --grpc_out=. --plugin=protoc-gen-grpc=C:\my\toolchain\vcpkg-2025.04.09\installed\x64-windows\tools\grpc\grpc_cpp_plugin.exe sensor.proto
+protoc.exe -I=. --proto_path=C:\my\toolchain\vcpkg-2025.04.09\installed\x64-windows\include --grpc_out=.  --plugin=protoc-gen-grpc=C:\my\toolchain\vcpkg-2025.04.09\installed\x64-windows\tools\grpc\grpc_python_plugin.exe sensor.proto
+protoc.exe -I=. --proto_path=C:\my\toolchain\vcpkg-2025.04.09\installed\x64-windows\include --grpc_out=. --plugin=protoc-gen-grpc=C:\my\toolchain\vcpkg-2025.04.09\installed\x64-windows\tools\grpc\grpc_csharp_plugin.exe sensor.proto
+protoc.exe -I=. --proto_path=C:\my\toolchain\vcpkg-2025.04.09\installed\x86-windows\include --cpp_out=. sensor.proto
+protoc.exe -I=. --proto_path=C:\my\toolchain\vcpkg-2025.04.09\installed\x86-windows\include --python_out=. sensor.proto
+protoc.exe -I=. --proto_path=C:\my\toolchain\vcpkg-2025.04.09\installed\x86-windows\include --csharp_out=. sensor.proto

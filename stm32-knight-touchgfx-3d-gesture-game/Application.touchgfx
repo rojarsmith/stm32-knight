@@ -1,0 +1,834 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "MainMenuCarousel",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "boxBackground",
+            "Width": 800,
+            "Height": 480
+          },
+          {
+            "Type": "Image",
+            "Name": "imageBackground",
+            "Width": 1440,
+            "Height": 480,
+            "RelativeFilename": "carousel_menu_background3.png"
+          },
+          {
+            "Type": "TextureMapper",
+            "Name": "textureMapperHand",
+            "X": 134,
+            "Y": 317,
+            "Width": 149,
+            "Height": 104,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "carousel_menu_hand.png",
+            "XBitmapPosition": 26.0,
+            "YBitmapPosition": 26.0,
+            "Scale": 1.0,
+            "LockOrigoToCenter": true,
+            "XOrigo": 74.5,
+            "YOrigo": 52.0,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaHand",
+            "X": 85,
+            "Y": 429,
+            "Width": 248,
+            "Height": 24,
+            "TextId": "__SingleUse_UOOZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextureMapper",
+            "Name": "textureMapperFTip",
+            "X": 529,
+            "Y": 320,
+            "Width": 123,
+            "Height": 115,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "carousel_menu_hand3.png",
+            "XBitmapPosition": 26.0,
+            "YBitmapPosition": 26.0,
+            "Scale": 1.0,
+            "LockOrigoToCenter": true,
+            "XOrigo": 61.5,
+            "YOrigo": 57.5,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaFTip",
+            "X": 505,
+            "Y": 429,
+            "Width": 209,
+            "Height": 24,
+            "TextId": "__SingleUse_X0P4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaCarouselTitle",
+            "X": 321,
+            "Y": 58,
+            "Width": 157,
+            "Height": 72,
+            "TextId": "__SingleUse_ON2A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box_bgu",
+            "Width": 800,
+            "Height": 90,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 25
+          },
+          {
+            "Type": "Box",
+            "Name": "box_bgd",
+            "Y": 392,
+            "Width": 800,
+            "Height": 90,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 25
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImageLogo",
+            "X": 635,
+            "Y": 10,
+            "Width": 155,
+            "Height": 70,
+            "Filename": "logo.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "CarouselSelectionGotoGame2D",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Score"
+            }
+          },
+          {
+            "InteractionName": "CarouselSelectionGotoScore",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Score"
+            }
+          },
+          {
+            "InteractionName": "CarouselSelectionGotoAbout",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "About"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Game2D",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "backgroundLayer10",
+            "X": -64,
+            "Y": -156,
+            "Width": 928,
+            "Height": 793,
+            "RelativeFilename": "game2d_bg_0010_1.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer09",
+            "Y": -237,
+            "Width": 800,
+            "Height": 677,
+            "FileName": "game2d_bg_0009_2.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer08",
+            "Y": -274,
+            "Width": 800,
+            "Height": 685,
+            "FileName": "game2d_bg_0008_3.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer07",
+            "Y": -221,
+            "Width": 800,
+            "Height": 717,
+            "FileName": "game2d_bg_0007_Lights.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer06",
+            "Y": -308,
+            "Width": 800,
+            "Height": 726,
+            "FileName": "game2d_bg_0006_4.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer05",
+            "Y": -281,
+            "Width": 800,
+            "Height": 786,
+            "FileName": "game2d_bg_0005_5.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer04",
+            "Y": -311,
+            "Width": 800,
+            "Height": 880,
+            "FileName": "game2d_bg_0004_Lights.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer03",
+            "Y": -285,
+            "Width": 800,
+            "Height": 794,
+            "FileName": "game2d_bg_0003_6.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "backgroundLayer02",
+            "Y": -281,
+            "Width": 800,
+            "Height": 820,
+            "FileName": "game2d_bg_0002_7.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "ground",
+            "Y": 400,
+            "Width": 800,
+            "Height": 80,
+            "FileName": "game2d_bg_tile.png"
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImageTopShadow",
+            "Y": 120,
+            "Width": 800,
+            "Height": 20,
+            "FileName": "game2d_top_shadow.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTop",
+            "Width": 800,
+            "Height": 120,
+            "Color": {
+              "Green": 40,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "ninja",
+            "X": -47,
+            "Y": 342,
+            "Width": 47,
+            "Height": 65,
+            "CustomContainerDefinitionName": "Ninja"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "arrow",
+            "X": 800,
+            "Y": 351,
+            "Width": 66,
+            "Height": 13,
+            "CustomContainerDefinitionName": "Arrow"
+          },
+          {
+            "Type": "TextureMapper",
+            "Name": "textureMapperHPush",
+            "X": 535,
+            "Y": -17,
+            "Width": 123,
+            "Height": 115,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "carousel_menu_hand3.png",
+            "XBitmapPosition": 26.0,
+            "YBitmapPosition": 26.0,
+            "Scale": 1.0,
+            "LockOrigoToCenter": true,
+            "XOrigo": 61.5,
+            "YOrigo": 57.5,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaHPush",
+            "X": 511,
+            "Y": 85,
+            "Width": 179,
+            "Height": 25,
+            "TextId": "__SingleUse_Z52M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextureMapper",
+            "Name": "textureMapperFTip",
+            "X": 292,
+            "Y": -17,
+            "Width": 123,
+            "Height": 115,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "carousel_menu_hand2.png",
+            "XBitmapPosition": 26.0,
+            "YBitmapPosition": 26.0,
+            "Scale": 1.0,
+            "LockOrigoToCenter": true,
+            "XOrigo": 61.5,
+            "YOrigo": 57.5,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaFTip",
+            "X": 268,
+            "Y": 85,
+            "Width": 200,
+            "Height": 25,
+            "TextId": "__SingleUse_8EB2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "imageLogo",
+            "X": 356,
+            "Y": 436,
+            "Width": 88,
+            "Height": 40,
+            "RelativeFilename": "logo_h40.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionGotoMain",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Game2D"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Score",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "imageBackground",
+            "Width": 1440,
+            "Height": 480,
+            "RelativeFilename": "carousel_menu_background3.png"
+          },
+          {
+            "Type": "TextureMapper",
+            "Name": "textureMapperFTip",
+            "X": 193,
+            "Y": 360,
+            "Width": 123,
+            "Height": 115,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "carousel_menu_hand2.png",
+            "XBitmapPosition": 26.0,
+            "YBitmapPosition": 26.0,
+            "Scale": 1.0,
+            "LockOrigoToCenter": true,
+            "XOrigo": 61.5,
+            "YOrigo": 57.5,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaFTip",
+            "X": 316,
+            "Y": 417,
+            "Width": 213,
+            "Height": 25,
+            "TextId": "__SingleUse_YYBO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonReturn",
+            "X": 700,
+            "Y": 385,
+            "Width": 124,
+            "Height": 124,
+            "Pressed": "about_return_press.png",
+            "Released": "about_return_release.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "imageListBG1",
+            "X": 15,
+            "Y": 85,
+            "Width": 770,
+            "Height": 92,
+            "RelativeFilename": "score_list_background.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "imageListBG1_1",
+            "X": 15,
+            "Y": 177,
+            "Width": 770,
+            "Height": 92,
+            "RelativeFilename": "score_list_background.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "imageListBG1_2",
+            "X": 15,
+            "Y": 269,
+            "Width": 770,
+            "Height": 92,
+            "RelativeFilename": "score_list_background.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTitle",
+            "X": 26,
+            "Y": 5,
+            "Width": 148,
+            "Height": 73,
+            "TextId": "__SingleUse_XHVX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaS3",
+            "X": 174,
+            "Y": 294,
+            "Width": 590,
+            "Height": 61,
+            "TextId": "__SingleUse_8CAI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaS2",
+            "X": 174,
+            "Y": 202,
+            "Width": 590,
+            "Height": 61,
+            "TextId": "__SingleUse_Y8JP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaS1",
+            "X": 174,
+            "Y": 110,
+            "Width": 590,
+            "Height": 61,
+            "TextId": "__SingleUse_6I4B",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {}
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionGotoMain",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MainMenuCarousel"
+            }
+          },
+          {
+            "InteractionName": "InteractionReturn",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonReturn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ReturnToMain"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "About",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "imageBackground",
+            "Width": 1440,
+            "Height": 480,
+            "RelativeFilename": "carousel_menu_background3.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTitleSub",
+            "X": 19,
+            "Y": 57,
+            "Width": 315,
+            "Height": 25,
+            "TextId": "__SingleUse_WNW1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTitle",
+            "X": 19,
+            "Y": 11,
+            "Width": 632,
+            "Height": 37,
+            "TextId": "__SingleUse_RBOM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextureMapper",
+            "Name": "textureMapperLOGO",
+            "X": 434,
+            "Y": 190,
+            "Width": 294,
+            "Height": 177,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "logo.png",
+            "XBitmapPosition": 26.0,
+            "YBitmapPosition": 26.0,
+            "Scale": 1.0,
+            "LockOrigoToCenter": true,
+            "XOrigo": 147.0,
+            "YOrigo": 88.5,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0
+          },
+          {
+            "Type": "Button",
+            "Name": "buttonReturn",
+            "X": 700,
+            "Y": 385,
+            "Width": 124,
+            "Height": 124,
+            "Pressed": "about_return_press.png",
+            "Released": "about_return_release.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 102,
+            "Y": 277,
+            "Width": 272,
+            "Height": 37,
+            "TextId": "__SingleUse_FA8J",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 246
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaRojar",
+            "X": 102,
+            "Y": 227,
+            "Width": 178,
+            "Height": 37,
+            "TextId": "__SingleUse_OK41",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 246
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 103,
+            "Y": 156,
+            "Width": 628,
+            "Height": 37,
+            "TextId": "__SingleUse_38GJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 169,
+              "Green": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextureMapper",
+            "Name": "textureMapperFTip",
+            "X": 193,
+            "Y": 360,
+            "Width": 123,
+            "Height": 115,
+            "RenderingAlgorithm": "Nearest-neighbor",
+            "FileNameImage": "carousel_menu_hand2.png",
+            "XBitmapPosition": 26.0,
+            "YBitmapPosition": 26.0,
+            "Scale": 1.0,
+            "LockOrigoToCenter": true,
+            "XOrigo": 61.5,
+            "YOrigo": 57.5,
+            "ZOrigo": 1000.0,
+            "CameraDistance": 1000.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaFTip",
+            "X": 316,
+            "Y": 416,
+            "Width": 213,
+            "Height": 25,
+            "TextId": "__SingleUse_FMMS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionReturn",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonReturn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ReturnToMain"
+            }
+          },
+          {
+            "InteractionName": "InteractionGotoMain",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MainMenuCarousel"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "Arrow",
+        "Width": 66,
+        "Height": 13,
+        "Components": [
+          {
+            "Type": "AnimatedImage",
+            "Name": "activeAnimation",
+            "Width": 66,
+            "Height": 13,
+            "FileNameFirst": "arrow_01.png",
+            "FileNameLast": "arrow_03.png",
+            "UpdateTicksInterval": 10,
+            "StartOnLoad": true,
+            "LoopEnabled": true,
+            "Fadeable": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Ninja",
+        "Width": 47,
+        "Height": 65,
+        "Components": [
+          {
+            "Type": "AnimatedImage",
+            "Name": "activeAnimation",
+            "Width": 47,
+            "Height": 65,
+            "FileNameFirst": "ninja_run_01.png",
+            "FileNameLast": "ninja_run_10.png",
+            "UpdateTicksInterval": 10,
+            "StartOnLoad": true,
+            "Fadeable": true
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "Application",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "MainMenuCarousel",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "C:\\TouchGFX\\4.12.3\\touchgfx",
+    "UIPath": ".",
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "2.0.0",
+    "ApplicationTemplateDescription": "Simulator Application Template",
+    "AvailableColorDepths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      24
+    ],
+    "AvailableLCDs": {
+      "1": "LCD1bpp",
+      "2": "LCD2bpp",
+      "4": "LCD4bpp",
+      "8": "LCD8bpp_ARGB2222",
+      "16": "LCD16bpp",
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "FlashTargetCommand": "",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "AdditionalFeatures": [
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.12.3"
+}
