@@ -19,20 +19,15 @@ extern "C"
 {
 #endif 
 #ifndef SIMULATOR       
-#include "stm32746g_edt_lcd.h"
-#include "stm32746g_edt_backlight.h"
-#include "../Components/EvboxCommunication/evboxCom.h"
-#include "../Components/EvboxCommunication/evmbcrc.h"
-#include "../Components/bootloader/inc/usartapi.h"
 #include <string.h>
 #if 1 // USART Debug Printf examlep check
-#include "../Components/bootloader/inc/bootloader.h"
+int dbg = 0;
 #endif
 
-	extern  bool EVBOX_FORMAT_API_En;
-	extern _EVBOX_FORMAT_API R_EVBOX_FORMAT_API;
-	extern _EVBOX_FORMAT_API L_EVBOX_FORMAT_API;
-	_EVBOX_FORMAT_API* msg;
+	// extern  bool EVBOX_FORMAT_API_En;
+	// extern _EVBOX_FORMAT_API R_EVBOX_FORMAT_API;
+	// extern _EVBOX_FORMAT_API L_EVBOX_FORMAT_API;
+	// _EVBOX_FORMAT_API* msg;
 
 #endif
 #ifdef __cplusplus
@@ -76,7 +71,7 @@ Communictaion_WaitCtn(COMMUNICATIONTIMER_DURATION)
 		fstream file(output_json_filename, ios::out);
 	}
 #else
-	if (BSP_BL_Illuminance())
+	if (false)
 		mstatus_.ux_weather = WeatherStyle(0);
 	else
 		mstatus_.ux_weather = WeatherStyle::NIGHT;
@@ -157,7 +152,7 @@ void Model::tick()
 
         switch (mstatus_.operation_charge_socket_selected) {
         case CHARGE_SOCKET_NONE:
-            if (ScrNumBuf != L_EVBOX_FORMAT_API.FORMAT_Selecttion.Current_screen_num) {
+            if (ScrNumBuf != 0) {
                 if (cancel_select) {
                     CancelScr = CheckScrId(mstatus_.ux_screen_id_previous);
                     ScrSel(L_side, cancel_select, CancelScr);
@@ -165,12 +160,12 @@ void Model::tick()
                     cancel_select = 0;
                 }
                 if (ScrNumBuf == 1) ScrNumBuf = 0;
-                ScrSel(L_side, eEV_NOSELECT, ScrNumBuf);
-                ScrSel(R_side, eEV_NOSELECT, ScrNumBuf);
+                ScrSel(L_side, 1, ScrNumBuf);
+                ScrSel(R_side, 1, ScrNumBuf);
             }
             break;
         case CHARGE_SOCKET_RIGHT:
-            if (ScrNumBuf != R_EVBOX_FORMAT_API.FORMAT_Selecttion.Current_screen_num) {
+            if (ScrNumBuf != 1) {
                 if (cancel_select) {
                     ScrSel(R_side, cancel_select, ScrNumBuf);
                     ScrSel(L_side, cancel_select, ScrNumBuf);
@@ -178,20 +173,20 @@ void Model::tick()
                 }
                 else {
                     if ((ScrNumBuf == 0x0265) && (mstatus_.ux_screen_id_previous == SCREEN_HOME)) {
-                        ScrSel(R_side, eEV_SELECTTHISSIDE, ScrNumBuf);
-                        ScrSel(R_side, eEV_NOSELECT, ScrNumBuf);
-                        ScrSel(L_side, eEV_OTHERSIDESELECTED, ScrNumBuf);
-                        ScrSel(L_side, eEV_NOSELECT, ScrNumBuf);
+                        ScrSel(R_side, 1, ScrNumBuf);
+                        ScrSel(R_side, 1, ScrNumBuf);
+                        ScrSel(L_side, 1, ScrNumBuf);
+                        ScrSel(L_side, 1, ScrNumBuf);
                     }
                     else {
-                        ScrSel(L_side, eEV_NOSELECT, ScrNumBuf);
-                        ScrSel(R_side, eEV_NOSELECT, ScrNumBuf);
+                        ScrSel(L_side, 1, ScrNumBuf);
+                        ScrSel(R_side, 1, ScrNumBuf);
                     }
                 }
             }
             break;
         case CHARGE_SOCKET_LEFT:
-            if (ScrNumBuf != L_EVBOX_FORMAT_API.FORMAT_Selecttion.Current_screen_num) {
+            if (ScrNumBuf != 1) {
                 if (cancel_select) {
                     ScrSel(L_side, cancel_select, ScrNumBuf);
                     ScrSel(R_side, cancel_select, ScrNumBuf);
@@ -199,14 +194,14 @@ void Model::tick()
                 }
                 else {
                     if ((ScrNumBuf == 0x0265) && (mstatus_.ux_screen_id_previous == SCREEN_HOME)) {
-                        ScrSel(L_side, eEV_SELECTTHISSIDE, ScrNumBuf);
-                        ScrSel(L_side, eEV_NOSELECT, ScrNumBuf);
-                        ScrSel(R_side, eEV_OTHERSIDESELECTED, ScrNumBuf);
-                        ScrSel(R_side, eEV_NOSELECT, ScrNumBuf);
+                        ScrSel(L_side, 1, ScrNumBuf);
+                        ScrSel(L_side, 1, ScrNumBuf);
+                        ScrSel(R_side, 1, ScrNumBuf);
+                        ScrSel(R_side, 1, ScrNumBuf);
                     }
                     else {
-                        ScrSel(L_side, eEV_NOSELECT, ScrNumBuf);
-                        ScrSel(R_side, eEV_NOSELECT, ScrNumBuf);
+                        ScrSel(L_side, 1, ScrNumBuf);
+                        ScrSel(R_side, 1, ScrNumBuf);
                     }
                 }
             }
@@ -219,7 +214,7 @@ void Model::tick()
     User_detected = GetProximity();
     //    switch(mstatus_.ux_screen_id_current){
     switch (ScreenNumberBuf) {
-    case SCREEN_WELCOME:
+    case SCREEN_INTRO:
         pop_one = true;
         enter_standby = false;
         mstatus_.ux_delay_0200_to_0000 = TimeOut_30sec;
@@ -277,7 +272,7 @@ void Model::tick()
         pop1[2] = true;
 
         if (tick_ & 0x10) {         //update weather status per 16 ticks
-            if (BSP_BL_Illuminance()) {
+            if (false) {
                 mstatus_.ux_weather = WeatherStyle(0);
             }
             else {
@@ -287,7 +282,7 @@ void Model::tick()
         break;
 
     case SCENARIO_2_2:
-        cancel_select = eEV_STOPTRANSCATION;
+        cancel_select = 1;
     case SCENARIO_2_3:
     case SCENARIO_2_4:
         charge_stop = 0;
@@ -333,7 +328,7 @@ void Model::tick()
         if (mstatus_.ux_return_button_clicked) {
             mstatus_.ux_return_button_clicked = false;
             mstatus_.ux_change_screen = GO_HOME;
-            cancel_select = eEV_CANCELSELECTION;
+            cancel_select = 1;
             pp_count = 0;
             home_flag = true;
             break;
@@ -459,11 +454,13 @@ void Model::tick()
 
     if (mstatus_.ux_screen_id_next == NULL_SCREEN) {
         if (mstatus_.ux_output_command_trigger != UX_COMMAND_ON)
-            EVBox_CommunicationIDLE = false;   //ACK    
+        {    // EVBox_CommunicationIDLE = false;   //ACK    
+        }
     }
-    else {
+    else 
+    {
         if (mstatus_.ux_output_command_trigger == UX_COMMAND_ON) {
-            EVBox_CommunicationIDLE = true;   //NACK
+            // EVBox_CommunicationIDLE = true;   //NACK
             Communictaion_WaitCtn = COMMUNICATIONTIMER_DURATION;
         }
     }
@@ -475,25 +472,25 @@ void Model::tick()
 
             Communictaion_WaitCtn = COMMUNICATIONTIMER_DURATION;
 
-            if (R_EVBOX_FORMAT_API_En) {
+            if (1) {
                 if (!mstatus_.popup_opened) {
-                    R_EVBOX_FORMAT_API_En = false;
+                    // R_EVBOX_FORMAT_API_En = false;
                     Msg_Conver(0);
                 }
                 else {
-                    if (R_EVBOX_FORMAT_API.EVBox_FormatEvent & Event_CHARGE_STATUS) {
+                    if (1) {
                         PopUp_Close(1);
                         session_stop = false;
                     }
                 }
             }
-            else if (L_EVBOX_FORMAT_API_En) {
+            else if (1) {
                 if (!mstatus_.popup_opened) {
-                    L_EVBOX_FORMAT_API_En = false;
+                    // L_EVBOX_FORMAT_API_En = false;
                     Msg_Conver(1);
                 }
                 else {
-                    if (L_EVBOX_FORMAT_API.EVBox_FormatEvent & Event_CHARGE_STATUS) {
+                    if (1) {
                         PopUp_Close(1);
                         session_stop = false;
                     }
@@ -727,22 +724,22 @@ void Model::ScrSel(bool RL, unsigned short sel, unsigned short scr)
 {
     unsigned short boxid;
     if (RL) {
-        msg = (&L_EVBOX_FORMAT_API);
-        boxid = EVBOX_ChargeBox_Lplug;
+        // msg = (&L_EVBOX_FORMAT_API);
+        // boxid = EVBOX_ChargeBox_Lplug;
     }
     else {
-        msg = (&R_EVBOX_FORMAT_API);
-        boxid = EVBOX_ChargeBox_Rplug;
+        // msg = (&R_EVBOX_FORMAT_API);
+        // boxid = EVBOX_ChargeBox_Rplug;
     }
 
-    msg->FORMAT_Selecttion.Screen = sel & 0x00ff;
-    msg->FORMAT_Selecttion.Current_screen_num = scr;
-    msg->FORMAT_Selecttion.Proximity = User_detected;//(char)GetProximity();
-    msg->FORMAT_Selecttion.DayNight = (char)mstatus_.ux_weather;
+    // msg->FORMAT_Selecttion.Screen = sel & 0x00ff;
+    // msg->FORMAT_Selecttion.Current_screen_num = scr;
+    // msg->FORMAT_Selecttion.Proximity = User_detected;//(char)GetProximity();
+    // msg->FORMAT_Selecttion.DayNight = (char)mstatus_.ux_weather;
 
-    msg->EVBox_FormatEvent |= Event_SELECT_SCREEN;
-    EVBOX_Transimt_ScreenSelect_API(boxid, &msg->FORMAT_Selecttion);
-    EVBox_CommunicationIDLE = false;
+    // msg->EVBox_FormatEvent |= Event_SELECT_SCREEN;
+    // EVBOX_Transimt_ScreenSelect_API(boxid, &msg->FORMAT_Selecttion);
+    // EVBox_CommunicationIDLE = false;
 }
 
 unsigned short Model::CheckScrId(ScreenNumber scr_id)
@@ -759,7 +756,7 @@ unsigned short Model::CheckScrId(ScreenNumber scr_id)
         //      scrid16 = 0x0;
         //      break;
     case SCREEN_STANDBY: // 2, //0x0000,
-    case SCREEN_WELCOME: // 3, //0x0100,
+    case SCREEN_INTRO: // 3, //0x0100,
     case SCREEN_HOME: // 4, //0x0200,
     case SCREEN_PAYMENT: // 5, //0x0300,
     case SCREEN_PAY_RFID: // 6, //0x0400,
@@ -790,317 +787,26 @@ unsigned short Model::CheckScrId(ScreenNumber scr_id)
 
 void Model::Msg_Conver(bool RL)
 {
-    pp_count = 0;
-    msg = (RL) ? (&L_EVBOX_FORMAT_API) : (&R_EVBOX_FORMAT_API);
-    msg->FORMAT_Selecttion.DayNight = mstatus_.ux_weather;
-    if (msg->EVBox_FormatEvent & Event_CHARGE_STATUS) {//0x73
-        EVBox_CommunicationIDLE = true;
-        if (msg->FORMAT_STATUS.ErrorNumber) {
-            if (msg->FORMAT_STATUS.ErrorNumber < 7) {
-                mstatus_.ux_popup_number = msg->FORMAT_STATUS.ErrorNumber + 900;
-                //            if (msg->FORMAT_STATUS.ErrorNumber==3) {
-                //              if (RL) {
-                //                  mstatus_.ux_socket_status_left = UX_SOCKET_ERROR;
-                //              } else {
-                //                  mstatus_.ux_socket_status_right = UX_SOCKET_ERROR;
-                //              }
-                //            } 
-            }
-            else {
-                mstatus_.ux_popup_number = 0;
-                mstatus_.ux_change_screen = GO_HOME;
-                //            if (RL) {
-                //                mstatus_.ux_socket_status_left = 0;
-                //            } else {
-                //                mstatus_.ux_socket_status_right = 0;
-                //            }
-            }
-            mstatus_.ux_home_rfid_status = 0;
-            mstatus_.ux_payment_user_selector = 0;
-
-        }
-        else {
-            switch (msg->FORMAT_STATUS.Charge)
-            {
-            case eEV_NONE:                    //0
-            case eEV_STATION_IDLE:    //1   
-                break;
-            case eEV_AUTH_REQU:    //2 
-                if (mstatus_.ux_screen_id_current == SCREEN_HOME)
-                {
-                    mstatus_.ux_home_rfid_status = 2;         //RFID detect(Charge Card)         
-                }
-                else
-                {
-                    Use_CreditCard = (mstatus_.ux_screen_id_current == SCENARIO_2_31);
-                    mstatus_.ux_payment_user_selector = 2;
-                    mstatus_.ux_payment_selector = 0;
-                    mstatus_.ux_payment_checked = 0;
-                }
-                break;
-
-            case eEV_AUTH_ACCE:    //3
-                if (mstatus_.ux_screen_id_current == SCENARIO_4_1) {  //SCREEN_PAY_RFID
-                    mstatus_.ux_home_rfid_status = 4;         //RFID OK
-                }
-                else if (mstatus_.ux_screen_id_current == SCENARIO_2_33) {  //credit card payment
-                    mstatus_.ux_payment_user_selector = 0;
-                    mstatus_.ux_payment_selector = 2;         //charge card or credit card ok               
-                }
-                else if (mstatus_.ux_screen_id_current == SCENARIO_2_32) {   //QR code OK 
-                    mstatus_.ux_payment_user_selector = 1;
-                    mstatus_.ux_payment_selector = 4;
-                }
-                break;
-
-            case eEV_PLUG_UNLOCKED:    //4      
-                //mstatus_.ux_plugin_lock_into_car =0;
-                mstatus_.ux_home_rfid_status = 8;         //RFID Unlock
-                if (mstatus_.ux_screen_id_current == SCENARIO_2_34) {
-                    mstatus_.ux_payment_checked = 1;         //charge card or credit card ok  
-
-            case eEV_PLUG_REMOVED:    //5  
-                (RL) ? (mstatus_.ux0400_plug_left_status = 2)        \
-                    : (mstatus_.ux0400_plug_right_status = 2);
-                }
-                mstatus_.ux_open_checked = 0;
-                break;
-
-            case eEV_PLUG_CONN2CAR:    //6 
-                mstatus_.ux_open_checked = 1;
-                mstatus_.ux_payment_checked = 0;
-                mstatus_.ux0400_plug_left_status = 0;
-                mstatus_.ux0400_plug_right_status = 0;
-                break;
-
-            case eEV_START_REQE:    //7
-                //mstatus_.ux_plugin_lock_into_car =1;
-                //mstatus_.ux_open_checked=2;
-                mstatus_.ux_payment_checked = 1;
-                break;
-
-            case eEV_START_ACCE:    //8
-                mstatus_.ux_popup_number = MESSAGE_54;
-                if (RL)
-                    mstatus_.ux_socket_status_left = UX_SOCKET_CHARGING;
-                else
-                    mstatus_.ux_socket_status_right = UX_SOCKET_CHARGING;
-                break;
-
-            case eEV_REMOTE_START:    //9
-                mstatus_.ux_payment_user_selector = 1;
-                break;
-
-            case eEV_REMOTE_STOP:    //15
-                (RL) ? (Use_App_L = true) : (Use_App_R = true);
-            case eEV_STOP_WITH_CARD:    //14   
-                //                mstatus_.ux_popup_number = MESSAGE_23;
-            case eEV_CAR_DISCONNECT:    //13
-                if (RL) {
-                    mstatus_.ux0400_plug_left_status = 1;
-                    mstatus_.ux_socket_status_left = UX_SOCKET_WARNING;
-                }
-                else {
-                    mstatus_.ux0400_plug_right_status = 1;
-                    mstatus_.ux_socket_status_right = UX_SOCKET_WARNING;
-                }
-
-                if ((msg->FORMAT_STATUS.Charge == eEV_CAR_DISCONNECT) && \
-                    (Use_CreditCard)) {
-                    if (ScreenNumberBuf == SCREEN_STANDBY) {
-                        charge_stop = MESSAGE_24;
-                        home_flag = true;
-                    }
-                    else {
-                        mstatus_.ux_popup_number = MESSAGE_24;
-                    }
-                }
-                else {
-                    if (ScreenNumberBuf == SCREEN_STANDBY) {
-                        charge_stop = MESSAGE_25;
-                        home_flag = true;
-                    }
-                    else {
-                        mstatus_.ux_popup_number = MESSAGE_25;
-                    }
-                }
-                break;
-
-            case eEV_TRANSACTION_ENDED:    //16
-                if (RL)
-                    mstatus_.ux_socket_status_left = UX_SOCKET_FULL;
-                else
-                    mstatus_.ux_socket_status_right = UX_SOCKET_FULL;
-                //mstatus_.ux_popup_number = MESSAGE_25;
-                charge_stop = MESSAGE_25;
-                break;
-
-            case eEV_REMOVE_PLUG_FCARD:    //17
-                if (RL) {
-                    mstatus_.ux0400_plug_left_status = 2;
-                }
-                else {
-                    mstatus_.ux0400_plug_right_status = 2;
-                }
-                break;
-
-            case eEV_PUT_CABLE_INSTATION:    //18
-                if (RL) {
-                    mstatus_.ux0400_plug_left_status = 1;
-                }
-                else {
-                    mstatus_.ux0400_plug_right_status = 1;
-                }
-                mstatus_.ux_popup_number = MESSAGE_26;
-                break;
-
-            case eEV_THANKS_AND_GOODBYE:    //19 
-                if (RL) {
-                    mstatus_.ux_socket_status_left = UX_SOCKET_AVAILABLE;
-                    if (Use_App_L)
-                    {
-                        Use_App_L = false;
-                        charge_stop = MESSAGE_28;
-                    }
-                    else
-                        charge_stop = MESSAGE_27;
-                }
-                else {
-                    mstatus_.ux_socket_status_right = UX_SOCKET_AVAILABLE;
-                    if (Use_App_R)
-                    {
-                        Use_App_R = false;
-                        charge_stop = MESSAGE_28;
-                    }
-                    else
-                        charge_stop = MESSAGE_27;
-                }
-                mstatus_.ux_payment_user_selector = 0;
-                mstatus_.ux_plugin_lock_into_car = 0;
-                //            mstatus_.operation_charge_socket_selected = CHARGE_SOCKET_NONE;       
-                break;
-
-            case eEV_CHARGEING_STATE_B:    //10
-            case eEV_CHARGEING_STATE_C:    //11
-            case eEV_CHARGEING_ON_HOLD:    //12        
-                if (RL) {
-                    mstatus_.ux_socket_status_left = (UXSocketStatus)msg->FORMAT_STATUS.Led_color;
-                }
-                else {
-                    mstatus_.ux_socket_status_right = (UXSocketStatus)msg->FORMAT_STATUS.Led_color;
-                }
-                break;
-
-            default:
-                if (RL) {
-                    mstatus_.ux_socket_status_left = UX_SOCKET_WARNING;
-                }
-                else {
-                    mstatus_.ux_socket_status_right = UX_SOCKET_WARNING;
-                }
-                break;
-            }
-
-            if (RL) {   //check the status of pluk_lock & plug_in_station
-                mstatus_.ux_plugin_in_out_status_left = !msg->FORMAT_STATUS.Plug_inStation;
-                mstatus_.ux_plugin_usability_status_left = !msg->FORMAT_STATUS.Plug_lock;
-                //            mstatus_.ux_socket_status_left = (UXSocketStatus)msg->FORMAT_STATUS.Led_color;
-            }
-            else {
-                mstatus_.ux_plugin_in_out_status_right = !msg->FORMAT_STATUS.Plug_inStation;
-                mstatus_.ux_plugin_usability_status_right = !msg->FORMAT_STATUS.Plug_lock;
-                //            mstatus_.ux_socket_status_right = (UXSocketStatus)msg->FORMAT_STATUS.Led_color;
-            }
-
-        }
-
-        msg->EVBox_FormatEvent = msg->EVBox_FormatEvent & (~Event_CHARGE_STATUS);
-    }
-
-    if (msg->EVBox_FormatEvent & Event_CHARGE_INFO) {//0x74
-        sprintf(mstatus_.ux_duration_h, "%d", msg->FORMAT_INFO.Charge_time / 60 / 60);
-        sprintf(mstatus_.ux_duration_m, "%d", msg->FORMAT_INFO.Charge_time / 60 % 60);
-        sprintf(mstatus_.ux_energy, "%d", msg->FORMAT_INFO.Current_power);
-        sprintf(mstatus_.ux_paid, "%d", msg->FORMAT_INFO.TotalCost);
-
-        msg->EVBox_FormatEvent = msg->EVBox_FormatEvent & (~Event_CHARGE_INFO);
-    }
-
-    if (msg->EVBox_FormatEvent & Event_SET_DISPLAY) {//0x75
-        sprintf(mstatus_.ux_per_kwh, "%.3f", msg->FORMAT_SETTING.PriceKwh / 1000.0);
-        sprintf(mstatus_.ux_max_kw, "%d", msg->FORMAT_SETTING.MaxPower);
-        //msg->FORMAT_SETTING.Currency;                   //not ready
-        if ((msg->FORMAT_SETTING.Language > 0) && (msg->FORMAT_SETTING.Language < 4)) {
-            mstatus_.ux_culture = (LanguageList)(msg->FORMAT_SETTING.Language - 1);
-        }
-        else {
-            mstatus_.ux_culture = LanguageList::ENGISH;
-        }
-        if (msg->FORMAT_SETTING.TelephoneNo != NULL)
-            strncpy(mstatus_.ux_phone, (char*)msg->FORMAT_SETTING.TelephoneNo, 13);
-
-        if (msg->FORMAT_SETTING.ChargePointSerNo != NULL)
-            strncpy(mstatus_.ux_charger_id, (char*)msg->FORMAT_SETTING.ChargePointSerNo, 9);
-
-        EnterPopupDelay = (msg->FORMAT_SETTING.EnterPopupDelay * TFT_FPS) >> FPS_DIV;
-        ExitPopupDelay = (msg->FORMAT_SETTING.ExitPopupDelay * TFT_FPS) >> FPS_DIV;
-        pp_count = 0;
-        msg->EVBox_FormatEvent = msg->EVBox_FormatEvent & (~Event_SET_DISPLAY);
-    }
-
-    if (msg->EVBox_FormatEvent & Event_GET_UTC) {       //0x78
-        char dt[21] = { ' ' };
-        char y2;
-        y2 = msg->FORMAT_UTC_ST.year - 2000;
-        dt[0] = msg->FORMAT_UTC_ST.hour / 10 + '0';
-        dt[1] = msg->FORMAT_UTC_ST.hour % 10 + '0';
-        dt[2] = ':';
-        dt[3] = msg->FORMAT_UTC_ST.minutes / 10 + '0';
-        dt[4] = msg->FORMAT_UTC_ST.minutes % 10 + '0';
-        dt[5] = ' ';
-        dt[6] = msg->FORMAT_UTC_ST.month / 10 + '0';
-        dt[7] = msg->FORMAT_UTC_ST.month % 10 + '0';
-        dt[8] = '/';
-        dt[9] = msg->FORMAT_UTC_ST.day / 10 + '0';
-        dt[10] = msg->FORMAT_UTC_ST.day % 10 + '0';
-        dt[11] = '/';
-        dt[12] = '2';
-        dt[13] = '0';
-        dt[14] = y2 / 10 + '0';
-        dt[15] = y2 % 10 + '0';
-        strcpy(mstatus_.ux_datetime, dt);
-        msg->EVBox_FormatEvent = msg->EVBox_FormatEvent & (~Event_GET_UTC);
-    }
+ 
 
 }
 unsigned short  Model::GetRS485()
 {
-    if (L_EVBOX_FORMAT_API.EVBox_EventEn) {
-        L_EVBOX_FORMAT_API.EVBox_EventEn = false;
-        return EVBOX_ChargeBox_M_ID;
-    }
-    else if (R_EVBOX_FORMAT_API.EVBox_EventEn) {
-        R_EVBOX_FORMAT_API.EVBox_EventEn = false;
-        return EVBOX_ChargeBox_S_ID;
-    }
     return 0;
 }
 void Model::SetBacklight(bool enable)
 {
-    if (enable)
-        BSP_BL_On();
-    else
-        BSP_BL_Off();
+
 }
 
 bool Model::GetBacklight()
 {
-    return BSP_BL_GetState();
+    return true;
 }
 bool Model::GetProximity()
 {
 #ifndef SIMULATOR   
-    return BSP_GetProximity();
+    return true;
 #endif  
 }
 #endif

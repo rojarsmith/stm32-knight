@@ -291,17 +291,23 @@ TouchGFX stress test performance evaluation Demo uses 2~3 tasks and supports dyn
 
 This is a real ODM project transplanted from a European electric vehicle power grid company. It has rich animation effects and communication control similar to the Modbus concept. Due to the complexity of the project, this 2025 porting version only ported the part that demonstrates its technical features. TouchGFX and the customized event engine were packaged into a command-based GUI subsystem that can use commands in JSON format to apply Modbus concepts.
 
+![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-charging-station-04.jpg)
+
+![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-charging-station-05.jpg)
+
 ![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-charging-station-01.jpg)
 
 ![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-charging-station-02.png)![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-charging-station-03.png)![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-charging-station-04.png)
 
-Not support compile with TouchGFX Designer, VSCode
+Not support compile with TouchGFX Designer.
+
+All communication and packet parsing functions are replaced by simple MOCK methods.
 
 Original resolution: Portrait 1024x768 4:3
 
 STM32H747I Discovery: Portrait 640x480 4:3
 
-Change to CONNECT screen:
+Change to CONNECT screen with json file:
 
 ```json
 "ux_payment_user_selector": 2,
