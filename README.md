@@ -152,9 +152,9 @@ CMakeUserPresets.json
 
 ```
 
-## stm32-knight-gui-demo-oven
+### stm32-knight-gui-demo-oven
 
-Simple oven demo with only GUI.
+Simple oven demo with only simulator GUI.
 
 ![stm32-knight-gui-demo-oven-01](img/stm32-knight-gui-demo-oven-01.png)
 
