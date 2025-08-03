@@ -160,7 +160,7 @@ Simple oven demo with only simulator GUI.
 
 ## stm32-knight-gui-demo-pool-hwint
 
-Simple Pool with backend demo with only GUI.
+Simple Pool with backend demo with only simulator GUI.
 
 ![stm32-knight-gui-demo-pool-hwint-01](img/stm32-knight-gui-demo-pool-hwint-01.png)
 
