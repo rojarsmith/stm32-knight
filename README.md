@@ -18,6 +18,8 @@ STM32 VS Code Extension→Import CMake project→Select Board→Actions→Open i
 
 Add `CMakeUserPresets.json` at root path:
 
+STM32H747I_DISCO
+
 ```json
 {
     "version": 3,
@@ -40,6 +42,8 @@ Add `CMakeUserPresets.json` at root path:
     ]
 }
 ```
+
+STM32F746G_DISCO
 
 ```json
 {
@@ -109,7 +113,7 @@ The scripts that resets the hardware environment on the development board, such 
 
 For Windows, it must set the environment variable `%STM32CLT_PATH%`.
 
-## stm32-knight-freertos
+### stm32-knight-freertos
 
 FreeRTOS example.
 
@@ -117,11 +121,13 @@ FreeRTOS example.
 // .vscode/launch.json
 "configurations": [{
         "executable": "${workspaceFolder}/build/cm7/build/stm32-knight-freertos-cm7.elf",
+        // "preLaunchTask": "Build + Flash CM7", // Remove if compile not work
 }]
 ```
 
+CMakeUserPresets.json
+
 ```json
-// CMakeUserPresets.json
 {
     "version": 3,
     "configurePresets": [
@@ -134,6 +140,12 @@ FreeRTOS example.
                 "BUILD_CONTEXT": "CM7",
                 "FREERTOS_KERNEL_PATH": "../../../../stm32-knight-sdk/operatingsystem/FreeRTOS-LTS/FreeRTOS/FreeRTOS-Kernel"
             }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "local-debug",
+            "configurePreset": "local-debug"
         }
     ]
 }
