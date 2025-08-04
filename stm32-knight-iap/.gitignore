@@ -1,5 +1,8 @@
 /.vscode/
 /build/
+/CMakeFiles/
 /target/stm32h747i_disco/cm7/stm32h747xx_flash_CM7.ld
+/build.ninja
+/cmake_install.cmake
 /CMakeCache.txt
 /CMakeUserPresets.json

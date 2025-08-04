@@ -158,19 +158,22 @@ Simple oven demo with only simulator GUI.
 
 ![stm32-knight-gui-demo-oven-01](img/stm32-knight-gui-demo-oven-01.png)
 
-## stm32-knight-gui-demo-pool-hwint
+### stm32-knight-gui-demo-pool-hwint
 
 Simple Pool with backend demo with only simulator GUI.
 
 ![stm32-knight-gui-demo-pool-hwint-01](img/stm32-knight-gui-demo-pool-hwint-01.png)
 
-## stm32-knight-iap
+### stm32-knight-iap
+
+An example of an In-application programming (IAP) architecture.
 
 Modify `.vscode/launch.json`
 
 ```json
 "executable": "${workspaceFolder}/build/cm7/build/stm32-knight-iap-cm7.elf",
 // "executable": "${command:cmake.launchTargetPath}",
+// "preLaunchTask": "Build + Flash CM7"
 ```
 
 Rebuild:
@@ -207,7 +210,7 @@ Delete folder `build`→Modify `CMakeUserPresets.json`
 
 →stm32-knight-iap-cm7 Build→CMakeLists.txt Configure with CMake Debugger
 
-## stm32-knight-iap-touchgfx
+### stm32-knight-iap-touchgfx
 
 IAP + FreeRTOS + TouchGFX
 
@@ -283,15 +286,15 @@ IAP + FreeRTOS + TouchGFX
 ]
 ```
 
-## stm32-knight-ltdc
+### stm32-knight-ltdc
 
-LTDC
+LTDC driving display LCD example.
 
-## stm32-knight-sdk
+### stm32-knight-sdk
 
-No need to rely on ST official package.
+An independent SDK that does not rely on ST official packages. It can manually add official or third-party dependency codes according to the specified structure.
 
-## stm32-knight-security-box
+### stm32-knight-security-box
 
 Advance security box demo.
 
