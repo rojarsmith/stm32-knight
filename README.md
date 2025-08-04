@@ -308,13 +308,13 @@ Correctly set the MCU register to generate a delay of 10 seconds.
 
 [Link]: stm32-knight-template-minimal
 
-## stm32-knight-touchgfx-3d-gesture-entry
+### stm32-knight-touchgfx-3d-gesture-entry
 
 A demonstration project in cooperation with Taiwan's new 5G mmWave 3D Hand Gesture IC company for algorithm development. This project cannot be executed on STM32, but uses a Windows x64 embedded computer, and uses grpc to communicate with the IC driver software. This 2025 ported version has disabled the grpc communication function.
 
 ![stm32-knight-touchgfx-3d-gesture-entry-01](img/stm32-knight-touchgfx-3d-gesture-entry-01.png)
 
-## stm32-knight-touchgfx-3d-gesture-game
+### stm32-knight-touchgfx-3d-gesture-game
 
 A demonstration project in cooperation with Taiwan's new 5G mmWave 3D Hand Gesture IC company was presented to the guests of the US CEO 2020 in the form of a parkour-style mini-game. This project cannot be executed on STM32, but uses a Windows x64 embedded computer, and uses grpc to communicate with the IC driver software. This 2025 ported version has disabled the grpc communication function.
 
@@ -348,7 +348,7 @@ vcpkg install protobuf
 vcpkg install protobuf[zlib] protobuf[zlib]:x86-windows
 ```
 
-## stm32-knight-touchgfx-burn-test
+### stm32-knight-touchgfx-burn-test
 
 TouchGFX stress test performance evaluation Demo uses 2~3 tasks and supports dynamic increase and decrease of tasks in the FreeRTOS background. Porting to STM32H747I Discovery at 2025.
 
@@ -356,7 +356,7 @@ TouchGFX stress test performance evaluation Demo uses 2~3 tasks and supports dyn
 
 ![stm32-knight-touchgfx-burn-test-02](img/stm32-knight-touchgfx-burn-test-02.jpg)
 
-## stm32-knight-touchgfx-charging-station
+### stm32-knight-touchgfx-charging-station
 
 This is a real ODM project transplanted from a European electric vehicle power grid company. It has rich animation effects and communication control similar to the Modbus concept. Due to the complexity of the project, this 2025 porting version only ported the part that demonstrates its technical features. TouchGFX and the customized event engine were packaged into a command-based GUI subsystem that can use commands in JSON format to apply Modbus concepts.
 
@@ -385,7 +385,7 @@ Change to CONNECT screen with json file:
 "ux_payment_checked": 1,
 ```
 
-## stm32-knight-touchgfx-coffee-machine
+### stm32-knight-touchgfx-coffee-machine
 
 Coffee machine GUI for 2017 Munich electronics show. Porting to STM32H747I Discovery at 2025.
 
@@ -393,13 +393,13 @@ Coffee machine GUI for 2017 Munich electronics show. Porting to STM32H747I Disco
 
 ![stm32-knight-touchgfx-coffee-machine-2](img/stm32-knight-touchgfx-coffee-machine-2.png)
 
-## stm32-knight-touchgfx-dynamic-container
+### stm32-knight-touchgfx-dynamic-container
 
 TouchGFX dynamically creates and deletes containers.
 
 ![stm32-knight-touchgfx-dynamic-container-1](img/stm32-knight-touchgfx-dynamic-container-01.png)![stm32-knight-touchgfx-dynamic-container-1](img/stm32-knight-touchgfx-dynamic-container-02.png)
 
-## stm32-knight-touchgfx-ew2017
+### stm32-knight-touchgfx-ew2017
 
 Video STM32 Demo : VSCode + STM32CubeCLT + IAP + FreeRTOS + TouchGFX
 
@@ -500,7 +500,7 @@ user_cflags := -DUSE_BPP=24
 ]
 ```
 
-## stm32-knight-touchgfx-massage-chair
+### stm32-knight-touchgfx-massage-chair
 
 Real Japanese Massage Chair GUI Case Performance Evaluation. Porting to STM32H747I Discovery at 2025.
 
@@ -511,6 +511,8 @@ Real Japanese Massage Chair GUI Case Performance Evaluation. Porting to STM32H74
 ## utility
 
 ### freertos-win-example
+
+FreeRTOS examples running under Windows.
 
 `CMakeUserPresets.json`
 
@@ -564,11 +566,9 @@ Run debug: Select and Strat Debug Configuration
 
 ## TouchGFX
 
-Non TouchGFX Designer generated:
+TouchGFX Designer does not automatically generate:
 
-App/
-
-target/
-
-GUI.touchgfx
+/App/
+/target/
+/GUI.touchgfx
 
