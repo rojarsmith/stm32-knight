@@ -178,6 +178,8 @@ Modify `.vscode/launch.json`
 
 Rebuild:
 
+Adding _S0 to the end of BUILD_CONTEXT simply disables it; the _S0 symbol is not used in the code.
+
 Delete folder `build`→Modify `CMakeUserPresets.json`
 
 ```json
@@ -571,4 +573,99 @@ TouchGFX Designer does not automatically generate:
 /App/
 /target/
 /GUI.touchgfx
+
+## Share Code
+
+Calling Bootloader from Application. Can be used to provide shared hardware driver code.
+
+`STM32F746NGHX_FLASH.ld`
+
+```c
+MEMORY
+{
+  RAM       (xrw) : ORIGIN = 0x20000000,   LENGTH = 320K
+  FLASH     (rx)  : ORIGIN = 0x08000000,   LENGTH =  32K
+  MY_MEMORY (rx)  : ORIGIN = 0x08018000,   LENGTH = 992K   
+}
+
+.API_SHARED 0x08018000 :
+{
+  KEEP(*(.API_SHARED))
+  KEEP(*(.text.add))
+} > MY_MEMORY
+    
+/* Check if MY_MEMORY usage exceeds MY_MEMORY size */
+ASSERT(LENGTH(MY_MEMORY) >= (__mysection_end__ - __mysection_start__), "MY_MEMORY memory overflowed !")
+```
+
+`Bootloader`
+
+```c
+typedef void (*ptrF)(uint32_t dlyticks);
+
+struct BootloaderSharedAPI
+{
+    void(*Blink)(uint32_t dlyticks);
+    void(*TrunOn)(void);
+    void(*TurnOff)(void);
+};
+
+void LOCATE_FUNC Blink(uint32_t dlyticks);
+void LOCATE_FUNC TurnOn(void);
+void LOCATE_FUNC TurnOff(void);
+
+static ptrF Functions[] =
+{
+    Blink
+};
+
+void LOCATE_FUNC TurnOn(void)
+{
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_SET);
+}
+
+void LOCATE_FUNC TurnOff(void)
+{
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, GPIO_PIN_RESET);
+}
+
+struct BootloaderSharedAPI api __attribute__((section(".API_SHARED"))) =
+{
+    Blink,
+	TurnOn,
+	TurnOff
+};
+
+void __attribute__((__section__(".RamFunc"))) TurnOnLED(GPIO_PinState PinState)
+{
+    if(PinState != GPIO_PIN_RESET)
+    {
+    	GPIOI->BSRR = (uint32_t)GPIO_PIN_1;
+    }
+    else
+    {
+        GPIOI->BSRR = (uint32_t)GPIO_PIN_1 << 16U;
+    }
+}
+```
+
+`Application`
+
+```c
+
+void LOCATE_FUNC Blink(uint32_t dlyticks);
+
+struct BootloaderAPI
+{
+    void (*Blink)(uint32_t dlyticks);
+    void (*TurnOn)(void);
+    void (*TurnOff)(void);
+};
+
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+    struct BootloaderAPI *api = (struct BootloaderAPI *) 0x08018000;
+}
+```
 
